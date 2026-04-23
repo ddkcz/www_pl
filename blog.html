@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dziennik — Twoje Imię</title>
+  <script>
+    (function(){
+      var t = localStorage.getItem('theme');
+      if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-mark"></span>
+        <span>TWOJE.IMIĘ_M.E.</span>
+      </a>
+      <div class="nav-right">
+        <button class="theme-toggle" aria-label="Przełącz na tryb ciemny">
+          <span class="theme-toggle-thumb"></span>
+        </button>
+        <button class="nav-toggle" aria-label="Menu">☰</button>
+        <ul class="nav-links">
+          <li><a href="index.html">Start</a></li>
+          <li><a href="about.html">O mnie</a></li>
+          <li><a href="projects.html">Projekty</a></li>
+          <li><a href="blog.html">Dziennik</a></li>
+          <li><a href="contact.html">Kontakt</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+
+    <header class="page-header">
+      <span class="section-label">ARKUSZ 04 / 05 · DZIENNIK</span>
+      <h1>Dziennik inżyniera</h1>
+      <p>Notatki sprzed deski kreślarskiej — wnioski z projektów, szybkie poradniki i rzeczy, których żałuję, że nie wiedziałem wcześniej.</p>
+    </header>
+
+    <section class="blog-list">
+
+      <a href="#" class="blog-item">
+        <div class="blog-date">2026.04.12</div>
+        <div>
+          <h3>GD&T bez bólu głowy — praktyczne wprowadzenie</h3>
+          <p>Pięć oznaczeń, których używam w 90% przypadków, i kiedy odłożyć resztę na bok.</p>
+        </div>
+        <div class="blog-arrow">→</div>
+      </a>
+
+      <a href="#" class="blog-item">
+        <div class="blog-date">2026.03.28</div>
+        <div>
+          <h3>Jak polubiłem badania zbieżności MES</h3>
+          <p>Zagęszczanie siatki to nie magia — oto mój sposób na zaufanie wynikom symulacji.</p>
+        </div>
+        <div class="blog-arrow">→</div>
+      </a>
+
+      <a href="#" class="blog-item">
+        <div class="blog-date">2026.03.05</div>
+        <div>
+          <h3>Obliczenia połączeń śrubowych — VDI 2230 krok po kroku</h3>
+          <p>Przykład obliczeń siły napięcia wstępnego dla rzeczywistego wspornika, z obliczeniami ręcznymi i arkuszem kalkulacyjnym.</p>
+        </div>
+        <div class="blog-arrow">→</div>
+      </a>
+
+      <a href="#" class="blog-item">
+        <div class="blog-date">2026.02.14</div>
+        <div>
+          <h3>Projektowanie pod produkcję — pięć błędów, których nie musisz powtarzać</h3>
+          <p>Krótki katalog części, które wróciły z warsztatu z uniesionymi brwiami, i czego mnie nauczyły.</p>
+        </div>
+        <div class="blog-arrow">→</div>
+      </a>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-revision">A · 2026</div>
+      <div class="footer-center">Zaprojektowane i zbudowane przez Twoje Imię</div>
+      <div class="footer-links">
+        <a href="https://github.com">GitHub</a>
+        <a href="https://linkedin.com">LinkedIn</a>
+        <a href="contact.html">E-mail</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

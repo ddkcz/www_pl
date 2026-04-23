@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dawid Kuczyński— Inżynier Mechanik</title>
+  
+  <script>
+    (function(){
+      var t = localStorage.getItem('theme');
+      if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-mark"></span>
+        <span>CADsmart</span>
+      </a>
+      <div class="nav-right">
+        <button class="theme-toggle" aria-label="Przełącz na tryb ciemny">
+          <span class="theme-toggle-thumb"></span>
+        </button>
+        <button class="nav-toggle" aria-label="Menu">☰</button>
+        <ul class="nav-links">
+          <li><a href="index.html">Start</a></li>
+          <li><a href="about.html">O mnie</a></li>
+          <li><a href="projects.html">Projekty</a></li>
+          <li><a href="blog.html">Dziennik</a></li>
+          <li><a href="contact.html">Kontakt</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+
+    <section class="hero">
+      <div>
+        <p class="hero-meta">ARKUSZ 01 / 05 · REV A · PORTFOLIO</p>
+        <h1>
+          <span class="hero-name">Dawid Kuczyński</span><br>
+          <span class="accent-name">Inżynier Mechanik</span>
+        </h1>
+        <p class="hero-role">Projektowanie · Analiza · Produkcja</p>
+        <p class="hero-description">
+          Projektuję mechanikę dla firm, które potrzebują solidnej konstrukcji bez rozbudowanego działu R&amp;D. Prowadzę projekt od pierwszego szkicu aż po dokumentację produkcyjną.
+        </p>
+        <div class="hero-actions">
+          <a href="projects.html" class="btn btn-primary">Zobacz projekty →</a>
+          <a href="contact.html" class="btn btn-secondary">Kontakt</a>
+        </div>
+      </div>
+
+      <div class="profile-frame">
+        <div class="profile-corners"></div>
+        <div class="profile-photo">
+          <!-- Zamień na: <img src="images/profile.jpg" alt="Twoje Imię"> -->
+          [ SKALA 1:1 ]
+        </div>
+        <div class="profile-titleblock">
+          <div>
+            <div class="label">Imię</div>
+            <div>Dawid</div>
+          </div>
+          <div>
+            <div class="label">Tytuł</div>
+            <div>mgr inż.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-revision">A · 2026</div>
+      <div class="footer-center">© 2026 CADsmart — wszelkie prawa zastrzeżone</div>
+      <div class="footer-links">
+        <a href="https://linkedin.com">LinkedIn</a>
+        <a href="contact.html">E-mail</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

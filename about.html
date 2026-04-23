@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>O mnie — Twoje Imię</title>
+  <script>
+    (function(){
+      var t = localStorage.getItem('theme');
+      if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-mark"></span>
+        <span>TWOJE.IMIĘ_M.E.</span>
+      </a>
+      <div class="nav-right">
+        <button class="theme-toggle" aria-label="Przełącz na tryb ciemny">
+          <span class="theme-toggle-thumb"></span>
+        </button>
+        <button class="nav-toggle" aria-label="Menu">☰</button>
+        <ul class="nav-links">
+          <li><a href="index.html">Start</a></li>
+          <li><a href="about.html">O mnie</a></li>
+          <li><a href="projects.html">Projekty</a></li>
+          <li><a href="blog.html">Dziennik</a></li>
+          <li><a href="contact.html">Kontakt</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+
+    <header class="page-header">
+      <span class="section-label">ARKUSZ 02 / 05 · O MNIE</span>
+      <h1>O mnie</h1>
+      <p>Inżynier mechanik z pasją do przemyślanego projektowania i precyzyjnego wykonania.</p>
+    </header>
+
+    <section class="about-grid">
+      <div class="profile-frame">
+        <div class="profile-corners"></div>
+        <div class="profile-photo">[ SKALA 1:1 ]</div>
+        <div class="profile-titleblock">
+          <div>
+            <div class="label">Imię</div>
+            <div>Twoje Imię</div>
+          </div>
+          <div>
+            <div class="label">Tytuł</div>
+            <div>mgr inż.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-text">
+        <p>
+          Cześć, jestem <strong>Twoje Imię</strong>, inżynier mechanik z Małopolski.
+          Od kilku lat zajmuję się projektowaniem części, prowadzeniem symulacji
+          i nauką jasnej komunikacji zarówno z operatorami maszyn, jak i kadrą
+          zarządzającą.
+        </p>
+        <p>
+          Wybrałem mechanikę, bo zafascynowała mnie myśl, że kilka dobrze
+          dobranych linii na papierze może stać się czymś rzeczywistym —
+          czymś, co się porusza, przenosi obciążenie, przekazuje ciepło lub
+          po prostu ułatwia komuś życie. Wciąż czuję to samo, gdy prototyp
+          schodzi z frezarki.
+        </p>
+        <p>
+          Po godzinach zwykle majsterkuję przy jakimś projekcie — komponent
+          rowerowy, uchwyt drukowany 3D albo pomysł, który nie daje mi spokoju.
+          O tych wartych podzielenia się piszę w sekcji Dziennik.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <span class="section-label">UMIEJĘTNOŚCI I NARZĘDZIA</span>
+      <h2>Kompetencje</h2>
+
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h3>CAD / Modelowanie</h3>
+          <ul class="skill-list">
+            <li>SolidWorks</li>
+            <li>Autodesk Inventor</li>
+            <li>Fusion 360</li>
+            <li>AutoCAD</li>
+          </ul>
+        </div>
+
+        <div class="skill-category">
+          <h3>Analiza / MES</h3>
+          <ul class="skill-list">
+            <li>ANSYS Mechanical</li>
+            <li>SolidWorks Simulation</li>
+            <li>MATLAB</li>
+            <li>Obliczenia ręczne</li>
+          </ul>
+        </div>
+
+        <div class="skill-category">
+          <h3>Produkcja</h3>
+          <ul class="skill-list">
+            <li>GD&T (ASME Y14.5)</li>
+            <li>Obróbka CNC</li>
+            <li>Druk 3D (FDM/SLA)</li>
+            <li>Projektowanie blach</li>
+          </ul>
+        </div>
+
+        <div class="skill-category">
+          <h3>Obecnie się uczę</h3>
+          <ul class="skill-list">
+            <li>Projektowanie generatywne</li>
+            <li>Python dla inżynierów</li>
+            <li>Six Sigma</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-revision">A · 2026</div>
+      <div class="footer-center">Zaprojektowane i zbudowane przez Twoje Imię</div>
+      <div class="footer-links">
+        <a href="https://github.com">GitHub</a>
+        <a href="https://linkedin.com">LinkedIn</a>
+        <a href="contact.html">E-mail</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

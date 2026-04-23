@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projekty — Twoje Imię</title>
+  <script>
+    (function(){
+      var t = localStorage.getItem('theme');
+      if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-mark"></span>
+        <span>TWOJE.IMIĘ_M.E.</span>
+      </a>
+      <div class="nav-right">
+        <button class="theme-toggle" aria-label="Przełącz na tryb ciemny">
+          <span class="theme-toggle-thumb"></span>
+        </button>
+        <button class="nav-toggle" aria-label="Menu">☰</button>
+        <ul class="nav-links">
+          <li><a href="index.html">Start</a></li>
+          <li><a href="about.html">O mnie</a></li>
+          <li><a href="projects.html">Projekty</a></li>
+          <li><a href="blog.html">Dziennik</a></li>
+          <li><a href="contact.html">Kontakt</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+
+    <header class="page-header">
+      <span class="section-label">ARKUSZ 03 / 05 · PROJEKTY</span>
+      <h1>Wybrane prace</h1>
+      <p>Przekrój projektów mechanicznych — od koncepcji przez prototyp po produkcję.</p>
+    </header>
+
+    <section class="grid-2">
+
+      <article class="card">
+        <div class="project-meta">
+          <span>PRJ-001</span>
+          <span>2026</span>
+        </div>
+        <h3>Lekki wspornik — optymalizacja topologiczna</h3>
+        <p>Zoptymalizowany topologicznie wspornik ramienia robota przemysłowego. Redukcja masy o 42% przy zachowaniu współczynnika bezpieczeństwa powyżej 2,0 przy obciążeniach dynamicznych.</p>
+        <div class="project-tags">
+          <span>MES</span>
+          <span>Optymalizacja</span>
+          <span>Aluminium</span>
+        </div>
+        <div class="project-links">
+          <a href="#">Studium przypadku</a>
+          <a href="#">Rysunki</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="project-meta">
+          <span>PRJ-002</span>
+          <span>2025</span>
+        </div>
+        <h3>Wymiennik ciepła — przeprojektowanie</h3>
+        <p>Przeprojektowany wymiennik ciepła płytowo-żebrowy do zastosowań HVAC. Poprawa wydajności cieplnej o 18% bez zwiększania gabarytów ani kosztów.</p>
+        <div class="project-tags">
+          <span>CFD</span>
+          <span>Termika</span>
+          <span>Blacha</span>
+        </div>
+        <div class="project-links">
+          <a href="#">Studium przypadku</a>
+          <a href="#">Raport</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="project-meta">
+          <span>PRJ-003</span>
+          <span>2025</span>
+        </div>
+        <h3>Precyzyjny uchwyt do CNC</h3>
+        <p>Modułowy uchwyt obróbczy z powtarzalnością ±0,01 mm dla rodziny 12 podobnych części. Skrócenie czasu przezbrojenia z 45 min do poniżej 8 min.</p>
+        <div class="project-tags">
+          <span>GD&T</span>
+          <span>Oprzyrządowanie</span>
+          <span>DFM</span>
+        </div>
+        <div class="project-links">
+          <a href="#">Studium przypadku</a>
+          <a href="#">Rysunki</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="project-meta">
+          <span>PRJ-004</span>
+          <span>2024</span>
+        </div>
+        <h3>Miniaturowa przekładnia planetarna</h3>
+        <p>Trzystopniowa przekładnia planetarna dla robotyki hobbystycznej. Kompletny projekt — od doboru kół zębatych po obudowę, zweryfikowany prototypem.</p>
+        <div class="project-tags">
+          <span>Koła zębate</span>
+          <span>Druk 3D</span>
+          <span>Robotyka</span>
+        </div>
+        <div class="project-links">
+          <a href="#">Studium przypadku</a>
+          <a href="#">Dziennik budowy</a>
+        </div>
+      </article>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-revision">A · 2026</div>
+      <div class="footer-center">Zaprojektowane i zbudowane przez Twoje Imię</div>
+      <div class="footer-links">
+        <a href="https://github.com">GitHub</a>
+        <a href="https://linkedin.com">LinkedIn</a>
+        <a href="contact.html">E-mail</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

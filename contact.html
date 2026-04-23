@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontakt — Twoje Imię</title>
+  <script>
+    (function(){
+      var t = localStorage.getItem('theme');
+      if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-mark"></span>
+        <span>TWOJE.IMIĘ_M.E.</span>
+      </a>
+      <div class="nav-right">
+        <button class="theme-toggle" aria-label="Przełącz na tryb ciemny">
+          <span class="theme-toggle-thumb"></span>
+        </button>
+        <button class="nav-toggle" aria-label="Menu">☰</button>
+        <ul class="nav-links">
+          <li><a href="index.html">Start</a></li>
+          <li><a href="about.html">O mnie</a></li>
+          <li><a href="projects.html">Projekty</a></li>
+          <li><a href="blog.html">Dziennik</a></li>
+          <li><a href="contact.html">Kontakt</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+
+    <header class="page-header">
+      <span class="section-label">ARKUSZ 05 / 05 · KONTAKT</span>
+      <h1>Skontaktuj się</h1>
+      <p>Chcesz nawiązać współpracę, masz pytanie albo po prostu chcesz porozmawiać o inżynierii? Chętnie usłyszę.</p>
+    </header>
+
+    <section class="contact-grid">
+
+      <div class="contact-methods">
+        <a href="mailto:twoj@email.pl" class="contact-method">
+          <div class="contact-icon">@</div>
+          <div>
+            <div class="contact-method-label">E-mail</div>
+            <div class="contact-method-value">twoj@email.pl</div>
+          </div>
+        </a>
+
+        <a href="https://linkedin.com" class="contact-method">
+          <div class="contact-icon">in</div>
+          <div>
+            <div class="contact-method-label">LinkedIn</div>
+            <div class="contact-method-value">/in/twojeimie</div>
+          </div>
+        </a>
+
+        <a href="https://github.com" class="contact-method">
+          <div class="contact-icon">&lt;/&gt;</div>
+          <div>
+            <div class="contact-method-label">GitHub</div>
+            <div class="contact-method-value">@twojlogin</div>
+          </div>
+        </a>
+
+        <a href="#" class="contact-method">
+          <div class="contact-icon">PDF</div>
+          <div>
+            <div class="contact-method-label">CV</div>
+            <div class="contact-method-value">Pobierz (PDF)</div>
+          </div>
+        </a>
+      </div>
+
+      <form id="contact-form">
+        <label for="name">Imię</label>
+        <input type="text" id="name" name="name" required placeholder="Twoje imię">
+
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" required placeholder="twoj@email.pl">
+
+        <label for="message">Wiadomość</label>
+        <textarea id="message" name="message" required placeholder="Opowiedz mi o swoim projekcie lub pytaniu..."></textarea>
+
+        <button type="submit" class="btn btn-primary">Wyślij wiadomość →</button>
+      </form>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-revision">A · 2026</div>
+      <div class="footer-center">Zaprojektowane i zbudowane przez Twoje Imię</div>
+      <div class="footer-links">
+        <a href="https://github.com">GitHub</a>
+        <a href="https://linkedin.com">LinkedIn</a>
+        <a href="contact.html">E-mail</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
