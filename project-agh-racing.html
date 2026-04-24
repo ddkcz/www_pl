@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formula Student — AGH Racing — Dawid Kuczyński</title>
+  <script>
+    (function(){
+      var t = localStorage.getItem('theme');
+      if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-mark"></span>
+        <span>CADsmart</span>
+      </a>
+      <div class="nav-right">
+        <button class="theme-toggle" aria-label="Przełącz na tryb ciemny">
+          <span class="theme-toggle-thumb"></span>
+        </button>
+        <button class="nav-toggle" aria-label="Menu">☰</button>
+        <ul class="nav-links">
+          <li><a href="index.html">Start</a></li>
+          <li><a href="about.html">O mnie</a></li>
+          <li><a href="projects.html">Projekty</a></li>
+          <li><a href="blog.html">Dziennik</a></li>
+          <li><a href="contact.html">Kontakt</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+
+    <a href="projects.html" class="back-link">← Wróć do wszystkich projektów</a>
+
+    <article class="project-entry">
+      <div class="project-entry-header">
+        <span class="prj-id">PRJ-005</span>
+        <span class="prj-company">AGH Racing</span>
+        <span>2017 — 2020</span>
+      </div>
+      <h2>Bolidy Formula Student — Grażyna, RTC, Lem</h2>
+      <p>
+        Udział w zespole AGH Racing podczas studiów — od pierwszych konstrukcji stalowych po kompozytowe wahacze bolidu elektrycznego. Pełny cykl: projekt → analiza MES → wykonanie CNC → badania i wyścigi.
+      </p>
+
+      <div class="project-stack">
+        <span>SolidWorks</span>
+        <span>ANSYS</span>
+        <span>MES</span>
+        <span>CNC</span>
+        <span>Kompozyty CFRP</span>
+        <span>Zawieszenie</span>
+      </div>
+
+      <h3>Projekty konstrukcyjne</h3>
+      <ul class="project-bullets">
+        <li>Projekt <strong>stalowych wahaczy</strong> dla dwóch bolidów Grażyna.</li>
+        <li>Projekt <strong>kolumny kierowniczej</strong> dla bolidu spalinowego Grażyna.</li>
+        <li>Projekt <strong>kompozytowych wahaczy</strong> dla bolidu elektrycznego Lem — redukcja masy zestawu wahaczy o <strong>53%</strong>.</li>
+        <li>Wykonanie komponentów na frezarce CNC w ramach pracy w zespole.</li>
+      </ul>
+
+      <h3>Praca inżynierska</h3>
+      <p>
+        <em>„Analiza wytrzymałościowa połączenia wahacza zawieszenia bolidu Formula Student w programie ANSYS"</em> — praca obroniona w kole naukowym AGH Racing. Badania wytrzymałościowe kleju, projekt CAD wahaczy i symulacje MES łączników. Rozwiązanie jest nadal używane w kolejnym bolidzie elektrycznym Lem.
+      </p>
+
+      <h3>Publikacje naukowe</h3>
+      <ul class="project-bullets">
+        <li>„Analiza połączeń zakładkowych w kontekście projektowania kompozytowego wału napędowego" — ISBN: 978-83-949477-4-3</li>
+        <li>„Projektowanie komponentów zawieszenia bolidu Formula Student na przykładzie piasty kierowanej" — ISBN: 978-83-949477-2-9</li>
+        <li>„Projektowanie wahaczy bolidu Formula Student z zastosowaniem włókna węglowego" — ISBN: 978-83-949477-2-9</li>
+      </ul>
+
+      <h3>Osiągnięcia zespołu</h3>
+      <ul class="project-bullets">
+        <li><strong>Formula SAE Australasia '20</strong> — 1. miejsce w kategorii Design.</li>
+        <li><strong>Formula SAE Michigan '19</strong> — 3. miejsce w acceleration, 15. miejsce ogółem (na 139 zespołów).</li>
+        <li><strong>Formula FS Netherlands '18</strong> — 1. miejsce w acceleration, 2. w skid-pad, 2. w autocross, 5. ogółem.</li>
+        <li><strong>Formula FS Spain '18</strong> — 1. miejsce w acceleration.</li>
+        <li><strong>Formula SAE Michigan '18</strong> — 4. miejsce w Business Plan, 5. w Endurance, 6. w Skid-Pad, 9. ogółem (na 118 zespołów).</li>
+      </ul>
+    </article>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-revision">A · 2026</div>
+      <div class="footer-center">© 2026 CADsmart — wszelkie prawa zastrzeżone</div>
+      <div class="footer-links">
+          <a href="https://github.com/ddkcz">GitHub</a>
+        <a href="https://www.linkedin.com/in/dkuczynski/">LinkedIn</a>
+        <a href="contact.html">E-mail</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

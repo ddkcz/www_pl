@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taras — Dawid Kuczyński</title>
+  <script>
+    (function(){
+      var t = localStorage.getItem('theme');
+      if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-mark"></span>
+        <span>CADsmart</span>
+      </a>
+      <div class="nav-right">
+        <button class="theme-toggle" aria-label="Przełącz na tryb ciemny">
+          <span class="theme-toggle-thumb"></span>
+        </button>
+        <button class="nav-toggle" aria-label="Menu">☰</button>
+        <ul class="nav-links">
+          <li><a href="index.html">Start</a></li>
+          <li><a href="about.html">O mnie</a></li>
+          <li><a href="projects.html">Projekty</a></li>
+          <li><a href="blog.html">Dziennik</a></li>
+          <li><a href="contact.html">Kontakt</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+
+    <a href="projects.html" class="back-link">← Wróć do wszystkich projektów</a>
+
+    <article class="project-entry">
+      <div class="project-entry-header">
+        <span class="prj-id">PRJ-010</span>
+        <span class="prj-company">Projekt własny · Dom</span>
+        <span>2025</span>
+      </div>
+      <h2>Taras — projekt i budowa własna</h2>
+      <p>
+        Projekt i samodzielna budowa tarasu przy domu — od szkicu koncepcyjnego w SketchUp, przez dobór materiałów i obliczenia konstrukcyjne, po realizację. Typowy przykład podejścia inżynierskiego do problemu domowego.
+      </p>
+
+      <div class="project-stack">
+        <span>SketchUp</span>
+        <span>Stolarka</span>
+        <span>Konstrukcja drewniana</span>
+        <span>Obliczenia statyczne</span>
+        <span>Projekt własny</span>
+      </div>
+
+      <h3>Zakres projektu</h3>
+      <ul class="project-bullets">
+        <li>Projekt koncepcyjny i model 3D w <strong>SketchUp</strong> — wymiary, układ desek, detale łączników.</li>
+        <li>Dobór materiałów: drewno impregnowane ciśnieniowo, łączniki stalowe nierdzewne, izolacja podpór.</li>
+        <li>Wstępne obliczenia nośności podkonstrukcji i rozstawu legarów.</li>
+        <li>Samodzielna realizacja — fundamenty punktowe, podkonstrukcja, deskowanie.</li>
+        <li>Wykończenie: impregnacja, oświetlenie LED, obrzeża.</li>
+      </ul>
+
+      <h3>Czego się nauczyłem</h3>
+      <ul class="project-bullets">
+        <li>Projektowanie z uwzględnieniem dylatacji — drewno pracuje, tolerancje muszą to przewidywać.</li>
+        <li>Koordynacja z dostawcami materiałów budowlanych i dobór najlepszego stosunku ceny do jakości.</li>
+        <li>Zarządzanie projektem solo: harmonogram, zakupy, wykonanie w czasie wolnym od pracy.</li>
+      </ul>
+    </article>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-revision">A · 2026</div>
+      <div class="footer-center">© 2026 CADsmart — wszelkie prawa zastrzeżone</div>
+      <div class="footer-links">
+        <a href="https://github.com/ddkcz">GitHub</a>
+        <a href="https://www.linkedin.com/in/dkuczynski/">LinkedIn</a>
+        <a href="contact.html">E-mail</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

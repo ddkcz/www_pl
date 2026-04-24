@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rajdy samochodowe — Dawid Kuczyński</title>
+  <script>
+    (function(){
+      var t = localStorage.getItem('theme');
+      if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-mark"></span>
+        <span>CADsmart</span>
+      </a>
+      <div class="nav-right">
+        <button class="theme-toggle" aria-label="Przełącz na tryb ciemny">
+          <span class="theme-toggle-thumb"></span>
+        </button>
+        <button class="nav-toggle" aria-label="Menu">☰</button>
+        <ul class="nav-links">
+          <li><a href="index.html">Start</a></li>
+          <li><a href="about.html">O mnie</a></li>
+          <li><a href="projects.html">Projekty</a></li>
+          <li><a href="blog.html">Dziennik</a></li>
+          <li><a href="contact.html">Kontakt</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+
+    <a href="projects.html" class="back-link">← Wróć do wszystkich projektów</a>
+
+    <article class="project-entry">
+      <div class="project-entry-header">
+        <span class="prj-id">PRJ-006</span>
+        <span class="prj-company">Szybka Jazda · MiTo Rally</span>
+        <span>2019 — obecnie</span>
+      </div>
+      <h2>Rajdy samochodowe — budowa auta i starty</h2>
+      <p>
+        Rajdy to moja pasja i jednocześnie poligon inżynierski — od budowy amatorskiego auta w garażu, po starty w klasie sportowej z licencją. Własne konstrukcje, własne modyfikacje, własne wnioski.
+      </p>
+
+      <div class="project-stack">
+        <span>Budowa auta</span>
+        <span>Modyfikacje</span>
+        <span>Pilot rajdowy</span>
+        <span>Licencja sportowa</span>
+      </div>
+
+      <h3>Doświadczenie i samochody</h3>
+      <ul class="project-bullets">
+        <li>Pilot rajdowy w <strong>SKJS</strong> (rajdy amatorskie) 2019–2023.</li>
+        <li>Pilot rajdowy w klasie <strong>Pro2S / RallyN</strong> od 2024.</li>
+        <li>Budowa i rozwój amatorskiego auta rajdowego — <strong>Fiat Seicento Sporting</strong> (2019–2023).</li>
+        <li>Budowa <strong>Alfy Romeo MiTo QV</strong> w specyfikacji RallyN (od 2023).</li>
+        <li>Ciągła modernizacja i dostosowywanie pojazdów do wymagań rajdowych.</li>
+      </ul>
+
+      <h3>Wyniki sportowe</h3>
+      <ul class="project-bullets">
+        <li><strong>1. miejsce</strong> — Rajd Głubczyce 2020.</li>
+        <li><strong>1. miejsce</strong> — Rajd Opolski 2021.</li>
+        <li><strong>1. i 2. miejsce</strong> w dwóch rundach Tarmac Masters 2022.</li>
+        <li><strong>2. miejsce</strong> w klasyfikacji generalnej Pucharu Śląska 2023.</li>
+        <li><strong>3. miejsce</strong> w klasyfikacji generalnej Pucharu Opolskiego 2023.</li>
+        <li>Starty w rajdach regionalnych z licencją sportową od 2024.</li>
+        <li><strong>4-krotny zwycięzca klasy Pro2S</strong> w sezonie 2024 — mistrz sezonu.</li>
+      </ul>
+    </article>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-revision">A · 2026</div>
+      <div class="footer-center">© 2026 CADsmart — wszelkie prawa zastrzeżone</div>
+      <div class="footer-links">
+         <a href="https://github.com/ddkcz">GitHub</a>
+        <a href="https://www.linkedin.com/in/dkuczynski/">LinkedIn</a>
+        <a href="contact.html">E-mail</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

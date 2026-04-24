@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Techramps Group — Dawid Kuczyński</title>
+  <script>
+    (function(){
+      var t = localStorage.getItem('theme');
+      if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-mark"></span>
+        <span>CADsmart</span>
+      </a>
+      <div class="nav-right">
+        <button class="theme-toggle" aria-label="Przełącz na tryb ciemny">
+          <span class="theme-toggle-thumb"></span>
+        </button>
+        <button class="nav-toggle" aria-label="Menu">☰</button>
+        <ul class="nav-links">
+          <li><a href="index.html">Start</a></li>
+          <li><a href="about.html">O mnie</a></li>
+          <li><a href="projects.html">Projekty</a></li>
+          <li><a href="blog.html">Dziennik</a></li>
+          <li><a href="contact.html">Kontakt</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+
+    <a href="projects.html" class="back-link">← Wróć do wszystkich projektów</a>
+
+    <article class="project-entry">
+      <div class="project-entry-header">
+        <span class="prj-id">PRJ-004</span>
+        <span class="prj-company">Techramps Group / FlowParks</span>
+        <span>2018 — 2021</span>
+      </div>
+      <h2>Obiekty sportowe — ROAM Further i seria LARIX</h2>
+      <p>
+        <strong>Rola:</strong> projektant i kierownik projektów. Od pierwszego kontaktu z klientem, przez projekt konstrukcyjny, po nadzór nad wdrożeniem.
+      </p>
+
+      <div class="project-stack">
+        <span>Konstrukcje stalowe</span>
+        <span>Project management</span>
+        <span>Wycena</span>
+        <span>Zarządzanie zespołem</span>
+        <span>VBA</span>
+      </div>
+
+      <h3>ROAM Further — kryty park parkour (USA)</h3>
+      <ul class="project-bullets">
+        <li>Kompleksowe prowadzenie projektu — od pierwszego kontaktu z klientem po odbiór.</li>
+        <li>Projekt funkcjonalny adaptacji magazynu na obiekt sportowy.</li>
+        <li>Projekt konstrukcyjny, wycena, komunikacja z klientem, negocjacje umowy, optymalizacja kosztów, pakowanie.</li>
+        <li>Zarządzanie <strong>4-osobowym zespołem projektowym</strong>.</li>
+        <li>Projekt zrealizowany w Stanach Zjednoczonych, z udziałem <strong>Red Bulla</strong>.</li>
+      </ul>
+
+      <h3>Seria LARIX Flowparks</h3>
+      <p>
+        Seria o wysokiej wartości estetycznej łącząca stalowe elementy nośne z wykończeniem z drewna modrzewiowego. W technologii LARIX zrealizowano <strong>ponad 30 obiektów na całym świecie</strong>.
+      </p>
+      <ul class="project-bullets">
+        <li>Stworzyłem <strong>całą linię produktową</strong>, włącznie z nazewnictwem.</li>
+        <li>Opracowałem szablon projektowy i dostosowałem istniejące linie produktowe do nowej technologii.</li>
+      </ul>
+
+      <h3>Automatyczny kalkulator wycen (Excel / VBA)</h3>
+      <p>
+        Kalkulator, który na podstawie raportu z modelu 3D w SketchUp generował kompletną ofertę handlową dla torów pumptrack oraz wstępną listę materiałową (BOM). Wybór typu nawierzchni, sposobu montażu i lokalizacji wystarczał, aby natychmiast wycenić projekt i przygotować listę komponentów do produkcji.
+      </p>
+
+      <div class="project-links-inline">
+        <a href="https://roamfurther.com" target="_blank" rel="noopener">→ roamfurther.com</a>
+        <a href="https://flowparks.com/en/larix" target="_blank" rel="noopener">→ LARIX na flowparks.com</a>
+        <a href="http://www.redbull.com/pl-pl/krystian-kowalewski-nowy-jork-roam-further-parkour" target="_blank" rel="noopener">→ Red Bull o ROAM Further</a>
+      </div>
+    </article>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-revision">A · 2026</div>
+      <div class="footer-center">© 2026 CADsmart — wszelkie prawa zastrzeżone</div>
+      <div class="footer-links">
+          <a href="https://github.com/ddkcz">GitHub</a>
+        <a href="https://www.linkedin.com/in/dkuczynski/">LinkedIn</a>
+        <a href="contact.html">E-mail</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

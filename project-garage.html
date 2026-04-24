@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Garaż — Dawid Kuczyński</title>
+  <script>
+    (function(){
+      var t = localStorage.getItem('theme');
+      if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-mark"></span>
+        <span>CADsmart</span>
+      </a>
+      <div class="nav-right">
+        <button class="theme-toggle" aria-label="Przełącz na tryb ciemny">
+          <span class="theme-toggle-thumb"></span>
+        </button>
+        <button class="nav-toggle" aria-label="Menu">☰</button>
+        <ul class="nav-links">
+          <li><a href="index.html">Start</a></li>
+          <li><a href="about.html">O mnie</a></li>
+          <li><a href="projects.html">Projekty</a></li>
+          <li><a href="blog.html">Dziennik</a></li>
+          <li><a href="contact.html">Kontakt</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+
+    <a href="projects.html" class="back-link">← Wróć do wszystkich projektów</a>
+
+    <article class="project-entry">
+      <div class="project-entry-header">
+        <span class="prj-id">PRJ-008</span>
+        <span class="prj-company">Własny warsztat · Garaż</span>
+        <span>2019 — obecnie</span>
+      </div>
+      <h2>Garaż — własny warsztat samochodowy</h2>
+      <p>
+        Garaż to nie tylko miejsce do parkowania — to moje laboratorium. Przez lata zbudowałem tu dwa auta rajdowe od podstaw, nauczyłem się spawania, ustawiania geometrii i diagnostyki. Połączenie pasji z inżynierią w czystej formie.
+      </p>
+
+      <div class="project-stack">
+        <span>Budowa auta</span>
+        <span>Spawanie MIG/TIG</span>
+        <span>Geometria zawieszenia</span>
+        <span>Diagnostyka OBD</span>
+        <span>Obróbka ręczna</span>
+      </div>
+
+      <h3>Co powstało w garażu</h3>
+      <ul class="project-bullets">
+        <li>Budowa <strong>Fiata Seicento Sporting</strong> do rajdów amatorskich — od zwykłego auta do pojazdu rajdowego (2019–2023).</li>
+        <li>Budowa <strong>Alfy Romeo MiTo QV</strong> w specyfikacji <strong>RallyN FIA</strong> — klatka bezpieczeństwa, zawieszenie, układ hamulcowy, fotel i wiązka (od 2023).</li>
+        <li>Samodzielne spawanie elementów wzmocnienia struktury nadwozia i mocowań.</li>
+        <li>Regulacja i ustawianie <strong>geometrii zawieszenia</strong> (camber, toe, caster) pod wymagania trasy.</li>
+        <li>Diagnostyka i tuning silnika — mapy zapłonu, wtrysku, optymalizacja pod tor.</li>
+      </ul>
+
+      <h3>Zaplecze i narzędzia</h3>
+      <ul class="project-bullets">
+        <li>Własny garaż z wyposażeniem: spawarka MIG, kompresor, podnośnik, stół warsztatowy.</li>
+        <li>Urządzenia pomiarowe: czujniki zegarowe, szablony geometrii, tester OBD.</li>
+        <li>Zaplanowane rozszerzenie: stacja do kalibracji hamulców i własna wyważarka kół.</li>
+      </ul>
+    </article>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-revision">A · 2026</div>
+      <div class="footer-center">© 2026 CADsmart — wszelkie prawa zastrzeżone</div>
+      <div class="footer-links">
+        <a href="https://github.com/ddkcz">GitHub</a>
+        <a href="https://www.linkedin.com/in/dkuczynski/">LinkedIn</a>
+        <a href="contact.html">E-mail</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

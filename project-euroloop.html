@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amber II S-HUB — Dawid Kuczyński</title>
+  <script>
+    (function(){
+      var t = localStorage.getItem('theme');
+      if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-mark"></span>
+        <span>CADsmart</span>
+      </a>
+      <div class="nav-right">
+        <button class="theme-toggle" aria-label="Przełącz na tryb ciemny">
+          <span class="theme-toggle-thumb"></span>
+        </button>
+        <button class="nav-toggle" aria-label="Menu">☰</button>
+        <ul class="nav-links">
+          <li><a href="index.html">Start</a></li>
+          <li><a href="about.html">O mnie</a></li>
+          <li><a href="projects.html">Projekty</a></li>
+          <li><a href="blog.html">Dziennik</a></li>
+          <li><a href="contact.html">Kontakt</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+
+    <a href="projects.html" class="back-link">← Wróć do wszystkich projektów</a>
+
+    <article class="project-entry">
+      <div class="project-entry-header">
+        <span class="prj-id">PRJ-002</span>
+        <span class="prj-company">Euroloop / Willbert</span>
+        <span>2022 — 2025</span>
+      </div>
+      <h2>Amber II S-HUB — stacja ładowania pojazdów elektrycznych</h2>
+      <p>
+        <strong>Rola:</strong> prowadzenie rozwoju mechanicznego szybkiej stacji ładowania z inteligentnym rozdziałem mocy. Od koncepcji po produkcję seryjną.
+      </p>
+
+      <div class="project-stack">
+        <span>SolidWorks</span>
+        <span>GD&T</span>
+        <span>Analiza tolerancji</span>
+        <span>Szyny prądowe</span>
+        <span>Blacha</span>
+        <span>EMC</span>
+        <span>NPI / NPD</span>
+      </div>
+
+      <h3>Zakres prac</h3>
+      <ul class="project-bullets">
+        <li><strong>Rozwój produktu od A do Z</strong> — prowadzenie projektów mechanicznych przez pełny cykl NPI/NPD stage-gate, od koncepcji po dostawę do klienta, z modelowaniem 3D w SolidWorks i pełną analizą GD&T / tolerance stack-up.</li>
+        <li><strong>Ponad 70% komponentów mechanicznych</strong> pierwszej iteracji produktu zaprojektowałem samodzielnie.</li>
+        <li>Projekt mechaniczny <strong>modułu mocy 50 kW</strong>.</li>
+        <li>Projekt mechaniczny urządzenia odpowiedzialnego za <strong>inteligentny rozdział mocy między ładowarkami</strong> (system S-HUB).</li>
+        <li>Prowadzenie kabli zasilających i projekt <strong>szyn prądowych (busbar)</strong>.</li>
+        <li>Nadzór nad montażem prototypów i <strong>wdrożenie produktu do produkcji seryjnej</strong>.</li>
+        <li>Udział w projektach związanych z <strong>kompatybilnością elektromagnetyczną (EMC)</strong>.</li>
+      </ul>
+
+      <div class="project-links-inline">
+        <a href="https://willbert.tech" target="_blank" rel="noopener">→ willbert.tech</a>
+      </div>
+    </article>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-revision">A · 2026</div>
+     <div class="footer-center">© 2026 CADsmart — wszelkie prawa zastrzeżone</div>
+      <div class="footer-links">
+         <a href="https://github.com/ddkcz">GitHub</a>
+        <a href="https://www.linkedin.com/in/dkuczynski/">LinkedIn</a>
+        <a href="contact.html">E-mail</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

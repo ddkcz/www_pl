@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cedrowa Stolarnia — Dawid Kuczyński</title>
+  <script>
+    (function(){
+      var t = localStorage.getItem('theme');
+      if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-mark"></span>
+        <span>CADsmart</span>
+      </a>
+      <div class="nav-right">
+        <button class="theme-toggle" aria-label="Przełącz na tryb ciemny">
+          <span class="theme-toggle-thumb"></span>
+        </button>
+        <button class="nav-toggle" aria-label="Menu">☰</button>
+        <ul class="nav-links">
+          <li><a href="index.html">Start</a></li>
+          <li><a href="about.html">O mnie</a></li>
+          <li><a href="projects.html">Projekty</a></li>
+          <li><a href="blog.html">Dziennik</a></li>
+          <li><a href="contact.html">Kontakt</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+
+    <a href="projects.html" class="back-link">← Wróć do wszystkich projektów</a>
+
+    <article class="project-entry">
+      <div class="project-entry-header">
+        <span class="prj-id">PRJ-007</span>
+        <span class="prj-company">Cedrowa Stolarnia</span>
+        <span>06.2024 — 02.2026</span>
+      </div>
+      <h2>Cedrowa Stolarnia — własna firma stolarska</h2>
+      <p>
+        Wszystko zaczęło się od budowy własnego domu. Robiąc meble na wymiar samodzielnie, zaoszczędziłem około <strong>40 000 PLN</strong> w porównaniu z najtańszą ofertą, a na schodach kolejne <strong>25 000 PLN</strong> — finalny koszt materiałów to około 700 PLN plus kilka prowadnic i resztki drewna z budowy. Jeszcze zanim skończyłem własny dom, postanowiłem założyć firmę stolarską.
+      </p>
+      <p>
+        Przez rok z okładem utrzymywałem <strong>2 stolarzy na etacie</strong>, przez zespół przewinęło się łącznie około 5 osób, a obroty wyniosły <strong>450–500 tys. PLN</strong>. Zbudowałem relacje z 5–8 hurtownikami i wyposażyłem warsztat od zera — łącznie około 80–100 tys. PLN inwestycji.
+      </p>
+
+      <div class="project-stack">
+        <span>Prowadzenie firmy</span>
+        <span>Zarządzanie zespołem</span>
+        <span>SketchUp</span>
+        <span>JavaScript</span>
+        <span>Automatyzacja</span>
+      </div>
+
+      <h3>Z czego jestem szczególnie dumny</h3>
+      <p>
+        Zbudowałem <strong>własną aplikację w JavaScript</strong> (we współpracy z Claude), która potrafiła wyciągnąć kompletną listę materiałową bezpośrednio z modelu 3D — około <strong>2 000 pozycji</strong> dla całego mieszkania, generowane w kilka sekund. Ogromnie przyspieszyło to składanie zamówień i wyceny dla klientów, a także zwiększyło ich dokładność.
+      </p>
+
+      <h3>Zrealizowane projekty</h3>
+      <ul class="project-bullets">
+        <li><strong>Kuchnie</strong> — kompletne kuchnie na wymiar, od projektu po montaż.</li>
+        <li><strong>Schody</strong> — konstrukcje drewniane i drewniano-stalowe.</li>
+        <li><strong>Tarasy</strong> — z drewna egzotycznego i modrzewia.</li>
+      </ul>
+
+      <h3>Wnioski</h3>
+      <p>
+        Firma była rentowna, ale długoterminowo nie był to kierunek, w którym chciałem iść. Polskie realia branży budowlanej wiążą się ze specyfiką, z którą nie chciałem się godzić — dlatego zdecydowałem się zamknąć firmę i wrócić w pełni do inżynierii. Biznes się spłacił, zarobiłem dobre pieniądze, a przede wszystkim <strong>ogromnie dużo się nauczyłem</strong> — zarówno o prowadzeniu firmy, jak i o sobie.
+      </p>
+
+      <div class="project-links-inline">
+        <a href="https://cedrowastolarnia.pl/" target="_blank" rel="noopener">→ cedrowastolarnia.pl</a>
+      </div>
+    </article>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-revision">A · 2026</div>
+     <div class="footer-center">© 2026 CADsmart — wszelkie prawa zastrzeżone</div>
+      <div class="footer-links">
+          <a href="https://github.com/ddkcz">GitHub</a>
+        <a href="https://www.linkedin.com/in/dkuczynski/">LinkedIn</a>
+        <a href="contact.html">E-mail</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

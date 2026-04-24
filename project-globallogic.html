@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ASENSUS Surgical — Dawid Kuczyński</title>
+  <script>
+    (function(){
+      var t = localStorage.getItem('theme');
+      if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-mark"></span>
+        <span>CADsmart</span>
+      </a>
+      <div class="nav-right">
+        <button class="theme-toggle" aria-label="Przełącz na tryb ciemny">
+          <span class="theme-toggle-thumb"></span>
+        </button>
+        <button class="nav-toggle" aria-label="Menu">☰</button>
+        <ul class="nav-links">
+          <li><a href="index.html">Start</a></li>
+          <li><a href="about.html">O mnie</a></li>
+          <li><a href="projects.html">Projekty</a></li>
+          <li><a href="blog.html">Dziennik</a></li>
+          <li><a href="contact.html">Kontakt</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+
+    <a href="projects.html" class="back-link">← Wróć do wszystkich projektów</a>
+
+    <article class="project-entry">
+      <div class="project-entry-header">
+        <span class="prj-id">PRJ-001</span>
+        <span class="prj-company">GlobalLogic</span>
+        <span>2025 — obecnie</span>
+      </div>
+      <h2>ASENSUS Surgical — robot chirurgiczny</h2>
+      <p>
+        <strong>Rola:</strong> Senior Mechanical Engineer / Product Lead. Projektowanie mechaniczne platformy robotycznej do chirurgii małoinwazyjnej — jednego z najbardziej zaawansowanych wyrobów medycznych w moim portfolio.
+      </p>
+
+      <div class="project-stack">
+        <span>SolidWorks</span>
+        <span>GD&T</span>
+        <span>DFM / DFA</span>
+        <span>Arena PLM</span>
+        <span>Agile</span>
+        <span>IEC 60601-1</span>
+        <span>DOE</span>
+      </div>
+
+      <h3>Zakres prac</h3>
+      <ul class="project-bullets">
+        <li><strong>Projektowanie wieloprocesowe</strong> — systemy i podzespoły łączące tworzywa wtryskowe, blachy, odlewy i części obrabiane mechanicznie, z zastosowaniem zasad DFM/DFA i najlepszych praktyk doboru materiałów.</li>
+        <li><strong>Integracja COTS i mechatroniki</strong> — dobór i integracja komponentów mechanicznych oraz mechatronicznych z półki, w oparciu o wymagania funkcjonalne, w tym kompletne zespoły z okablowaniem.</li>
+        <li><strong>Prototypowanie i analiza strukturalna</strong> — prowadzenie cykli rozwoju prototypów opartych o obliczenia wytrzymałościowe i analizy inżynierskie walidujące projekt przed produkcją.</li>
+        <li><strong>Testy i walidacja</strong> — opracowanie protokołów i raportów testów, definiowanie kryteriów akceptacji, projektowanie przyrządów testowych (mechanicznych i mechatronicznych) wspierających produkcję.</li>
+        <li><strong>PLM i procesy Agile</strong> — zarządzanie cyklem życia komponentów, procesami ECO/ECR oraz tworzeniem EBOM w Arena PLM w środowisku sprintowym Agile; stosowanie metodologii DOE do testowania i optymalizacji produktu.</li>
+        <li><strong>Wyroby medyczne</strong> — praca zgodnie z procesami projektowania wyrobów medycznych i normą IEC 60601-1, ze znajomością ram problem-solving stosowanych w produktach regulowanych.</li>
+      </ul>
+
+      <div class="project-links-inline">
+        <a href="https://www.surgicalroboticstechnology.com" target="_blank" rel="noopener">→ Surgical Robotics Technology</a>
+      </div>
+    </article>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-revision">A · 2026</div>
+     <div class="footer-center">© 2026 CADsmart — wszelkie prawa zastrzeżone</div>
+      <div class="footer-links">
+          <a href="https://github.com/ddkcz">GitHub</a>
+        <a href="https://www.linkedin.com/in/dkuczynski/">LinkedIn</a>
+        <a href="contact.html">E-mail</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

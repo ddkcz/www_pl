@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projekty hobbystyczne — Dawid Kuczyński</title>
+  <script>
+    (function(){
+      var t = localStorage.getItem('theme');
+      if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-mark"></span>
+        <span>CADsmart</span>
+      </a>
+      <div class="nav-right">
+        <button class="theme-toggle" aria-label="Przełącz na tryb ciemny">
+          <span class="theme-toggle-thumb"></span>
+        </button>
+        <button class="nav-toggle" aria-label="Menu">☰</button>
+        <ul class="nav-links">
+          <li><a href="index.html">Start</a></li>
+          <li><a href="about.html">O mnie</a></li>
+          <li><a href="projects.html">Projekty</a></li>
+          <li><a href="blog.html">Dziennik</a></li>
+          <li><a href="contact.html">Kontakt</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+
+    <a href="projects.html" class="back-link">← Wróć do wszystkich projektów</a>
+
+    <article class="project-entry">
+      <div class="project-entry-header">
+        <span class="prj-id">PRJ-009</span>
+        <span class="prj-company">Projekty własne · Side projects</span>
+        <span>2018 — obecnie</span>
+      </div>
+      <h2>Projekty hobbystyczne — narzędzia, automatyzacja, DIY</h2>
+      <p>
+        Poza pracą zawodową buduję rzeczy dla siebie — głównie narzędzia, które rozwiązują konkretne problemy, i projekty DIY, które uczą nowych technik. Większość zaczyna się od pytania „a czy da się to zautomatyzować?".
+      </p>
+
+      <div class="project-stack">
+        <span>JavaScript</span>
+        <span>VBA</span>
+        <span>Python</span>
+        <span>3D Print</span>
+        <span>DIY Electronics</span>
+      </div>
+
+      <h3>Narzędzia i automatyzacja</h3>
+      <ul class="project-bullets">
+        <li><strong>Ekstraktor BOM z modeli 3D</strong> — aplikacja JavaScript generująca listy materiałów bezpośrednio z modeli SketchUp. Wdrożona w Cedrowej Stolarni, zaoszczędziła kilka godzin tygodniowo na zamówieniach.</li>
+        <li><strong>Kalkulator VBA do wyceny stolarki</strong> — arkusz Excel z automatycznym liczeniem powierzchni, materiałów i marży na podstawie rysunku klienta.</li>
+        <li><strong>Skrypty do obróbki danych CAD</strong> — automatyzacja eksportu plików i generowania rysunków w SolidWorks przez API.</li>
+      </ul>
+
+      <h3>Projekty DIY</h3>
+      <ul class="project-bullets">
+        <li>Projektowanie i druk 3D niestandardowych uchwytów, adapterów i elementów montażowych do garażu i domu.</li>
+        <li>Mała elektronika — własne czujniki diagnostyczne i interfejsy do aut rajdowych.</li>
+        <li>Ta strona — zaprojektowana i zakodowana samodzielnie jako ćwiczenie z CSS i HTML.</li>
+      </ul>
+    </article>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-revision">A · 2026</div>
+      <div class="footer-center">© 2026 CADsmart — wszelkie prawa zastrzeżone</div>
+      <div class="footer-links">
+        <a href="https://github.com/ddkcz">GitHub</a>
+        <a href="https://www.linkedin.com/in/dkuczynski/">LinkedIn</a>
+        <a href="contact.html">E-mail</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
