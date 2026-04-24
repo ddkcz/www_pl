@@ -136,22 +136,8 @@ main {
 .logo-mark {
   width: 28px;
   height: 28px;
-  border: 1.5px solid var(--ink);
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  position: relative;
   flex-shrink: 0;
 }
-
-.logo-mark::before,
-.logo-mark::after {
-  content: '';
-  position: absolute;
-  background: var(--accent);
-}
-.logo-mark::before { width: 14px; height: 1px; }
-.logo-mark::after  { height: 14px; width: 1px; }
 
 .nav-links {
   display: flex;
