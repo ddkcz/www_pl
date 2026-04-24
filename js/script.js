@@ -1,62 +1,75 @@
 // ============================================
-// Theme toggle (light / dark mode)
+// Theme init — runs immediately to avoid flash
 // ============================================
-
-// Apply saved theme as early as possible to avoid flash
-(function initTheme() {
+(function () {
   const saved = localStorage.getItem('theme');
   const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  const theme = saved || (systemDark ? 'dark' : 'light');
-  document.documentElement.setAttribute('data-theme', theme);
+  document.documentElement.setAttribute('data-theme', saved || (systemDark ? 'dark' : 'light'));
 })();
 
-const themeToggle = document.querySelector('.theme-toggle');
-if (themeToggle) {
-  // Set the correct label for current theme
-  const setLabel = () => {
-    const current = document.documentElement.getAttribute('data-theme');
-    themeToggle.setAttribute(
-      'aria-label',
-      current === 'dark' ? 'Przełącz na tryb jasny' : 'Przełącz na tryb ciemny'
-    );
-  };
-  setLabel();
+// ============================================
+// Shared layout loader (header + footer)
+// ============================================
+fetch('/layout.html')
+  .then(r => r.text())
+  .then(html => {
+    const doc = new DOMParser().parseFromString(html, 'text/html');
 
-  themeToggle.addEventListener('click', () => {
-    const current = document.documentElement.getAttribute('data-theme');
-    const next = current === 'dark' ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', next);
-    localStorage.setItem('theme', next);
+    const header = document.getElementById('header-placeholder');
+    if (header) {
+      header.outerHTML = doc.querySelector('[data-slot="header"]').outerHTML;
+      initNav();
+    }
+
+    const footer = document.getElementById('footer-placeholder');
+    if (footer) footer.outerHTML = doc.querySelector('[data-slot="footer"]').outerHTML;
+  });
+
+// ============================================
+// Nav behaviours — called after header inject
+// ============================================
+function initNav() {
+  // Theme toggle
+  const themeToggle = document.querySelector('.theme-toggle');
+  if (themeToggle) {
+    const setLabel = () => {
+      const current = document.documentElement.getAttribute('data-theme');
+      themeToggle.setAttribute(
+        'aria-label',
+        current === 'dark' ? 'Przełącz na tryb jasny' : 'Przełącz na tryb ciemny'
+      );
+    };
     setLabel();
-  });
-}
-
-// ============================================
-// Mobile nav toggle
-// ============================================
-const toggle = document.querySelector('.nav-toggle');
-const navLinks = document.querySelector('.nav-links');
-
-if (toggle && navLinks) {
-  toggle.addEventListener('click', () => {
-    navLinks.classList.toggle('open');
-    toggle.textContent = navLinks.classList.contains('open') ? '✕' : '☰';
-  });
-}
-
-// ============================================
-// Auto-highlight active nav link
-// ============================================
-const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-document.querySelectorAll('.nav-links a').forEach(link => {
-  const href = link.getAttribute('href');
-  if (href === currentPage || (currentPage === '' && href === 'index.html')) {
-    link.classList.add('active');
+    themeToggle.addEventListener('click', () => {
+      const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      setLabel();
+    });
   }
-});
+
+  // Mobile nav toggle
+  const toggle = document.querySelector('.nav-toggle');
+  const navLinks = document.querySelector('.nav-links');
+  if (toggle && navLinks) {
+    toggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      toggle.textContent = navLinks.classList.contains('open') ? '✕' : '☰';
+    });
+  }
+
+  // Active link highlight
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    const href = link.getAttribute('href').split('/').pop();
+    if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+      link.classList.add('active');
+    }
+  });
+}
 
 // ============================================
-// Simple contact form handler (demo only)
+// Contact form handler
 // ============================================
 const contactForm = document.querySelector('#contact-form');
 if (contactForm) {

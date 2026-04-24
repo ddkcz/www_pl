@@ -11,46 +11,27 @@
       document.documentElement.setAttribute('data-theme', t);
     })();
   </script>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-
-  <nav class="navbar">
-    <div class="navbar-inner">
-      <a href="index.html" class="logo">
-        <span class="logo-mark"></span>
-        <span>CADsmart</span>
-      </a>
-      <div class="nav-right">
-        <button class="theme-toggle" aria-label="Przełącz na tryb ciemny">
-          <span class="theme-toggle-thumb"></span>
-        </button>
-        <button class="nav-toggle" aria-label="Menu">☰</button>
-        <ul class="nav-links">
-          <li><a href="index.html">Start</a></li>
-          <li><a href="about.html">O mnie</a></li>
-          <li><a href="projects.html">Projekty</a></li>
-          <li><a href="blog.html">Dziennik</a></li>
-          <li><a href="contact.html">Kontakt</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  <div id="header-placeholder"></div>
 
   <main class="container">
 
-    <a href="projects.html" class="back-link">← Wróć do wszystkich projektów</a>
+    <a href="../projects.html" class="back-link">← Wróć do wszystkich projektów</a>
 
     <article class="project-entry">
-      <div class="project-entry-header">
-        <span class="prj-id">PRJ-001</span>
-        <span class="prj-company">GlobalLogic</span>
-        <span>2025 — obecnie</span>
-      </div>
-      <h2>ASENSUS Surgical — robot chirurgiczny</h2>
-      <p>
+      <div class="project-head">
+        <div class="project-entry-header">
+                <span class="prj-id">PRJ-001</span>
+                <span class="prj-company">GlobalLogic</span>
+                <span>2025 — obecnie</span>
+              </div>
+        <h2>ASENSUS Surgical — robot chirurgiczny</h2>
+        <p>
         <strong>Rola:</strong> Senior Mechanical Engineer / Product Lead. Projektowanie mechaniczne platformy robotycznej do chirurgii małoinwazyjnej — jednego z najbardziej zaawansowanych wyrobów medycznych w moim portfolio.
       </p>
+      </div>
 
       <div class="project-stack">
         <span>SolidWorks</span>
@@ -72,25 +53,25 @@
         <li><strong>Wyroby medyczne</strong> — praca zgodnie z procesami projektowania wyrobów medycznych i normą IEC 60601-1, ze znajomością ram problem-solving stosowanych w produktach regulowanych.</li>
       </ul>
 
+    <table class="project-datasheet">
+      <caption>Karta projektu</caption>
+      <tbody>
+        <tr><th>Projekt</th><td>PRJ-001</td></tr>
+        <tr><th>Klient</th><td>GlobalLogic</td></tr>
+        <tr><th>Okres</th><td>2025 — obecnie</td></tr>
+        <tr><th>Rola</th><td>Senior Mechanical Engineer / Product Lead. Projektowanie mechaniczne platformy robotycznej do chirurgii małoinwazyjnej — jednego z najbardziej zaawansowanych wyrobów medycznych w moim portfolio.</td></tr>
+        <tr><th>Technologie</th><td>SolidWorks · GD&T · DFM / DFA · Arena PLM · Agile · IEC 60601-1 · DOE</td></tr>
+      </tbody>
+    </table>
+
       <div class="project-links-inline">
         <a href="https://www.surgicalroboticstechnology.com" target="_blank" rel="noopener">→ Surgical Robotics Technology</a>
       </div>
     </article>
 
   </main>
+  <div id="footer-placeholder"></div>
 
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-revision">A · 2026</div>
-     <div class="footer-center">© 2026 CADsmart — wszelkie prawa zastrzeżone</div>
-      <div class="footer-links">
-          <a href="https://github.com/ddkcz">GitHub</a>
-        <a href="https://www.linkedin.com/in/dkuczynski/">LinkedIn</a>
-        <a href="contact.html">E-mail</a>
-      </div>
-    </div>
-  </footer>
-
-  <script src="js/script.js"></script>
+  <script src="../js/script.js"></script>
 </body>
 </html>

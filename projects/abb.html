@@ -11,46 +11,27 @@
       document.documentElement.setAttribute('data-theme', t);
     })();
   </script>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-
-  <nav class="navbar">
-    <div class="navbar-inner">
-      <a href="index.html" class="logo">
-        <span class="logo-mark"></span>
-        <span>CADsmart</span>
-      </a>
-      <div class="nav-right">
-        <button class="theme-toggle" aria-label="Przełącz na tryb ciemny">
-          <span class="theme-toggle-thumb"></span>
-        </button>
-        <button class="nav-toggle" aria-label="Menu">☰</button>
-        <ul class="nav-links">
-          <li><a href="index.html">Start</a></li>
-          <li><a href="about.html">O mnie</a></li>
-          <li><a href="projects.html">Projekty</a></li>
-          <li><a href="blog.html">Dziennik</a></li>
-          <li><a href="contact.html">Kontakt</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  <div id="header-placeholder"></div>
 
   <main class="container">
 
-    <a href="projects.html" class="back-link">← Wróć do wszystkich projektów</a>
+    <a href="../projects.html" class="back-link">← Wróć do wszystkich projektów</a>
 
     <article class="project-entry">
-      <div class="project-entry-header">
-        <span class="prj-id">PRJ-003</span>
-        <span class="prj-company">ABB E-mobility</span>
-        <span>2021 — 2022</span>
-      </div>
-      <h2>Ładowarki do samochodów elektrycznych — w tym Formula E</h2>
-      <p>
+      <div class="project-head">
+        <div class="project-entry-header">
+                <span class="prj-id">PRJ-003</span>
+                <span class="prj-company">ABB E-mobility</span>
+                <span>2021 — 2022</span>
+              </div>
+        <h2>Ładowarki do samochodów elektrycznych — w tym Formula E</h2>
+        <p>
         <strong>Rola:</strong> udział w projektach ładowarek EV, w tym współpraca przy oficjalnej ładowarce Formuły E — najbardziej wymagającej aplikacji high-power w portfolio firmy.
       </p>
+      </div>
 
       <div class="project-stack">
         <span>DFMA</span>
@@ -73,6 +54,17 @@
         <li>Projektowanie ładowarek <strong>AC Wallbox</strong>, <strong>DC 150 kW</strong> oraz rozdzielnic zasilania (Contactor Box) dla stacji ładowania.</li>
       </ul>
 
+    <table class="project-datasheet">
+      <caption>Karta projektu</caption>
+      <tbody>
+        <tr><th>Projekt</th><td>PRJ-003</td></tr>
+        <tr><th>Klient</th><td>ABB E-mobility</td></tr>
+        <tr><th>Okres</th><td>2021 — 2022</td></tr>
+        <tr><th>Rola</th><td>udział w projektach ładowarek EV, w tym współpraca przy oficjalnej ładowarce Formuły E — najbardziej wymagającej aplikacji high-power w portfolio firmy.</td></tr>
+        <tr><th>Technologie</th><td>DFMA · Szyny prądowe · Ładowarki DC · NPI · 150 kW</td></tr>
+      </tbody>
+    </table>
+
       <div class="project-links-inline">
         <a href="https://global.abb/partnership/formula-e/en/the-championship/official-charging-partner" target="_blank" rel="noopener">→ ABB × Formula E</a>
         <a href="https://abb.com" target="_blank" rel="noopener">→ abb.com</a>
@@ -80,19 +72,8 @@
     </article>
 
   </main>
+  <div id="footer-placeholder"></div>
 
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-revision">A · 2026</div>
-      <div class="footer-center">© 2026 CADsmart — wszelkie prawa zastrzeżone</div>
-      <div class="footer-links">
-         <a href="https://github.com/ddkcz">GitHub</a>
-        <a href="https://www.linkedin.com/in/dkuczynski/">LinkedIn</a>
-        <a href="contact.html">E-mail</a>
-      </div>
-    </div>
-  </footer>
-
-  <script src="js/script.js"></script>
+  <script src="../js/script.js"></script>
 </body>
 </html>

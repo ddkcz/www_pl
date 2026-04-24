@@ -11,35 +11,14 @@
       document.documentElement.setAttribute('data-theme', t);
     })();
   </script>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-
-  <nav class="navbar">
-    <div class="navbar-inner">
-      <a href="index.html" class="logo">
-        <span class="logo-mark"></span>
-        <span>CADsmart</span>
-      </a>
-      <div class="nav-right">
-        <button class="theme-toggle" aria-label="Przełącz na tryb ciemny">
-          <span class="theme-toggle-thumb"></span>
-        </button>
-        <button class="nav-toggle" aria-label="Menu">☰</button>
-        <ul class="nav-links">
-          <li><a href="index.html">Start</a></li>
-          <li><a href="about.html">O mnie</a></li>
-          <li><a href="projects.html">Projekty</a></li>
-          <li><a href="blog.html">Dziennik</a></li>
-          <li><a href="contact.html">Kontakt</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  <div id="header-placeholder"></div>
 
   <main class="container">
 
-    <a href="projects.html" class="back-link">← Wróć do wszystkich projektów</a>
+    <a href="../projects.html" class="back-link">← Wróć do wszystkich projektów</a>
 
     <article class="project-entry">
       <div class="project-entry-header">
@@ -80,25 +59,25 @@
         Firma była rentowna, ale długoterminowo nie był to kierunek, w którym chciałem iść. Polskie realia branży budowlanej wiążą się ze specyfiką, z którą nie chciałem się godzić — dlatego zdecydowałem się zamknąć firmę i wrócić w pełni do inżynierii. Biznes się spłacił, zarobiłem dobre pieniądze, a przede wszystkim <strong>ogromnie dużo się nauczyłem</strong> — zarówno o prowadzeniu firmy, jak i o sobie.
       </p>
 
+    <table class="project-datasheet">
+      <caption>Karta projektu</caption>
+      <tbody>
+        <tr><th>Projekt</th><td>PRJ-007</td></tr>
+        <tr><th>Klient</th><td>Cedrowa Stolarnia</td></tr>
+        <tr><th>Okres</th><td>06.2024 — 02.2026</td></tr>
+        <tr><th>Rola</th><td></td></tr>
+        <tr><th>Technologie</th><td>Prowadzenie firmy · Zarządzanie zespołem · SketchUp · JavaScript · Automatyzacja</td></tr>
+      </tbody>
+    </table>
+
       <div class="project-links-inline">
         <a href="https://cedrowastolarnia.pl/" target="_blank" rel="noopener">→ cedrowastolarnia.pl</a>
       </div>
     </article>
 
   </main>
+  <div id="footer-placeholder"></div>
 
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-revision">A · 2026</div>
-     <div class="footer-center">© 2026 CADsmart — wszelkie prawa zastrzeżone</div>
-      <div class="footer-links">
-          <a href="https://github.com/ddkcz">GitHub</a>
-        <a href="https://www.linkedin.com/in/dkuczynski/">LinkedIn</a>
-        <a href="contact.html">E-mail</a>
-      </div>
-    </div>
-  </footer>
-
-  <script src="js/script.js"></script>
+  <script src="../js/script.js"></script>
 </body>
 </html>

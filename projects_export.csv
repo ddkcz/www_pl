@@ -1,0 +1,113 @@
+﻿"file","prj_id","company","year","page_title","title","role","stack","content","links"
+"abb.html","PRJ-003","ABB E-mobility","2021 — 2022","Ładowarki ABB E-mobility — Dawid Kuczyński","Ładowarki do samochodów elektrycznych — w tym Formula E","","DFMA | Szyny prądowe | Ładowarki DC | NPI | 150 kW","[Formula E — Car Charger Project]
+- Projekt szyn prądowych i prowadzenie kabli mocy.
+- Projekt komponentów montażowych wewnątrz ładowarki.
+- Optymalizacja DFMA (Design for Manufacturing and Assembly).
+- Zaangażowanie w procesy NPI (New Product Introduction).
+
+[Inne projekty ładowarek]
+- Projektowanie ładowarek AC Wallbox, DC 150 kW oraz rozdzielnic zasilania (Contactor Box) dla stacji ładowania.","→ ABB × Formula E → https://global.abb/partnership/formula-e/en/the-championship/official-charging-partner | → abb.com → https://abb.com"
+"agh-racing.html","PRJ-005","AGH Racing","2017 — 2020","Formula Student — AGH Racing — Dawid Kuczyński","Bolidy Formula Student — Grażyna, RTC, Lem","","SolidWorks | ANSYS | MES | CNC | Kompozyty CFRP | Zawieszenie","[Projekty konstrukcyjne]
+- Projekt stalowych wahaczy dla dwóch bolidów Grażyna.
+- Projekt kolumny kierowniczej dla bolidu spalinowego Grażyna.
+- Projekt kompozytowych wahaczy dla bolidu elektrycznego Lem — redukcja masy zestawu wahaczy o 53%.
+- Wykonanie komponentów na frezarce CNC w ramach pracy w zespole.
+
+[Praca inżynierska]
+„Analiza wytrzymałościowa połączenia wahacza zawieszenia bolidu Formula Student w programie ANSYS"" — praca obroniona w kole naukowym AGH Racing. Badania wytrzymałościowe kleju, projekt CAD wahaczy i symulacje MES łączników. Rozwiązanie jest nadal używane w kolejnym bolidzie elektrycznym Lem.
+
+[Publikacje naukowe]
+- „Analiza połączeń zakładkowych w kontekście projektowania kompozytowego wału napędowego"" — ISBN: 978-83-949477-4-3
+- „Projektowanie komponentów zawieszenia bolidu Formula Student na przykładzie piasty kierowanej"" — ISBN: 978-83-949477-2-9
+- „Projektowanie wahaczy bolidu Formula Student z zastosowaniem włókna węglowego"" — ISBN: 978-83-949477-2-9
+
+[Osiągnięcia zespołu]
+- Formula SAE Australasia '20 — 1. miejsce w kategorii Design.
+- Formula SAE Michigan '19 — 3. miejsce w acceleration, 15. miejsce ogółem (na 139 zespołów).
+- Formula FS Netherlands '18 — 1. miejsce w acceleration, 2. w skid-pad, 2. w autocross, 5. ogółem.
+- Formula FS Spain '18 — 1. miejsce w acceleration.
+- Formula SAE Michigan '18 — 4. miejsce w Business Plan, 5. w Endurance, 6. w Skid-Pad, 9. ogółem (na 118 zespołów).",""
+"cedrowa.html","PRJ-007","Cedrowa Stolarnia","06.2024 — 02.2026","Cedrowa Stolarnia — Dawid Kuczyński","Cedrowa Stolarnia — własna firma stolarska","","Prowadzenie firmy | Zarządzanie zespołem | SketchUp | JavaScript | Automatyzacja","[Z czego jestem szczególnie dumny]
+Zbudowałem własną aplikację w JavaScript (we współpracy z Claude), która potrafiła wyciągnąć kompletną listę materiałową bezpośrednio z modelu 3D — około 2 000 pozycji dla całego mieszkania, generowane w kilka sekund. Ogromnie przyspieszyło to składanie zamówień i wyceny dla klientów, a także zwiększyło ich dokładność.
+
+[Zrealizowane projekty]
+- Kuchnie — kompletne kuchnie na wymiar, od projektu po montaż.
+- Schody — konstrukcje drewniane i drewniano-stalowe.
+- Tarasy — z drewna egzotycznego i modrzewia.
+
+[Wnioski]
+Firma była rentowna, ale długoterminowo nie był to kierunek, w którym chciałem iść. Polskie realia branży budowlanej wiążą się ze specyfiką, z którą nie chciałem się godzić — dlatego zdecydowałem się zamknąć firmę i wrócić w pełni do inżynierii. Biznes się spłacił, zarobiłem dobre pieniądze, a przede wszystkim ogromnie dużo się nauczyłem — zarówno o prowadzeniu firmy, jak i o sobie.","→ cedrowastolarnia.pl → https://cedrowastolarnia.pl/"
+"euroloop.html","PRJ-002","Euroloop / Willbert","2022 — 2025","Amber II S-HUB — Dawid Kuczyński","Amber II S-HUB — stacja ładowania pojazdów elektrycznych","","SolidWorks | GD&T | Analiza tolerancji | Szyny prądowe | Blacha | EMC | NPI / NPD","[Zakres prac]
+- Rozwój produktu od A do Z — prowadzenie projektów mechanicznych przez pełny cykl NPI/NPD stage-gate, od koncepcji po dostawę do klienta, z modelowaniem 3D w SolidWorks i pełną analizą GD&T / tolerance stack-up.
+- Ponad 70% komponentów mechanicznych pierwszej iteracji produktu zaprojektowałem samodzielnie.
+- Projekt mechaniczny modułu mocy 50 kW.
+- Projekt mechaniczny urządzenia odpowiedzialnego za inteligentny rozdział mocy między ładowarkami (system S-HUB).
+- Prowadzenie kabli zasilających i projekt szyn prądowych (busbar).
+- Nadzór nad montażem prototypów i wdrożenie produktu do produkcji seryjnej.
+- Udział w projektach związanych z kompatybilnością elektromagnetyczną (EMC).","→ willbert.tech → https://willbert.tech"
+"garage.html","PRJ-008","Własny warsztat · Garaż","2019 — obecnie","Garaż — Dawid Kuczyński","Garaż — własny warsztat samochodowy","","Budowa auta | Spawanie MIG/TIG | Geometria zawieszenia | Diagnostyka OBD | Obróbka ręczna","[Co powstało w garażu]
+- Budowa Fiata Seicento Sporting do rajdów amatorskich — od zwykłego auta do pojazdu rajdowego (2019–2023).
+- Budowa Alfy Romeo MiTo QV w specyfikacji RallyN FIA — klatka bezpieczeństwa, zawieszenie, układ hamulcowy, fotel i wiązka (od 2023).
+- Samodzielne spawanie elementów wzmocnienia struktury nadwozia i mocowań.
+- Regulacja i ustawianie geometrii zawieszenia (camber, toe, caster) pod wymagania trasy.
+- Diagnostyka i tuning silnika — mapy zapłonu, wtrysku, optymalizacja pod tor.
+
+[Zaplecze i narzędzia]
+- Własny garaż z wyposażeniem: spawarka MIG, kompresor, podnośnik, stół warsztatowy.
+- Urządzenia pomiarowe: czujniki zegarowe, szablony geometrii, tester OBD.
+- Zaplanowane rozszerzenie: stacja do kalibracji hamulców i własna wyważarka kół.",""
+"globallogic.html","PRJ-001","GlobalLogic","2025 — obecnie","ASENSUS Surgical — Dawid Kuczyński","ASENSUS Surgical — robot chirurgiczny","","SolidWorks | GD&T | DFM / DFA | Arena PLM | Agile | IEC 60601-1 | DOE","[Zakres prac]
+- Projektowanie wieloprocesowe — systemy i podzespoły łączące tworzywa wtryskowe, blachy, odlewy i części obrabiane mechanicznie, z zastosowaniem zasad DFM/DFA i najlepszych praktyk doboru materiałów.
+- Integracja COTS i mechatroniki — dobór i integracja komponentów mechanicznych oraz mechatronicznych z półki, w oparciu o wymagania funkcjonalne, w tym kompletne zespoły z okablowaniem.
+- Prototypowanie i analiza strukturalna — prowadzenie cykli rozwoju prototypów opartych o obliczenia wytrzymałościowe i analizy inżynierskie walidujące projekt przed produkcją.
+- Testy i walidacja — opracowanie protokołów i raportów testów, definiowanie kryteriów akceptacji, projektowanie przyrządów testowych (mechanicznych i mechatronicznych) wspierających produkcję.
+- PLM i procesy Agile — zarządzanie cyklem życia komponentów, procesami ECO/ECR oraz tworzeniem EBOM w Arena PLM w środowisku sprintowym Agile; stosowanie metodologii DOE do testowania i optymalizacji produktu.
+- Wyroby medyczne — praca zgodnie z procesami projektowania wyrobów medycznych i normą IEC 60601-1, ze znajomością ram problem-solving stosowanych w produktach regulowanych.","→ Surgical Robotics Technology → https://www.surgicalroboticstechnology.com"
+"hobby.html","PRJ-009","Projekty własne · Side projects","2018 — obecnie","Projekty hobbystyczne — Dawid Kuczyński","Projekty hobbystyczne — narzędzia, automatyzacja, DIY","","JavaScript | VBA | Python | 3D Print | DIY Electronics","[Narzędzia i automatyzacja]
+- Ekstraktor BOM z modeli 3D — aplikacja JavaScript generująca listy materiałów bezpośrednio z modeli SketchUp. Wdrożona w Cedrowej Stolarni, zaoszczędziła kilka godzin tygodniowo na zamówieniach.
+- Kalkulator VBA do wyceny stolarki — arkusz Excel z automatycznym liczeniem powierzchni, materiałów i marży na podstawie rysunku klienta.
+- Skrypty do obróbki danych CAD — automatyzacja eksportu plików i generowania rysunków w SolidWorks przez API.
+
+[Projekty DIY]
+- Projektowanie i druk 3D niestandardowych uchwytów, adapterów i elementów montażowych do garażu i domu.
+- Mała elektronika — własne czujniki diagnostyczne i interfejsy do aut rajdowych.
+- Ta strona — zaprojektowana i zakodowana samodzielnie jako ćwiczenie z CSS i HTML.",""
+"rally.html","PRJ-006","Szybka Jazda · MiTo Rally","2019 — obecnie","Rajdy samochodowe — Dawid Kuczyński","Rajdy samochodowe — budowa auta i starty","","Budowa auta | Modyfikacje | Pilot rajdowy | Licencja sportowa","[Doświadczenie i samochody]
+- Pilot rajdowy w SKJS (rajdy amatorskie) 2019–2023.
+- Pilot rajdowy w klasie Pro2S / RallyN od 2024.
+- Budowa i rozwój amatorskiego auta rajdowego — Fiat Seicento Sporting (2019–2023).
+- Budowa Alfy Romeo MiTo QV w specyfikacji RallyN (od 2023).
+- Ciągła modernizacja i dostosowywanie pojazdów do wymagań rajdowych.
+
+[Wyniki sportowe]
+- 1. miejsce — Rajd Głubczyce 2020.
+- 1. miejsce — Rajd Opolski 2021.
+- 1. i 2. miejsce w dwóch rundach Tarmac Masters 2022.
+- 2. miejsce w klasyfikacji generalnej Pucharu Śląska 2023.
+- 3. miejsce w klasyfikacji generalnej Pucharu Opolskiego 2023.
+- Starty w rajdach regionalnych z licencją sportową od 2024.
+- 4-krotny zwycięzca klasy Pro2S w sezonie 2024 — mistrz sezonu.",""
+"tarrace.html","PRJ-010","Projekt własny · Dom","2025","Taras — Dawid Kuczyński","Taras — projekt i budowa własna","","SketchUp | Stolarka | Konstrukcja drewniana | Obliczenia statyczne | Projekt własny","[Zakres projektu]
+- Projekt koncepcyjny i model 3D w SketchUp — wymiary, układ desek, detale łączników.
+- Dobór materiałów: drewno impregnowane ciśnieniowo, łączniki stalowe nierdzewne, izolacja podpór.
+- Wstępne obliczenia nośności podkonstrukcji i rozstawu legarów.
+- Samodzielna realizacja — fundamenty punktowe, podkonstrukcja, deskowanie.
+- Wykończenie: impregnacja, oświetlenie LED, obrzeża.
+
+[Czego się nauczyłem]
+- Projektowanie z uwzględnieniem dylatacji — drewno pracuje, tolerancje muszą to przewidywać.
+- Koordynacja z dostawcami materiałów budowlanych i dobór najlepszego stosunku ceny do jakości.
+- Zarządzanie projektem solo: harmonogram, zakupy, wykonanie w czasie wolnym od pracy.",""
+"techramps.html","PRJ-004","Techramps Group / FlowParks","2018 — 2021","Techramps Group — Dawid Kuczyński","Obiekty sportowe — ROAM Further i seria LARIX","","Konstrukcje stalowe | Project management | Wycena | Zarządzanie zespołem | VBA","[ROAM Further — kryty park parkour (USA)]
+- Kompleksowe prowadzenie projektu — od pierwszego kontaktu z klientem po odbiór.
+- Projekt funkcjonalny adaptacji magazynu na obiekt sportowy.
+- Projekt konstrukcyjny, wycena, komunikacja z klientem, negocjacje umowy, optymalizacja kosztów, pakowanie.
+- Zarządzanie 4-osobowym zespołem projektowym.
+- Projekt zrealizowany w Stanach Zjednoczonych, z udziałem Red Bulla.
+
+[Seria LARIX Flowparks]
+- Stworzyłem całą linię produktową, włącznie z nazewnictwem.
+- Opracowałem szablon projektowy i dostosowałem istniejące linie produktowe do nowej technologii.
+
+[Automatyczny kalkulator wycen (Excel / VBA)]
+Kalkulator, który na podstawie raportu z modelu 3D w SketchUp generował kompletną ofertę handlową dla torów pumptrack oraz wstępną listę materiałową (BOM). Wybór typu nawierzchni, sposobu montażu i lokalizacji wystarczał, aby natychmiast wycenić projekt i przygotować listę komponentów do produkcji.","→ roamfurther.com → https://roamfurther.com | → LARIX na flowparks.com → https://flowparks.com/en/larix | → Red Bull o ROAM Further → http://www.redbull.com/pl-pl/krystian-kowalewski-nowy-jork-roam-further-parkour"

@@ -11,46 +11,27 @@
       document.documentElement.setAttribute('data-theme', t);
     })();
   </script>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-
-  <nav class="navbar">
-    <div class="navbar-inner">
-      <a href="index.html" class="logo">
-        <span class="logo-mark"></span>
-        <span>CADsmart</span>
-      </a>
-      <div class="nav-right">
-        <button class="theme-toggle" aria-label="Przełącz na tryb ciemny">
-          <span class="theme-toggle-thumb"></span>
-        </button>
-        <button class="nav-toggle" aria-label="Menu">☰</button>
-        <ul class="nav-links">
-          <li><a href="index.html">Start</a></li>
-          <li><a href="about.html">O mnie</a></li>
-          <li><a href="projects.html">Projekty</a></li>
-          <li><a href="blog.html">Dziennik</a></li>
-          <li><a href="contact.html">Kontakt</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  <div id="header-placeholder"></div>
 
   <main class="container">
 
-    <a href="projects.html" class="back-link">← Wróć do wszystkich projektów</a>
+    <a href="../projects.html" class="back-link">← Wróć do wszystkich projektów</a>
 
     <article class="project-entry">
-      <div class="project-entry-header">
-        <span class="prj-id">PRJ-004</span>
-        <span class="prj-company">Techramps Group / FlowParks</span>
-        <span>2018 — 2021</span>
-      </div>
-      <h2>Obiekty sportowe — ROAM Further i seria LARIX</h2>
-      <p>
+      <div class="project-head">
+        <div class="project-entry-header">
+                <span class="prj-id">PRJ-004</span>
+                <span class="prj-company">Techramps Group / FlowParks</span>
+                <span>2018 — 2021</span>
+              </div>
+        <h2>Obiekty sportowe — ROAM Further i seria LARIX</h2>
+        <p>
         <strong>Rola:</strong> projektant i kierownik projektów. Od pierwszego kontaktu z klientem, przez projekt konstrukcyjny, po nadzór nad wdrożeniem.
       </p>
+      </div>
 
       <div class="project-stack">
         <span>Konstrukcje stalowe</span>
@@ -83,6 +64,17 @@
         Kalkulator, który na podstawie raportu z modelu 3D w SketchUp generował kompletną ofertę handlową dla torów pumptrack oraz wstępną listę materiałową (BOM). Wybór typu nawierzchni, sposobu montażu i lokalizacji wystarczał, aby natychmiast wycenić projekt i przygotować listę komponentów do produkcji.
       </p>
 
+    <table class="project-datasheet">
+      <caption>Karta projektu</caption>
+      <tbody>
+        <tr><th>Projekt</th><td>PRJ-004</td></tr>
+        <tr><th>Klient</th><td>Techramps Group / FlowParks</td></tr>
+        <tr><th>Okres</th><td>2018 — 2021</td></tr>
+        <tr><th>Rola</th><td>projektant i kierownik projektów. Od pierwszego kontaktu z klientem, przez projekt konstrukcyjny, po nadzór nad wdrożeniem.</td></tr>
+        <tr><th>Technologie</th><td>Konstrukcje stalowe · Project management · Wycena · Zarządzanie zespołem · VBA</td></tr>
+      </tbody>
+    </table>
+
       <div class="project-links-inline">
         <a href="https://roamfurther.com" target="_blank" rel="noopener">→ roamfurther.com</a>
         <a href="https://flowparks.com/en/larix" target="_blank" rel="noopener">→ LARIX na flowparks.com</a>
@@ -91,19 +83,8 @@
     </article>
 
   </main>
+  <div id="footer-placeholder"></div>
 
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-revision">A · 2026</div>
-      <div class="footer-center">© 2026 CADsmart — wszelkie prawa zastrzeżone</div>
-      <div class="footer-links">
-          <a href="https://github.com/ddkcz">GitHub</a>
-        <a href="https://www.linkedin.com/in/dkuczynski/">LinkedIn</a>
-        <a href="contact.html">E-mail</a>
-      </div>
-    </div>
-  </footer>
-
-  <script src="js/script.js"></script>
+  <script src="../js/script.js"></script>
 </body>
 </html>
