@@ -17,6 +17,13 @@
   --accent-soft: #e8d5cc;
   --blueprint: #2c4a6b;
   --navbar-bg: rgba(244, 241, 234, 0.94);
+  /* Tag category colours */
+  --tag-cad-text: #c23a1e;
+  --tag-cad-border: #dda090;
+  --tag-sector-text: #c26010;
+  --tag-sector-border: #ddb060;
+  --tag-tech-text: #6b7789;
+  --tag-tech-border: #b8b3a4;
 
   --font-sans: 'IBM Plex Sans', sans-serif;
   --font-mono: 'IBM Plex Mono', monospace;
@@ -39,6 +46,13 @@
   --accent-soft: #3a2820;
   --blueprint: #4a7fb5;
   --navbar-bg: rgba(15, 24, 35, 0.94);
+  /* Tag category colours — dark mode */
+  --tag-cad-text: #ff7a5c;
+  --tag-cad-border: #6a2a20;
+  --tag-sector-text: #ffaa50;
+  --tag-sector-border: #6a4210;
+  --tag-tech-text: #7a8ea3;
+  --tag-tech-border: #2a3a4d;
 }
 
 /* Smooth color transitions on theme switch */
@@ -544,6 +558,113 @@ a { color: var(--accent); }
   gap: 1.5rem;
 }
 
+/* PROJECT FILTER BAR */
+.filter-bar {
+  border: 1px solid var(--line);
+  padding: 0 1.5rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: 2rem;
+}
+
+.filter-bar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0 1rem;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 0;
+}
+
+.filter-bar-title {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--ink);
+}
+.filter-bar-title::before {
+  content: '■ ';
+  color: var(--accent);
+}
+
+.filter-reset {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-muted);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.2s;
+}
+.filter-reset:hover:not(:disabled) { color: var(--accent); }
+.filter-reset:disabled { opacity: 0.25; cursor: default; }
+
+.filter-group {
+  display: grid;
+  grid-template-columns: 5rem 1fr;
+  column-gap: 1.25rem;
+  align-items: start;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--line-soft);
+}
+.filter-group:last-child { border-bottom: none; }
+
+.filter-group-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  padding-top: 0.22rem;
+}
+
+.filter-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.filter-pill {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.2rem 0.5rem;
+  border: 1px solid var(--line);
+  background: none;
+  color: var(--ink-soft);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.filter-pill:hover { border-color: var(--ink); color: var(--ink); }
+
+.filter-pill.tag-cad    { color: var(--tag-cad-text);    border-color: var(--tag-cad-border); }
+.filter-pill.tag-sector { color: var(--tag-sector-text); border-color: var(--tag-sector-border); }
+.filter-pill.tag-tech   { color: var(--tag-tech-text);   border-color: var(--tag-tech-border); }
+
+.filter-pill.tag-cad.active    { background: var(--tag-cad-text);    border-color: var(--tag-cad-text);    color: var(--paper); }
+.filter-pill.tag-sector.active { background: var(--tag-sector-text); border-color: var(--tag-sector-text); color: var(--paper); }
+.filter-pill.tag-tech.active   { background: var(--tag-tech-text);   border-color: var(--tag-tech-text);   color: var(--paper); }
+
+.card--hidden { display: none; }
+
+.filter-no-results {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  grid-column: 1 / -1;
+  padding: 2rem 0;
+}
+
 /* ABOUT PAGE */
 .about-grid {
   display: grid;
@@ -641,6 +762,21 @@ a { color: var(--accent); }
   border: 1px solid var(--line);
   text-transform: uppercase;
   letter-spacing: 0.08em;
+}
+.project-tags span.tag-cad,
+.project-stack span.tag-cad {
+  color: var(--tag-cad-text);
+  border-color: var(--tag-cad-border);
+}
+.project-tags span.tag-sector,
+.project-stack span.tag-sector {
+  color: var(--tag-sector-text);
+  border-color: var(--tag-sector-border);
+}
+.project-tags span.tag-tech,
+.project-stack span.tag-tech {
+  color: var(--tag-tech-text);
+  border-color: var(--tag-tech-border);
 }
 
 .project-links {
@@ -743,6 +879,7 @@ a { color: var(--accent); }
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
+/* tag-cad/sector/tech colours already declared after .project-tags span rules */
 
 .project-entry h3 {
   font-family: var(--font-mono);
