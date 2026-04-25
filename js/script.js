@@ -72,70 +72,70 @@ function initNav() {
 // Project tags — single source of truth
 // ============================================
 const PROJECT_TAGS = {
-  globallogic: {
+  'tarrace': {
+    cad:    ['SketchUp'],
+    sector: ['Konstrukcje drewniane'],
+    stack:  ['Konstrukcja drewniana', 'Obliczenia statyczne', 'Stolarka'],
+  },
+  'www': {
+    cad:    [],
+    sector: ['Web Design'],
+    stack:  ['AI', 'GitHub', 'HTML', 'CSS', 'JavaScript'],
+  },
+  'garage': {
+    cad:    ['SketchUp'],
+    sector: ['Konstrukcje drewniane'],
+    stack:  ['Konstrukcja drewniana', 'Obliczenia statyczne', 'Stolarka'],
+  },
+  'globallogic': {
     cad:    ['SolidWorks'],
     sector: ['Med-tech'],
-    stack:  ['GD&T', 'DFM / DFA', 'Arena PLM', 'IEC 60601-1', 'Agile', 'DOE'],
+    stack:  ['GD&T', 'DFM / DFMA', 'Arena PLM', 'IEC 60601-1', 'DoE', 'Prototyping', '3D Print', 'Mechanical Assembly', 'Electro-mechanical Assembly', 'Agile', 'NPI', 'EMC', 'AI'],
   },
-  euroloop: {
+  'cedrowa': {
+    cad:    ['SketchUp', 'OnShape'],
+    sector: ['Meble na wymiar'],
+    stack:  ['Prowadzenie firmy', 'Zarządzanie zespołem', 'JavaScript', 'Automatyzacja'],
+  },
+  'euroloop': {
+    cad:    ['OnShape'],
+    sector: ['E-mobility'],
+    stack:  ['GD&T', 'DFM / DFMA', 'DoE', 'MES', 'Prototyping', '3D Print', 'Mechanical Assembly', 'Electro-mechanical Assembly', 'Agile', 'NPI', 'EMC', 'Formy wtryskowe', 'AI'],
+  },
+  'abb': {
     cad:    ['SolidWorks'],
     sector: ['E-mobility'],
-    stack:  ['GD&T', 'Analiza tolerancji', 'Szyny prądowe', 'Blacha', 'EMC', 'NPI / NPD'],
+    stack:  ['GD&T', 'DFM / DFMA', 'MES', 'Mechanical Assembly', 'Electro-mechanical Assembly', 'Agile', 'NPI', 'EMC'],
   },
-  abb: {
+  'roamfurther': {
+    cad:    ['SolidWorks', 'SketchUp'],
+    sector: ['Construction', 'Industrial production'],
+    stack:  ['Konstrukcje drewniane', 'DFM / DFMA', 'Konstrukcje stalowe'],
+  },
+  'techramps': {
+    cad:    ['SolidWorks', 'SketchUp'],
+    sector: ['Construction', 'Industrial production', 'Architectural design'],
+    stack:  ['Konstrukcje stalowe', 'Konstrukcje z tworzyw sztucznych', 'Konstrukcje drewniane', 'Agile', 'DFM / DFMA', 'MES'],
+  },
+  'rally': {
     cad:    ['SolidWorks'],
-    sector: ['E-mobility'],
-    stack:  ['DFMA', 'Szyny prądowe', 'Ładowarki DC', 'NPI'],
+    sector: ['Motorsport'],
+    stack:  ['Budowa auta', 'Spawanie MIG/TIG', 'Geometria zawieszenia', 'Diagnostyka OBD', 'Obróbka ręczna'],
   },
-  techramps: {
-    cad:    ['SketchUp'],
-    sector: ['Sports infra'],
-    stack:  ['Konstrukcje stalowe', 'VBA', 'Project management', 'Wycena'],
+  'flowparks': {
+    cad:    ['SolidWorks', 'SketchUp'],
+    sector: ['Construction', 'Industrial production', 'Architectural design'],
+    stack:  ['Konstrukcje stalowe', 'Konstrukcje z tworzyw sztucznych', 'Konstrukcje drewniane', 'Agile', 'DFM / DFMA', 'Formy wtryskowe'],
   },
   'agh-racing': {
     cad:    ['SolidWorks', 'ANSYS'],
     sector: ['Formula Student'],
-    stack:  ['MES', 'CNC', 'Kompozyty CFRP', 'Zawieszenie'],
+    stack:  ['MES', 'Frezowanie CNC', 'Kompozyty CFRP', 'Zawieszenie'],
   },
-  rally: {
-    cad:    [],
-    sector: ['Motorsport'],
-    stack:  ['Budowa auta', 'Modyfikacje', 'Pilot rajdowy', 'Licencja sportowa'],
-  },
-  cedrowa: {
-    cad:    ['SketchUp'],
-    sector: ['Własna firma'],
-    stack:  ['JavaScript', 'Automatyzacja', 'Prowadzenie firmy', 'Zarządzanie zespołem'],
-  },
-  garage: {
-    cad:    [],
-    sector: ['Motorsport'],
-    stack:  ['Budowa auta', 'Spawanie MIG/TIG', 'Geometria zawieszenia', 'Diagnostyka OBD', 'Obróbka ręczna'],
-  },
-  hobby: {
+  'hobby': {
     cad:    [],
     sector: ['Side projects'],
     stack:  ['JavaScript', 'VBA', 'Python', '3D Print', 'DIY Electronics'],
-  },
-  tarrace: {
-    cad:    ['SketchUp'],
-    sector: ['DIY / Dom'],
-    stack:  ['Konstrukcja drewniana', 'Obliczenia statyczne', 'Stolarka'],
-  },
-  flowparks: {
-    cad:    ['SolidWorks', 'SketchUp'],
-    sector: ['Sports infra'],
-    stack:  ['Konstrukcje stalowe', 'DFM / DFMA', 'VBA', 'Project management'],
-  },
-  roamfurther: {
-    cad:    ['SolidWorks', 'SketchUp'],
-    sector: ['Sports infra'],
-    stack:  ['Konstrukcje drewniane', 'Konstrukcje stalowe', 'DFM / DFMA', 'Project management'],
-  },
-  www: {
-    cad:    [],
-    sector: ['Side projects'],
-    stack:  ['HTML', 'CSS', 'JavaScript', 'AI', 'GitHub'],
   },
 };
 
@@ -229,21 +229,71 @@ function renderFilters() {
       container.querySelectorAll('.filter-pill.active').forEach(p => p.classList.remove('active'));
       resetBtn.disabled = true;
       filterCards([]);
+      updatePillAvailability(container, []);
       return;
     }
 
     if (pill) {
+      const cat = pill.dataset.cat;
+      if (cat === 'cad' || cat === 'sector') {
+        container.querySelectorAll(`.filter-pill[data-cat="${cat}"].active`)
+          .forEach(p => { if (p !== pill) p.classList.remove('active'); });
+      }
       pill.classList.toggle('active');
       const active = [...container.querySelectorAll('.filter-pill.active')];
       resetBtn.disabled = active.length === 0;
-      filterCards(active.map(p => ({ cat: p.dataset.cat, val: p.dataset.val })));
+      const activeFilters = active.map(p => ({ cat: p.dataset.cat, val: p.dataset.val }));
+      filterCards(activeFilters);
+      updatePillAvailability(container, activeFilters);
     }
+  });
+
+  updatePillAvailability(container, []);
+}
+
+function buildBycat(activeFilters) {
+  const bycat = {};
+  activeFilters.forEach(({ cat, val }) => {
+    (bycat[cat] = bycat[cat] || []).push(val);
+  });
+  return bycat;
+}
+
+function projectMatchesBycat(tags, bycat) {
+  return Object.entries(bycat).every(([cat, vals]) =>
+    vals.every(val => tags[cat] && tags[cat].includes(val))
+  );
+}
+
+function updatePillAvailability(container, activeFilters) {
+  const bycat = buildBycat(activeFilters);
+  const allCards = [...document.querySelectorAll('.card[data-project]')];
+
+  container.querySelectorAll('.filter-pill:not(.active)').forEach(pill => {
+    const cat = pill.dataset.cat;
+    const val = pill.dataset.val;
+
+    // Build hypothetical bycat if this pill were clicked
+    const test = Object.fromEntries(Object.entries(bycat).map(([k, v]) => [k, [...v]]));
+    if (cat === 'cad' || cat === 'sector') {
+      test[cat] = [val];          // radio: replace
+    } else {
+      test[cat] = [...(test[cat] || []), val];  // stack: AND append
+    }
+
+    const wouldMatch = allCards.some(card => {
+      const tags = PROJECT_TAGS[card.dataset.project];
+      return tags && projectMatchesBycat(tags, test);
+    });
+
+    pill.disabled = !wouldMatch;
   });
 }
 
 function filterCards(activeFilters) {
   const cards = document.querySelectorAll('.card[data-project]');
   let visible = 0;
+  const bycat = buildBycat(activeFilters);
 
   cards.forEach(card => {
     if (!activeFilters.length) {
@@ -253,7 +303,7 @@ function filterCards(activeFilters) {
     }
     const tags = PROJECT_TAGS[card.dataset.project];
     if (!tags) return;
-    const match = activeFilters.some(({ cat, val }) => tags[cat] && tags[cat].includes(val));
+    const match = projectMatchesBycat(tags, bycat);
     card.classList.toggle('card--hidden', !match);
     if (match) visible++;
   });
