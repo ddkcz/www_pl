@@ -15,6 +15,12 @@ fetch('/layout.html')
   .then(html => {
     const doc = new DOMParser().parseFromString(html, 'text/html');
 
+    doc.querySelectorAll('[data-slot="head"] link').forEach(el => {
+      if (!document.head.querySelector(`link[href="${el.getAttribute('href')}"]`)) {
+        document.head.appendChild(el.cloneNode(true));
+      }
+    });
+
     const header = document.getElementById('header-placeholder');
     if (header) {
       header.outerHTML = doc.querySelector('[data-slot="header"]').outerHTML;
