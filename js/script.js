@@ -122,6 +122,21 @@ const PROJECT_TAGS = {
     sector: ['DIY / Dom'],
     stack:  ['Konstrukcja drewniana', 'Obliczenia statyczne', 'Stolarka'],
   },
+  flowparks: {
+    cad:    ['SolidWorks', 'SketchUp'],
+    sector: ['Sports infra'],
+    stack:  ['Konstrukcje stalowe', 'DFM / DFMA', 'VBA', 'Project management'],
+  },
+  roamfurther: {
+    cad:    ['SolidWorks', 'SketchUp'],
+    sector: ['Sports infra'],
+    stack:  ['Konstrukcje drewniane', 'Konstrukcje stalowe', 'DFM / DFMA', 'Project management'],
+  },
+  www: {
+    cad:    [],
+    sector: ['Side projects'],
+    stack:  ['HTML', 'CSS', 'JavaScript', 'AI', 'GitHub'],
+  },
 };
 
 function buildTagSpans(tags) {

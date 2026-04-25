@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CADsmart - Własna strona internetowa</title>
+  <meta property="og:type"        content="website">
+  <meta property="og:site_name"   content="CADsmart">
+  <meta property="og:url"         content="https://cadsmart.pl/projects/www.html">
+  <meta property="og:title"       content="CADsmart - Własna strona internetowa">
+  <meta property="og:description" content="Własna strona internetowa — projekt.">
+  <meta property="og:image"       content="https://cadsmart.pl/assets/og-image.png">
+  <meta property="og:image:width"  content="744">
+  <meta property="og:image:height" content="198">
+  <meta name="twitter:card"       content="summary_large_image">
+
+
+
+
+  <script>
+    (function(){
+      var t = localStorage.getItem('theme');
+      if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div id="header-placeholder"></div>
+
+  <main class="container">
+
+    <a href="../projects.html" class="back-link">← Wróć do wszystkich projektów</a>
+
+    <article class="project-entry">
+      <div class="project-head">
+        <div class="project-entry-header">
+          <span class="prj-id">PRJ-013</span>
+          <span class="prj-company">CADsmart</span>
+          <span>2026</span>
+        </div>
+        <h2>Własna strona internetowa</h2>
+        <p>
+          <strong>Rola:</strong> Developer
+        </p>
+      </div>
+
+      <div class="project-stack"></div>
+
+      <p>Projekt i wykonanie wizytówki w sieci — od zera do działającego portfolio. Dzięki intensywnemu wykorzystaniu AI, cały serwis powstał z rąk inżyniera mechanika bez wcześniejszego doświadczenia we front-endzie.</p>
+
+      <h3>Stack i narzędzia</h3>
+      <ul class="project-bullets">
+        <li>Vanilla HTML / CSS / JavaScript — bez frameworków.</li>
+        <li>Hosting na Cloudflare Workers z automatycznym deploymentem przez GitHub Actions.</li>
+        <li>Dynamiczne ładowanie layoutu (header &amp; footer) ze wspólnego pliku.</li>
+        <li>System tagów i filtrów projektów — single source of truth w JS.</li>
+        <li>Obsługa trybu ciemnego i jasnego z persystencją w localStorage.</li>
+      </ul>
+
+    <table class="project-datasheet">
+      <caption>Karta projektu</caption>
+      <tbody>
+        <tr><th>Projekt</th><td>PRJ-013</td></tr>
+        <tr><th>Klient</th><td>CADsmart</td></tr>
+        <tr><th>Okres</th><td>2026</td></tr>
+        <tr><th>Rola</th><td>Developer</td></tr>
+      </tbody>
+    </table>
+
+    </article>
+
+  </main>
+  <div id="footer-placeholder"></div>
+
+  <script src="../js/script.js"></script>
+</body>
+</html>
