@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 746 198" width="746" height="198">
+  <defs>
+    <style>@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@600&amp;display=swap');</style>
+    <clipPath id="c">
+      <rect width="746" height="198" rx="45"/>
+    </clipPath>
+    <pattern id="g" width="20" height="20" patternUnits="userSpaceOnUse">
+      <line x1="20" y1="0" x2="0" y2="0" stroke="#e0dbd2" stroke-width=".5"/>
+      <line x1="0" y1="0" x2="0" y2="20" stroke="#e0dbd2" stroke-width=".5"/>
+    </pattern>
+  </defs>
+
+  <g clip-path="url(#c)">
+    <!-- background + grid -->
+    <rect width="746" height="198" fill="#f4f1ea"/>
+    <rect width="746" height="198" fill="url(#g)"/>
+
+    <!-- box frame -->
+    <rect x="5" y="5" width="736" height="188" rx="40"
+          fill="none" stroke="#c23a1e" stroke-width="10"/>
+
+    <!-- cube: stroke-only, linejoin=round, matches header SVG -->
+    <g fill="none" stroke="#c23a1e" stroke-width="5.85"
+       stroke-linejoin="round" stroke-linecap="round">
+      <polygon points="95.1,60 130.2,79.5 95.1,99 60,79.5"/>
+      <polygon points="60,79.5 95.1,99 95.1,138 60,118.5"/>
+      <polygon points="95.1,99 130.2,79.5 130.2,118.5 95.1,138"/>
+    </g>
+
+    <!-- CADsmart — IBM Plex Mono SemiBold, baseline at y=138 -->
+    <text x="166.2" y="138"
+          font-family="'IBM Plex Mono', monospace"
+          font-weight="600" font-size="108"
+          fill="#1a2332"
+          stroke="#f4f1ea" stroke-width="5.5" paint-order="stroke fill">CADsmart</text>
+  </g>
+</svg>

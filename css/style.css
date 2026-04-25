@@ -122,22 +122,20 @@ main {
 }
 
 .logo {
-  font-family: var(--font-mono);
-  font-weight: 600;
-  font-size: 0.95rem;
-  color: var(--ink);
   text-decoration: none;
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  letter-spacing: 0.02em;
 }
 
-.logo-mark {
-  width: 28px;
-  height: 28px;
-  flex-shrink: 0;
+.logo-img {
+  height: 34px;
+  width: auto;
+  display: block;
 }
+
+.logo-img--dark { display: none; }
+[data-theme="dark"] .logo-img--light { display: none; }
+[data-theme="dark"] .logo-img--dark  { display: block; }
 
 .nav-links {
   display: flex;
