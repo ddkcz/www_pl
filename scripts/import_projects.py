@@ -6,6 +6,13 @@ Reads content/projects_export.csv and propagates all changes to:
 
 Run from the project root:
     python3 scripts/import_projects.py
+
+CSV columns:
+  file, key, prj_id, company, period, card_title, card_description,
+  title, role, cad, sector, stack, content, links, images
+
+images format: filename.jpg:Caption text|filename2.jpg:Another caption
+  Files are stored in assets/projects/{key}/
 """
 
 import re, csv, pathlib
@@ -28,6 +35,34 @@ def parse_pipe(field: str) -> list[str]:
     """Split on | or , (whichever is present). Trims whitespace, drops empties."""
     sep = '|' if '|' in field else ','
     return [t.strip() for t in field.split(sep) if t.strip()]
+
+def parse_images(field: str, key: str) -> list[tuple[str, str]]:
+    """'photo.jpg:Caption|photo2.jpg' → [(src, caption), ...]"""
+    result = []
+    for part in re.split(r'\|', field or ''):
+        part = part.strip()
+        if not part:
+            continue
+        if ':' in part:
+            fname, caption = part.split(':', 1)
+        else:
+            fname, caption = part, ''
+        src = f'../assets/projects/{key}/{fname.strip()}'
+        result.append((src, caption.strip()))
+    return result
+
+def build_gallery(images: list[tuple[str, str]]) -> str:
+    if not images:
+        return ''
+    lines = ['      <div class="project-gallery">']
+    for src, alt in images:
+        lines.append('        <figure>')
+        lines.append(f'          <img src="{src}" alt="{esc(alt)}" loading="lazy">')
+        if alt:
+            lines.append(f'          <figcaption>{esc(alt)}</figcaption>')
+        lines.append('        </figure>')
+    lines.append('      </div>')
+    return '\n'.join(lines)
 
 def parse_links(field: str) -> list[tuple[str, str]]:
     """
@@ -99,6 +134,10 @@ def build_page(row: dict, filename: str) -> str:
         role_html = (f'\n      <p>\n        <strong>Rola:</strong> '
                      f'{esc(role_raw)}\n      </p>')
 
+    images        = parse_images(row.get('images') or '', row['key'])
+    gallery_html  = build_gallery(images)
+    gallery_block = f'\n{gallery_html}\n' if gallery_html else ''
+
     content_html  = content_to_html(row['content'])
     content_block = f'\n{content_html}\n' if content_html else ''
 
@@ -162,6 +201,7 @@ def build_page(row: dict, filename: str) -> str:
       </div>
 
       <div class="project-stack"></div>
+{gallery_block}
 {content_block}
     <table class="project-datasheet">
       <caption>Karta projektu</caption>

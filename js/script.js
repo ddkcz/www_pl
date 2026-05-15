@@ -330,6 +330,64 @@ function filterCards(activeFilters) {
 }
 
 // ============================================
+// Lightbox — project galleries
+// ============================================
+(function () {
+  const gallery = document.querySelector('.project-gallery');
+  if (!gallery) return;
+
+  const figs = [...gallery.querySelectorAll('figure')];
+  if (!figs.length) return;
+
+  let cur = 0;
+
+  const overlay = document.createElement('div');
+  overlay.className = 'lb-overlay lb-hidden';
+  overlay.innerHTML =
+    '<button class="lb-close" aria-label="Zamknij">✕</button>' +
+    '<button class="lb-btn lb-prev" aria-label="Poprzednie">‹</button>' +
+    '<img class="lb-img" src="" alt="">' +
+    '<p class="lb-caption"></p>' +
+    '<button class="lb-btn lb-next" aria-label="Następne">›</button>' +
+    '<span class="lb-counter"></span>';
+  document.body.appendChild(overlay);
+
+  const lbImg     = overlay.querySelector('.lb-img');
+  const lbCaption = overlay.querySelector('.lb-caption');
+  const lbCounter = overlay.querySelector('.lb-counter');
+
+  function open(i) {
+    cur = (i + figs.length) % figs.length;
+    const img = figs[cur].querySelector('img');
+    const cap = figs[cur].querySelector('figcaption');
+    lbImg.src = img.src;
+    lbImg.alt = img.alt;
+    lbCaption.textContent = cap ? cap.textContent : '';
+    lbCounter.textContent = `${cur + 1} / ${figs.length}`;
+    overlay.classList.remove('lb-hidden');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function close() {
+    overlay.classList.add('lb-hidden');
+    document.body.style.overflow = '';
+  }
+
+  figs.forEach((fig, i) => fig.addEventListener('click', () => open(i)));
+  overlay.querySelector('.lb-close').addEventListener('click', close);
+  overlay.querySelector('.lb-prev').addEventListener('click', e => { e.stopPropagation(); open(cur - 1); });
+  overlay.querySelector('.lb-next').addEventListener('click', e => { e.stopPropagation(); open(cur + 1); });
+  overlay.addEventListener('click', e => { if (e.target === overlay) close(); });
+
+  document.addEventListener('keydown', e => {
+    if (overlay.classList.contains('lb-hidden')) return;
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowLeft') open(cur - 1);
+    if (e.key === 'ArrowRight') open(cur + 1);
+  });
+})();
+
+// ============================================
 // Contact form handler
 // ============================================
 const contactForm = document.querySelector('#contact-form');

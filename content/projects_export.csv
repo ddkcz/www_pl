@@ -1,4 +1,4 @@
-"file","key","prj_id","company","period","card_title","card_description","title","role","cad","sector","stack","content","links"
+"file","key","prj_id","company","period","card_title","card_description","title","role","cad","sector","stack","content","links","images"
 "agh-racing.html","agh-racing","PRJ-001","AGH Racing","2017 — 2020","Zespół wyścigowy Formuły Student","Projektowanie zawieszeń bolidów — od stalowych wahaczy po kompozyty CFRP. W ramach swoich aktywności wykonałem tu pracę inżynierską oraz 3 publikacje naukowe.","Zespół wyścigowy Formuły Student","Suspension Engineer","SolidWorks | ANSYS","Formula Student","MES | Frezowanie CNC | Kompozyty CFRP | Zawieszenie","[Projekty konstrukcyjne]
 - Projekt stalowych wahaczy dla dwóch bolidów Grażyna.
 - Projekt kolumny kierowniczej dla bolidu spalinowego Grażyna.
@@ -18,7 +18,7 @@ Analiza wytrzymałościowa połączenia wahacza zawieszenia bolidu Formula Stude
 - Formula SAE Michigan 2019 — 3. miejsce w acceleration, 15. miejsce ogółem (na 139 zespołów).
 - Formula FS Netherlands 2018 — 1. miejsce w acceleration, 2. w skid-pad, 2. w autocross, 5. ogółem.
 - Formula FS Spain 2018 — 1. miejsce w acceleration.
-- Formula SAE Michigan 2018 — 4. miejsce w Business Plan, 5. w Endurance, 6. w Skid-Pad, 9. ogółem (na 118 zespołów).","→ AGH Racing → https://www.racing.agh.edu.pl/"
+- Formula SAE Michigan 2018 — 4. miejsce w Business Plan, 5. w Endurance, 6. w Skid-Pad, 9. ogółem (na 118 zespołów).","→ AGH Racing → https://www.racing.agh.edu.pl/",""
 "flowparks.html","flowparks","PRJ-002","FlowParks","2018 — 2021","Flowparki do street workoutu i parkouru","Projekty obiektów sportowych takich jak parkour parki i street workout parki. Budowa nowych linii produktowych i R&D nowych rozwiązań.","Flowparki do street workoutu i parkouru","Senior Mechanical Engineer / Project Manager","SolidWorks | SketchUp","Construction | Industrial production | Architectural design","Konstrukcje stalowe | Konstrukcje z tworzyw sztucznych | Konstrukcje drewniane | Agile | DFM / DFMA | Formy wtryskowe","[Seria LARIX Flowparks]
 - Stworzyłem całą linię produktową, włącznie z nazewnictwem.
 - Opracowałem szablon projektowy i dostosowałem istniejące linie produktowe do nowej technologii.
@@ -26,7 +26,7 @@ Analiza wytrzymałościowa połączenia wahacza zawieszenia bolidu Formula Stude
 - Budowa nowych linii produktowych i R&D nowych rozwiązań konstrukcyjnych.
 
 [Automatyczny kalkulator wycen (Excel / VBA)]
-Kalkulator, który na podstawie raportu z modelu 3D w SketchUp generował kompletną ofertę handlową dla torów pumptrack oraz wstępną listę materiałową (BOM). Wybór typu nawierzchni, sposobu montażu i lokalizacji wystarczał, aby natychmiast wycenić projekt i przygotować listę komponentów do produkcji.","→ flowparks.com → https://flowparks.com/en"
+Kalkulator, który na podstawie raportu z modelu 3D w SketchUp generował kompletną ofertę handlową dla torów pumptrack oraz wstępną listę materiałową (BOM). Wybór typu nawierzchni, sposobu montażu i lokalizacji wystarczał, aby natychmiast wycenić projekt i przygotować listę komponentów do produkcji.","→ flowparks.com → https://flowparks.com/en",""
 "rally.html","rally","PRJ-003","Szybka Jazda · MiTo Rally","2019 — 2025","Zespół rajdowy Szybka Jazda oraz MiTo Rally","Pilot rajdowy z licencją sportową. Udział w budowie paru wersji Fiata Seicento oraz Alfy MiTo QV w specyfikacji RallyN. Mistrz klasy Pro2S sezon 2024.","Zespół rajdowy Szybka Jazda oraz MiTo Rally","Engineer / Co-pilot","SolidWorks","Motorsport","Budowa auta | Spawanie MIG/TIG | Geometria zawieszenia | Diagnostyka OBD | Obróbka ręczna","[Doświadczenie i samochody]
 - Pilot rajdowy w SKJS (rajdy amatorskie) 2019–2023.
 - Pilot rajdowy w klasie Pro2S / RallyN od 2024.
@@ -41,7 +41,7 @@ Kalkulator, który na podstawie raportu z modelu 3D w SketchUp generował komple
 - 2. miejsce w klasyfikacji generalnej Pucharu Śląska 2023.
 - 3. miejsce w klasyfikacji generalnej Pucharu Opolskiego 2023.
 - Starty w rajdach regionalnych z licencją sportową od 2024.
-- 4-krotny zwycięzca klasy Pro2S w sezonie 2024 — mistrz sezonu.","→ MiTo Rally → https://www.instagram.com/mito_rally/"
+- 4-krotny zwycięzca klasy Pro2S w sezonie 2024 — mistrz sezonu.","→ MiTo Rally → https://www.instagram.com/mito_rally/",""
 "techramps.html","techramps","PRJ-004","Techramps Group","2019 — 2021","Obiekty sportowe XXI wieku","Projekty nowoczesnych obiektów sportowych. R&D technologii i tworzenie nowych procesów projektowych. W oparciu o moje postępy w dziale R&D napisałem pracę magisterską.","Obiekty sportowe XXI wieku","Senior Mechanical Engineer / Project Manager","SolidWorks | SketchUp","Construction | Industrial production | Architectural design","Konstrukcje stalowe | Konstrukcje z tworzyw sztucznych | Konstrukcje drewniane | Agile | DFM / DFMA | MES","[ROAM Further — kryty park parkour (USA)]
 - Kompleksowe prowadzenie projektu — od pierwszego kontaktu z klientem po odbiór.
 - Projekt funkcjonalny adaptacji magazynu na obiekt sportowy.
@@ -55,13 +55,13 @@ Seria o wysokiej wartości estetycznej łącząca stalowe elementy nośne z wyko
 - Opracowałem szablon projektowy i dostosowałem istniejące linie produktowe do nowej technologii.
 
 [Automatyczny kalkulator wycen (Excel / VBA)]
-Kalkulator, który na podstawie raportu z modelu 3D w SketchUp generował kompletną ofertę handlową dla torów pumptrack oraz wstępną listę materiałową (BOM). Wybór typu nawierzchni, sposobu montażu i lokalizacji wystarczał, aby natychmiast wycenić projekt i przygotować listę komponentów do produkcji.","→ techrampsgroup.com → https://www.techrampsgroup.com/en/"
+Kalkulator, który na podstawie raportu z modelu 3D w SketchUp generował kompletną ofertę handlową dla torów pumptrack oraz wstępną listę materiałową (BOM). Wybór typu nawierzchni, sposobu montażu i lokalizacji wystarczał, aby natychmiast wycenić projekt i przygotować listę komponentów do produkcji.","→ techrampsgroup.com → https://www.techrampsgroup.com/en/",""
 "roamfurther.html","roamfurther","PRJ-005","RoamFurther","2021","Sala do parkouru ROAMfurther","Projekt i wybudowanie wewnętrznej sali do parkouru w USA. Prowadzenie projektu od pierwszego kontaktu aż do wykonania.","Sala do parkouru ROAMfurther","Senior Mechanical Engineer / Project Manager","SolidWorks | SketchUp","Construction | Industrial production","Konstrukcje drewniane | DFM / DFMA | Konstrukcje stalowe","[ROAM Further — kryty park parkour (USA)]
 - Kompleksowe prowadzenie projektu — od pierwszego kontaktu z klientem po odbiór.
 - Projekt funkcjonalny adaptacji magazynu na obiekt sportowy.
 - Projekt konstrukcyjny, wycena, komunikacja z klientem, negocjacje umowy, optymalizacja kosztów, pakowanie.
 - Zarządzanie 4-osobowym zespołem projektowym.
-- Projekt zrealizowany w Stanach Zjednoczonych, z udziałem Red Bulla.","→ Red Bull — artykuł → http://www.redbull.com/pl-pl/krystian-kowalewski-nowy-jork-roam-further-parkour | → roamfurther.com → https://roamfurther.com"
+- Projekt zrealizowany w Stanach Zjednoczonych, z udziałem Red Bulla.","→ Red Bull — artykuł → http://www.redbull.com/pl-pl/krystian-kowalewski-nowy-jork-roam-further-parkour | → roamfurther.com → https://roamfurther.com","sala-ogolna.jpg:Widok ogólny sali parkour|sciana-parkour.jpg:Konstrukcja drewniano-stalowa ściany parkour"
 "abb.html","abb","PRJ-006","ABB E-mobility","2021 — 2022","ABB Formula E — ładowarka na wyścigi","Projekt mobilnej stacji ładowania pojazdów EV o mocy 160 kW. Flagowy produkt ABB wyprodukowany na potrzeby startów Formuły E.","ABB Formula E — ładowarka na wyścigi","Senior Mechanical Engineer","SolidWorks","E-mobility","GD&T | DFM / DFMA | MES | Mechanical Assembly | Electro-mechanical Assembly | Agile | NPI | EMC","[Formula E — Car Charger Project]
 - Projekt szyn prądowych i prowadzenie kabli mocy.
 - Projekt komponentów montażowych wewnątrz ładowarki.
@@ -69,7 +69,7 @@ Kalkulator, który na podstawie raportu z modelu 3D w SketchUp generował komple
 - Zaangażowanie w procesy NPI (New Product Introduction).
 
 [Inne projekty ładowarek]
-- Projektowanie ładowarek AC Wallbox, DC 150 kW oraz rozdzielnic zasilania (Contactor Box) dla stacji ładowania.","→ ABB × Formula E → https://new.abb.com/news/pl/detail/98466/formula-e-na-ladowarkach-zaprojektowanych-w-polsce"
+- Projektowanie ładowarek AC Wallbox, DC 150 kW oraz rozdzielnic zasilania (Contactor Box) dla stacji ładowania.","→ ABB × Formula E → https://new.abb.com/news/pl/detail/98466/formula-e-na-ladowarkach-zaprojektowanych-w-polsce","infografika.jpg:Infografika — ładowarka Formula E 160 kW|boks-formule.jpg:Ładowarka ABB w boksie Formuły E"
 "euroloop.html","euroloop","PRJ-007","Willbert by Euroloop","2022 — 2025","Amber II 720 kW — stacja ładowania EV","Projekt stacji ładowania pojazdów EV typu standalone o mocy 720 kW działającej w tandemie. Praca w tej firmie zbiegła się z napisaniem mojej drugiej pracy magisterskiej — o rynku EV.","Amber II 720 kW — stacja ładowania EV","Senior Mechanical Engineer / Product Lead","OnShape","E-mobility","GD&T | DFM / DFMA | DoE | MES | Prototyping | 3D Print | Mechanical Assembly | Electro-mechanical Assembly | Agile | NPI | EMC | Formy wtryskowe | AI","[Zakres prac]
 - Rozwój produktu od A do Z — prowadzenie projektów mechanicznych przez pełny cykl NPI/NPD stage-gate, od koncepcji po dostawę do klienta, z modelowaniem 3D i pełną analizą GD&T / tolerance stack-up.
 - Ponad 70% komponentów mechanicznych pierwszej iteracji produktu zaprojektowałem samodzielnie.
@@ -77,7 +77,7 @@ Kalkulator, który na podstawie raportu z modelu 3D w SketchUp generował komple
 - Projekt mechaniczny urządzenia odpowiedzialnego za inteligentny rozdział mocy między ładowarkami (system S-HUB).
 - Prowadzenie kabli zasilających i projekt szyn prądowych (busbar).
 - Nadzór nad montażem prototypów i wdrożenie produktu do produkcji seryjnej.
-- Udział w projektach związanych z kompatybilnością elektromagnetyczną (EMC).","→ willbert.tech → https://willbert.tech"
+- Udział w projektach związanych z kompatybilnością elektromagnetyczną (EMC).","→ willbert.tech → https://willbert.tech",""
 "cedrowa.html","cedrowa","PRJ-008","Cedrowa Stolarnia","2024 — 2026","Cedrowa Stolarnia","Od budowy mebli do swojego domu do firmy z 2 stolarzami na etacie i obrotem 450–500 tys. PLN.","Cedrowa Stolarnia","Owner","SketchUp | OnShape","Meble na wymiar","Prowadzenie firmy | Zarządzanie zespołem | JavaScript | Automatyzacja","Wszystko zaczęło się od budowy własnego domu. Robiąc meble na wymiar samodzielnie, zaoszczędziłem około 40 000 PLN w porównaniu z najtańszą ofertą, a na schodach kolejne 25 000 PLN — finalny koszt materiałów to około 700 PLN plus kilka prowadnic i resztki drewna z budowy. Jeszcze zanim skończyłem własny dom, postanowiłem założyć firmę stolarską.
 
 Przez rok z okładem utrzymywałem 2 stolarzy na etacie, przez zespół przewinęło się łącznie około 5 osób, a obroty wyniosły 450–500 tys. PLN. Zbudowałem relacje z 5–8 hurtownikami i wyposażyłem warsztat od zera — łącznie około 80–100 tys. PLN inwestycji.
@@ -91,15 +91,15 @@ Zbudowałem własną aplikację w JavaScript (we współpracy z Claude), która 
 - Tarasy — z drewna egzotycznego i modrzewia.
 
 [Wnioski]
-Firma była rentowna, ale długoterminowo nie był to kierunek, w którym chciałem iść. Polskie realia branży budowlanej wiążą się ze specyfiką, z którą nie chciałem się godzić — dlatego zdecydowałem się zamknąć firmę i wrócić w pełni do inżynierii. Biznes się spłacił, zarobiłem dobre pieniądze, a przede wszystkim ogromnie dużo się nauczyłem — zarówno o prowadzeniu firmy, jak i o sobie.","→ cedrowastolarnia.pl → https://cedrowastolarnia.pl/"
+Firma była rentowna, ale długoterminowo nie był to kierunek, w którym chciałem iść. Polskie realia branży budowlanej wiążą się ze specyfiką, z którą nie chciałem się godzić — dlatego zdecydowałem się zamknąć firmę i wrócić w pełni do inżynierii. Biznes się spłacił, zarobiłem dobre pieniądze, a przede wszystkim ogromnie dużo się nauczyłem — zarówno o prowadzeniu firmy, jak i o sobie.","→ cedrowastolarnia.pl → https://cedrowastolarnia.pl/","kuchnia.jpg:Kuchnia na wymiar|przedpokoj-lustro.jpg:Zabudowa przedpokoju z lustrem LED|biblioteczka.jpg:Biblioteczka narożna z podświetleniem|szafy-korytarz.jpg:Szafy do sufitu z lustrem|sypialnia-nisza.jpg:Zabudowa sypialni z niszą łóżkową"
 "globallogic.html","globallogic","PRJ-009","GlobalLogic","2025 — obecnie","ASENSUS Surgical — robot chirurgiczny","Projekt laparoskopicznego robota chirurgicznego nowej generacji.","ASENSUS Surgical — robot chirurgiczny","Senior Mechanical Engineer / Product Lead","SolidWorks","Med-tech","GD&T | DFM / DFMA | Arena PLM | IEC 60601-1 | DoE | Prototyping | 3D Print | Mechanical Assembly | Electro-mechanical Assembly | Agile | NPI | EMC | AI","[Zakres prac]
 - Projektowanie wieloprocesowe — systemy i podzespoły łączące tworzywa wtryskowe, blachy, odlewy i części obrabiane mechanicznie, z zastosowaniem zasad DFM/DFA i najlepszych praktyk doboru materiałów.
 - Integracja COTS i mechatroniki — dobór i integracja komponentów mechanicznych oraz mechatronicznych z półki, w oparciu o wymagania funkcjonalne, w tym kompletne zespoły z okablowaniem.
 - Prototypowanie i analiza strukturalna — prowadzenie cykli rozwoju prototypów opartych o obliczenia wytrzymałościowe i analizy inżynierskie walidujące projekt przed produkcją.
 - Testy i walidacja — opracowanie protokołów i raportów testów, definiowanie kryteriów akceptacji, projektowanie przyrządów testowych (mechanicznych i mechatronicznych) wspierających produkcję.
 - PLM i procesy Agile — zarządzanie cyklem życia komponentów, procesami ECO/ECR oraz tworzeniem EBOM w Arena PLM w środowisku sprintowym Agile; stosowanie metodologii DOE do testowania i optymalizacji produktu.
-- Wyroby medyczne — praca zgodnie z procesami projektowania wyrobów medycznych i normą IEC 60601-1, ze znajomością ram problem-solving stosowanych w produktach regulowanych.","→ Surgical Robotics Technology → https://www.surgicalroboticstechnology.com"
-"garage.html","garage","PRJ-010","Projekty własne","2026","Konstrukcja garażu w technologii drewnianej","Projekt i wykonanie garażu na swoim podwórku w technologii drewnianej. Spełnienie marzenia o wykonaniu budynku własnymi siłami.","Konstrukcja garażu w technologii drewnianej","","SketchUp","Konstrukcje drewniane","Konstrukcja drewniana | Obliczenia statyczne | Stolarka","",""
+- Wyroby medyczne — praca zgodnie z procesami projektowania wyrobów medycznych i normą IEC 60601-1, ze znajomością ram problem-solving stosowanych w produktach regulowanych.","→ Surgical Robotics Technology → https://www.surgicalroboticstechnology.com","luna-system.jpg:System chirurgiczny LUNA — Asensus Surgical"
+"garage.html","garage","PRJ-010","Projekty własne","2026","Konstrukcja garażu w technologii drewnianej","Projekt i wykonanie garażu na swoim podwórku w technologii drewnianej. Spełnienie marzenia o wykonaniu budynku własnymi siłami.","Konstrukcja garażu w technologii drewnianej","","SketchUp","Konstrukcje drewniane","Konstrukcja drewniana | Obliczenia statyczne | Stolarka","","",""
 "www.html","www","PRJ-011","CADsmart","2026","Własna strona internetowa","Projekt i wykonanie mojej wizytówki w sieci, na której jesteś. Dzięki wykorzystaniu rozwiązań AI, wszystko co tu można znaleźć powstało z rąk inżyniera mechanika.","Własna strona internetowa","Deweloper","","Web Design","AI | GitHub | HTML | CSS | JavaScript","Projekt i wykonanie wizytówki w sieci — od zera do działającego portfolio. Dzięki intensywnemu wykorzystaniu AI, cały serwis powstał z rąk inżyniera mechanika bez wcześniejszego doświadczenia we front-endzie.
 
 [Stack i narzędzia]
@@ -107,7 +107,7 @@ Firma była rentowna, ale długoterminowo nie był to kierunek, w którym chcia�
 - Hosting na Cloudflare Workers z automatycznym deploymentem przez GitHub Actions.
 - Dynamiczne ładowanie layoutu (header i footer) ze wspólnego pliku.
 - System tagów i filtrów projektów — single source of truth w JS.
-- Obsługa trybu ciemnego i jasnego z persystencją w localStorage.",""
+- Obsługa trybu ciemnego i jasnego z persystencją w localStorage.","",""
 "tarrace.html","tarrace","PRJ-012","Projekty własne","2026","Konstrukcja drewnianego tarasu","Projekt koncepcyjny w SketchUp, obliczenia konstrukcyjne i samodzielna realizacja tarasu przy domu. Inżynierskie podejście do projektu budowlanego.","Konstrukcja drewnianego tarasu","","SketchUp","Konstrukcje drewniane","Konstrukcja drewniana | Obliczenia statyczne | Stolarka","Projekt i samodzielna budowa tarasu przy domu — od szkicu koncepcyjnego w SketchUp, przez dobór materiałów i obliczenia konstrukcyjne, po realizację.
 
 [Zakres projektu]
@@ -120,7 +120,7 @@ Firma była rentowna, ale długoterminowo nie był to kierunek, w którym chcia�
 [Czego się nauczyłem]
 - Projektowanie z uwzględnieniem dylatacji — drewno pracuje, tolerancje muszą to przewidywać.
 - Koordynacja z dostawcami materiałów budowlanych i dobór najlepszego stosunku ceny do jakości.
-- Zarządzanie projektem solo: harmonogram, zakupy, wykonanie w czasie wolnym od pracy.",""
+- Zarządzanie projektem solo: harmonogram, zakupy, wykonanie w czasie wolnym od pracy.","",""
 "hobby.html","hobby","","Projekty własne / Side projects","2018 — obecnie","Side projects — narzędzia i automatyzacja","Narzędzia i skrypty rozwiązujące konkretne problemy: ekstraktor BOM z modeli 3D, kalkulatory VBA, automatyzacja CAD. Projekty DIY i elektronika.","Projekty hobbystyczne — narzędzia, automatyzacja, DIY","","","Side projects","JavaScript | VBA | Python | 3D Print | DIY Electronics","Poza pracą zawodową buduję rzeczy dla siebie — głównie narzędzia, które rozwiązują konkretne problemy, i projekty DIY, które uczą nowych technik. Większość zaczyna się od pytania ""a czy da się to zautomatyzować?"".
 
 [Narzędzia i automatyzacja]
@@ -130,4 +130,4 @@ Firma była rentowna, ale długoterminowo nie był to kierunek, w którym chcia�
 
 [Projekty DIY]
 - Projektowanie i druk 3D niestandardowych uchwytów, adapterów i elementów montażowych do garażu i domu.
-- Mała elektronika — własne czujniki diagnostyczne i interfejsy do aut rajdowych.",""
+- Mała elektronika — własne czujniki diagnostyczne i interfejsy do aut rajdowych.","",""
