@@ -54,7 +54,7 @@ def parse_images(field: str, key: str) -> list[tuple[str, str]]:
 def build_gallery(images: list[tuple[str, str]]) -> str:
     if not images:
         return ''
-    lines = ['      <div class="project-gallery">']
+    lines = [f'      <div class="project-gallery" data-count="{len(images)}">']
     for src, alt in images:
         lines.append('        <figure>')
         lines.append(f'          <img src="{src}" alt="{esc(alt)}" loading="lazy">')
