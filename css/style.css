@@ -315,7 +315,7 @@ a { color: var(--accent); }
 
 .hero-meta {
   font-family: var(--font-mono);
-  font-size: 0.78rem;
+  font-size: 0.65rem;
   color: var(--ink-muted);
   text-transform: uppercase;
   letter-spacing: 0.15em;
@@ -345,12 +345,12 @@ a { color: var(--accent); }
   color: var(--accent);
   position: relative;
   display: inline-block;
-  font-size: 0.65em;
+  font-size: 0.55em;
 }
 
 .hero-role {
   font-family: var(--font-mono);
-  font-size: 1rem;
+  font-size: 0.875rem;
   color: var(--ink);
   margin-bottom: 1.25rem;
   text-transform: uppercase;
@@ -359,7 +359,7 @@ a { color: var(--accent); }
 }
 
 .hero-description {
-  font-size: 1.0625rem;
+  font-size: 0.875rem;
   margin-bottom: 2rem;
   max-width: 500px;
   font-family: var(--font-serif);
