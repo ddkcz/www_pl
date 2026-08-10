@@ -104,12 +104,12 @@ const PROJECT_TAGS = {
     stack:  ['GD&T', 'Electromechanical Integration', 'DFM / DFMA', 'Prototyping & Validation', 'PLM / ECO / ECR'],
   },
   'cedrowa': {
-    cad:    ['SketchUp', 'OnShape'],
+    cad:    ['SketchUp', 'Onshape'],
     sector: ['Meble na wymiar'],
     stack:  ['Product Development & Management', 'Process Automation', 'Manufacturing & Assembly', 'DFM / DFMA', 'AI'],
   },
   'euroloop': {
-    cad:    ['OnShape'],
+    cad:    ['Onshape'],
     sector: ['E-mobility'],
     stack:  ['GD&T', 'Product Development & Management', 'DFM / DFMA', 'Electromechanical Integration', 'PLM / ECO / ECR'],
   },
@@ -144,7 +144,7 @@ const PROJECT_TAGS = {
     stack:  ['GD&T', 'MES', 'Manufacturing & Assembly', 'Prototyping & Validation'],
   },
   'wood': {
-    cad:    ['OnShape', 'SketchUp'],
+    cad:    ['Onshape', 'SketchUp'],
     sector: ['Architectural design'],
     stack:  ['Engineering Calculations', 'Manufacturing & Assembly', 'Product Development & Management', 'Prototyping & Validation', 'DFM / DFMA'],
   },

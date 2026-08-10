@@ -15,7 +15,7 @@ ARKUSZ 02 / 05 · O MNIE
 ---
 
 ## Intro
-Cześć, mam na imię **Dawid Kuczyński**. Jestem Inżynierem Mechaniki
+Cześć, mam na imię **Dawid Kuczyński**. Jestem inżynierem mechaniki
 z ponad 7-letnim doświadczeniem zawodowym. Posiadam doświadczenie
 w takich branżach jak e-mobility, medtech, automotive i motorsport. Pracowałem zarówno dla dużych
 korporacji, start-upów, jak i firm o ugruntowanej pozycji na rynku. Przez 2 lata prowadziłem własną
@@ -29,7 +29,7 @@ firmę produkcyjną. Zawsze z tym samym celem: zamieniać ambitne pomysły w nam
 | 01 | 7+ lat | Doświadczenia zawodowego |
 | 02 | 4 branże | E-mobility · Medtech · Auto · Sport |
 | 03 | #1 klasa | Mistrz Pro2S · 2024 |
-| 04 | 500k PLN | Roczny obrót · Cedrowa |
+| 04 | 500 tys. PLN | Roczny obrót · Cedrowa |
 
 ---
 
@@ -111,8 +111,8 @@ tuningiem silnika, geometrią zawieszenia, układami hamulcowymi i wzmocnieniami
 jako pilot z licencją sportową.
 
 Wyniki mówią same za siebie: 1. miejsce Rally Głubczyce (2020), 1. miejsce Rally Opole (2021),
-1. i 2. miejsce Tarmac Masters (2022), 2. miejsce Puchar Śląski (2023),
-3. miejsce Puchar Opola (2023). W 2024 roku zespół zdobył mistrzostwo klasy Pro2S z czterema
+1. i 2. miejsce Tarmac Masters (2022), 2. miejsce w Pucharze Śląskim (2023),
+3. miejsce w Pucharze Opola (2023). W 2024 roku zespół zdobył mistrzostwo klasy Pro2S z czterema
 zwycięstwami wyścigowymi.
 
 W 2024 roku założyłem Cedrową Stolarnię — firmę produkującą meble i stolarkę na zamówienie. Zbudowałem ją
