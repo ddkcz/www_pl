@@ -254,6 +254,174 @@
       color: var(--ink-soft);
     }
 
+    /* ── COMPETENCY MAP ────────────────────────────── */
+    .competency-map {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+      gap: 3rem;
+      align-items: center;
+      margin-top: 1.75rem;
+      padding: 2rem;
+      border: 1px solid var(--ink);
+      background: var(--paper);
+      position: relative;
+    }
+
+    .competency-map::before {
+      content: 'MAPA / 07 OBSZARÓW';
+      position: absolute;
+      top: 0.55rem;
+      left: 0.75rem;
+      font-family: var(--font-mono);
+      font-size: 0.58rem;
+      letter-spacing: 0.12em;
+      color: var(--ink-muted);
+    }
+
+    .competency-wheel svg {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-width: 570px;
+      margin: 0 auto;
+    }
+
+    .competency-orbit {
+      fill: none;
+      stroke: var(--line);
+      stroke-width: 1;
+      stroke-dasharray: 4 7;
+    }
+
+    .competency-core {
+      fill: var(--accent-soft);
+      stroke: var(--accent);
+      stroke-width: 2;
+    }
+
+    .competency-core-title,
+    .competency-core-subtitle,
+    .competency-node text {
+      font-family: var(--font-mono);
+      text-anchor: middle;
+      pointer-events: none;
+    }
+
+    .competency-core-title {
+      fill: var(--ink);
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+
+    .competency-core-subtitle {
+      fill: var(--ink-muted);
+      font-size: 10px;
+      letter-spacing: 0.08em;
+    }
+
+    .competency-connector {
+      stroke: var(--line);
+      stroke-width: 1.5;
+      transition: stroke 0.2s ease, stroke-width 0.2s ease;
+    }
+
+    .competency-connector.active {
+      stroke: var(--accent);
+      stroke-width: 2.5;
+    }
+
+    .competency-node {
+      cursor: pointer;
+      outline: none;
+    }
+
+    .competency-node circle {
+      fill: var(--paper);
+      stroke: var(--line);
+      stroke-width: 1.5;
+      transition: fill 0.2s ease, stroke 0.2s ease;
+    }
+
+    .competency-node:hover circle,
+    .competency-node:focus circle {
+      stroke: var(--accent);
+    }
+
+    .competency-node.active circle {
+      fill: var(--accent);
+      stroke: var(--accent);
+    }
+
+    .competency-node .node-index {
+      fill: var(--accent);
+      font-size: 9px;
+      font-weight: 600;
+    }
+
+    .competency-node .node-label {
+      fill: var(--ink);
+      font-size: 10px;
+      font-weight: 600;
+    }
+
+    .competency-node.active text { fill: var(--paper); }
+
+    .competency-details {
+      min-height: 360px;
+      padding-left: 2rem;
+      border-left: 1px solid var(--line);
+    }
+
+    .competency-details-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--ink-muted);
+    }
+
+    .competency-details-index {
+      padding: 0.2rem 0.45rem;
+      color: var(--paper);
+      background: var(--accent);
+    }
+
+    .competency-details h3 {
+      margin: 0 0 0.75rem;
+      font-size: clamp(1.35rem, 2.5vw, 1.8rem);
+    }
+
+    .competency-details p {
+      margin: 0 0 1.25rem;
+      color: var(--ink-soft);
+    }
+
+    .competency-detail-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+
+    .competency-detail-list li {
+      display: flex;
+      gap: 0.65rem;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--ink);
+    }
+
+    .competency-detail-list li::before {
+      content: '—';
+      color: var(--accent);
+      flex: 0 0 auto;
+    }
+
     /* ── RESPONSIVE ────────────────────────────────── */
     @media (max-width: 700px) {
       .stat-strip {
@@ -285,6 +453,19 @@
       .highlight-num {
         font-size: 1.3rem;
       }
+
+      .competency-map {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 1.5rem 1rem;
+      }
+
+      .competency-details {
+        min-height: 0;
+        padding: 1.5rem 0 0;
+        border-left: none;
+        border-top: 1px solid var(--line);
+      }
     }
   </style>
 </head>
@@ -301,7 +482,7 @@
    
       <h2>O mnie</h2>
       <p>
-      Moje kompetencje obejmują m.in. rozwój produktów, projekty B+R, prototypowanie, wdrożenia produkcyjne, optymalizację procesów oraz organizację i rozwój produkcji. Buduję i rozwijamy zespoły, wspieramy tworzenie struktur R&D i pomagamy firmom przejść od pierwszego pomysłu do powtarzalnego, efektywnego procesu produkcyjnego.
+      Moje kompetencje obejmują m.in. rozwój produktów, projekty B+R, prototypowanie, wdrożenia produkcyjne, optymalizację procesów oraz organizację i rozwój produkcji. Buduję i rozwijamy zespoły, wspieramy tworzenie struktur R&amp;D i pomagamy firmom przejść od pierwszego pomysłu do powtarzalnego, efektywnego procesu produkcyjnego.
       
       </p>
     
@@ -410,70 +591,93 @@
     <section style="margin-bottom: 4rem;">
       <span class="section-label">UMIEJĘTNOŚCI I NARZĘDZIA</span>
       <h2>Kompetencje</h2>
-          <div class="skills-grid">
-            <div class="skills-grid">
+      <div class="competency-map">
+        <div class="competency-wheel">
+          <svg viewBox="0 0 600 600" role="group" aria-label="Interaktywna mapa siedmiu obszarów kompetencji">
+            <circle class="competency-orbit" cx="300" cy="300" r="238"></circle>
 
-  <div class="skill-category">
-    <h3>Projektowanie mechaniczne</h3>
-    <ul class="skill-list">
-      <li>Konstrukcje stalowe i spawane</li>
-      <li>Tworzywa sztuczne, arkusze blach</li>
-      <li>Elementy obrabiane CNC</li>
-      <li>Mechanika precyzyjna i formy wtryskowe</li>
-    </ul>
-  </div>
+            <line class="competency-connector active" data-connector="0" x1="300" y1="300" x2="300" y2="68"></line>
+            <line class="competency-connector" data-connector="1" x1="300" y1="300" x2="481" y2="155"></line>
+            <line class="competency-connector" data-connector="2" x1="300" y1="300" x2="526" y2="352"></line>
+            <line class="competency-connector" data-connector="3" x1="300" y1="300" x2="401" y2="509"></line>
+            <line class="competency-connector" data-connector="4" x1="300" y1="300" x2="199" y2="509"></line>
+            <line class="competency-connector" data-connector="5" x1="300" y1="300" x2="74" y2="352"></line>
+            <line class="competency-connector" data-connector="6" x1="300" y1="300" x2="119" y2="155"></line>
 
-  <div class="skill-category">
-    <h3>Modelowanie 3D i dokumentacja</h3>
-    <ul class="skill-list">
-      <li>SolidWorks · OnShape · Inventor</li>
-      <li>Catia v4 · NX Siemens · AutoCAD</li>
-      <li>Rysunki wykonawcze i dokumentacja techniczna</li>
-      <li>GD&amp;T i analiza tolerancji</li>
-    </ul>
-  </div>
+            <circle class="competency-core" cx="300" cy="300" r="100"></circle>
+            <text class="competency-core-title" x="300" y="288">KOMPETENCJE</text>
+            <text class="competency-core-title" x="300" y="310">INŻYNIERSKIE</text>
+            <text class="competency-core-subtitle" x="300" y="336">OD KONCEPCJI DO PRODUKCJI</text>
 
-  <div class="skill-category">
-    <h3>Analiza inżynierska</h3>
-    <ul class="skill-list">
-      <li>MES · FEA</li>
-      <li>Metodologia TRIZ</li>
-      <li>Obliczenia wytrzymałościowe</li>
-      <li>FMEA · Root Cause Analysis · 5 WHY </li>
-    </ul>
-  </div>
+            <g class="competency-node active" data-skill="0" tabindex="0" role="button" aria-pressed="true" aria-label="Projektowanie mechaniczne">
+              <circle cx="300" cy="68" r="60"></circle>
+              <text class="node-index" x="300" y="48">01</text>
+              <text class="node-label" x="300" y="69">PROJEKTOWANIE</text>
+              <text class="node-label" x="300" y="83">MECHANICZNE</text>
+            </g>
 
-  <div class="skill-category">
-    <h3>Prototypowanie &amp; Testy</h3>
-    <ul class="skill-list">
-      <li>Prototypowanie i druk 3D</li>
-      <li>Stanowiska i oprzyrządowanie testowe</li>
-      <li>Planowanie i prowadzenie testów</li>
-      <li>Walidacja i analiza wyników</li>
-    </ul>
-  </div>
+            <g class="competency-node" data-skill="1" tabindex="0" role="button" aria-pressed="false" aria-label="Modelowanie 3D i dokumentacja">
+              <circle cx="481" cy="155" r="60"></circle>
+              <text class="node-index" x="481" y="129">02</text>
+              <text class="node-label" x="481" y="151">MODELOWANIE 3D</text>
+              <text class="node-label" x="481" y="165">I DOKUMENTACJA</text>
+            </g>
 
-  <div class="skill-category">
-    <h3>Produkcja &amp; Industrializacja</h3>
-    <ul class="skill-list">
-      <li>DFM · DFA · DFMA</li>
-      <li>NPI i wdrażanie do produkcji</li>
-      <li>Optymalizacja konstrukcji i montażu</li>
-      <li>Współpraca z produkcją i dostawcami</li>
-    </ul>
-  </div>
+            <g class="competency-node" data-skill="2" tabindex="0" role="button" aria-pressed="false" aria-label="Analiza inżynierska">
+              <circle cx="526" cy="352" r="60"></circle>
+              <text class="node-index" x="526" y="332">03</text>
+              <text class="node-label" x="526" y="353">ANALIZA</text>
+              <text class="node-label" x="526" y="367">INŻYNIERSKA</text>
+            </g>
 
-  <div class="skill-category">
-    <h3>Mechatronika &amp; Rozwój Produktu</h3>
-    <ul class="skill-list">
-      <li>Integracja komponentów elektromechanicznych</li>
-      <li>Szyny prądowe i trasy kablowe</li>
-      <li>Rozwój produktu od koncepcji do produkcji</li>
-      <li>PLM, ECO/ECR i zarządzanie zmianą</li>
-    </ul>
-  </div>
+            <g class="competency-node" data-skill="3" tabindex="0" role="button" aria-pressed="false" aria-label="Prototypowanie i testy">
+              <circle cx="401" cy="509" r="60"></circle>
+              <text class="node-index" x="401" y="489">04</text>
+              <text class="node-label" x="401" y="510">PROTOTYPOWANIE</text>
+              <text class="node-label" x="401" y="524">I TESTY</text>
+            </g>
 
+            <g class="competency-node" data-skill="4" tabindex="0" role="button" aria-pressed="false" aria-label="Produkcja i industrializacja">
+              <circle cx="199" cy="509" r="60"></circle>
+              <text class="node-index" x="199" y="483">05</text>
+              <text class="node-label" x="199" y="505">PRODUKCJA</text>
+              <text class="node-label" x="199" y="519">I INDUSTRIALIZACJA</text>
+            </g>
 
+            <g class="competency-node" data-skill="5" tabindex="0" role="button" aria-pressed="false" aria-label="Mechatronika i rozwój produktu">
+              <circle cx="74" cy="352" r="60"></circle>
+              <text class="node-index" x="74" y="326">06</text>
+              <text class="node-label" x="74" y="348">MECHATRONIKA</text>
+              <text class="node-label" x="74" y="362">I ROZWÓJ PRODUKTU</text>
+            </g>
+
+            <g class="competency-node" data-skill="6" tabindex="0" role="button" aria-pressed="false" aria-label="Projektowanie specjalistyczne">
+              <circle cx="119" cy="155" r="60"></circle>
+              <text class="node-index" x="119" y="129">07</text>
+              <text class="node-label" x="119" y="151">PROJEKTOWANIE</text>
+              <text class="node-label" x="119" y="165">SPECJALISTYCZNE</text>
+            </g>
+          </svg>
+        </div>
+
+        <div class="competency-details" aria-live="polite">
+          <div class="competency-details-meta">
+            <span class="competency-details-index">01</span>
+            <span>Obszar kompetencji</span>
+          </div>
+          <h3 id="competency-title">Projektowanie mechaniczne</h3>
+          <p id="competency-description">Projektuję komponenty i kompletne zespoły z uwzględnieniem funkcji, technologii wykonania, montażu i kosztu.</p>
+          <ul class="competency-detail-list" id="competency-list">
+            <li>Konstrukcje stalowe i spawane</li>
+            <li>Tworzywa sztuczne i arkusze blach</li>
+            <li>Elementy obrabiane CNC</li>
+            <li>Mechanika precyzyjna i formy wtryskowe</li>
+            <li>Elementy pod formowanie wtryskowe (injection molding)</li>
+            <li>Elementy pod formowanie próżniowe (vacuum forming)</li>
+            <li>Formy wtryskowe i próżniowe</li>
+          </ul>
+        </div>
+      </div>
     </section>
 
     
@@ -481,6 +685,87 @@
   </main>
   <div id="footer-placeholder"></div>
 
+  <script>
+    (function () {
+      const competencies = [
+        {
+          title: 'Projektowanie mechaniczne',
+          description: 'Projektuję komponenty i kompletne zespoły z uwzględnieniem funkcji, technologii wykonania, montażu i kosztu.',
+          items: ['Konstrukcje stalowe i spawane', 'Tworzywa sztuczne i arkusze blach', 'Elementy obrabiane CNC', 'Mechanika precyzyjna i formy wtryskowe', 'Elementy pod formowanie wtryskowe (injection molding)', 'Elementy pod formowanie próżniowe (vacuum forming)', 'Formy wtryskowe i próżniowe']
+        },
+        {
+          title: 'Modelowanie 3D i dokumentacja',
+          description: 'Tworzę modele i dokumentację, które sprawnie prowadzą projekt od koncepcji do wykonania i kontroli jakości.',
+          items: ['SolidWorks · OnShape · Inventor', 'Catia v4 · NX Siemens · AutoCAD', 'Rysunki wykonawcze i dokumentacja techniczna', 'GD&T i analiza tolerancji', 'Review dokumentacji technicznej', 'Dokumentacja montażu']
+        },
+        {
+          title: 'Analiza inżynierska',
+          description: 'Weryfikuję założenia projektowe obliczeniami oraz uporządkowaną analizą ryzyka i przyczyn problemów.',
+          items: ['MES · FEA', 'Metodologia TRIZ', 'Obliczenia wytrzymałościowe', 'FMEA · Root Cause Analysis · 5 WHY']
+        },
+        {
+          title: 'Prototypowanie i testy',
+          description: 'Szybko zamieniam koncepcje w fizyczne rozwiązania, a wyniki testów wykorzystuję do kolejnych iteracji projektu.',
+          items: ['Prototypowanie', 'Stanowiska i oprzyrządowanie testowe', 'Planowanie i prowadzenie testów', 'Walidacja i analiza wyników']
+        },
+        {
+          title: 'Produkcja i industrializacja',
+          description: 'Przygotowuję konstrukcję i proces do powtarzalnej produkcji, dbając o montaż, jakość, koszt i skalowalność.',
+          items: ['DFM · DFA · DFMA', 'NPI i wdrażanie do produkcji', 'Optymalizacja konstrukcji i montażu', 'Współpraca z produkcją i dostawcami', 'Inżynieria procesowa', 'Zarządzanie zmianą', 'Zarządzanie produkcją']
+        },
+        {
+          title: 'Mechatronika i rozwój produktu',
+          description: 'Łączę mechanikę, elektronikę i proces rozwoju produktu w spójne rozwiązania gotowe do wdrożenia.',
+          items: ['Integracja komponentów elektromechanicznych', 'Szyny prądowe i trasy kablowe', 'Dobór czujników', 'Rozwój produktu od koncepcji do produkcji', 'PLM, ECO/ECR i zarządzanie zmianą']
+        },
+        {
+          title: 'Projektowanie specjalistyczne',
+          description: 'Projektuję rozwiązania wymagające uwzględnienia specjalistycznych technologii wytwarzania, zarządzania temperaturą i architektury kompletnego urządzenia.',
+          items: ['Projektowanie pod druk 3D w technologii FDM i SLS', 'Druk 3D w technologii FDM', 'Projektowanie termiczne: chłodzenie urządzeń i złożeń elektromechanicznych', 'Projektowanie architektury mechanicznej urządzeń', 'Oprzyrządowanie produkcyjne i kontrolne']
+        }
+      ];
+
+      const nodes = [...document.querySelectorAll('.competency-node')];
+      const connectors = [...document.querySelectorAll('.competency-connector')];
+      const index = document.querySelector('.competency-details-index');
+      const title = document.getElementById('competency-title');
+      const description = document.getElementById('competency-description');
+      const list = document.getElementById('competency-list');
+
+      function selectCompetency(selectedIndex) {
+        const selected = competencies[selectedIndex];
+        if (!selected) return;
+
+        nodes.forEach((node, nodeIndex) => {
+          const active = nodeIndex === selectedIndex;
+          node.classList.toggle('active', active);
+          node.setAttribute('aria-pressed', String(active));
+        });
+        connectors.forEach((connector, connectorIndex) => {
+          connector.classList.toggle('active', connectorIndex === selectedIndex);
+        });
+
+        index.textContent = String(selectedIndex + 1).padStart(2, '0');
+        title.textContent = selected.title;
+        description.textContent = selected.description;
+        list.replaceChildren(...selected.items.map(item => {
+          const li = document.createElement('li');
+          li.textContent = item;
+          return li;
+        }));
+      }
+
+      nodes.forEach((node, nodeIndex) => {
+        node.addEventListener('click', () => selectCompetency(nodeIndex));
+        node.addEventListener('keydown', event => {
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            selectCompetency(nodeIndex);
+          }
+        });
+      });
+    })();
+  </script>
   <script src="js/script.js"></script>
 </body>
 </html>

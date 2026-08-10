@@ -81,67 +81,77 @@ const PROJECT_TAGS = {
   'tarrace': {
     cad:    ['SketchUp'],
     sector: ['Konstrukcje drewniane'],
-    stack:  ['Konstrukcja drewniana', 'Obliczenia statyczne', 'Stolarka'],
+    stack:  [],
   },
   'www': {
     cad:    [],
     sector: ['Web Design'],
-    stack:  ['AI', 'GitHub', 'HTML', 'CSS', 'JavaScript'],
+    stack:  [],
+  },
+  'ai': {
+    cad:    [],
+    sector: ['Automation & AI'],
+    stack:  ['AI', 'Process Automation', 'Python', 'JavaScript', 'CI/CD'],
   },
   'garage': {
     cad:    ['SketchUp'],
     sector: ['Konstrukcje drewniane'],
-    stack:  ['Konstrukcja drewniana', 'Obliczenia statyczne', 'Stolarka'],
+    stack:  [],
   },
   'globallogic': {
     cad:    ['SolidWorks'],
     sector: ['Med-tech'],
-    stack:  ['GD&T', 'DFM / DFMA', 'Arena PLM', 'IEC 60601-1', 'DoE', 'Prototyping', '3D Print', 'Mechanical Assembly', 'Electro-mechanical Assembly', 'Agile', 'NPI', 'EMC', 'AI'],
+    stack:  ['GD&T', 'Electromechanical Integration', 'DFM / DFMA', 'Prototyping & Validation', 'PLM / ECO / ECR'],
   },
   'cedrowa': {
     cad:    ['SketchUp', 'OnShape'],
     sector: ['Meble na wymiar'],
-    stack:  ['Prowadzenie firmy', 'Zarządzanie zespołem', 'JavaScript', 'Automatyzacja'],
+    stack:  ['Product Development & Management', 'Process Automation', 'Manufacturing & Assembly', 'DFM / DFMA', 'AI'],
   },
   'euroloop': {
     cad:    ['OnShape'],
     sector: ['E-mobility'],
-    stack:  ['GD&T', 'DFM / DFMA', 'DoE', 'MES', 'Prototyping', '3D Print', 'Mechanical Assembly', 'Electro-mechanical Assembly', 'Agile', 'NPI', 'EMC', 'Formy wtryskowe', 'AI'],
+    stack:  ['GD&T', 'Product Development & Management', 'DFM / DFMA', 'Electromechanical Integration', 'PLM / ECO / ECR'],
   },
   'abb': {
     cad:    ['SolidWorks'],
     sector: ['E-mobility'],
-    stack:  ['GD&T', 'DFM / DFMA', 'MES', 'Mechanical Assembly', 'Electro-mechanical Assembly', 'Agile', 'NPI', 'EMC'],
+    stack:  ['GD&T', 'MES', 'DFM / DFMA', 'Electromechanical Integration', 'PLM / ECO / ECR'],
   },
   'roamfurther': {
     cad:    ['SolidWorks', 'SketchUp'],
     sector: ['Construction', 'Industrial production'],
-    stack:  ['Konstrukcje drewniane', 'DFM / DFMA', 'Konstrukcje stalowe'],
+    stack:  [],
   },
   'techramps': {
     cad:    ['SolidWorks', 'SketchUp'],
-    sector: ['Construction', 'Industrial production', 'Architectural design'],
-    stack:  ['Konstrukcje stalowe', 'Konstrukcje z tworzyw sztucznych', 'Konstrukcje drewniane', 'Agile', 'DFM / DFMA', 'MES'],
+    sector: ['Architectural design'],
+    stack:  ['Product Development & Management', 'DFM / DFMA', 'Electromechanical Integration', 'Process Automation', 'Engineering Calculations'],
   },
   'rally': {
     cad:    ['SolidWorks'],
     sector: ['Motorsport'],
-    stack:  ['Budowa auta', 'Spawanie MIG/TIG', 'Geometria zawieszenia', 'Diagnostyka OBD', 'Obróbka ręczna'],
+    stack:  ['MES', 'Prototyping & Validation', 'Root Cause Analysis', 'Manufacturing & Assembly', 'DFM / DFMA'],
   },
   'flowparks': {
     cad:    ['SolidWorks', 'SketchUp'],
     sector: ['Construction', 'Industrial production', 'Architectural design'],
-    stack:  ['Konstrukcje stalowe', 'Konstrukcje z tworzyw sztucznych', 'Konstrukcje drewniane', 'Agile', 'DFM / DFMA', 'Formy wtryskowe'],
+    stack:  [],
   },
   'agh-racing': {
-    cad:    ['SolidWorks', 'ANSYS'],
-    sector: ['Formula Student'],
-    stack:  ['MES', 'Frezowanie CNC', 'Kompozyty CFRP', 'Zawieszenie'],
+    cad:    ['SolidWorks', 'NX Siemens'],
+    sector: ['Motorsport'],
+    stack:  ['GD&T', 'MES', 'Manufacturing & Assembly', 'Prototyping & Validation'],
+  },
+  'wood': {
+    cad:    ['OnShape', 'SketchUp'],
+    sector: ['Architectural design'],
+    stack:  ['Engineering Calculations', 'Manufacturing & Assembly', 'Product Development & Management', 'Prototyping & Validation', 'DFM / DFMA'],
   },
   'hobby': {
     cad:    [],
     sector: ['Side projects'],
-    stack:  ['JavaScript', 'VBA', 'Python', '3D Print', 'DIY Electronics'],
+    stack:  [],
   },
 };
 
@@ -194,7 +204,11 @@ function renderFilters() {
   if (!container) return;
 
   const all = { cad: new Set(), sector: new Set(), stack: new Set() };
-  Object.values(PROJECT_TAGS).forEach(({ cad, sector, stack }) => {
+  const visibleProjectTags = [...document.querySelectorAll('.card[data-project]')]
+    .map(card => PROJECT_TAGS[card.dataset.project])
+    .filter(Boolean);
+
+  visibleProjectTags.forEach(({ cad, sector, stack }) => {
     cad.forEach(v => all.cad.add(v));
     sector.forEach(v => all.sector.add(v));
     stack.forEach(v => all.stack.add(v));
@@ -213,7 +227,6 @@ function renderFilters() {
 
   groups.forEach(({ key, label, cls }) => {
     const values = [...all[key]].sort((a, b) => a.localeCompare(b, 'pl'));
-    if (!values.length) return;
     html += `<div class="filter-group">`;
     html += `<span class="filter-group-label">${label}</span>`;
     html += `<div class="filter-pills">`;
