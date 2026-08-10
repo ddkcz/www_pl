@@ -202,22 +202,23 @@ function renderProjectTags() {
     if (container) container.innerHTML = buildTagSpans(tags);
   });
 
-  // project detail pages — fill .project-stack and karta rows
+  // Project detail pages — render tags inside the project datasheet
   const tags = PROJECT_TAGS[pageKey];
   if (!tags) return;
 
-  const stackEl = document.querySelector('.project-stack');
-  if (stackEl) stackEl.innerHTML = buildTagSpans(tags);
-
   const tbody = document.querySelector('.project-datasheet tbody');
   if (tbody) {
-    const cadRow    = tags.cad && tags.cad.length
-      ? `<tr><th>CAD</th><td>${tags.cad.join(' · ')}</td></tr>` : '';
-    const sectorValues = IS_ENGLISH
-      ? tags.sector.map(value => ({ 'Konstrukcje drewniane': 'Timber structures', 'Meble na wymiar': 'Custom furniture' }[value] || value))
-      : tags.sector;
-    const sectorRow = `<tr><th>${IS_ENGLISH ? 'Sector' : 'Sektor'}</th><td>${sectorValues.join(' · ')}</td></tr>`;
-    const stackRow  = `<tr><th>Stack</th><td>${tags.stack.join(' · ')}</td></tr>`;
+    const translations = {
+      'Konstrukcje drewniane': 'Timber structures',
+      'Meble na wymiar': 'Custom furniture',
+    };
+    const label = value => IS_ENGLISH ? (translations[value] || value) : value;
+    const isGridDatasheet = Boolean(tbody.closest('.project-datasheet--grid'));
+    const cadRow = tags.cad && tags.cad.length
+      ? `<tr><th>CAD</th><td>${tags.cad.map(label).join(' · ')}</td></tr>`
+      : (isGridDatasheet ? '<tr><th>CAD</th><td>—</td></tr>' : '');
+    const sectorRow = `<tr><th>${IS_ENGLISH ? 'Sector' : 'Sektor'}</th><td>${tags.sector.map(label).join(' · ')}</td></tr>`;
+    const stackRow = `<tr><th>Stack</th><td>${tags.stack.map(label).join(' · ')}</td></tr>`;
     tbody.insertAdjacentHTML('beforeend', cadRow + sectorRow + stackRow);
   }
 }
@@ -377,16 +378,56 @@ function filterCards(activeFilters) {
 }
 
 // ============================================
+// Contact form — submit without redirect
+// ============================================
+(function () {
+  const form = document.querySelector('#contact-form');
+  if (!form) return;
+
+  const submitButton = form.querySelector('button[type="submit"]');
+  if (!submitButton) return;
+
+  const defaultLabel = submitButton.textContent;
+  submitButton.setAttribute('aria-live', 'polite');
+
+  form.addEventListener('submit', async event => {
+    event.preventDefault();
+
+    submitButton.disabled = true;
+    submitButton.textContent = IS_ENGLISH ? 'Sending…' : 'Wysyłanie…';
+
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: new FormData(form),
+        headers: { Accept: 'application/json' }
+      });
+
+      if (!response.ok) throw new Error(`Form submission failed: ${response.status}`);
+
+      form.reset();
+      submitButton.textContent = IS_ENGLISH ? 'Message sent!' : 'Wiadomość wysłana!';
+    } catch (error) {
+      console.error(error);
+      submitButton.disabled = false;
+      submitButton.textContent = IS_ENGLISH ? 'Could not send — try again' : 'Nie udało się — spróbuj ponownie';
+
+      window.setTimeout(() => {
+        if (!submitButton.disabled) submitButton.textContent = defaultLabel;
+      }, 5000);
+    }
+  });
+})();
+
+// ============================================
 // Lightbox — project galleries
 // ============================================
 (function () {
-  const gallery = document.querySelector('.project-gallery');
-  if (!gallery) return;
-
-  const figs = [...gallery.querySelectorAll('figure')];
-  if (!figs.length) return;
+  const galleries = [...document.querySelectorAll('.project-gallery')];
+  if (!galleries.length) return;
 
   let cur = 0;
+  let activeFigs = [];
 
   const overlay = document.createElement('div');
   overlay.className = 'lb-overlay lb-hidden';
@@ -403,14 +444,15 @@ function filterCards(activeFilters) {
   const lbCaption = overlay.querySelector('.lb-caption');
   const lbCounter = overlay.querySelector('.lb-counter');
 
-  function open(i) {
-    cur = (i + figs.length) % figs.length;
-    const img = figs[cur].querySelector('img');
-    const cap = figs[cur].querySelector('figcaption');
+  function open(figs, i) {
+    activeFigs = figs;
+    cur = (i + activeFigs.length) % activeFigs.length;
+    const img = activeFigs[cur].querySelector('img');
+    const cap = activeFigs[cur].querySelector('figcaption');
     lbImg.src = img.src;
     lbImg.alt = img.alt;
     lbCaption.textContent = cap ? cap.textContent : '';
-    lbCounter.textContent = `${cur + 1} / ${figs.length}`;
+    lbCounter.textContent = `${cur + 1} / ${activeFigs.length}`;
     overlay.classList.remove('lb-hidden');
     document.body.style.overflow = 'hidden';
   }
@@ -420,16 +462,19 @@ function filterCards(activeFilters) {
     document.body.style.overflow = '';
   }
 
-  figs.forEach((fig, i) => fig.addEventListener('click', () => open(i)));
+  galleries.forEach(gallery => {
+    const figs = [...gallery.querySelectorAll('figure')];
+    figs.forEach((fig, i) => fig.addEventListener('click', () => open(figs, i)));
+  });
   overlay.querySelector('.lb-close').addEventListener('click', close);
-  overlay.querySelector('.lb-prev').addEventListener('click', e => { e.stopPropagation(); open(cur - 1); });
-  overlay.querySelector('.lb-next').addEventListener('click', e => { e.stopPropagation(); open(cur + 1); });
+  overlay.querySelector('.lb-prev').addEventListener('click', e => { e.stopPropagation(); open(activeFigs, cur - 1); });
+  overlay.querySelector('.lb-next').addEventListener('click', e => { e.stopPropagation(); open(activeFigs, cur + 1); });
   overlay.addEventListener('click', e => { if (e.target === overlay) close(); });
 
   document.addEventListener('keydown', e => {
     if (overlay.classList.contains('lb-hidden')) return;
     if (e.key === 'Escape') close();
-    if (e.key === 'ArrowLeft') open(cur - 1);
-    if (e.key === 'ArrowRight') open(cur + 1);
+    if (e.key === 'ArrowLeft') open(activeFigs, cur - 1);
+    if (e.key === 'ArrowRight') open(activeFigs, cur + 1);
   });
 })();

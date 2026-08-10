@@ -922,7 +922,7 @@ a { color: var(--accent); }
   color: var(--line);
 }
 
-.project-entry h2 {
+.project-entry h1 {
   font-size: clamp(1.6rem, 3.5vw, 2.25rem);
   margin-bottom: 0.75rem;
 }
@@ -941,6 +941,11 @@ a { color: var(--accent); }
   gap: 0.4rem;
   margin-bottom: 2.5rem;
 }
+
+.project-stack:empty {
+  display: none;
+}
+
 .project-stack span {
   font-family: var(--font-mono);
   font-size: 0.72rem;
@@ -1006,7 +1011,7 @@ a { color: var(--accent); }
 .project-datasheet {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 4rem;
+  margin-top: 2rem;
   margin-bottom: 1rem;
   font-family: var(--font-mono);
   font-size: 0.78rem;
@@ -1018,7 +1023,6 @@ a { color: var(--accent); }
   text-transform: uppercase;
   letter-spacing: 0.15em;
   padding-bottom: 0.75rem;
-  border-top: 1.5px solid var(--ink);
   padding-top: 0.75rem;
 }
 .project-datasheet caption::before {
@@ -1050,7 +1054,91 @@ a { color: var(--accent); }
   color: var(--ink-soft);
 }
 
+/* Asymmetric technical-drawing title block */
+.project-datasheet--grid {
+  display: block;
+}
+
+.project-datasheet--grid caption {
+  display: block;
+  width: 100%;
+}
+
+.project-datasheet--grid tbody {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  grid-template-areas:
+    "project period"
+    "client role"
+    "cad sector"
+    "stack stack";
+  border-top: 1.5px solid var(--ink-muted);
+  border-left: 1.5px solid var(--ink-muted);
+}
+
+.project-datasheet--grid tr {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 0.9rem 1rem;
+  border-right: 1.5px solid var(--ink-muted);
+  border-bottom: 1.5px solid var(--ink-muted);
+}
+
+.project-datasheet--grid tr:nth-child(1) { grid-area: project; }
+.project-datasheet--grid tr:nth-child(2) { grid-area: client; }
+.project-datasheet--grid tr:nth-child(3) { grid-area: period; }
+.project-datasheet--grid tr:nth-child(4) { grid-area: role; }
+.project-datasheet--grid tr:nth-child(5) { grid-area: cad; }
+.project-datasheet--grid tr:nth-child(6) { grid-area: sector; }
+.project-datasheet--grid tr:nth-child(7) { grid-area: stack; }
+
+.project-datasheet--grid th,
+.project-datasheet--grid td {
+  display: block;
+  width: auto;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  white-space: normal;
+}
+
+.project-datasheet--grid th {
+  font-size: 0.64rem;
+}
+
+.project-datasheet--grid td {
+  font-size: 0.9rem;
+  line-height: 1.35;
+}
+
+@media (max-width: 640px) {
+  .project-datasheet--grid tbody {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "project"
+      "period"
+      "client"
+      "role"
+      "cad"
+      "sector"
+      "stack";
+  }
+}
+
 /* PROJECT GALLERY */
+.project-hero-image {
+  width: 100%;
+  margin: 1.5rem 0;
+}
+
+.project-hero-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .project-gallery {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
