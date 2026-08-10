@@ -405,16 +405,41 @@ function filterCards(activeFilters) {
 // ============================================
 const contactForm = document.querySelector('#contact-form');
 if (contactForm) {
-  contactForm.addEventListener('submit', (e) => {
+  contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const btn = contactForm.querySelector('button[type="submit"]');
+    const status = contactForm.querySelector('#contact-form-status');
     const original = btn.textContent;
-    btn.textContent = '✓ Wiadomość wysłana (demo)';
+
+    btn.textContent = 'Wysyłanie…';
     btn.disabled = true;
-    setTimeout(() => {
+    status.textContent = '';
+    status.className = 'form-status';
+
+    try {
+      const response = await fetch(contactForm.action, {
+        method: contactForm.method,
+        body: new FormData(contactForm),
+        headers: { Accept: 'application/json' },
+      });
+
+      if (!response.ok) {
+        const result = await response.json().catch(() => ({}));
+        const message = result.errors
+          ? result.errors.map(error => error.message).join(' ')
+          : 'Nie udało się wysłać wiadomości. Spróbuj ponownie.';
+        throw new Error(message);
+      }
+
+      contactForm.reset();
+      status.textContent = '✓ Wiadomość została wysłana. Dziękuję!';
+      status.classList.add('form-status--success');
+    } catch (error) {
+      status.textContent = error.message || 'Nie udało się wysłać wiadomości. Spróbuj ponownie.';
+      status.classList.add('form-status--error');
+    } finally {
       btn.textContent = original;
       btn.disabled = false;
-      contactForm.reset();
-    }, 2500);
+    }
   });
 }
