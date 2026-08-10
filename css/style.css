@@ -201,24 +201,31 @@ main {
   gap: 1rem;
 }
 
-.language-switch {
-  display: flex;
+.language-toggle {
+  display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
+  justify-content: center;
+  min-width: 42px;
+  height: 28px;
+  padding: 0 0.65rem;
+  border: 1.5px solid var(--ink);
+  border-radius: 14px;
   font-family: var(--font-mono);
   font-size: 0.72rem;
+  font-weight: 600;
   letter-spacing: 0.08em;
-  color: var(--ink-muted);
-}
-
-.language-switch a {
-  color: var(--ink-muted);
+  color: var(--ink);
+  background: transparent;
   text-decoration: none;
+  line-height: 1;
+  transition: color 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+  flex-shrink: 0;
 }
 
-.language-switch a:hover,
-.language-switch a[aria-current="page"] {
+.language-toggle:hover {
   color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-soft);
 }
 
 .theme-toggle {

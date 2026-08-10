@@ -10,24 +10,7 @@
 // ============================================
 // Shared layout loader (header + footer)
 // ============================================
-const IS_ENGLISH = window.location.pathname.startsWith('/en/');
-const AVAILABLE_ENGLISH_PAGES = new Set([
-  'index.html',
-  'blog.html',
-  'contact.html',
-  'offer.html',
-  'projects.html',
-  'abb.html',
-  'agh-racing.html',
-  'ai.html',
-  'cedrowa.html',
-  'euroloop.html',
-  'globallogic.html',
-  'rally.html',
-  'techramps.html',
-  'wood.html',
-]);
-
+const IS_ENGLISH = window.location.pathname === '/en' || window.location.pathname.startsWith('/en/');
 fetch(IS_ENGLISH ? '/layout-en.html' : '/layout.html')
   .then(r => r.text())
   .then(html => {
@@ -54,13 +37,6 @@ fetch(IS_ENGLISH ? '/layout-en.html' : '/layout.html')
 // ============================================
 function initNav() {
   initLanguageSwitch();
-
-  if (IS_ENGLISH) {
-    document.querySelectorAll('.nav-links a').forEach(link => {
-      const pageName = link.getAttribute('href').split('/').pop();
-      if (!AVAILABLE_ENGLISH_PAGES.has(pageName)) link.closest('li').hidden = true;
-    });
-  }
 
   // Theme toggle
   const themeToggle = document.querySelector('.theme-toggle');
@@ -107,22 +83,16 @@ function initLanguageSwitch() {
   const relativePath = window.location.pathname
     .replace(/^\/en\//, '')
     .replace(/^\//, '') || 'index.html';
-  const normalizedPath = relativePath.endsWith('/') ? `${relativePath}index.html` : relativePath;
-  const pageName = normalizedPath.split('/').pop();
-  const polishLink = document.querySelector('[data-language="pl"]');
-  const englishLink = document.querySelector('[data-language="en"]');
+  const toggle = document.querySelector('[data-language-toggle]');
+  if (!toggle) return;
 
-  if (polishLink) polishLink.href = `/${normalizedPath}`;
-  if (englishLink) englishLink.href = `/en/${normalizedPath}`;
-
-  const currentLink = IS_ENGLISH ? englishLink : polishLink;
-  if (currentLink) currentLink.setAttribute('aria-current', 'page');
-
-  if (!IS_ENGLISH && englishLink && !AVAILABLE_ENGLISH_PAGES.has(pageName)) {
-    englishLink.hidden = true;
-    const separator = englishLink.previousElementSibling;
-    if (separator) separator.hidden = true;
-  }
+  toggle.href = IS_ENGLISH ? `/${relativePath}` : `/en/${relativePath}`;
+  toggle.textContent = IS_ENGLISH ? 'PL' : 'EN';
+  toggle.lang = IS_ENGLISH ? 'pl' : 'en';
+  toggle.setAttribute(
+    'aria-label',
+    IS_ENGLISH ? 'Przełącz na język polski' : 'Switch to English'
+  );
 }
 
 // ============================================
