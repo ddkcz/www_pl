@@ -10,7 +10,25 @@
 // ============================================
 // Shared layout loader (header + footer)
 // ============================================
-fetch('/layout.html')
+const IS_ENGLISH = window.location.pathname.startsWith('/en/');
+const AVAILABLE_ENGLISH_PAGES = new Set([
+  'index.html',
+  'blog.html',
+  'contact.html',
+  'offer.html',
+  'projects.html',
+  'abb.html',
+  'agh-racing.html',
+  'ai.html',
+  'cedrowa.html',
+  'euroloop.html',
+  'globallogic.html',
+  'rally.html',
+  'techramps.html',
+  'wood.html',
+]);
+
+fetch(IS_ENGLISH ? '/layout-en.html' : '/layout.html')
   .then(r => r.text())
   .then(html => {
     const doc = new DOMParser().parseFromString(html, 'text/html');
@@ -35,6 +53,15 @@ fetch('/layout.html')
 // Nav behaviours — called after header inject
 // ============================================
 function initNav() {
+  initLanguageSwitch();
+
+  if (IS_ENGLISH) {
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      const pageName = link.getAttribute('href').split('/').pop();
+      if (!AVAILABLE_ENGLISH_PAGES.has(pageName)) link.closest('li').hidden = true;
+    });
+  }
+
   // Theme toggle
   const themeToggle = document.querySelector('.theme-toggle');
   if (themeToggle) {
@@ -42,7 +69,9 @@ function initNav() {
       const current = document.documentElement.getAttribute('data-theme');
       themeToggle.setAttribute(
         'aria-label',
-        current === 'dark' ? 'Przełącz na tryb jasny' : 'Przełącz na tryb ciemny'
+        current === 'dark'
+          ? (IS_ENGLISH ? 'Switch to light mode' : 'Przełącz na tryb jasny')
+          : (IS_ENGLISH ? 'Switch to dark mode' : 'Przełącz na tryb ciemny')
       );
     };
     setLabel();
@@ -72,6 +101,28 @@ function initNav() {
       link.classList.add('active');
     }
   });
+}
+
+function initLanguageSwitch() {
+  const relativePath = window.location.pathname
+    .replace(/^\/en\//, '')
+    .replace(/^\//, '') || 'index.html';
+  const normalizedPath = relativePath.endsWith('/') ? `${relativePath}index.html` : relativePath;
+  const pageName = normalizedPath.split('/').pop();
+  const polishLink = document.querySelector('[data-language="pl"]');
+  const englishLink = document.querySelector('[data-language="en"]');
+
+  if (polishLink) polishLink.href = `/${normalizedPath}`;
+  if (englishLink) englishLink.href = `/en/${normalizedPath}`;
+
+  const currentLink = IS_ENGLISH ? englishLink : polishLink;
+  if (currentLink) currentLink.setAttribute('aria-current', 'page');
+
+  if (!IS_ENGLISH && englishLink && !AVAILABLE_ENGLISH_PAGES.has(pageName)) {
+    englishLink.hidden = true;
+    const separator = englishLink.previousElementSibling;
+    if (separator) separator.hidden = true;
+  }
 }
 
 // ============================================
@@ -156,10 +207,15 @@ const PROJECT_TAGS = {
 };
 
 function buildTagSpans(tags) {
+  const translations = {
+    'Konstrukcje drewniane': 'Timber structures',
+    'Meble na wymiar': 'Custom furniture',
+  };
+  const label = value => IS_ENGLISH ? (translations[value] || value) : value;
   return [
-    ...(tags.cad    || []).map(t => `<span class="tag-cad">${t}</span>`),
-    ...(tags.sector || []).map(t => `<span class="tag-sector">${t}</span>`),
-    ...(tags.stack  || []).map(t => `<span class="tag-tech">${t}</span>`),
+    ...(tags.cad    || []).map(t => `<span class="tag-cad">${label(t)}</span>`),
+    ...(tags.sector || []).map(t => `<span class="tag-sector">${label(t)}</span>`),
+    ...(tags.stack  || []).map(t => `<span class="tag-tech">${label(t)}</span>`),
   ].join('');
 }
 
@@ -187,7 +243,10 @@ function renderProjectTags() {
   if (tbody) {
     const cadRow    = tags.cad && tags.cad.length
       ? `<tr><th>CAD</th><td>${tags.cad.join(' · ')}</td></tr>` : '';
-    const sectorRow = `<tr><th>Sektor</th><td>${tags.sector.join(' · ')}</td></tr>`;
+    const sectorValues = IS_ENGLISH
+      ? tags.sector.map(value => ({ 'Konstrukcje drewniane': 'Timber structures', 'Meble na wymiar': 'Custom furniture' }[value] || value))
+      : tags.sector;
+    const sectorRow = `<tr><th>${IS_ENGLISH ? 'Sector' : 'Sektor'}</th><td>${sectorValues.join(' · ')}</td></tr>`;
     const stackRow  = `<tr><th>Stack</th><td>${tags.stack.join(' · ')}</td></tr>`;
     tbody.insertAdjacentHTML('beforeend', cadRow + sectorRow + stackRow);
   }
@@ -216,22 +275,25 @@ function renderFilters() {
 
   const groups = [
     { key: 'cad',    label: 'CAD',    cls: 'tag-cad' },
-    { key: 'sector', label: 'Sektor', cls: 'tag-sector' },
+    { key: 'sector', label: IS_ENGLISH ? 'Sector' : 'Sektor', cls: 'tag-sector' },
     { key: 'stack',  label: 'Stack',  cls: 'tag-tech' },
   ];
 
   let html = `<div class="filter-bar-header">
-      <span class="filter-bar-title">Filtruj projekty</span>
-      <button class="filter-reset" id="filter-reset" disabled>✕ Wyczyść</button>
+      <span class="filter-bar-title">${IS_ENGLISH ? 'Filter projects' : 'Filtruj projekty'}</span>
+      <button class="filter-reset" id="filter-reset" disabled>✕ ${IS_ENGLISH ? 'Clear' : 'Wyczyść'}</button>
     </div>`;
 
   groups.forEach(({ key, label, cls }) => {
-    const values = [...all[key]].sort((a, b) => a.localeCompare(b, 'pl'));
+    const values = [...all[key]].sort((a, b) => a.localeCompare(b, IS_ENGLISH ? 'en' : 'pl'));
     html += `<div class="filter-group">`;
     html += `<span class="filter-group-label">${label}</span>`;
     html += `<div class="filter-pills">`;
     values.forEach(v => {
-      html += `<button class="filter-pill ${cls}" data-cat="${key}" data-val="${v}">${v}</button>`;
+      const displayValue = IS_ENGLISH
+        ? ({ 'Konstrukcje drewniane': 'Timber structures', 'Meble na wymiar': 'Custom furniture' }[v] || v)
+        : v;
+      html += `<button class="filter-pill ${cls}" data-cat="${key}" data-val="${v}">${displayValue}</button>`;
     });
     html += `</div></div>`;
   });
@@ -334,7 +396,9 @@ function filterCards(activeFilters) {
     if (!noResults) {
       noResults = document.createElement('p');
       noResults.className = 'filter-no-results';
-      noResults.textContent = 'Brak projektów dla wybranych filtrów.';
+      noResults.textContent = IS_ENGLISH
+        ? 'No projects match the selected filters.'
+        : 'Brak projektów dla wybranych filtrów.';
       grid.appendChild(noResults);
     }
   } else if (noResults) {
@@ -357,11 +421,11 @@ function filterCards(activeFilters) {
   const overlay = document.createElement('div');
   overlay.className = 'lb-overlay lb-hidden';
   overlay.innerHTML =
-    '<button class="lb-close" aria-label="Zamknij">✕</button>' +
-    '<button class="lb-btn lb-prev" aria-label="Poprzednie">‹</button>' +
+    `<button class="lb-close" aria-label="${IS_ENGLISH ? 'Close' : 'Zamknij'}">✕</button>` +
+    `<button class="lb-btn lb-prev" aria-label="${IS_ENGLISH ? 'Previous' : 'Poprzednie'}">‹</button>` +
     '<img class="lb-img" src="" alt="">' +
     '<p class="lb-caption"></p>' +
-    '<button class="lb-btn lb-next" aria-label="Następne">›</button>' +
+    `<button class="lb-btn lb-next" aria-label="${IS_ENGLISH ? 'Next' : 'Następne'}">›</button>` +
     '<span class="lb-counter"></span>';
   document.body.appendChild(overlay);
 

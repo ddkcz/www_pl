@@ -201,6 +201,26 @@ main {
   gap: 1rem;
 }
 
+.language-switch {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--ink-muted);
+}
+
+.language-switch a {
+  color: var(--ink-muted);
+  text-decoration: none;
+}
+
+.language-switch a:hover,
+.language-switch a[aria-current="page"] {
+  color: var(--accent);
+}
+
 .theme-toggle {
   background: transparent;
   border: 1.5px solid var(--ink);
