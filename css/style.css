@@ -1315,19 +1315,6 @@ form button {
   margin-top: 0.75rem;
 }
 
-.form-status {
-  min-height: 1.5rem;
-  margin: 0;
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  line-height: 1.5;
-  color: var(--ink-muted);
-}
-
-.form-status:empty { display: none; }
-.form-status--success { color: var(--blueprint); }
-.form-status--error { color: var(--accent); }
-
 /* FOOTER */
 footer {
   border-top: 1.5px solid var(--ink);
