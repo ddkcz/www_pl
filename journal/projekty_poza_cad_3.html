@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prototyp działa. Czy produkt jest gotowy do produkcji? | CADsmart</title>
+  <meta name="description" content="Jak przejść od działającego prototypu do powtarzalnego produktu: testy, dokumentacja, zmiany, koszt, montaż i cykl życia.">
+  <meta name="author" content="Dawid Kuczyński">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="CADsmart">
+  <meta property="og:url" content="https://cadsmart.pl/journal/projekty_poza_cad_3.html">
+  <meta property="og:title" content="Prototyp działa. Czy produkt jest gotowy do produkcji? | CADsmart">
+  <meta property="og:description" content="Jak przejść od działającego prototypu do powtarzalnego produktu: testy, dokumentacja, zmiany, koszt, montaż i cykl życia.">
+  <meta property="og:image" content="https://cadsmart.pl/assets/og-image.png">
+  <meta property="article:published_time" content="2026-08-11">
+  <meta property="article:author" content="Dawid Kuczyński">
+  <meta property="article:section" content="Projekt poza ekranem CAD">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="alternate" hreflang="pl" href="https://cadsmart.pl/journal/projekty_poza_cad_3.html">
+  <link rel="alternate" hreflang="en" href="https://cadsmart.pl/en/journal/projekty_poza_cad_3.html">
+  <script>
+    (function(){
+      var t = localStorage.getItem('theme');
+      if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div id="header-placeholder"></div>
+  <main class="container">
+    <a href="../blog.html" class="back-link">← Wróć do dziennika</a>
+    <article class="journal-entry" data-published="2026.08.11" data-author="Dawid Kuczyński">
+      <header class="page-header">
+        <span class="section-label">DZIENNIK · ARTYKUŁ</span>
+        <div class="journal-series" data-article-series="beyond-cad" data-series-part="03" data-series-total="03">Projekt poza ekranem CAD</div>
+        <h1>Prototyp działa. Co musi się wydarzyć przed uruchomieniem produkcji?</h1>
+        <p class="journal-lead">Jak przejść od działającego prototypu do powtarzalnego produktu: testy, dokumentacja, zmiany, koszt, montaż i cykl życia.</p>
+      </header>
+
+      <h2>Działający prototyp to dopiero początek</h2>
+      <p>Działający prototyp daje zespołowi coś bardzo potrzebnego: dowód, że główna koncepcja ma sens. Mechanizm wykonuje ruch, konstrukcja przenosi obciążenie, urządzenie realizuje funkcję, a prezentacja dla interesariuszy wreszcie pokazuje coś namacalnego. To ważny moment, ale łatwo wyciągnąć z niego zbyt daleki wniosek: „produkt jest prawie gotowy”.<br class="paragraph-break"><br>Prototyp potwierdza wybrane hipotezy. Produkcja wymaga natomiast powtarzalności, kontrolowalności, aktualnej dokumentacji, stabilnego łańcucha dostaw i procesu, który nie zależy od wiedzy jednej osoby. Egzemplarz złożony przez zespół R&amp;D może działać dzięki poprawkom wykonanym na miejscu, ręcznemu dopasowaniu i znajomości wszystkich wcześniejszych iteracji. Fabryka nie powinna potrzebować tego samego kontekstu. Przejście od „działa” do „można to powtarzalnie wytwarzać” wymaga domknięcia pięciu obszarów: walidacji, kryteriów akceptacji, dokumentacji i zmian, ekonomiki całego produktu oraz jego życia po opuszczeniu produkcji.</p>
+      <h2>1. Test ma potwierdzić ryzyko, a nie tylko działanie</h2>
+      <p>Pierwszy prototyp zwykle odpowiada na najważniejsze pytanie funkcjonalne. Kolejne testy powinny być już budowane wokół ryzyk. Inaczej zespół może wielokrotnie potwierdzać to, co wie, i nadal nie sprawdzić warunków, które zdecydują o powodzeniu produktu.<br class="paragraph-break"><br>Plan walidacji warto rozpocząć od mapy ryzyk i wymagań. Dla każdego kluczowego założenia trzeba określić:</p>
+      <ul class="journal-bullets">
+        <li>co dokładnie chcemy potwierdzić;</li>
+        <li>jaki egzemplarz, konfiguracja i warunki są reprezentatywne;</li>
+        <li>co mierzymy i z jaką dokładnością;</li>
+        <li>ile powtórzeń potrzebujemy do podjęcia decyzji;</li>
+        <li>jaki wynik uznajemy za pozytywny;</li>
+        <li>co zrobimy, jeśli wynik będzie graniczny lub negatywny.</li>
+      </ul>
+      <p>Nie każdy test musi być rozbudowany. Ważne, aby był projektowany pod decyzję. Czasem wystarczy proste oprzyrządowanie, które umożliwi powtarzalne obciążenie i pomiar. W innym przypadku potrzebne będzie porównanie kilku czynników, na przykład poprzez planowanie eksperymentu (DOE), aby odróżnić wpływ poszczególnych parametrów.<br class="paragraph-break"><br>W pracy nad produktami elektromechanicznymi przygotowywałem protokoły i raporty testowe, kryteria akceptacji oraz stanowiska wspierające testy produkcyjne. Wspólnym mianownikiem było przełożenie wymagania na powtarzalną metodę. Bez tego nawet duża liczba prób może pozostawić zespół bez jednoznacznej odpowiedzi.</p>
+      <section class="journal-checklist">
+        <h3>Pytanie kontrolne</h3>
+        <ul class="journal-checklist__items">
+          <li>Które największe ryzyko nadal opieramy na pojedynczym udanym egzemplarzu lub ocenie „wygląda dobrze”?</li>
+          <li>Czy plan testów uwzględnia warunki graniczne, zmienność części, montażu i użytkowania oraz liczbę prób adekwatną do podejmowanej decyzji?</li>
+          <li>Czy każdy wynik można powiązać z konkretnym wymaganiem i jednoznaczną decyzją: akceptujemy, poprawiamy albo wracamy do koncepcji?</li>
+        </ul>
+      </section>
+      <h2>2. Kryterium akceptacji musi działać także bez konstruktora obok</h2>
+      <p>Podczas prototypowania zespół toleruje niejednoznaczność. Konstruktor wie, jak ułożyć przewód, z jaką siłą dokręcić połączenie i który dźwięk jest normalny. W produkcji taka wiedza musi zostać zamieniona w sposób pracy, który można przekazać, wykonać i skontrolować. Kryterium „zgodne z modelem” nie wystarcza. Potrzebne są cechy krytyczne, metody kontroli oraz granice decyzji. Trzeba również sprawdzić, czy wybrany wymiar lub parametr rzeczywiście da się zmierzyć w warunkach produkcyjnych.<br class="paragraph-break"><br>Dobry plan kontroli łączy trzy poziomy:</p>
+      <ul class="journal-bullets">
+        <li>Część: czy kluczowe cechy wykonano zgodnie z dokumentacją?</li>
+        <li>Montaż: czy proces połączenia i regulacji daje właściwy wynik?</li>
+        <li>Produkt: czy gotowy egzemplarz spełnia funkcję oraz wymagania bezpieczeństwa?</li>
+      </ul>
+      <p>Jeśli produkt przechodzi wyłącznie test końcowy, wada może zostać wykryta bardzo późno, gdy koszty części i montażu są już poniesione. Jeśli kontrolujemy wszystko bez związku z funkcją, proces staje się drogi i powolny. Celem jest kontrola właściwych cech w miejscu, w którym informacja pozwala jeszcze skutecznie zareagować.</p>
+      <section class="journal-checklist">
+        <h3>Pytanie kontrolne</h3>
+        <ul class="journal-checklist__items">
+          <li>Czy osoba, która nie brała udziału w rozwoju produktu, potrafi na podstawie dokumentacji jednoznacznie zdecydować, czy część i gotowy wyrób są akceptowalne?</li>
+          <li>Czy metoda kontroli wskazuje narzędzie, sposób bazowania, warunki pomiaru, granice wyniku oraz wymagania dotyczące kalibracji?</li>
+          <li>Czy wiadomo, co zrobić z wynikiem niezgodnym: kto podejmuje decyzję, jak oznaczamy wyrób i jak dokumentujemy odstępstwo lub poprawkę?</li>
+        </ul>
+      </section>
+      <h2>3. Dokumentacja musi opisywać jedną aktualną wersję produktu</h2>
+      <p>Prototyp może powstać z mieszanki plików, notatek, wiadomości i ręcznych poprawek. Przy małej liczbie osób zespół zwykle wie, co zostało zmienione. Ten model przestaje działać, gdy rośnie liczba części, dostawców, stanowisk i egzemplarzy.<br class="paragraph-break"><br>Gotowość produkcyjna wymaga spójnego pakietu informacji. W zależności od produktu może obejmować między innymi:</p>
+      <ul class="journal-bullets">
+        <li>zatwierdzone modele i rysunki z rewizjami;</li>
+        <li>strukturę EBOM, czyli inżynierską listę materiałową;</li>
+        <li>specyfikacje komponentów handlowych;</li>
+        <li>instrukcje montażu i wymagane momenty dokręcania;</li>
+        <li>procedury kontroli i testów;</li>
+        <li>wymagania dotyczące oznaczeń, pakowania i transportu;</li>
+        <li>ślad decyzji o odstępstwach oraz zmianach.</li>
+      </ul>
+      <p>Sama obecność plików nie oznacza jeszcze kontroli konfiguracji. Zespół powinien potrafić odpowiedzieć: która rewizja jest aktualna, gdzie jest zatwierdzona, od którego egzemplarza obowiązuje i jakie inne elementy zmienia. W środowisku PLM procesy ECR/ECO - zgłoszenia i zatwierdzenia zmiany inżynierskiej - pomagają przeprowadzić zmianę przez produkt zamiast poprawiać pojedynczy plik. Ma to znaczenie szczególnie wtedy, gdy jedna decyzja wpływa jednocześnie na model, rysunek, BOM, zapas magazynowy, instrukcję montażu i test.<br class="paragraph-break"><br>Pracując z Arena PLM, EBOM oraz procesami zmian, widziałem, że narzędzie jest tylko częścią rozwiązania. Najpierw trzeba ustalić odpowiedzialność: kto inicjuje zmianę, kto ocenia jej wpływ, kto ją zatwierdza i w jaki sposób produkcja otrzymuje jednoznaczną informację o wdrożeniu.</p>
+      <section class="journal-checklist">
+        <h3>Pytanie kontrolne</h3>
+        <ul class="journal-checklist__items">
+          <li>Czy potrafimy dziś odtworzyć konfigurację dowolnego zbudowanego egzemplarza i wskazać dokumentację, według której powstał?</li>
+          <li>Czy wpływ każdej zmiany został przeprowadzony przez model, rysunek, EBOM, instrukcję montażu, test, zapas magazynowy i dokumentację dostawcy?</li>
+          <li>Czy dla nowej rewizji wiadomo, kto ją zatwierdził, od kiedy obowiązuje i których numerów seryjnych, partii lub zamówień dotyczy?</li>
+        </ul>
+      </section>
+      <h2>4. Optymalizujemy koszt produktu i procesu, nie cenę pojedynczej części</h2>
+      <p>Po potwierdzeniu funkcji naturalnie pojawia się presja na obniżenie kosztu. Najłatwiej porównywać ceny części, ale to tylko fragment ekonomiki produktu. Tańszy komponent może wymagać dodatkowego uchwytu, dłuższego montażu, osobnej kontroli lub częstszych poprawek. Droższa część może z kolei uprościć złożenie, ograniczyć liczbę elementów złącznych i skrócić test. Decyzję warto więc oceniać przez całkowity koszt wytworzenia i obsługi.<br class="paragraph-break"><br>Przydatne pytania obejmują:</p>
+      <ul class="journal-bullets">
+        <li>ile operacji i zmian narzędzia wymaga montaż;</li>
+        <li>które czynności są podatne na pomyłkę;</li>
+        <li>czy potrzebne jest specjalne oprzyrządowanie;</li>
+        <li>jaki jest koszt kontroli i testu;</li>
+        <li>ile wariantów części utrzymujemy w magazynie;</li>
+        <li>czy dostawca może powtarzalnie utrzymać wymagane tolerancje;</li>
+        <li>co stanie się z kosztem przy docelowym wolumenie.</li>
+      </ul>
+      <p>To właśnie tutaj DFMA - projektowanie z myślą o wytwarzaniu i montażu - staje się narzędziem biznesowym. Mniej części, prostsze bazowanie, lepszy dostęp i ograniczenie możliwości błędnego montażu mogą jednocześnie skrócić czas, poprawić jakość i zmniejszyć ryzyko.<br class="paragraph-break"><br>Przy wdrażaniu produktów do produkcji masowej oraz budowaniu procedur R&amp;D i produkcji kluczowe było przejście od jednego działającego egzemplarza do procesu, który daje ten sam wynik wielokrotnie. To wymaga współpracy konstrukcji, zakupów, jakości, dostawców i osób odpowiedzialnych za montaż - nie jednorazowej rundy „cost down” na końcu.</p>
+      <section class="journal-checklist">
+        <h3>Pytanie kontrolne</h3>
+        <ul class="journal-checklist__items">
+          <li>Czy zmiana naprawdę obniża koszt całego produktu, czy tylko przenosi go do montażu, jakości, zapasu lub serwisu?</li>
+          <li>Czy porównanie kosztu uwzględnia docelowy wolumen, czas pracy, oprzyrządowanie, kontrolę, braki, logistykę i koszty zmian?</li>
+          <li>Czy możemy usunąć część, operację, regulację albo możliwość pomyłki zamiast jedynie negocjować niższą cenę istniejącego rozwiązania?</li>
+        </ul>
+      </section>
+      <h2>5. Produkcja nie jest ostatnim etapem życia produktu</h2>
+      <p>Gotowy wyrób trzeba jeszcze zabezpieczyć, przetransportować, zainstalować, użytkować, serwisować i kiedyś wycofać. Każdy z tych etapów może ujawnić założenie pominięte w prototypie. Pakowanie jest dobrym przykładem. Produkt, który działa w laboratorium, może nie przetrwać transportu albo wymagać kosztownej skrzyni, jeśli konstrukcja nie uwzględnia punktów podparcia, elementów podatnych na uszkodzenie i sposobu podnoszenia. W projekcie realizowanym dla klienta w USA pakowanie było częścią zakresu obok konstrukcji, kosztu i koordynacji. Nie było dodatkiem po zakończeniu projektowania, lecz warunkiem dostarczenia rozwiązania.<br class="paragraph-break"><br>Podobnie jest z serwisem. Dostęp do części zużywalnej, możliwość diagnozy, czas demontażu i identyfikacja rewizji wpływają na koszt już po sprzedaży. Jeśli zespół nie uwzględni ich przed zamrożeniem projektu, późniejsze usprawnienia mogą wymagać zmian w obudowie, okablowaniu lub architekturze podzespołów. Przed uruchomieniem produkcji warto więc przeprowadzić produkt przez pełny scenariusz:</p>
+      <ul class="journal-bullets">
+        <li>odbiór komponentów;</li>
+        <li>magazynowanie i identyfikację;</li>
+        <li>montaż oraz test;</li>
+        <li>pakowanie i transport;</li>
+        <li>instalację u klienta;</li>
+        <li>użytkowanie, serwis i obsługę zmian;</li>
+        <li>wycofanie lub wymianę.</li>
+      </ul>
+      <section class="journal-checklist">
+        <h3>Pytanie kontrolne</h3>
+        <ul class="journal-checklist__items">
+          <li>Który etap po opuszczeniu linii produkcyjnej może dziś wymusić zmianę konstrukcji?</li>
+          <li>Czy pakowanie, transport, instalacja, użytkowanie i serwis zostały sprawdzone na rzeczywistych ograniczeniach, a nie tylko opisane jako późniejsze zadania?</li>
+          <li>Czy informacje z produkcji i eksploatacji wracają do kontrolowanego procesu zmian, tak aby poprawka była widoczna w kolejnych egzemplarzach i dokumentacji?</li>
+        </ul>
+      </section>
+      <h2>Kiedy prototyp staje się produktem?</h2>
+      <p>Nie ma jednej ceremonii, która zmienia prototyp w produkt. Gotowość powstaje wtedy, gdy dowody, dokumentacja i proces zaczynają tworzyć spójny system.<br class="paragraph-break"><br>Przed skalowaniem warto potwierdzić, że:</p>
+      <ul class="journal-bullets">
+        <li>kluczowe wymagania mają wyniki testów i jednoznaczne kryteria;</li>
+        <li>cechy krytyczne można wytworzyć oraz skontrolować;</li>
+        <li>dokumentacja opisuje jedną zatwierdzoną konfigurację;</li>
+        <li>zmiany mają właścicieli i kontrolowany sposób wdrożenia;</li>
+        <li>koszt oceniono na poziomie produktu, montażu, jakości i serwisu;</li>
+        <li>pakowanie, transport, instalacja oraz cykl życia nie opierają się na improwizacji.</li>
+      </ul>
+      <p>Działający prototyp jest ważnym dowodem. Gotowy do produkcji produkt wymaga jednak czegoś więcej: powtarzalnego sposobu osiągania tego samego wyniku przez dostawców, produkcję i kontrolę - również wtedy, gdy zespół R&amp;D nie stoi obok.<br class="paragraph-break"><br>Jeżeli przygotowujesz produkt do NPI, uruchomienia produkcji lub przekazania dokumentacji dostawcom, mogę pomóc w przeglądzie gotowości produkcyjnej, DFMA, strukturze EBOM, planie testów i uporządkowaniu procesu zmian.</p>
+    </article>
+  </main>
+  <div id="footer-placeholder"></div>
+  <script src="../js/script.js"></script>
+</body>
+</html>

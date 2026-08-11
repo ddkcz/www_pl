@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The prototype works. What must happen before production begins? | CADsmart</title>
+  <meta name="description" content="How to move from a working prototype to a repeatable product: testing, documentation, change control, cost, assembly and lifecycle.">
+  <meta name="author" content="Dawid Kuczyński">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="CADsmart">
+  <meta property="og:url" content="https://cadsmart.pl/en/journal/projekty_poza_cad_3.html">
+  <meta property="og:title" content="The prototype works. What must happen before production begins? | CADsmart">
+  <meta property="og:description" content="How to move from a working prototype to a repeatable product: testing, documentation, change control, cost, assembly and lifecycle.">
+  <meta property="og:image" content="https://cadsmart.pl/assets/og-image.png">
+  <meta property="article:published_time" content="2026-08-11">
+  <meta property="article:author" content="Dawid Kuczyński">
+  <meta property="article:section" content="Beyond the CAD screen">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="alternate" hreflang="pl" href="https://cadsmart.pl/journal/projekty_poza_cad_3.html">
+  <link rel="alternate" hreflang="en" href="https://cadsmart.pl/en/journal/projekty_poza_cad_3.html">
+  <script>
+    (function(){
+      var t = localStorage.getItem('theme');
+      if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+  <div id="header-placeholder"></div>
+  <main class="container">
+    <a href="../blog.html" class="back-link">← Back to the journal</a>
+    <article class="journal-entry" data-published="2026.08.11" data-author="Dawid Kuczyński">
+      <header class="page-header">
+        <span class="section-label">JOURNAL · ARTICLE</span>
+        <div class="journal-series" data-article-series="beyond-cad" data-series-part="03" data-series-total="03">Beyond the CAD screen</div>
+        <h1>The prototype works. What must happen before production begins?</h1>
+        <p class="journal-lead">How to move from a working prototype to a repeatable product: testing, documentation, change control, cost, assembly and lifecycle.</p>
+      </header>
+
+      <h2>A working prototype is only the beginning</h2>
+      <p>A working prototype gives the team something essential: evidence that the main concept makes sense. The mechanism moves, the structure carries its load, the device performs its function and a stakeholder presentation finally has something tangible to show. This is an important moment, but it is easy to draw an overly broad conclusion from it: “the product is almost ready”.<br class="paragraph-break"><br>A prototype confirms selected hypotheses. Production, by contrast, requires repeatability, inspectability, current documentation, a stable supply chain and a process that does not depend on one person's knowledge. A unit assembled by the R&amp;D team may work because of adjustments made on the spot, manual fitting and familiarity with every previous iteration. The factory should not need the same context. Moving from “it works” to “we can manufacture it repeatedly” requires five areas to be closed: validation, acceptance criteria, documentation and change control, whole-product economics and the product's life after it leaves manufacturing.</p>
+
+      <h2>1. A test must confirm risk, not merely operation</h2>
+      <p>The first prototype usually answers the most important functional question. Subsequent tests should be built around risks. Otherwise, the team may repeatedly confirm what it already knows while leaving untested the conditions that will determine whether the product succeeds.<br class="paragraph-break"><br>A validation plan should begin with a map of risks and requirements. For each key assumption, define:</p>
+      <ul class="journal-bullets">
+        <li>exactly what is to be confirmed;</li>
+        <li>which unit, configuration and conditions are representative;</li>
+        <li>what will be measured and with what accuracy;</li>
+        <li>how many repetitions are needed to support the decision;</li>
+        <li>what constitutes a positive result;</li>
+        <li>what happens if the result is marginal or negative.</li>
+      </ul>
+      <p>Not every test has to be elaborate. What matters is that it is designed around a decision. Sometimes a simple fixture that enables repeatable loading and measurement is enough. In other cases, several factors must be compared—for example through design of experiments (DOE)—to distinguish the influence of individual parameters.<br class="paragraph-break"><br>While working on electromechanical products, I prepared test protocols and reports, acceptance criteria and fixtures supporting production testing. The common requirement was to translate a requirement into a repeatable method. Without this, even a large number of trials may leave the team without a clear answer.</p>
+      <section class="journal-checklist">
+        <h3>Review questions</h3>
+        <ul class="journal-checklist__items">
+          <li>Which greatest risk is still supported only by one successful unit or an assessment that “it looks good”?</li>
+          <li>Does the test plan include boundary conditions, variation in parts, assembly and use, and a number of trials appropriate to the decision being made?</li>
+          <li>Can every result be linked to a specific requirement and an unambiguous decision: accept, improve or return to the concept?</li>
+        </ul>
+      </section>
+
+      <h2>2. Acceptance criteria must work without the designer standing nearby</h2>
+      <p>During prototyping, a team tolerates ambiguity. The designer knows how to route a cable, how tightly to secure a joint and which sound is normal. In production, that knowledge must become a way of working that can be communicated, performed and inspected.<br class="paragraph-break"><br>“Matches the model” is not a sufficient criterion. Critical characteristics, inspection methods and decision limits are required. The team must also verify that the selected dimension or parameter can actually be measured under production conditions. A good control plan connects three levels:</p>
+      <ul class="journal-bullets">
+        <li><strong>Part:</strong> were the critical characteristics manufactured in accordance with the documentation?</li>
+        <li><strong>Assembly:</strong> does the joining and adjustment process produce the correct result?</li>
+        <li><strong>Product:</strong> does the completed unit perform its function and meet safety requirements?</li>
+      </ul>
+      <p>If a product undergoes only a final test, a defect may be discovered very late, after the costs of parts and assembly have already been incurred. If everything is inspected without reference to function, the process becomes expensive and slow. The aim is to inspect the right characteristics at a point where the information still enables an effective response.</p>
+      <section class="journal-checklist">
+        <h3>Review questions</h3>
+        <ul class="journal-checklist__items">
+          <li>Can someone who did not participate in product development use the documentation to decide unambiguously whether the part and finished product are acceptable?</li>
+          <li>Does the inspection method specify the instrument, datum method, measurement conditions, result limits and calibration requirements?</li>
+          <li>Is it clear what to do with a nonconforming result: who makes the decision, how the product is identified and how a deviation or rework is documented?</li>
+        </ul>
+      </section>
+
+      <h2>3. Documentation must describe one current product configuration</h2>
+      <p>A prototype may be built from a mixture of files, notes, messages and manual corrections. With a small team, everyone usually knows what changed. This model stops working as the number of parts, suppliers, workstations and units grows.<br class="paragraph-break"><br>Production readiness requires a coherent information package. Depending on the product, this may include:</p>
+      <ul class="journal-bullets">
+        <li>approved models and drawings with revisions;</li>
+        <li>the EBOM—engineering bill of materials;</li>
+        <li>specifications for standard components;</li>
+        <li>assembly instructions and required tightening torques;</li>
+        <li>inspection and test procedures;</li>
+        <li>marking, packaging and transport requirements;</li>
+        <li>a record of decisions concerning deviations and changes.</li>
+      </ul>
+      <p>The mere presence of files does not amount to configuration control. The team should be able to answer which revision is current, where it was approved, from which unit it applies and what other items it changes.<br class="paragraph-break"><br>In a PLM environment, ECR and ECO processes—engineering change requests and orders—help carry a change through the product rather than correcting one isolated file. This matters especially when one decision affects the model, drawing, BOM, inventory, assembly instruction and test at the same time.</p>
+      <p>While working with Arena PLM, EBOM structures and change processes, I saw that the tool is only part of the solution. Responsibility must come first: who initiates a change, who assesses its impact, who approves it and how manufacturing receives unambiguous implementation information.</p>
+      <section class="journal-checklist">
+        <h3>Review questions</h3>
+        <ul class="journal-checklist__items">
+          <li>Can we reconstruct the configuration of any unit built to date and identify the documentation used to manufacture it?</li>
+          <li>Has the impact of every change been carried through the model, drawing, EBOM, assembly instruction, test, inventory and supplier documentation?</li>
+          <li>For a new revision, is it clear who approved it, when it takes effect and which serial numbers, batches or orders it covers?</li>
+        </ul>
+      </section>
+
+      <h2>4. Optimise the cost of the product and process, not the price of one part</h2>
+      <p>Once function has been confirmed, pressure to reduce cost follows naturally. Part prices are the easiest values to compare, but they represent only one element of product economics. A cheaper component may require an additional bracket, longer assembly, separate inspection or more frequent rework. A more expensive part may simplify the assembly, reduce the number of fasteners and shorten testing.<br class="paragraph-break"><br>A decision should therefore be assessed through the total cost of manufacturing and support. Useful questions include:</p>
+      <ul class="journal-bullets">
+        <li>how many operations and tool changes assembly requires;</li>
+        <li>which tasks are susceptible to error;</li>
+        <li>whether special fixtures are required;</li>
+        <li>the cost of inspection and testing;</li>
+        <li>how many part variants must be held in inventory;</li>
+        <li>whether the supplier can repeatedly maintain the required tolerances;</li>
+        <li>what happens to cost at the target volume.</li>
+      </ul>
+      <p>This is where DFMA—design for manufacture and assembly—becomes a business tool. Fewer parts, simpler locating, better access and fewer opportunities for incorrect assembly can simultaneously shorten lead time, improve quality and reduce risk.<br class="paragraph-break"><br>When launching products into volume production and establishing R&amp;D and manufacturing procedures, the key challenge was moving from one working unit to a process that repeatedly produced the same result. That requires collaboration between design, purchasing, quality, suppliers and assembly—not a one-off “cost-down” exercise at the end.</p>
+      <section class="journal-checklist">
+        <h3>Review questions</h3>
+        <ul class="journal-checklist__items">
+          <li>Does the change genuinely reduce the cost of the complete product, or merely transfer it to assembly, quality, inventory or service?</li>
+          <li>Does the cost comparison include target volume, labour, tooling, inspection, scrap, logistics and the cost of changes?</li>
+          <li>Can we eliminate a part, operation, adjustment or opportunity for error instead of merely negotiating a lower price for the existing solution?</li>
+        </ul>
+      </section>
+
+      <h2>5. Production is not the final stage of a product's life</h2>
+      <p>A finished product must still be protected, transported, installed, used, serviced and eventually withdrawn. Every one of these stages can expose an assumption overlooked in the prototype.<br class="paragraph-break"><br>Packaging is a good example. A product that works in the laboratory may not survive transport, or may require an expensive crate if the design does not account for support points, vulnerable components and lifting methods. In a project delivered for a client in the United States, packaging was part of the scope alongside design, cost and coordination. It was not an addition after design had finished, but a condition for delivering the solution.</p>
+      <p>Service follows the same principle. Access to wear parts, diagnostic capability, disassembly time and revision identification affect cost after sale. If the team does not consider them before design freeze, later improvements may require changes to the enclosure, wiring or subsystem architecture.<br class="paragraph-break"><br>Before production begins, the product should therefore be walked through its complete scenario:</p>
+      <ul class="journal-bullets">
+        <li>receipt of components;</li>
+        <li>storage and identification;</li>
+        <li>assembly and testing;</li>
+        <li>packaging and transport;</li>
+        <li>installation at the customer's site;</li>
+        <li>use, service and change management;</li>
+        <li>withdrawal or replacement.</li>
+      </ul>
+      <section class="journal-checklist">
+        <h3>Review questions</h3>
+        <ul class="journal-checklist__items">
+          <li>Which stage after the product leaves the production line could still force a design change today?</li>
+          <li>Have packaging, transport, installation, use and service been checked against real constraints rather than merely described as later tasks?</li>
+          <li>Does information from manufacturing and field use return through a controlled change process so that the correction appears in subsequent units and documentation?</li>
+        </ul>
+      </section>
+
+      <h2>When does a prototype become a product?</h2>
+      <p>There is no single ceremony that turns a prototype into a product. Readiness develops when evidence, documentation and process begin to form a coherent system.<br class="paragraph-break"><br>Before scaling, confirm that:</p>
+      <ul class="journal-bullets">
+        <li>key requirements have test results and unambiguous criteria;</li>
+        <li>critical characteristics can be manufactured and inspected;</li>
+        <li>the documentation describes one approved configuration;</li>
+        <li>changes have owners and a controlled implementation method;</li>
+        <li>cost has been assessed at product, assembly, quality and service level;</li>
+        <li>packaging, transport, installation and lifecycle do not depend on improvisation.</li>
+      </ul>
+      <p>A working prototype is important evidence. A production-ready product requires something more: a repeatable way for suppliers, manufacturing and inspection to achieve the same result—even when the R&amp;D team is not standing nearby.<br class="paragraph-break"><br>If you are preparing a product for NPI, a production launch or a documentation handover to suppliers, I can help review production readiness, DFMA, the EBOM structure, the test plan and the change-control process.</p>
+    </article>
+  </main>
+  <div id="footer-placeholder"></div>
+  <script src="../../js/script.js"></script>
+</body>
+</html>

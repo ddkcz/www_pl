@@ -10,7 +10,7 @@
 // ============================================
 // Shared layout loader (header + footer)
 // ============================================
-const IS_ENGLISH = window.location.pathname === '/en' || window.location.pathname.startsWith('/en/');
+const IS_ENGLISH = document.documentElement.lang.toLowerCase().startsWith('en');
 fetch(IS_ENGLISH ? '/layout-en.html' : '/layout.html')
   .then(r => r.text())
   .then(html => {
@@ -86,7 +86,13 @@ function initLanguageSwitch() {
   const toggle = document.querySelector('[data-language-toggle]');
   if (!toggle) return;
 
-  toggle.href = IS_ENGLISH ? `/${relativePath}` : `/en/${relativePath}`;
+  const articleWithoutTranslation =
+    document.querySelector('.journal-entry') &&
+    !document.querySelector(`link[rel="alternate"][hreflang="${IS_ENGLISH ? 'pl' : 'en'}"]`);
+
+  toggle.href = articleWithoutTranslation
+    ? (IS_ENGLISH ? '/blog.html' : '/en/blog.html')
+    : (IS_ENGLISH ? `/${relativePath}` : `/en/${relativePath}`);
   toggle.textContent = IS_ENGLISH ? 'PL' : 'EN';
   toggle.lang = IS_ENGLISH ? 'pl' : 'en';
   toggle.setAttribute(
@@ -376,6 +382,134 @@ function filterCards(activeFilters) {
     noResults.remove();
   }
 }
+
+// ============================================
+// Journal — series metadata
+// ============================================
+function buildSeriesLabel(source) {
+  const name = source.textContent.trim();
+  const number = buildSeriesNumber(source);
+
+  return number ? `${name} · ${number}` : name;
+}
+
+function buildSeriesNumber(source) {
+  const part = source.dataset.seriesPart;
+  const total = source.dataset.seriesTotal;
+
+  if (!part) return '';
+  return `${part}${total ? `/${total}` : ''}`;
+}
+
+(function () {
+  const article = document.querySelector('.journal-entry');
+  const series = document.querySelector('[data-article-series]');
+  if (!article || !series) return;
+
+  const seriesNumber = buildSeriesNumber(series);
+  const wordCount = [...article.querySelectorAll('p, li')]
+    .reduce((total, element) => total + element.textContent.trim().split(/\s+/).filter(Boolean).length, 0);
+  const readingMinutes = Math.max(1, Math.ceil(wordCount / 200));
+  const published = article.dataset.published;
+  const author = article.dataset.author;
+  const profilePhoto = new URL(
+    IS_ENGLISH ? '../../assets/profile.jpg' : '../assets/profile.jpg',
+    window.location.href
+  ).href;
+
+  series.textContent = buildSeriesLabel(series);
+
+  const datasheet = document.createElement('table');
+  datasheet.className = 'project-datasheet project-datasheet--grid journal-datasheet';
+  datasheet.innerHTML = `
+    <caption>${IS_ENGLISH ? 'Article data' : 'Metryka artykułu'}</caption>
+    <tbody>
+      <tr>
+        <th>${IS_ENGLISH ? 'Published' : 'Data publikacji'}</th>
+        <td><time datetime="${published.replace(/\./g, '-')}">${published}</time></td>
+      </tr>
+      <tr><th>${IS_ENGLISH ? 'Author' : 'Autor'}</th><td>${author}</td></tr>
+      <tr><th>${IS_ENGLISH ? 'Series number' : 'Numer w cyklu'}</th><td>${seriesNumber}</td></tr>
+      <tr><th>${IS_ENGLISH ? 'Reading time' : 'Czas czytania'}</th><td>${readingMinutes} min</td></tr>
+    </tbody>`;
+
+  article.querySelector('.page-header').insertAdjacentElement('afterend', datasheet);
+
+  const authorFooter = document.createElement('aside');
+  authorFooter.className = 'article-author';
+  authorFooter.setAttribute('aria-labelledby', 'article-author-name');
+  authorFooter.innerHTML = `
+    <p class="article-author__eyebrow">${IS_ENGLISH ? 'Article author / CADsmart' : 'Autor artykułu / CADsmart'}</p>
+    <div class="article-author__identity">
+      <img
+        class="article-author__photo"
+        src="${profilePhoto}"
+        alt="${author}"
+        width="76"
+        height="76"
+        loading="lazy"
+      >
+      <div>
+        <h2 class="article-author__name" id="article-author-name">${author}</h2>
+        <p class="article-author__role">${IS_ENGLISH ? 'mechanical engineer · creator of CADsmart' : 'inżynier mechanik · twórca CADsmart'}</p>
+      </div>
+    </div>
+    <details class="article-author__disclosure">
+      <summary class="article-author__summary">
+        ${IS_ENGLISH ? 'Practical expertise. Editing supported by AI' : 'Merytoryka z praktyki. Redakcja wsparta AI'}
+      </summary>
+      <div class="article-author__note">
+        <p>${IS_ENGLISH
+          ? 'I do not want to add more articles to the internet that sound good but contribute little. That is why I base every article on my own know-how, years of experience and original materials.'
+          : 'Nie chcę dokładać do internetu kolejnych tekstów, które dobrze brzmią, ale niewiele wnoszą. Dlatego każdy artykuł opieram na własnym know-how, doświadczeniu zbieranym latami i materiałach własnych.'}</p>
+        <p>${IS_ENGLISH
+          ? 'I am not a master wordsmith, so AI helps me organise notes, create a clear structure and polish the language. It does not replace technical knowledge or substantive verification. I remain responsible for the conclusions and final content. How is it possible that I have a blog post in both Polish and English? I think you know the answer.'
+          : 'Nie jestem mistrzem słowa, dlatego AI pomaga mi uporządkować notatki, zbudować czytelną strukturę i dopracować język. Nie zastępuje jednak wiedzy technicznej ani merytorycznej weryfikacji. Za przedstawione wnioski i finalną treść odpowiadam ja.'}</p>
+      </div>
+    </details>`;
+
+  article.appendChild(authorFooter);
+})();
+
+// Load series metadata from articles into the journal list.
+(async function () {
+  const list = document.querySelector('.blog-list');
+  const items = [...document.querySelectorAll('.blog-item')];
+  if (!items.length) return;
+
+  await Promise.all(items.map(async item => {
+    const label = item.querySelector('.blog-series');
+    if (!label) return;
+
+    try {
+      const response = await fetch(item.getAttribute('href'));
+      if (!response.ok) throw new Error(`Article metadata failed: ${response.status}`);
+
+      const html = await response.text();
+      const doc = new DOMParser().parseFromString(html, 'text/html');
+      const article = doc.querySelector('.journal-entry');
+      const source = doc.querySelector('[data-article-series]');
+      if (!article || !source) return;
+
+      label.textContent = buildSeriesLabel(source);
+      item.querySelector('.blog-date').textContent = article.dataset.published;
+      item.dataset.published = article.dataset.published;
+      item.dataset.series = source.dataset.articleSeries;
+      item.dataset.seriesPart = source.dataset.seriesPart;
+      item.dataset.author = article.dataset.author;
+      if (source.dataset.seriesTotal) item.dataset.seriesTotal = source.dataset.seriesTotal;
+    } catch (error) {
+      console.warn(error);
+    }
+  }));
+
+  const publishedDate = item =>
+    item.dataset.published || item.querySelector('.blog-date').textContent.trim();
+
+  items
+    .sort((a, b) => publishedDate(b).localeCompare(publishedDate(a)))
+    .forEach(item => list.appendChild(item));
+})();
 
 // ============================================
 // Contact form — submit without redirect
