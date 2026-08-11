@@ -1351,11 +1351,12 @@ a { color: var(--accent); }
   max-width: 860px;
 }
 
-.back-link + .journal-entry {
-  margin-top: -3rem;
+.journal-back-link {
+  margin-bottom: 1rem;
 }
 
 .journal-entry .page-header {
+  padding-top: 0.75rem;
   margin-bottom: 1rem;
 }
 
