@@ -1351,6 +1351,10 @@ a { color: var(--accent); }
   max-width: 860px;
 }
 
+.back-link + .journal-entry {
+  margin-top: -3rem;
+}
+
 .journal-entry .page-header {
   margin-bottom: 1rem;
 }
