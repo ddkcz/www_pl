@@ -12,6 +12,8 @@
   --ink-muted: #6b7789;
   --line: #b8b3a4;
   --line-soft: #d4cfc0;
+  --grid-major: #ddd8cc;
+  --grid-minor: #e9e5dc;
   --accent: #c23a1e;
   --accent-dim: #9d2f18;
   --accent-soft: #e8d5cc;
@@ -41,6 +43,8 @@
   --ink-muted: #7a8ea3;
   --line: #2a3a4d;
   --line-soft: #1e2a39;
+  --grid-major: #1e2a39;
+  --grid-minor: #1e2a39;
   --accent: #ff7a5c;           /* warmer drafting red — readable on blueprint */
   --accent-dim: #e5624a;
   --accent-soft: #3a2820;
@@ -92,10 +96,10 @@ body {
   flex-direction: column;
   overflow-x: hidden;
   background-image:
-    linear-gradient(var(--line-soft) 1px, transparent 1px),
-    linear-gradient(90deg, var(--line-soft) 1px, transparent 1px),
-    linear-gradient(var(--line-soft) 0.5px, transparent 0.5px),
-    linear-gradient(90deg, var(--line-soft) 0.5px, transparent 0.5px);
+    linear-gradient(var(--grid-major) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-major) 1px, transparent 1px),
+    linear-gradient(var(--grid-minor) 0.5px, transparent 0.5px),
+    linear-gradient(90deg, var(--grid-minor) 0.5px, transparent 0.5px);
   background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
   background-attachment: fixed;
 }
