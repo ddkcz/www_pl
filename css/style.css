@@ -555,6 +555,10 @@ a { color: var(--accent); }
   line-height: 1.6;
 }
 
+.page-header--wide p {
+  max-width: none;
+}
+
 /* CARDS */
 .card {
   background: var(--paper);
