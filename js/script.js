@@ -554,6 +554,238 @@ function buildSeriesNumber(source) {
 })();
 
 // ============================================
+// Journal checklist — generate a branded PDF in the browser
+// ============================================
+(function () {
+  const buttons = [...document.querySelectorAll('[data-checklist-pdf]')];
+  if (!buttons.length) return;
+
+  const PDFMAKE_VERSION = '0.2.23';
+  let pdfMakeReady;
+
+  function loadScript(src) {
+    return new Promise((resolve, reject) => {
+      const existing = document.querySelector(`script[src="${src}"]`);
+      if (existing) {
+        if (existing.dataset.loaded === 'true') resolve();
+        else {
+          existing.addEventListener('load', resolve, { once: true });
+          existing.addEventListener('error', reject, { once: true });
+        }
+        return;
+      }
+
+      const script = document.createElement('script');
+      script.src = src;
+      script.async = true;
+      script.addEventListener('load', () => {
+        script.dataset.loaded = 'true';
+        resolve();
+      }, { once: true });
+      script.addEventListener('error', reject, { once: true });
+      document.head.appendChild(script);
+    });
+  }
+
+  function loadPdfMake() {
+    if (!pdfMakeReady) {
+      const base = `https://cdn.jsdelivr.net/npm/pdfmake@${PDFMAKE_VERSION}/build`;
+      pdfMakeReady = loadScript(`${base}/pdfmake.min.js`)
+        .then(() => loadScript(`${base}/vfs_fonts.js`))
+        .then(() => {
+          if (!window.pdfMake) throw new Error('pdfMake is unavailable');
+          return window.pdfMake;
+        });
+    }
+    return pdfMakeReady;
+  }
+
+  function pdfBackground(currentPage, pageSize) {
+    const headerHeight = 46;
+    const footerHeight = 36;
+    const contentBottom = pageSize.height - footerHeight;
+    const lines = [
+      { type: 'rect', x: 0, y: 0, w: pageSize.width, h: headerHeight, color: '#ebe7dc' },
+      { type: 'rect', x: 0, y: contentBottom, w: pageSize.width, h: footerHeight, color: '#ebe7dc' }
+    ];
+    const step = 28;
+
+    for (let x = 0; x <= pageSize.width; x += step) {
+      lines.push({ type: 'line', x1: x, y1: headerHeight, x2: x, y2: contentBottom, lineColor: '#e4dfd5', lineWidth: 0.35 });
+    }
+    for (let y = headerHeight; y <= contentBottom; y += step) {
+      lines.push({ type: 'line', x1: 0, y1: y, x2: pageSize.width, y2: y, lineColor: '#e4dfd5', lineWidth: 0.35 });
+    }
+    lines.push({ type: 'line', x1: 0, y1: headerHeight, x2: pageSize.width, y2: headerHeight, lineColor: '#1a2332', lineWidth: 1 });
+    lines.push({ type: 'line', x1: 0, y1: contentBottom, x2: pageSize.width, y2: contentBottom, lineColor: '#1a2332', lineWidth: 1 });
+
+    return { canvas: lines };
+  }
+
+  function createChecklistDefinition(button) {
+    const article = button.closest('.journal-entry');
+    const checklist = button.closest('.journal-project-check');
+    const questions = [...checklist.querySelectorAll('.journal-checklist__items li')]
+      .map(item => item.textContent.trim());
+    const title = article.querySelector('h1').textContent.trim();
+    const seriesElement = article.querySelector('.journal-series');
+    const series = seriesElement.textContent
+      .replace(/\s*[·•]\s*\d{2}\/\d{2}\s*$/, '')
+      .trim();
+    const seriesPart = `${seriesElement.dataset.seriesPart}/${seriesElement.dataset.seriesTotal}`;
+
+    const labels = IS_ENGLISH ? {
+      documentLabel: 'PROJECT CHECKLIST',
+      intro: 'Questions to use during your project review',
+      answer: '□  YES     □  NO     □  TO REVIEW',
+      subject: 'CADsmart project checklist'
+    } : {
+      documentLabel: 'CHECKLISTA PROJEKTOWA',
+      intro: 'Pytania do wykorzystania podczas przeglądu projektu',
+      answer: '□  TAK     □  NIE     □  DO SPRAWDZENIA',
+      subject: 'Checklista projektowa CADsmart'
+    };
+
+    const columnCount = questions.length <= 10 ? 1 : questions.length <= 18 ? 2 : 3;
+    const questionsPerColumn = Math.ceil(questions.length / columnCount);
+    const density = Math.max(0, questions.length - 9);
+    const questionFontSize = Math.max(columnCount === 1 ? 7.2 : 6.2, 8.7 - density * 0.13);
+    const rowPadding = Math.max(3, 6 - density * 0.16);
+
+    function questionTable(items, numberOffset) {
+      const rows = items.map((question, index) => ([
+        {
+          text: String(numberOffset + index + 1).padStart(2, '0'),
+          style: 'questionNumber',
+          margin: [0, 1, 0, 0]
+        },
+        {
+          stack: [
+            { text: question, style: 'question' },
+            { text: labels.answer, style: 'answer', margin: [0, 4, 0, 0] }
+          ]
+        }
+      ]));
+
+      return {
+        table: {
+          widths: [columnCount === 1 ? 30 : 24, '*'],
+          body: rows,
+          dontBreakRows: true
+        },
+        layout: {
+          hLineWidth: () => 0.8,
+          vLineWidth: i => i === 1 ? 0.8 : 0,
+          hLineColor: () => '#b8b3a4',
+          vLineColor: () => '#b8b3a4',
+          paddingLeft: i => i === 0 ? 0 : columnCount === 1 ? 9 : 7,
+          paddingRight: () => columnCount === 1 ? 8 : 5,
+          paddingTop: () => rowPadding,
+          paddingBottom: () => rowPadding
+        }
+      };
+    }
+
+    const questionColumns = Array.from({ length: columnCount }, (_, index) => {
+      const start = index * questionsPerColumn;
+      return questionTable(questions.slice(start, start + questionsPerColumn), start);
+    });
+    const questionBlock = columnCount === 1
+      ? questionColumns[0]
+      : { columns: questionColumns, columnGap: columnCount === 2 ? 12 : 8 };
+
+    return {
+      pageSize: 'A4',
+      pageOrientation: columnCount === 3 ? 'landscape' : 'portrait',
+      pageMargins: [42, 48, 42, 40],
+      background: pdfBackground,
+      info: {
+        title: `CADsmart — ${title}`,
+        author: 'Dawid Kuczyński',
+        subject: labels.subject
+      },
+      header: {
+        margin: [42, 12, 42, 0],
+        columns: [
+          {
+            width: 83,
+            svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 174 46">
+              <rect x="1.5" y="1.5" width="171" height="43" rx="10" fill="#f4f1ea" stroke="#c23a1e" stroke-width="2.5"/>
+              <g fill="none" stroke="#c23a1e" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round">
+                <polygon points="22,13 30,17.5 22,22 14,17.5"/>
+                <polygon points="14,17.5 22,22 22,31 14,26.5"/>
+                <polygon points="22,22 30,17.5 30,26.5 22,31"/>
+              </g>
+              <text x="40" y="30" font-family="Roboto, Arial, sans-serif" font-size="23" font-weight="700" fill="#1a2332">CADsmart</text>
+            </svg>`,
+            fit: [83, 22]
+          },
+          {
+            text: `${labels.documentLabel}  ·  ${series.toUpperCase()}  ·  ${seriesPart}`,
+            style: 'headerLabel',
+            alignment: 'center',
+            margin: [0, 7, 0, 0]
+          }
+        ]
+      },
+      footer: {
+        margin: [42, 17, 42, 0],
+        text: IS_ENGLISH
+          ? 'dawid.kuczynski.dom@gmail.com  ·  © 2026 CADsmart.pl — all rights reserved'
+          : 'dawid.kuczynski.dom@gmail.com  ·  © 2026 CADsmart.pl — wszelkie prawa zastrzeżone',
+        style: 'footer',
+        alignment: 'center'
+      },
+      content: [
+        { text: title, style: 'title' },
+        { text: labels.intro, style: 'intro' },
+        questionBlock
+      ],
+      defaultStyle: {
+        font: 'Roboto',
+        color: '#1a2332',
+        fontSize: 8.5,
+        lineHeight: 1.15
+      },
+      styles: {
+        brand: { color: '#c23a1e', bold: true, fontSize: 14 },
+        headerLabel: { color: '#6b7789', bold: true, fontSize: 7.2, characterSpacing: 1.1 },
+        title: { color: '#1a2332', bold: true, fontSize: 18, lineHeight: 1.02, margin: [0, 12, 0, 6] },
+        intro: { color: '#6b7789', fontSize: 8, margin: [0, 0, 0, 10] },
+        questionNumber: { color: '#c23a1e', bold: true, fontSize: Math.max(6.5, questionFontSize - 0.2), characterSpacing: 0.8 },
+        question: { color: '#1a2332', bold: true, fontSize: questionFontSize, lineHeight: 1.08 },
+        answer: { color: '#6b7789', fontSize: Math.max(5.5, questionFontSize - 2), characterSpacing: 0.25 },
+        footer: { color: '#6b7789', fontSize: 6.5 }
+      }
+    };
+  }
+
+  buttons.forEach(button => {
+    const defaultLabel = button.textContent;
+
+    button.addEventListener('click', async () => {
+      button.disabled = true;
+      button.textContent = IS_ENGLISH ? 'Preparing PDF…' : 'Przygotowuję PDF…';
+
+      try {
+        const pdfMake = await loadPdfMake();
+        const definition = createChecklistDefinition(button);
+        pdfMake.createPdf(definition).download(button.dataset.pdfFilename || 'CADsmart-checklista.pdf');
+        button.textContent = IS_ENGLISH ? 'PDF downloaded ✓' : 'PDF pobrany ✓';
+      } catch (error) {
+        console.error('Checklist PDF generation failed:', error);
+        button.textContent = IS_ENGLISH ? 'Could not create PDF — try again' : 'Nie udało się utworzyć PDF — spróbuj ponownie';
+      } finally {
+        window.setTimeout(() => {
+          button.disabled = false;
+          button.textContent = defaultLabel;
+        }, 3000);
+      }
+    });
+  });
+})();
+
+// ============================================
 // Lightbox — project galleries
 // ============================================
 (function () {
