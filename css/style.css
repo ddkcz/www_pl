@@ -503,6 +503,7 @@ a { color: var(--accent); }
 
 .profile-titleblock {
   margin-top: 0.75rem;
+  background: var(--paper);
   border: 1px solid var(--ink);
   font-family: var(--font-mono);
   font-size: 0.72rem;
@@ -609,6 +610,7 @@ a { color: var(--accent); }
 
 /* PROJECT FILTER BAR */
 .filter-bar {
+  background: var(--paper);
   border: 1px solid var(--line);
   padding: 0 1.5rem 1.25rem;
   display: flex;
@@ -1905,7 +1907,7 @@ html[lang="en"] .journal-series::before {
 }
 
 .contact-method:hover {
-  padding-left: 0.75rem;
+  transform: translateX(0.75rem);
   color: var(--accent);
 }
 

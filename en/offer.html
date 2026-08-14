@@ -32,6 +32,7 @@
     .stat-strip {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
+      background: var(--paper);
       border: 1px solid var(--ink);
       margin: 2rem 0 2.5rem;
       max-width: 640px;
@@ -430,7 +431,8 @@
         grid-template-columns: repeat(2, 1fr);
       }
       .stat-cell:nth-child(2) { border-right: none; }
-      .stat-cell:nth-child(3) { border-top: 1px solid var(--ink); }
+      .stat-cell:nth-child(3),
+      .stat-cell:nth-child(4) { border-top: 1px solid var(--ink); }
 
       .photo-strip {
         grid-template-columns: repeat(2, 1fr);
@@ -442,6 +444,9 @@
       }
       .service-block {
         border-right: none;
+        border-bottom: 1px solid var(--ink);
+      }
+      .service-block:nth-child(3) {
         border-bottom: 1px solid var(--ink);
       }
       .service-block:last-child {

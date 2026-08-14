@@ -39,10 +39,13 @@
         <p class="journal-lead">Five areas to check before prototyping: tolerances, assembly, interfaces, simulation and the complete product lifecycle.</p>
       </header>
 
+      <figure class="journal-figure journal-figure--hero"><img src="../../assets/journal/en/projekty-poza-cad-2/01-grafika-otwierajaca.svg" alt="A nominal CAD model compared with the physical product." width="1600" height="900" loading="eager" fetchpriority="high" decoding="async"></figure>
+
       <h2>From correct geometry to a working product</h2>
       <p>A model can be rebuilt without material resistance. An assembly can be rotated to any angle. The assembly tool occupies no space, a cable follows its defined route exactly and every part has its nominal dimensions. A real product is not so accommodating. Parts have variation, cables have stiffness, operators have limited access, and the assembly sequence can block a solution that looks correct on screen. Deformation, contact surfaces, clearances, transport, quality control and servicing add further constraints.<br class="paragraph-break"><br>A correct 3D model is therefore not proof of a good design. CAD describes geometry; the designer must supply the complete context that the model does not know. I treat the following five areas as a practical pre-prototype review. They are not merely “beginner mistakes”. They recur in experienced teams as well, especially when a product combines several technologies and is developed under schedule pressure.</p>
 
       <h2>1. The nominal geometry fits. What happens at the tolerance limits?</h2>
+      <figure class="journal-figure"><img src="../../assets/journal/en/projekty-poza-cad-2/02-nominal-i-granice-tolerancji.svg" alt="Nominal, minimum-clearance and maximum-clearance conditions." width="1600" height="900" loading="lazy" decoding="async"></figure>
       <p>In CAD, each part usually appears at its nominal dimensions. A hole is exactly 10 mm, a spacing exactly 80 mm and two surfaces meet without variation. In manufacturing, every one of those dimensions occupies a range. A single tolerance may seem harmless. The problem begins when several dimensions form a stack that affects the same clearance, clamp load or position. Parts that individually comply with their drawings can then assemble into a product that fails to perform its function.<br class="paragraph-break"><br>A tolerance-stack analysis does not always require an elaborate statistical model. The first step is to understand the function:</p>
       <ul class="journal-bullets">
         <li>which surfaces actually locate the component;</li>
@@ -54,6 +57,7 @@
       <p>In electromechanical assemblies, cable routing, sheet-metal components or plastic housings, one change can affect several interfaces at once. A tolerance is therefore not an annotation added to completed geometry; it is part of the product architecture.<br class="paragraph-break"><br>Excessively tightening tolerances “for safety” also deserves caution. A more accurate dimension will not repair an unclear locating strategy. It can, however, increase cost, reduce the supplier base and make inspection more difficult.</p>
 
       <h2>2. Parts fitting together is not the same as an assembly process</h2>
+      <figure class="journal-figure"><img src="../../assets/journal/en/projekty-poza-cad-2/03-zlozenie-a-montaz.svg" alt="A part that fits its target position but collides with a wall along the assembly path." width="1600" height="900" loading="lazy" decoding="async"></figure>
       <p>In a CAD assembly, a component can appear immediately in its final position. In reality, it has to follow a physical path. Someone must grip it, orient it, hold it, connect it and inspect it. The simplest assembly review begins by reconstructing the sequence of operations. Once part A is installed, is fastener B still accessible? Can the tool align with the fastener axis? Can the operator see the joint? Can the cable be routed without exceeding its bend radius or removing half of the device later?<br class="paragraph-break"><br>Fasteners deserve particular attention. A CAD library may suggest a bolt diameter and length, but it will not automatically assess:</p>
       <ul class="journal-bullets">
         <li>wrench or screwdriver access;</li>
@@ -78,7 +82,9 @@
       <p>This perspective changes the question from “Is my part correct?” to “What does my part do to the whole product?”. It is particularly important in distributed work, where different subsystems have different owners and each person optimises their own scope.</p>
 
       <h2>4. Simulation and automation do not know every assumption</h2>
-      <p>Software can quickly detect an interference, calculate stress, suggest a dimension or generate a geometry variant. The result looks precise, which makes it easy to assign it more certainty than it actually provides. Every result is an answer to the model and assumptions entered by a person. A structural analysis will not independently recognise that a boundary condition fails to represent the real mounting arrangement. Interference detection will not show a problem if the assembly is missing a cable, tool, seal or complete range of motion. A component library cannot guarantee that the selected part is available in the required variant and lead time.<br class="paragraph-break"><br>When working with structural analyses, prototypes and tests, I treat a digital result as one element in a chain of evidence, not its conclusion. Good practice includes:</p>
+      <p>Software can quickly detect an interference, calculate stress, suggest a dimension or generate a geometry variant. The result looks precise, which makes it easy to assign it more certainty than it actually provides. Every result is an answer to the model and assumptions entered by a person. A structural analysis will not independently recognise that a boundary condition fails to represent the real mounting arrangement. Interference detection will not show a problem if the assembly is missing a cable, tool, seal or complete range of motion. A component library cannot guarantee that the selected part is available in the required variant and lead time.</p>
+      <figure class="journal-figure"><img src="../../assets/journal/en/projekty-poza-cad-2/04-symulacja-i-weryfikacja.svg" alt="Simulation assumptions leading to a result verified by calculation, test and sensitivity analysis." width="1600" height="900" loading="lazy" decoding="async"></figure>
+      <p>When working with structural analyses, prototypes and tests, I treat a digital result as one element in a chain of evidence, not its conclusion. Good practice includes:</p>
       <ul class="journal-bullets">
         <li>recording the input assumptions;</li>
         <li>checking whether the model represents the real case;</li>
@@ -89,6 +95,7 @@
       <p>This is not about distrusting tools. It is about assigning responsibility correctly. The software calculates the consequences of the chosen model. The designer is responsible for whether that model represents the right problem.</p>
 
       <h2>5. The project ends later than the model</h2>
+      <figure class="journal-figure"><img src="../../assets/journal/en/projekty-poza-cad-2/05-cykl-zycia-czesci.svg" alt="A part life cycle from sourcing through manufacture and use to service." width="1600" height="900" loading="lazy" decoding="async"></figure>
       <p>A part may work in a prototype and still create difficulties in manufacturing, transport, inspection or service. A product's life extends far beyond its nominal operation. Projects developed from concept to implementation repeatedly raise questions that are not visible in a basic assembly:</p>
       <ul class="journal-bullets">
         <li>how the part will be held during machining or inspection;</li>

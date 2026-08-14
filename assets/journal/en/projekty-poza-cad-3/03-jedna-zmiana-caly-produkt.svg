@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">One change affects the whole product</title><desc id="desc">Zmiana konstrukcyjna w centrum wpływa na osiem obszarów dokumentacji i procesu.</desc>
+  <defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#0F1823"/><stop offset="1" stop-color="#0A1118"/></linearGradient><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#2A3A4D" opacity=".45"/></pattern></defs>
+  <rect width="1600" height="900" fill="url(#bg)"/><rect width="1600" height="900" fill="url(#grid)" opacity=".55"/>
+  <g transform="translate(72 54)"><path d="M0 8l16-9 16 9v19l-16 9L0 27zM0 8l16 10 16-10M16 18v18" fill="none" stroke="#FF7A5C" stroke-width="4"/><text x="48" y="29" font-family="Arial" font-size="30" fill="#E8F0F9">CADsmart</text></g>
+  <text x="1528" y="86" font-family="monospace" font-size="19" fill="#FF7A5C" text-anchor="end">BEYOND THE CAD SCREEN · 3/3</text><text x="72" y="160" font-family="Arial" font-size="52" fill="#E8F0F9">One change affects the whole product</text><path d="M72 282H1528" stroke="#2A3A4D" stroke-width="2"/>
+  <g stroke="#2A3A4D" stroke-width="3"><path d="M800 545L305 375"/><path d="M800 545L305 555"/><path d="M800 545L515 720"/><path d="M800 545L800 748"/><path d="M800 545L1085 720"/><path d="M800 545L1295 555"/><path d="M800 545L1295 375"/><path d="M800 545L800 342"/></g>
+  <g font-family="monospace" font-size="16" fill="#E8F0F9" text-anchor="middle">
+    <g transform="translate(170 330)"><rect width="270" height="90" rx="20" fill="#18283A" stroke="#4A7FB5" stroke-width="2"/><text x="135" y="52">CAD MODEL</text></g>
+    <g transform="translate(170 510)"><rect width="270" height="90" rx="20" fill="#18283A" stroke="#4A7FB5" stroke-width="2"/><text x="135" y="52">DRAWING</text></g>
+    <g transform="translate(380 675)"><rect width="270" height="90" rx="20" fill="#18283A" stroke="#FFAA50" stroke-width="2"/><text x="135" y="52">EBOM</text></g>
+    <g transform="translate(665 703)"><rect width="270" height="90" rx="20" fill="#18283A" stroke="#4A7FB5" stroke-width="2"/><text x="135" y="42">SERIAL NUMBERS</text><text x="135" y="64">AND BATCHES</text></g>
+    <g transform="translate(950 675)"><rect width="270" height="90" rx="20" fill="#18283A" stroke="#FFAA50" stroke-width="2"/><text x="135" y="52">ASSEMBLY INSTRUCTION</text></g>
+    <g transform="translate(1160 510)"><rect width="270" height="90" rx="20" fill="#18283A" stroke="#FF7A5C" stroke-width="2"/><text x="135" y="52">INSPECTION PLAN + TEST</text></g>
+    <g transform="translate(1160 330)"><rect width="270" height="90" rx="20" fill="#18283A" stroke="#FF7A5C" stroke-width="2"/><text x="135" y="52">SUPPLIER</text></g>
+    <g transform="translate(665 297)"><rect width="270" height="90" rx="20" fill="#18283A" stroke="#FFAA50" stroke-width="2"/><text x="135" y="52">INVENTORY</text></g>
+  </g>
+  <circle cx="800" cy="545" r="112" fill="#E5624A" stroke="#FF7A5C" stroke-width="3"/><text x="800" y="536" font-family="monospace" font-size="19" fill="#fff" text-anchor="middle">ENGINEERING</text><text x="800" y="568" font-family="monospace" font-size="19" fill="#fff" text-anchor="middle">CHANGE</text>
+  <rect x="250" y="825" width="1100" height="50" rx="18" fill="#161F2A" stroke="#2A3A4D"/><text x="800" y="857" font-family="Arial" font-size="20" fill="#E8F0F9" text-anchor="middle">A change is implemented when every record describes the same version.</text>
+</svg>
