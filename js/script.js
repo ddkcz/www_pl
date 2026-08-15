@@ -901,6 +901,56 @@ function buildSeriesNumber(source) {
 })();
 
 // ============================================
+// Testimonials — manual stacked-card carousel
+// ============================================
+(function () {
+  document.querySelectorAll('[data-testimonial-carousel]').forEach(carousel => {
+    const slides = [...carousel.querySelectorAll('[data-testimonial-slide]')];
+    const dots = [...carousel.querySelectorAll('[data-testimonial-dot]')];
+    const previous = carousel.querySelector('[data-testimonial-prev]');
+    const next = carousel.querySelector('[data-testimonial-next]');
+    const current = carousel.querySelector('[data-testimonial-current]');
+    if (!slides.length || !previous || !next || !current) return;
+
+    let activeIndex = 0;
+
+    function showTestimonial(index) {
+      activeIndex = (index + slides.length) % slides.length;
+
+      slides.forEach((slide, slideIndex) => {
+        const isActive = slideIndex === activeIndex;
+        slide.hidden = !isActive;
+        slide.classList.toggle('is-active', isActive);
+      });
+
+      dots.forEach((dot, dotIndex) => {
+        const isActive = dotIndex === activeIndex;
+        dot.classList.toggle('is-active', isActive);
+        if (isActive) dot.setAttribute('aria-current', 'true');
+        else dot.removeAttribute('aria-current');
+      });
+
+      current.textContent = String(activeIndex + 1).padStart(2, '0');
+    }
+
+    previous.addEventListener('click', () => showTestimonial(activeIndex - 1));
+    next.addEventListener('click', () => showTestimonial(activeIndex + 1));
+    dots.forEach((dot, index) => dot.addEventListener('click', () => showTestimonial(index)));
+
+    carousel.addEventListener('keydown', event => {
+      if (event.key === 'ArrowLeft') {
+        event.preventDefault();
+        showTestimonial(activeIndex - 1);
+      }
+      if (event.key === 'ArrowRight') {
+        event.preventDefault();
+        showTestimonial(activeIndex + 1);
+      }
+    });
+  });
+})();
+
+// ============================================
 // Lightbox — project galleries
 // ============================================
 (function () {

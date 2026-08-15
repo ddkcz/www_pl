@@ -8,7 +8,8 @@
   <meta property="og:site_name"   content="CADsmart">
   <meta property="og:url"         content="https://cadsmart.pl/en/offer.html">
   <meta property="og:title"       content="CADsmart - Services">
-  <meta property="og:description" content="Product development, prototyping and manufacturing-launch support.">
+  <meta name="description" content="Product reviews, development through launch, fractional Product Engineer / R&amp;D Lead support and technical problem resolution.">
+  <meta property="og:description" content="Product reviews, development through launch, fractional Product Engineer / R&amp;D Lead support and technical problem resolution.">
   <meta property="og:image"       content="https://cadsmart.pl/assets/og-image.png">
   <meta property="og:image:width"  content="744">
   <meta property="og:image:height" content="198">
@@ -223,6 +224,154 @@
       margin: 0;
       color: var(--ink-soft);
     }
+
+    .offer-format-card { display: flex; flex-direction: column; }
+
+    .offer-format-fit {
+      margin: 1.1rem 0;
+      padding: 0.9rem 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .offer-format-fit strong,
+    .offer-format-label {
+      display: block;
+      margin-bottom: 0.35rem;
+      font-family: var(--font-mono);
+      font-size: 0.64rem;
+      color: var(--ink-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .offer-format-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .offer-format-list li {
+      position: relative;
+      padding-left: 1.15rem;
+      color: var(--ink-soft);
+      font-size: 0.9rem;
+      line-height: 1.55;
+    }
+
+    .offer-format-list li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .offer-formats .service-grid {
+      margin-bottom: 1rem;
+    }
+
+    .offer-permanent {
+      display: grid;
+      grid-template-columns: minmax(180px, 0.35fr) minmax(0, 1fr);
+      gap: 1.5rem;
+      align-items: center;
+      margin-bottom: 3rem;
+      padding: 1rem 1.25rem;
+      border: 1px solid var(--line);
+      background: var(--paper);
+    }
+
+    .offer-permanent strong {
+      color: var(--accent);
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .offer-permanent p {
+      margin: 0;
+      font-size: 0.9rem;
+    }
+
+    .offer-process {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      margin-top: 1.75rem;
+      border-top: 1px solid var(--ink);
+      border-left: 1px solid var(--ink);
+    }
+
+    .offer-step {
+      min-height: 170px;
+      padding: 1.75rem;
+      border-right: 1px solid var(--ink);
+      border-bottom: 1px solid var(--ink);
+      background: var(--paper);
+      transition: background 0.15s ease;
+    }
+
+    .offer-step:hover { background: var(--paper-dark); }
+
+    .offer-step-index {
+      display: block;
+      margin-bottom: 1rem;
+      color: var(--accent);
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+    }
+
+    .offer-step h3 { margin-bottom: 0.55rem; }
+    .offer-step p { font-size: 0.86rem; }
+
+    .engagement-details {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      margin-top: 1.75rem;
+      border-top: 1px solid var(--ink);
+      border-left: 1px solid var(--ink);
+    }
+
+    .engagement-detail {
+      min-height: 160px;
+      padding: 1.25rem;
+      border-right: 1px solid var(--ink);
+      border-bottom: 1px solid var(--ink);
+      background: var(--paper);
+      transition: background 0.15s ease;
+    }
+
+    .engagement-detail:hover { background: var(--paper-dark); }
+
+    .engagement-detail span {
+      display: block;
+      margin-bottom: 0.75rem;
+      color: var(--accent);
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .engagement-detail p { font-size: 0.86rem; }
+
+    .offer-cta {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 2rem;
+      align-items: center;
+      padding: 2rem;
+      border: 1.5px solid var(--ink);
+      background: var(--paper-dark);
+    }
+
+    .offer-cta h2 { margin-bottom: 0.5rem; }
+    .offer-cta p { max-width: 700px; }
 
     /* ── HIGHLIGHT LIST (Co mnie wyróżnia) ─────────── */
     .highlight-list {
@@ -453,6 +602,20 @@
         border-bottom: none;
       }
 
+      .offer-process {
+        grid-template-columns: 1fr;
+      }
+
+      .offer-permanent,
+      .engagement-details {
+        grid-template-columns: 1fr;
+      }
+
+      .offer-cta {
+        grid-template-columns: 1fr;
+        padding: 1.5rem;
+      }
+
       .highlight-item {
         grid-template-columns: 44px 1fr;
         gap: 1rem;
@@ -481,72 +644,98 @@
 
   <main class="container">
 
-    <header class="page-header">
+    <header class="page-header page-header--wide">
       <span class="section-label">SHEET 03 / 05 · SERVICES</span>
       <h1>Services</h1>
+      <p>My expertise includes product development, R&amp;D projects, prototyping, manufacturing launches, process optimisation, and the organisation and development of production. I build and develop teams, support the creation of R&amp;D structures, and help companies progress from an initial idea to a repeatable and efficient manufacturing process.</p>
     </header>
 
-   
-      <h2>About me</h2>
-      <p>
-      My expertise includes product development, R&amp;D projects, prototyping, manufacturing launches, process optimisation, and the organisation and development of production. I build and develop teams, support the creation of R&amp;D structures, and help companies progress from an initial idea to a repeatable and efficient manufacturing process.
-      
-      </p>
-    
-
-    <!-- full-width from here -->
-    <div class="stat-strip">
-      <div class="stat-cell" data-index="01">
-        <div class="stat-value">8<span class="stat-unit">+ years</span></div>
-        <div class="stat-label">Professional experience</div>
-      </div>
-      <div class="stat-cell" data-index="02">
-        <div class="stat-value">5<span class="stat-unit">+ industries</span></div>
-        <div class="stat-label">E-mobility · Med-tech · and more</div>
-      </div>
-      <div class="stat-cell" data-index="03">
-        <div class="stat-value">8<span class="stat-unit">+ clients</span></div>
-        <div class="stat-label">Consulting engagements</div>
-      </div>
-      <div class="stat-cell" data-index="04">
-        <div class="stat-value">100<span class="stat-unit">%</span></div>
-        <div class="stat-label">Satisfied clients</div>
-      </div>
-    </div>
-
-    <!-- 1. Usługi -->
-    <section style="margin-bottom: 4rem;">
+    <section class="offer-formats" style="margin-bottom: 4rem;">
       <span class="section-label">OFFER</span>
-      <h2>Services</h2>
+      <h2>Choose the right engagement format</h2>
 
       <div class="service-grid">
-        <div class="service-block">
-          <span class="service-num">01 · PRODUCT ENGINEERING</span>
-          <h3>Product development</h3>
-          <p>I develop mechanical products end to end, from concept and solution architecture through design and validation to preparation for series production. I design with functional requirements, manufacturing technology, cost, reliability and scalability in mind.</p>
-        </div>
+        <article class="service-block offer-format-card">
+          <span class="service-num">01 · PRODUCT REVIEW</span>
+          <h3>Product Review</h3>
+          <p>An independent assessment of a concept, prototype or established product. I clarify requirements, identify risks and find optimisation opportunities before the next investment decision.</p>
+          <div class="offer-format-fit"><strong>Choose this when</strong><p>Before prototyping, design freeze or manufacturing — or when an existing product needs lower cost, simpler assembly, greater reliability or preparation for scaling.</p></div>
+          <span class="offer-format-label">The scope may include</span>
+          <ul class="offer-format-list">
+            <li>requirements, functions and acceptance criteria;</li>
+            <li>design, tolerances, materials, interfaces and DFMA;</li>
+            <li>optimisation of cost, assembly, testing and service.</li>
+          </ul>
+        </article>
 
-        <div class="service-block">
-          <span class="service-num">02 · PROTOTYPING AND NPI</span>
-          <h3>From concept to launch</h3>
-          <p>I accelerate the path from concept to finished product through rapid prototyping and an iterative development process. I verify technical solutions, eliminate issues early, and prepare both the product and the process for launch and series production.</p>
-        </div>
+        <article class="service-block offer-format-card">
+          <span class="service-num">02 · PRODUCT DEVELOPMENT</span>
+          <h3>Product development through launch</h3>
+          <p>I lead the project from requirements and architecture through design, prototypes and testing to documentation and manufacturing launch.</p>
+          <div class="offer-format-fit"><strong>Choose this when</strong><p>You have an idea or early prototype and need to structure the stages, technical decisions and transition to manufacturing.</p></div>
+          <span class="offer-format-label">The scope may include</span>
+          <ul class="offer-format-list">
+            <li>project stages, priorities and technical decisions;</li>
+            <li>design, prototypes, testing and subsequent revisions;</li>
+            <li>suppliers, documentation and launch preparation.</li>
+          </ul>
+        </article>
 
-        <div class="service-block">
-          <span class="service-num">03 · ADDITIVE MANUFACTURING</span>
-          <h3>Additive manufacturing</h3>
-          <p>I use additive manufacturing for rapid prototyping, design validation, and the production of functional components and tooling. I select the right solution for each project by optimising geometry, material, process parameters and cost.</p>
-        </div>
+        <article class="service-block offer-format-card">
+          <span class="service-num">03 · FRACTIONAL LEAD</span>
+          <h3>Fractional Product Engineer / R&amp;D Lead</h3>
+          <p>Ongoing product-development support: technical decisions, team and supplier coordination, and the connection between R&amp;D and manufacturing.</p>
+          <div class="offer-format-fit"><strong>Choose this when</strong><p>The project needs continuity and a technical owner, but not yet a complete R&amp;D department.</p></div>
+          <span class="offer-format-label">The scope may include</span>
+          <ul class="offer-format-list">
+            <li>development plan, priorities and design reviews;</li>
+            <li>coordination of the team, suppliers, testing and changes;</li>
+            <li>development of the R&amp;D process and its connection with manufacturing.</li>
+          </ul>
+        </article>
 
-        <div class="service-block">
-          <span class="service-num">04 · CONSULTING</span>
-          <h3>Engineering and manufacturing consulting</h3>
-          <p>I support companies in technical and manufacturing decisions, from product-design assessment to analysis of the complete manufacturing process. I identify bottlenecks, risks and optimisation opportunities, providing recommendations grounded in technical analysis and manufacturing experience.</p>
-        </div>
+        <article class="service-block offer-format-card">
+          <span class="service-num">04 · ENGINEERING SUPPORT</span>
+          <h3>Technical problem resolution</h3>
+          <p>Focused support with a design or manufacturing problem: from root-cause analysis to verification of the solution.</p>
+          <div class="offer-format-fit"><strong>Choose this when</strong><p>A failure, unsuccessful test, or an assembly, quality or cost issue is blocking the next project stage.</p></div>
+          <span class="offer-format-label">The scope may include</span>
+          <ul class="offer-format-list">
+            <li>evidence gathering and problem reproduction;</li>
+            <li>root-cause analysis and solution options;</li>
+            <li>test plan, decision criteria and implementation support.</li>
+          </ul>
+        </article>
+      </div>
+
+      <aside class="offer-permanent">
+        <strong>Long-term collaboration</strong>
+        <p>I am also open to a long-term engagement or a permanent role within a team when the product, scope of responsibility and way of working are a strong mutual fit.</p>
+      </aside>
+    </section>
+
+    <section style="margin-bottom: 4rem;">
+      <span class="section-label">PROCESS</span>
+      <h2>What happens after you get in touch?</h2>
+      <div class="offer-process">
+        <article class="offer-step"><span class="offer-step-index">01</span><h3>Context</h3><p>The goal, product stage, constraints, team and most important problem.</p></article>
+        <article class="offer-step"><span class="offer-step-index">02</span><h3>Fit</h3><p>Confirming whether the topic fits and what information is needed.</p></article>
+        <article class="offer-step"><span class="offer-step-index">03</span><h3>Scope</h3><p>Outcome, responsibility, milestones, schedule and commercial terms.</p></article>
+        <article class="offer-step"><span class="offer-step-index">04</span><h3>Delivery</h3><p>Short working cycles, regular decisions and a clear handover of the result.</p></article>
       </div>
     </section>
 
-    <!-- 2. Co mnie wyróżnia -->
+    <section style="margin-bottom: 4rem;">
+      <span class="section-label">WORKING ARRANGEMENTS</span>
+      <h2>Clear expectations from the start</h2>
+      <div class="engagement-details">
+        <article class="engagement-detail"><span>01 · Confidentiality</span><p>If required, we can begin with an NDA before any project documentation is shared.</p></article>
+        <article class="engagement-detail"><span>02 · PL / EN</span><p>Meetings, communication and documentation can be handled in Polish or English.</p></article>
+        <article class="engagement-detail"><span>03 · Remote / on-site</span><p>I work remotely on a day-to-day basis, with on-site support available for testing, workshops, manufacturing launches and production support.</p></article>
+      </div>
+    </section>
+
+    <!-- 3. What sets me apart -->
     <section style="margin-bottom: 4rem;">
       <span class="section-label">ADVANTAGE</span>
       <h2>What sets me apart</h2>
@@ -556,7 +745,7 @@
           <span class="highlight-num">01</span>
           <div>
             <h3>Technology without limitations</h3>
-            <p>I use modern engineering tools, automation and AI technologies to analyse problems faster, design solutions and make better decisions. By combining engineering experience with modern technology, I shorten delivery times and move more efficiently from a problem to a working solution.</p>
+            <p>I combine engineering experience with modern tools, automation and AI to analyse problems faster and move efficiently towards working solutions.</p>
           </div>
         </div>
 
@@ -564,7 +753,7 @@
           <span class="highlight-num">02</span>
           <div>
             <h3>Access to broad know-how</h3>
-            <p>I am not limited to the closed structure of a single organisation. Through an extensive cross-industry network, I can involve specialists, manufacturers, technologists and experts whenever a project requires them — without building an entire team from scratch.</p>
+            <p>Through my professional network, I can involve the right specialists, manufacturers and technologists without building an entire team from scratch.</p>
           </div>
         </div>
 
@@ -572,7 +761,7 @@
           <span class="highlight-num">03</span>
           <div>
             <h3>Flexibility and speed</h3>
-            <p>As an external partner, I am not constrained by internal structures, multi-level decision processes or extensive bureaucracy. I can make decisions quickly, change direction and adapt the scope of work to the project's current needs.</p>
+            <p>As an external partner, I can quickly adapt the scope and direction of work to the project’s current needs, without multi-level decision processes.</p>
           </div>
         </div>
 
@@ -580,7 +769,7 @@
           <span class="highlight-num">04</span>
           <div>
             <h3>Focus on results</h3>
-            <p>I do not sell hours or complicated processes — my objective is a specific result. I focus on solving the problem, shortening the path from idea to implementation, and delivering an outcome with tangible business value.</p>
+            <p>A specific outcome matters more than an elaborate process. I focus on solving the problem and delivering tangible business value.</p>
           </div>
         </div>
 
@@ -588,13 +777,69 @@
           <span class="highlight-num">05</span>
           <div>
             <h3>A broad perspective</h3>
-            <p>I combine design, engineering, prototyping and manufacturing expertise with experience gained across multiple industries. This allows me to look beyond a single way of thinking and find the solution that best meets the needs of a particular product, process and business.</p>
+            <p>I combine design, prototyping and manufacturing expertise with cross-industry experience to match solutions to the product, process and business.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 3. Kompetencje -->
+    <section style="margin-bottom: 4rem;" aria-labelledby="testimonials-title">
+      <span class="section-label">REFERENCES</span>
+      <h2 id="testimonials-title">Collaboration confirmed by the people involved</h2>
+      <p>Feedback from people I have worked with on product development, manufacturing launches and engineering projects.</p>
+
+      <div class="testimonial-carousel" data-testimonial-carousel aria-label="References" aria-roledescription="carousel" tabindex="0">
+        <div class="testimonial-carousel__stage" aria-live="polite">
+          <article class="testimonial-slide is-active" role="group" aria-roledescription="slide" aria-label="1 of 5" data-testimonial-slide>
+            <span class="testimonial-slide__index" aria-hidden="true">REF · 01</span>
+            <blockquote><p>It is my pleasure to provide reference for Dawid Kuczynski, a highly skilled mechanical engineer with multidisciplinary experience gained in both global companies and SMEs. Dawid joined our ABB E-Mobility team in June 2021 and stayed with us for one year. His exceptional time management and analytical thinking enabled him to learn quickly and take up new responsibilities in all project phases - from concept creation, through design development, to prototype assembly and testing. With excellent task organization and structured approach, he helped the team optimize the workload, which was crucial in very important and tightly scheduled project of a mobile charger for Formula E cars. Across all projects he was involved in, Dawid has shown as a very creative designer, precise engineer and open-minded team member. Always ready to take responsibility not only for internal tasks but also cooperate with NPI, factory and suppliers, Dawid approached challenges with enthusiasm. It was a pleasure working with Dawid. I am confident that with his entrepreneurial mindset he will be a valuable asset, contributing to every team he will join.</p></blockquote>
+            <div class="testimonial-slide__author"><strong>Maciej Herdzina</strong><span>Senior Mechanical Engineer · ABB E-Mobility</span></div>
+          </article>
+
+          <article class="testimonial-slide" role="group" aria-roledescription="slide" aria-label="2 of 5" data-testimonial-slide hidden>
+            <span class="testimonial-slide__index" aria-hidden="true">REF · 02</span>
+            <blockquote><p>I worked with Dawid for 3 years on a Formula Student car project, and later we jointly carried out projects for motorsport - rallies. I could always count on constructive criticism and a precise definition of the problems, in solving which his excellent work organization was a great help.</p></blockquote>
+            <div class="testimonial-slide__author"><strong>Marek Zięć</strong><span>Lead Testing Engineer · Clone Incorporated</span></div>
+          </article>
+
+          <article class="testimonial-slide" role="group" aria-roledescription="slide" aria-label="3 of 5" data-testimonial-slide hidden>
+            <span class="testimonial-slide__index" aria-hidden="true">REF · 03</span>
+            <blockquote><p>An above-average ability to identify and communicate unnecessary tasks, and to automate those that are essential and repetitive, was a significant asset to our company. Dawid's involvement in the production process of Flowpark for the US market will be remembered for a long time.</p></blockquote>
+            <div class="testimonial-slide__author"><strong>Piotr Reczyński</strong><span>CEO &amp; Founder · FlowParks</span></div>
+          </article>
+
+          <article class="testimonial-slide" role="group" aria-roledescription="slide" aria-label="4 of 5" data-testimonial-slide hidden>
+            <span class="testimonial-slide__index" aria-hidden="true">REF · 04</span>
+            <blockquote><p>I have had the pleasure of working with Dawid for over 2 years at Euroloop, where we collaborate across several project teams. His ability to organize the work of these teams using simple applications has impressed me greatly and has significantly improved the effectiveness of our efforts. I also highly value his technical knowledge, his drive to continuously expand that knowledge, and his commitment to optimizing design processes. Dawid will be a valuable member of any project team.</p></blockquote>
+            <div class="testimonial-slide__author"><strong>Radosław Fąfara</strong><span>Owner / Mechanical Design Engineer · CAD.D</span></div>
+          </article>
+
+          <article class="testimonial-slide" role="group" aria-roledescription="slide" aria-label="5 of 5" data-testimonial-slide hidden>
+            <span class="testimonial-slide__index" aria-hidden="true">REF · 05</span>
+            <blockquote><p>Dawid and I worked together for about a year and it was a pleasure to work with him. The project was unique and he showed a lot of creativity and flexibility that lead to a successful experience and I would strongly encourage anyone who has the chance to work with him to do so!</p></blockquote>
+            <div class="testimonial-slide__author"><strong>Joe Cannato</strong><span>Co-founder · ROAM Further Athletics</span></div>
+          </article>
+        </div>
+
+        <div class="testimonial-carousel__controls">
+          <button class="testimonial-carousel__button" type="button" data-testimonial-prev aria-label="Previous reference"><span aria-hidden="true">←</span><span>PREVIOUS</span></button>
+          <div class="testimonial-carousel__position">
+            <span class="testimonial-carousel__counter" aria-live="polite" aria-atomic="true"><span data-testimonial-current>01</span> / 05</span>
+            <div class="testimonial-carousel__dots" aria-label="Choose a reference">
+              <button class="is-active" type="button" data-testimonial-dot="0" aria-label="Show reference 1" aria-current="true"></button>
+              <button type="button" data-testimonial-dot="1" aria-label="Show reference 2"></button>
+              <button type="button" data-testimonial-dot="2" aria-label="Show reference 3"></button>
+              <button type="button" data-testimonial-dot="3" aria-label="Show reference 4"></button>
+              <button type="button" data-testimonial-dot="4" aria-label="Show reference 5"></button>
+            </div>
+          </div>
+          <button class="testimonial-carousel__button" type="button" data-testimonial-next aria-label="Next reference"><span>NEXT</span><span aria-hidden="true">→</span></button>
+        </div>
+        <p class="testimonial-carousel__hint">Use the arrow keys or buttons to browse the references.</p>
+      </div>
+    </section>
+
+    <!-- 4. Expertise -->
     <section style="margin-bottom: 4rem;">
       <span class="section-label">SKILLS AND TOOLS</span>
       <h2>Expertise</h2>
@@ -687,7 +932,16 @@
       </div>
     </section>
 
-    
+    <section style="margin-bottom: 4rem;">
+      <div class="offer-cta">
+        <div>
+          <span class="section-label">NEXT STEP</span>
+          <h2>Not sure which format fits?</h2>
+          <p>Describe the product stage and the biggest risk. Choosing the right format is part of the first conversation, not a task for the client.</p>
+        </div>
+        <a href="contact.html" class="btn btn-primary">Describe the project →</a>
+      </div>
+    </section>
 
   </main>
   <div id="footer-placeholder"></div>
