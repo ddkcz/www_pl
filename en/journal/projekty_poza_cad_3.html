@@ -41,79 +41,93 @@
 
 
       <h2>A working prototype is only the beginning</h2>
-      <p>A working prototype gives the team something essential: evidence that the main concept makes sense. The mechanism moves, the structure carries its load, the device performs its function and a stakeholder presentation finally has something tangible to show. This is an important moment, but it is easy to draw an overly broad conclusion from it: “the product is almost ready”.</p>
+      <p>The prototype works. The mechanism moves, the structure carries the load and the device does what it was meant to do. At last, there is something more to show than a render and a slide with the schedule. A great moment. There really is something to celebrate. Just do not open the bottle labelled “mass production” yet.</p>
+      <br>
+      <p>A working prototype confirms that the main concept makes sense. It does not automatically confirm that the product can be built again, to the same quality, at the target cost and without a designer standing beside the workstation. A unit assembled by R&amp;D often relies on knowledge that appears on no drawing. This needs a little filing, that cable has to be routed “in this particular way”, and that bolt must be tightened by feel. The team knows every previous iteration, so it may not even notice how much information exists only in people's heads. Manufacturing should not need that context.</p>
 
       <figure class="journal-figure journal-figure--hero"><img src="../../assets/journal/en/projekty-poza-cad-3/01-grafika-otwierajaca.svg" alt="A working prototype progressing toward a repeatable product." width="1600" height="900" loading="eager" fetchpriority="high" decoding="async"></figure>
 
-      <p>A prototype confirms selected hypotheses. Production, by contrast, requires repeatability, inspectability, current documentation, a stable supply chain and a process that does not depend on one person's knowledge. A unit assembled by the R&amp;D team may work because of adjustments made on the spot, manual fitting and familiarity with every previous iteration. The factory should not need the same context. Moving from “it works” to “we can manufacture it repeatedly” requires five areas to be closed: validation, acceptance criteria, documentation and change control, whole-product economics and the product's life after it leaves manufacturing.</p>
+      <p>Moving from “it works” to “we can manufacture it repeatedly” requires five areas to be closed: validation, inspection criteria, documentation and change control, the cost of the whole process and the product's life after it leaves the factory.</p>
 
-      <h2>1. A test must confirm risk, not merely operation</h2>
-      <p>The first prototype usually answers the most important functional question. Subsequent tests should be built around risks. Otherwise, the team may repeatedly confirm what it already knows while leaving untested the conditions that will determine whether the product succeeds.</p>
+      <h2>1. Do not keep testing what you already know</h2>
+      <p>The first prototype usually answers the basic question: does this concept work at all? The next tests should target risks. Otherwise, you can confirm the same thing ten times and never test the condition that eventually brings the product down.</p>
 
       <figure class="journal-figure"><img src="../../assets/journal/en/projekty-poza-cad-3/02-testowanie-ryzyka.svg" alt="A flow from requirement and risk through test method and criterion to a decision." width="1600" height="900" loading="lazy" decoding="async"></figure>
 
-      <p>A validation plan should begin with a map of risks and requirements. For each key assumption, define:</p>
+      <p>A validation plan is best started with a list of key requirements and risks. For each one, establish:</p>
       <ul class="journal-bullets">
         <li>exactly what is to be confirmed;</li>
         <li>which unit, configuration and conditions are representative;</li>
         <li>what will be measured and with what accuracy;</li>
         <li>how many repetitions are needed to support the decision;</li>
-        <li>what constitutes a positive result;</li>
-        <li>what happens if the result is marginal or negative.</li>
+        <li>what result means success;</li>
+        <li>what happens if the result is borderline or negative.</li>
       </ul>
-      <p>Not every test has to be elaborate. What matters is that it is designed around a decision. Sometimes a simple fixture that enables repeatable loading and measurement is enough. In other cases, several factors must be compared—for example through design of experiments (DOE)—to distinguish the influence of individual parameters.<br class="paragraph-break"><br>While working on electromechanical products, I prepared test protocols and reports, acceptance criteria and fixtures supporting production testing. The common requirement was to translate a requirement into a repeatable method. Without this, even a large number of trials may leave the team without a clear answer.</p>
+      <p>Not every test has to look like a space programme. Sometimes a simple fixture that applies a load repeatedly and captures the result is enough. In other cases, several factors need to be compared, for example through design of experiments, or DOE. The scale of the test should follow from the decision we need to make, not from a desire to fill the report with charts.</p>
+      <br>
+      <p>On electromechanical products, I prepared test protocols and reports, acceptance criteria and fixtures supporting production tests. The common thread was always the same: a requirement has to become a repeatable method. Without that, even a hundred trials can produce a lot of numbers and very few answers.</p>
 
-      <h2>2. Acceptance criteria must work without the designer standing nearby</h2>
-      <p>During prototyping, a team tolerates ambiguity. The designer knows how to route a cable, how tightly to secure a joint and which sound is normal. In production, that knowledge must become a way of working that can be communicated, performed and inspected.<br class="paragraph-break"><br>“Matches the model” is not a sufficient criterion. Critical characteristics, inspection methods and decision limits are required. The team must also verify that the selected dimension or parameter can actually be measured under production conditions. A good control plan connects three levels:</p>
+      <h2>2. Inspection must work without a designer looking over your shoulder</h2>
+      <p>During prototyping, many things are done “by feel”. The designer knows how to route a cable, how tightly to secure a joint and which sound is normal. That is manageable for one unit. In production, it becomes a lottery. Knowledge stored in someone's head must become a way of working that can be communicated, repeated and inspected.</p>
+      <br>
+      <p>“Matches the model” is not much of a criterion here. Critical characteristics, a measurement method and decision limits need to be defined. The team must also check whether the selected dimension can actually be measured reliably in production. A requirement that cannot be inspected is a little like a rulebook written in invisible ink. A good control plan covers three levels:</p>
       <ul class="journal-bullets">
         <li><strong>Part:</strong> were the critical characteristics manufactured in accordance with the documentation?</li>
-        <li><strong>Assembly:</strong> does the joining and adjustment process produce the correct result?</li>
+        <li><strong>Assembly:</strong> does the way it is joined and adjusted produce the correct result?</li>
         <li><strong>Product:</strong> does the completed unit perform its function and meet safety requirements?</li>
       </ul>
-      <p>If a product undergoes only a final test, a defect may be discovered very late, after the costs of parts and assembly have already been incurred. If everything is inspected without reference to function, the process becomes expensive and slow. The aim is to inspect the right characteristics at a point where the information still enables an effective response.</p>
+      <p>If the product is checked only at the very end, a defect may be found after the full cost of parts and assembly has already been incurred. If we measure everything that can possibly be measured, inspection becomes expensive and slow. The aim is to inspect the right characteristics at a point in the process where we can still react sensibly.</p>
+      <br>
+      <p>The simplest rule? Someone who did not take part in developing the product should be able to use the documentation and say: good, bad or needs a decision. Without calling the designer to ask, “What exactly did the author mean?”.</p>
 
-      <h2>3. Documentation must describe one current product configuration</h2>
-      <p>A prototype may be built from a mixture of files, notes, messages and manual corrections. With a small team, everyone usually knows what changed. This model stops working as the number of parts, suppliers, workstations and units grows.</p>
+      <h2>3. A folder called “FINAL_final_really-final2” is not configuration control</h2>
+      <p>A prototype may be built from a mixture of models, drawings, notes, messages and manual corrections. In a small team, everyone more or less knows what changed. “More or less” stops working quickly as the number of parts, suppliers, workstations and units grows.</p>
 
       <figure class="journal-figure"><img src="../../assets/journal/en/projekty-poza-cad-3/03-jedna-zmiana-caly-produkt.svg" alt="One engineering change affecting eight product records and processes." width="1600" height="900" loading="lazy" decoding="async"></figure>
 
-      <p>Production readiness requires a coherent information package. Depending on the product, this may include:</p>
+      <p>Production readiness requires one coherent information package. Depending on the product, it may include:</p>
       <ul class="journal-bullets">
         <li>approved models and drawings with revisions;</li>
-        <li>the EBOM—engineering bill of materials;</li>
+        <li>the EBOM, or engineering bill of materials;</li>
         <li>specifications for standard components;</li>
         <li>assembly instructions and required tightening torques;</li>
         <li>inspection and test procedures;</li>
         <li>marking, packaging and transport requirements;</li>
-        <li>a record of decisions concerning deviations and changes.</li>
+        <li>a record of deviations and changes.</li>
       </ul>
-      <p>The mere presence of files does not amount to configuration control. The team should be able to answer which revision is current, where it was approved, from which unit it applies and what other items it changes.<br class="paragraph-break"><br>In a PLM environment, ECR and ECO processes—engineering change requests and orders—help carry a change through the product rather than correcting one isolated file. This matters especially when one decision affects the model, drawing, BOM, inventory, assembly instruction and test at the same time.</p>
-      <p>While working with Arena PLM, EBOM structures and change processes, I saw that the tool is only part of the solution. Responsibility must come first: who initiates a change, who assesses its impact, who approves it and how manufacturing receives unambiguous implementation information.</p>
+      <p>Having the files does not mean that the configuration is under control. We need to know which revision applies, who approved it, from which unit it should be used and what else changes with it. In a PLM environment, ECR and ECO processes, engineering change requests and engineering change orders, are used for this purpose. Their point is not to produce forms. It is to carry a change through the whole product, because one decision can affect the model, drawing, BOM, inventory, assembly instructions and test at the same time.</p>
+      <br>
+      <p>Working with Arena PLM, EBOM structures and change processes taught me that the tool itself does not solve the problem. Responsibility comes first: who submits the change, who assesses its impact, who approves it and how manufacturing learns when to start building the new version. PLM helps keep things in order. It cannot replace a decision that nobody made.</p>
 
-      <h2>4. Optimise the cost of the product and process, not the price of one part</h2>
-      <p>Once function has been confirmed, pressure to reduce cost follows naturally. Part prices are the easiest values to compare, but they represent only one element of product economics. A cheaper component may require an additional bracket, longer assembly, separate inspection or more frequent rework. A more expensive part may simplify the assembly, reduce the number of fasteners and shorten testing.</p>
+      <h2>4. A cheap part can make an expensive product</h2>
+      <p>Once the prototype works, cost reduction quickly enters the conversation. The easiest thing is to compare two part prices and choose the lower one. But the component price is only one piece of the bill. A cheaper item may need an extra bracket, longer assembly, separate inspection or more frequent rework. A more expensive one may remove two bolts, simplify locating and shorten the test. The question is not “which part is cheaper?”, but “which solution gives us the lower total product cost?”.</p>
 
       <figure class="journal-figure"><img src="../../assets/journal/en/projekty-poza-cad-3/04-cena-a-calkowity-koszt.svg" alt="An iceberg comparing part price with total solution cost." width="1600" height="900" loading="lazy" decoding="async"></figure>
 
-      <p>A decision should therefore be assessed through the total cost of manufacturing and support. Useful questions include:</p>
+      <p>It is worth calculating, among other things:</p>
       <ul class="journal-bullets">
-        <li>how many operations and tool changes assembly requires;</li>
-        <li>which tasks are susceptible to error;</li>
-        <li>whether special fixtures are required;</li>
-        <li>the cost of inspection and testing;</li>
-        <li>how many part variants must be held in inventory;</li>
-        <li>whether the supplier can repeatedly maintain the required tolerances;</li>
-        <li>what happens to cost at the target volume.</li>
+        <li>the number of operations and tool changes during assembly;</li>
+        <li>tasks that are prone to mistakes;</li>
+        <li>the cost of special fixtures;</li>
+        <li>inspection and test time;</li>
+        <li>the number of variants held in inventory;</li>
+        <li>the supplier's ability to maintain the required tolerances;</li>
+        <li>how cost behaves at the target volume.</li>
       </ul>
-      <p>This is where DFMA—design for manufacture and assembly—becomes a business tool. Fewer parts, simpler locating, better access and fewer opportunities for incorrect assembly can simultaneously shorten lead time, improve quality and reduce risk.<br class="paragraph-break"><br>When launching products into volume production and establishing R&amp;D and manufacturing procedures, the key challenge was moving from one working unit to a process that repeatedly produced the same result. That requires collaboration between design, purchasing, quality, suppliers and assembly—not a one-off “cost-down” exercise at the end.</p>
+      <p>This is where DFMA, design for manufacture and assembly, becomes a business tool. Removing a part, simplifying locating, improving access or reducing the possibility of incorrect assembly can shorten time, improve quality and reduce risk at the same time.</p>
+      <br>
+      <p>When launching products into volume production and building procedures for R&amp;D and manufacturing, the most important step was moving from one working unit to a process that produces the same result repeatedly. A one-off “cost-down” round will not achieve that. It takes cooperation between design, purchasing, quality, suppliers and assembly. A part price is easy to enter in a spreadsheet. The cost of chaos is a little harder, but that does not mean it is not there.</p>
 
-      <h2>5. Production is not the final stage of a product's life</h2>
-      <p>A finished product must still be protected, transported, installed, used, serviced and eventually withdrawn. Every one of these stages can expose an assumption overlooked in the prototype.</p>
+      <h2>5. A product does not stop existing when it leaves the line</h2>
+      <p>A finished product still has to be packaged, transported, installed, used, serviced and eventually withdrawn. Every one of those stages can expose an assumption that the laboratory prototype never tested. Packaging is a great example. A product may work perfectly and then fail to survive transport, or require a very expensive crate because nobody planned the support points, lifting method or vulnerable components.</p>
+      <br>
+      <p>On a project for a client in the United States, packaging was part of the scope alongside design, cost and manufacturing coordination. It was not an extra added at the end. It was a condition for delivering the solution in one piece, which, let us agree, is quite an important product function.</p>
 
       <figure class="journal-figure"><img src="../../assets/journal/en/projekty-poza-cad-3/05-petla-zycia-produktu.svg" alt="An evenly spaced product life cycle with a repeat loop returning feedback to the next revision." width="1600" height="900" loading="lazy" decoding="async"></figure>
 
-      <p>Packaging is a good example. A product that works in the laboratory may not survive transport, or may require an expensive crate if the design does not account for support points, vulnerable components and lifting methods. In a project delivered for a client in the United States, packaging was part of the scope alongside design, cost and coordination. It was not an addition after design had finished, but a condition for delivering the solution.</p>
-      <p>Service follows the same principle. Access to wear parts, diagnostic capability, disassembly time and revision identification affect cost after sale. If the team does not consider them before design freeze, later improvements may require changes to the enclosure, wiring or subsystem architecture.<br class="paragraph-break"><br>Before production begins, the product should therefore be walked through its complete scenario:</p>
+      <p>The same applies to service. Access to wear parts, diagnostic capability, disassembly time and revision identification have a direct effect on after-sales cost. If we consider them only after design freeze, a small service improvement may require a new enclosure, wiring changes or a different subsystem architecture.</p>
+      <br>
+      <p>Before production begins, it is therefore worth walking the product through its complete scenario:</p>
       <ul class="journal-bullets">
         <li>receipt of components;</li>
         <li>storage and identification;</li>
@@ -123,18 +137,23 @@
         <li>use, service and change management;</li>
         <li>withdrawal or replacement.</li>
       </ul>
+      <p>If any stage requires improvisation, we have just found another design risk.</p>
 
-      <h2>When does a prototype become a product?</h2>
-      <p>There is no single ceremony that turns a prototype into a product. Readiness develops when evidence, documentation and process begin to form a coherent system.<br class="paragraph-break"><br>Before scaling, confirm that:</p>
+      <h2>When does a prototype really become a product?</h2>
+      <p>There is no ceremonial button that turns a prototype into a product. Readiness appears when testing, documentation and process begin to form one coherent system.</p>
+      <br>
+      <p>Before scaling, confirm that:</p>
       <ul class="journal-bullets">
-        <li>key requirements have test results and unambiguous criteria;</li>
-        <li>critical characteristics can be manufactured and inspected;</li>
+        <li>key requirements have test results and clear criteria;</li>
+        <li>critical characteristics can be manufactured and inspected repeatedly;</li>
         <li>the documentation describes one approved configuration;</li>
         <li>changes have owners and a controlled implementation method;</li>
-        <li>cost has been assessed at product, assembly, quality and service level;</li>
-        <li>packaging, transport, installation and lifecycle do not depend on improvisation.</li>
+        <li>cost has been calculated for the product, assembly, quality and service;</li>
+        <li>packaging, transport, installation and the lifecycle do not depend on improvisation.</li>
       </ul>
-      <p>A working prototype is important evidence. A production-ready product requires something more: a repeatable way for suppliers, manufacturing and inspection to achieve the same result—even when the R&amp;D team is not standing nearby.<br class="paragraph-break"><br>If you are preparing a product for NPI, a production launch or a documentation handover to suppliers, I can help review production readiness, DFMA, the EBOM structure, the test plan and the change-control process.</p>
+      <p>A working prototype is important evidence. A production-ready product requires something more: a way to achieve the same result repeatedly, through different people and different suppliers, including when the R&amp;D team is not standing nearby.</p>
+      <br>
+      <p>If you are preparing a product for NPI, a production launch or a documentation handover to suppliers, I can help review production readiness, DFMA, the EBOM structure, the test plan and the change-control process.</p>
 
       <section class="journal-project-check">
         <h2>Check production readiness</h2>

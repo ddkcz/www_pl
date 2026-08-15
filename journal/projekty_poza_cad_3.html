@@ -41,82 +41,102 @@
 
 
       <h2>Działający prototyp to dopiero początek</h2>
-      <p>Działający prototyp daje zespołowi coś bardzo potrzebnego: dowód, że główna koncepcja ma sens. Mechanizm wykonuje ruch, konstrukcja przenosi obciążenie, urządzenie realizuje funkcję, a prezentacja dla interesariuszy wreszcie pokazuje coś namacalnego. To ważny moment, ale łatwo wyciągnąć z niego zbyt daleki wniosek: „produkt jest prawie gotowy”.</p>
+      <p>Prototyp działa. Mechanizm się rusza, konstrukcja przenosi obciążenie, urządzenie robi to, co miało robić. Wreszcie można pokazać coś więcej niż render i slajd z harmonogramem. Świetny moment. Naprawdę jest co świętować. Tylko nie otwierajmy jeszcze szampana z napisem „produkcja seryjna”.</p>
+      <br>
+      <p>Działający prototyp potwierdza, że główna koncepcja ma sens. Nie potwierdza automatycznie, że produkt da się wykonywać kolejny raz, w tej samej jakości, za zakładane pieniądze i bez konstruktora stojącego obok stanowiska. Egzemplarz złożony przez R&amp;D często korzysta z wiedzy, której nie ma na żadnym rysunku. Tu trzeba coś lekko podpiłować, tam przewód ułożyć „w ten konkretny sposób”, a tę śrubę dokręcić z wyczuciem. Zespół zna wszystkie wcześniejsze iteracje, więc nawet nie zauważa, ile informacji nosi wyłącznie we własnych głowach. Produkcja takiego kontekstu nie powinna potrzebować.</p>
 
       <figure class="journal-figure journal-figure--hero">
         <img src="../assets/journal/projekty-poza-cad-3/01-grafika-otwierajaca.svg" alt="Przejście od jednego działającego prototypu do powtarzalnego produktu przez walidację, kontrolę, dokumentację, ekonomikę i cykl życia." width="1600" height="900" loading="eager" fetchpriority="high" decoding="async">
       </figure>
 
-      <p>Prototyp potwierdza wybrane hipotezy. Produkcja wymaga natomiast powtarzalności, kontrolowalności, aktualnej dokumentacji, stabilnego łańcucha dostaw i procesu, który nie zależy od wiedzy jednej osoby. Egzemplarz złożony przez zespół R&amp;D może działać dzięki poprawkom wykonanym na miejscu, ręcznemu dopasowaniu i znajomości wszystkich wcześniejszych iteracji. Fabryka nie powinna potrzebować tego samego kontekstu. Przejście od „działa” do „można to powtarzalnie wytwarzać” wymaga domknięcia pięciu obszarów: walidacji, kryteriów akceptacji, dokumentacji i zmian, ekonomiki całego produktu oraz jego życia po opuszczeniu produkcji.</p>
-      <h2>1. Test ma potwierdzić ryzyko, a nie tylko działanie</h2>
-      <p>Pierwszy prototyp zwykle odpowiada na najważniejsze pytanie funkcjonalne. Kolejne testy powinny być już budowane wokół ryzyk. Inaczej zespół może wielokrotnie potwierdzać to, co wie, i nadal nie sprawdzić warunków, które zdecydują o powodzeniu produktu.</p>
+      <p>Przejście od „działa” do „możemy to powtarzalnie wytwarzać” wymaga domknięcia pięciu obszarów: walidacji, kryteriów kontroli, dokumentacji i zmian, kosztu całego procesu oraz życia produktu już po opuszczeniu hali.</p>
+
+      <h2>1. Nie testuj w kółko tego, co już wiesz</h2>
+      <p>Pierwszy prototyp zwykle odpowiada na podstawowe pytanie: czy ta koncepcja w ogóle działa? Kolejne testy powinny celować w ryzyka. Inaczej można dziesięć razy potwierdzić to samo i ani razu nie sprawdzić warunku, który później położy produkt.</p>
 
       <figure class="journal-figure">
         <img src="../assets/journal/projekty-poza-cad-3/02-testowanie-ryzyka.svg" alt="Schemat łączący wymaganie, ryzyko, metodę testu, kryterium i decyzję." width="1600" height="900" loading="lazy" decoding="async">
       </figure>
 
-      <p>Plan walidacji warto rozpocząć od mapy ryzyk i wymagań. Dla każdego kluczowego założenia trzeba określić:</p>
+      <p>Plan walidacji dobrze zacząć od listy kluczowych wymagań i ryzyk. Dla każdego z nich trzeba ustalić:</p>
       <ul class="journal-bullets">
         <li>co dokładnie chcemy potwierdzić;</li>
         <li>jaki egzemplarz, konfiguracja i warunki są reprezentatywne;</li>
         <li>co mierzymy i z jaką dokładnością;</li>
         <li>ile powtórzeń potrzebujemy do podjęcia decyzji;</li>
-        <li>jaki wynik uznajemy za pozytywny;</li>
-        <li>co zrobimy, jeśli wynik będzie graniczny lub negatywny.</li>
+        <li>jaki wynik oznacza sukces;</li>
+        <li>co robimy, jeśli wynik będzie graniczny albo negatywny.</li>
       </ul>
-      <p>Nie każdy test musi być rozbudowany. Ważne, aby był projektowany pod decyzję. Czasem wystarczy proste oprzyrządowanie, które umożliwi powtarzalne obciążenie i pomiar. W innym przypadku potrzebne będzie porównanie kilku czynników, na przykład poprzez planowanie eksperymentu (DOE), aby odróżnić wpływ poszczególnych parametrów.<br class="paragraph-break"><br>W pracy nad produktami elektromechanicznymi przygotowywałem protokoły i raporty testowe, kryteria akceptacji oraz stanowiska wspierające testy produkcyjne. Wspólnym mianownikiem było przełożenie wymagania na powtarzalną metodę. Bez tego nawet duża liczba prób może pozostawić zespół bez jednoznacznej odpowiedzi.</p>
-      <h2>2. Kryterium akceptacji musi działać także bez konstruktora obok</h2>
-      <p>Podczas prototypowania zespół toleruje niejednoznaczność. Konstruktor wie, jak ułożyć przewód, z jaką siłą dokręcić połączenie i który dźwięk jest normalny. W produkcji taka wiedza musi zostać zamieniona w sposób pracy, który można przekazać, wykonać i skontrolować. Kryterium „zgodne z modelem” nie wystarcza. Potrzebne są cechy krytyczne, metody kontroli oraz granice decyzji. Trzeba również sprawdzić, czy wybrany wymiar lub parametr rzeczywiście da się zmierzyć w warunkach produkcyjnych.<br class="paragraph-break"><br>Dobry plan kontroli łączy trzy poziomy:</p>
+      <p>Nie każdy test musi wyglądać jak program kosmiczny. Czasem wystarczy proste oprzyrządowanie, które pozwala powtarzalnie przyłożyć obciążenie i zebrać wynik. W innym przypadku trzeba porównać kilka czynników, na przykład poprzez planowanie eksperymentu, czyli DOE. Skala testu powinna wynikać z decyzji, którą chcemy podjąć, a nie z potrzeby zapełnienia raportu wykresami.</p>
+      <br>
+      <p>Przy produktach elektromechanicznych przygotowywałem protokoły i raporty testowe, kryteria akceptacji oraz stanowiska wspierające testy produkcyjne. Wspólny mianownik zawsze był ten sam: wymaganie trzeba przełożyć na powtarzalną metodę. Bez tego nawet sto prób może dać dużo liczb i bardzo mało odpowiedzi.</p>
+
+      <h2>2. Kontrola musi działać bez konstruktora za plecami</h2>
+      <p>Podczas prototypowania wiele rzeczy odbywa się „na wyczucie”. Konstruktor wie, jak ułożyć przewód, jak mocno dokręcić połączenie i który dźwięk jest normalny. Przy jednym egzemplarzu da się z tym żyć. Przy produkcji zaczyna się loteria. Wiedza z głowy musi zostać zamieniona w sposób pracy, który można przekazać, powtórzyć i skontrolować.</p>
+      <br>
+      <p>Kryterium „zgodne z modelem” niewiele tu daje. Trzeba wskazać cechy krytyczne, metodę pomiaru i granice decyzji. Do tego sprawdzić, czy wybrany wymiar w ogóle da się wiarygodnie zmierzyć na produkcji. Wymaganie, którego nie potrafimy skontrolować, jest trochę jak regulamin napisany niewidzialnym atramentem. Dobry plan kontroli obejmuje trzy poziomy:</p>
       <ul class="journal-bullets">
         <li>Część: czy kluczowe cechy wykonano zgodnie z dokumentacją?</li>
-        <li>Montaż: czy proces połączenia i regulacji daje właściwy wynik?</li>
-        <li>Produkt: czy gotowy egzemplarz spełnia funkcję oraz wymagania bezpieczeństwa?</li>
+        <li>Montaż: czy sposób połączenia i regulacji daje właściwy wynik?</li>
+        <li>Produkt: czy gotowy egzemplarz spełnia funkcję i wymagania bezpieczeństwa?</li>
       </ul>
-      <p>Jeśli produkt przechodzi wyłącznie test końcowy, wada może zostać wykryta bardzo późno, gdy koszty części i montażu są już poniesione. Jeśli kontrolujemy wszystko bez związku z funkcją, proces staje się drogi i powolny. Celem jest kontrola właściwych cech w miejscu, w którym informacja pozwala jeszcze skutecznie zareagować.</p>
-      <h2>3. Dokumentacja musi opisywać jedną aktualną wersję produktu</h2>
-      <p>Prototyp może powstać z mieszanki plików, notatek, wiadomości i ręcznych poprawek. Przy małej liczbie osób zespół zwykle wie, co zostało zmienione. Ten model przestaje działać, gdy rośnie liczba części, dostawców, stanowisk i egzemplarzy.</p>
+      <p>Jeśli sprawdzamy produkt dopiero na samym końcu, wadę możemy znaleźć wtedy, gdy koszt części i całego montażu został już poniesiony. Jeśli z kolei mierzymy wszystko, co da się zmierzyć, kontrola robi się droga i powolna. Chodzi o sprawdzanie właściwych cech w takim miejscu procesu, w którym nadal możemy sensownie zareagować.</p>
+      <br>
+      <p>Najprostsza zasada? Osoba, która nie uczestniczyła w rozwoju produktu, powinna na podstawie dokumentacji umieć powiedzieć: dobre, złe albo wymaga decyzji. Bez telefonu do konstruktora i pytania: „A co autor miał na myśli?”.</p>
+
+      <h2>3. Folder „FINAL_final_ostateczny2” nie jest kontrolą konfiguracji</h2>
+      <p>Prototyp potrafi powstać z mieszanki modeli, rysunków, notatek, wiadomości i ręcznych poprawek. Przy małym zespole wszyscy mniej więcej wiedzą, co zostało zmienione. „Mniej więcej” kończy się jednak szybko, gdy rośnie liczba części, dostawców, stanowisk i egzemplarzy.</p>
 
       <figure class="journal-figure">
         <img src="../assets/journal/projekty-poza-cad-3/03-jedna-zmiana-caly-produkt.svg" alt="Zmiana konstrukcyjna połączona z modelem CAD, rysunkiem, EBOM, instrukcją montażu, planem kontroli, dostawcą, zapasem i numerami seryjnymi." width="1600" height="900" loading="lazy" decoding="async">
       </figure>
 
-      <p>Gotowość produkcyjna wymaga spójnego pakietu informacji. W zależności od produktu może obejmować między innymi:</p>
+      <p>Gotowość produkcyjna wymaga jednego spójnego pakietu informacji. Zależnie od produktu będą to między innymi:</p>
       <ul class="journal-bullets">
         <li>zatwierdzone modele i rysunki z rewizjami;</li>
-        <li>strukturę EBOM, czyli inżynierską listę materiałową;</li>
+        <li>EBOM, czyli inżynierska lista materiałowa;</li>
         <li>specyfikacje komponentów handlowych;</li>
-        <li>instrukcje montażu i wymagane momenty dokręcania;</li>
-        <li>procedury kontroli i testów;</li>
+        <li>instrukcje montażu i momenty dokręcania;</li>
+        <li>procedury kontroli oraz testów;</li>
         <li>wymagania dotyczące oznaczeń, pakowania i transportu;</li>
-        <li>ślad decyzji o odstępstwach oraz zmianach.</li>
+        <li>zapis odstępstw i zmian.</li>
       </ul>
-      <p>Sama obecność plików nie oznacza jeszcze kontroli konfiguracji. Zespół powinien potrafić odpowiedzieć: która rewizja jest aktualna, gdzie jest zatwierdzona, od którego egzemplarza obowiązuje i jakie inne elementy zmienia. W środowisku PLM procesy ECR/ECO - zgłoszenia i zatwierdzenia zmiany inżynierskiej - pomagają przeprowadzić zmianę przez produkt zamiast poprawiać pojedynczy plik. Ma to znaczenie szczególnie wtedy, gdy jedna decyzja wpływa jednocześnie na model, rysunek, BOM, zapas magazynowy, instrukcję montażu i test.<br class="paragraph-break"><br>Pracując z Arena PLM, EBOM oraz procesami zmian, widziałem, że narzędzie jest tylko częścią rozwiązania. Najpierw trzeba ustalić odpowiedzialność: kto inicjuje zmianę, kto ocenia jej wpływ, kto ją zatwierdza i w jaki sposób produkcja otrzymuje jednoznaczną informację o wdrożeniu.</p>
-      <h2>4. Optymalizujemy koszt produktu i procesu, nie cenę pojedynczej części</h2>
-      <p>Po potwierdzeniu funkcji naturalnie pojawia się presja na obniżenie kosztu. Najłatwiej porównywać ceny części, ale to tylko fragment ekonomiki produktu. Tańszy komponent może wymagać dodatkowego uchwytu, dłuższego montażu, osobnej kontroli lub częstszych poprawek. Droższa część może z kolei uprościć złożenie, ograniczyć liczbę elementów złącznych i skrócić test. Decyzję warto więc oceniać przez całkowity koszt wytworzenia i obsługi.</p>
+      <p>Same pliki nie oznaczają jeszcze, że konfiguracja jest pod kontrolą. Trzeba wiedzieć, która rewizja obowiązuje, kto ją zatwierdził, od którego egzemplarza ma być używana i co jeszcze zmienia się razem z nią. W środowisku PLM służą do tego między innymi procesy ECR i ECO, czyli zgłoszenie oraz zatwierdzenie zmiany inżynierskiej. Ich sens nie polega na produkowaniu formularzy. Chodzi o przeprowadzenie zmiany przez cały produkt, bo jedna decyzja może jednocześnie dotknąć modelu, rysunku, BOM-u, zapasu magazynowego, instrukcji montażu i testu.</p>
+      <br>
+      <p>Pracując z Arena PLM, EBOM oraz procesami zmian, widziałem, że samo narzędzie nie rozwiązuje problemu. Najpierw trzeba ustalić odpowiedzialność: kto zgłasza zmianę, kto ocenia jej wpływ, kto zatwierdza i jak produkcja dowiaduje się, od kiedy ma budować nową wersję. PLM pomaga pilnować porządku. Nie zastąpi decyzji, której nikt nie podjął.</p>
+      <h2>4. Tania część potrafi zrobić drogi produkt</h2>
+      <p>Kiedy prototyp zaczyna działać, szybko pojawia się temat obniżenia kosztu. Najłatwiej porównać dwie ceny części i wybrać niższą. Tyle że cena komponentu to tylko kawałek całego rachunku. Tańszy element może wymagać dodatkowego uchwytu, dłuższego montażu, osobnej kontroli albo częstszych poprawek. Droższy może usunąć dwie śruby, uprościć bazowanie i skrócić test. Dlatego pytanie nie brzmi: „która część jest tańsza?”, lecz „które rozwiązanie daje niższy koszt całego produktu?”.</p>
 
       <figure class="journal-figure">
         <img src="../assets/journal/projekty-poza-cad-3/04-cena-a-calkowity-koszt.svg" alt="Góra lodowa pokazująca cenę części oraz ukryte koszty oprzyrządowania, montażu, kontroli, braków, logistyki, serwisu i zmian." width="1600" height="900" loading="lazy" decoding="async">
       </figure>
 
-      <p>Przydatne pytania obejmują:</p>
+      <p>Warto policzyć między innymi:</p>
       <ul class="journal-bullets">
-        <li>ile operacji i zmian narzędzia wymaga montaż;</li>
-        <li>które czynności są podatne na pomyłkę;</li>
-        <li>czy potrzebne jest specjalne oprzyrządowanie;</li>
-        <li>jaki jest koszt kontroli i testu;</li>
-        <li>ile wariantów części utrzymujemy w magazynie;</li>
-        <li>czy dostawca może powtarzalnie utrzymać wymagane tolerancje;</li>
-        <li>co stanie się z kosztem przy docelowym wolumenie.</li>
+        <li>liczbę operacji i zmian narzędzia podczas montażu;</li>
+        <li>czynności podatne na pomyłkę;</li>
+        <li>koszt specjalnego oprzyrządowania;</li>
+        <li>czas kontroli i testu;</li>
+        <li>liczbę wariantów utrzymywanych w magazynie;</li>
+        <li>zdolność dostawcy do utrzymania wymaganych tolerancji;</li>
+        <li>zachowanie kosztu przy docelowym wolumenie.</li>
       </ul>
-      <p>To właśnie tutaj DFMA - projektowanie z myślą o wytwarzaniu i montażu - staje się narzędziem biznesowym. Mniej części, prostsze bazowanie, lepszy dostęp i ograniczenie możliwości błędnego montażu mogą jednocześnie skrócić czas, poprawić jakość i zmniejszyć ryzyko.<br class="paragraph-break"><br>Przy wdrażaniu produktów do produkcji masowej oraz budowaniu procedur R&amp;D i produkcji kluczowe było przejście od jednego działającego egzemplarza do procesu, który daje ten sam wynik wielokrotnie. To wymaga współpracy konstrukcji, zakupów, jakości, dostawców i osób odpowiedzialnych za montaż - nie jednorazowej rundy „cost down” na końcu.</p>
-      <h2>5. Produkcja nie jest ostatnim etapem życia produktu</h2>
-      <p>Gotowy wyrób trzeba jeszcze zabezpieczyć, przetransportować, zainstalować, użytkować, serwisować i kiedyś wycofać. Każdy z tych etapów może ujawnić założenie pominięte w prototypie. Pakowanie jest dobrym przykładem. Produkt, który działa w laboratorium, może nie przetrwać transportu albo wymagać kosztownej skrzyni, jeśli konstrukcja nie uwzględnia punktów podparcia, elementów podatnych na uszkodzenie i sposobu podnoszenia. W projekcie realizowanym dla klienta w USA pakowanie było częścią zakresu obok konstrukcji, kosztu i koordynacji. Nie było dodatkiem po zakończeniu projektowania, lecz warunkiem dostarczenia rozwiązania.</p>
+      <p>Tu właśnie DFMA, projektowanie z myślą o wytwarzaniu i montażu, staje się narzędziem biznesowym. Usunięcie części, uproszczenie bazowania, lepszy dostęp albo ograniczenie możliwości błędnego montażu potrafią jednocześnie skrócić czas, poprawić jakość i obniżyć ryzyko.</p>
+      <br>
+      <p>Przy wdrażaniu produktów do produkcji masowej i budowaniu procedur dla R&amp;D oraz produkcji najważniejsze było przejście od jednego działającego egzemplarza do procesu, który daje ten sam wynik wielokrotnie. Tego nie załatwia jednorazowa runda „cost down”. Potrzebna jest współpraca konstrukcji, zakupów, jakości, dostawców i montażu. Cena części jest łatwa do wpisania w tabelę. Koszt chaosu trochę gorzej, ale to nie znaczy, że go nie ma.</p>
+
+      <h2>5. Produkt nie przestaje istnieć po zejściu z linii</h2>
+      <p>Gotowy wyrób trzeba zapakować, przetransportować, zainstalować, użytkować, serwisować i kiedyś wycofać. Każdy z tych etapów może ujawnić założenie, którego prototyp laboratoryjny nigdy nie sprawdził. Pakowanie jest świetnym przykładem. Produkt może działać bez zarzutu, a potem nie przetrwać transportu albo wymagać bardzo drogiej skrzyni, bo nikt nie przewidział punktów podparcia, sposobu podnoszenia czy podatnych na uszkodzenie elementów.</p>
+      <br>
+      <p>W projekcie dla klienta w USA pakowanie było częścią zakresu obok konstrukcji, kosztu i koordynacji wykonania. Nie było dodatkiem dopisanym na końcu. Było warunkiem dostarczenia rozwiązania w jednym kawałku, co, umówmy się, jest dość istotną funkcją produktu.</p>
 
       <figure class="journal-figure">
         <img src="../assets/journal/projekty-poza-cad-3/05-petla-zycia-produktu.svg" alt="Pętla życia produktu od dostaw i magazynu przez montaż, test, pakowanie, transport i instalację po użytkowanie oraz serwis." width="1600" height="900" loading="lazy" decoding="async">
       </figure>
 
-      <p>Podobnie jest z serwisem. Dostęp do części zużywalnej, możliwość diagnozy, czas demontażu i identyfikacja rewizji wpływają na koszt już po sprzedaży. Jeśli zespół nie uwzględni ich przed zamrożeniem projektu, późniejsze usprawnienia mogą wymagać zmian w obudowie, okablowaniu lub architekturze podzespołów. Przed uruchomieniem produkcji warto więc przeprowadzić produkt przez pełny scenariusz:</p>
+      <p>Podobnie z serwisem. Dostęp do części zużywalnej, możliwość diagnozy, czas demontażu i identyfikacja rewizji mają bezpośredni wpływ na koszt po sprzedaży. Jeśli pomyślimy o nich dopiero po zamrożeniu projektu, mała poprawa serwisowa może oznaczać zmianę obudowy, okablowania albo całej architektury podzespołu.</p>
+      <br>
+      <p>Przed uruchomieniem produkcji warto więc przeprowadzić produkt przez pełny scenariusz:</p>
       <ul class="journal-bullets">
         <li>odbiór komponentów;</li>
         <li>magazynowanie i identyfikację;</li>
@@ -126,17 +146,23 @@
         <li>użytkowanie, serwis i obsługę zmian;</li>
         <li>wycofanie lub wymianę.</li>
       </ul>
-      <h2>Kiedy prototyp staje się produktem?</h2>
-      <p>Nie ma jednej ceremonii, która zmienia prototyp w produkt. Gotowość powstaje wtedy, gdy dowody, dokumentacja i proces zaczynają tworzyć spójny system.<br class="paragraph-break"><br>Przed skalowaniem warto potwierdzić, że:</p>
+      <p>Jeżeli któryś etap wymaga improwizacji, to właśnie znaleźliśmy kolejne ryzyko projektowe.</p>
+
+      <h2>Kiedy prototyp naprawdę staje się produktem?</h2>
+      <p>Nie ma uroczystego przycisku, który zamienia prototyp w produkt. Gotowość pojawia się wtedy, gdy testy, dokumentacja i proces zaczynają tworzyć jeden spójny system.</p>
+      <br>
+      <p>Przed skalowaniem warto potwierdzić, że:</p>
       <ul class="journal-bullets">
-        <li>kluczowe wymagania mają wyniki testów i jednoznaczne kryteria;</li>
-        <li>cechy krytyczne można wytworzyć oraz skontrolować;</li>
+        <li>kluczowe wymagania mają wyniki testów i jasne kryteria;</li>
+        <li>cechy krytyczne można powtarzalnie wykonać i skontrolować;</li>
         <li>dokumentacja opisuje jedną zatwierdzoną konfigurację;</li>
-        <li>zmiany mają właścicieli i kontrolowany sposób wdrożenia;</li>
-        <li>koszt oceniono na poziomie produktu, montażu, jakości i serwisu;</li>
-        <li>pakowanie, transport, instalacja oraz cykl życia nie opierają się na improwizacji.</li>
+        <li>zmiany mają właścicieli oraz kontrolowany sposób wdrożenia;</li>
+        <li>koszt policzono dla produktu, montażu, jakości i serwisu;</li>
+        <li>pakowanie, transport, instalacja i cykl życia nie opierają się na improwizacji.</li>
       </ul>
-      <p>Działający prototyp jest ważnym dowodem. Gotowy do produkcji produkt wymaga jednak czegoś więcej: powtarzalnego sposobu osiągania tego samego wyniku przez dostawców, produkcję i kontrolę - również wtedy, gdy zespół R&amp;D nie stoi obok.<br class="paragraph-break"><br>Jeżeli przygotowujesz produkt do NPI, uruchomienia produkcji lub przekazania dokumentacji dostawcom, mogę pomóc w przeglądzie gotowości produkcyjnej, DFMA, strukturze EBOM, planie testów i uporządkowaniu procesu zmian.</p>
+      <p>Działający prototyp jest ważnym dowodem. Produkt gotowy do produkcji wymaga jednak czegoś więcej: sposobu osiągania tego samego wyniku wiele razy, przez różne osoby i różnych dostawców, również wtedy, gdy zespół R&amp;D nie stoi obok.</p>
+      <br>
+      <p>Jeżeli przygotowujesz produkt do NPI, uruchomienia produkcji albo przekazania dokumentacji dostawcom, mogę pomóc w przeglądzie gotowości produkcyjnej, DFMA, strukturze EBOM, planie testów i uporządkowaniu procesu zmian.</p>
 
       <section class="journal-project-check">
         <h2>Sprawdź gotowość do produkcji</h2>

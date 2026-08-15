@@ -40,68 +40,106 @@
       </header>
 
 
-      <h2>Before the first prototype is built</h2>
-      <p>We often treat the first prototype as the moment when a project truly meets reality for the first time. This is when we see whether the mechanism works, the parts fit together and the device meets its basic assumptions. The problem is that many of the most expensive mistakes arise much earlier—not during machining, assembly or testing, but when the team makes its first decisions: what exactly is to be built, under what conditions it must operate, how the outcome will be assessed and how the product will be manufactured.</p>
+      <h2>Before you order the first prototype</h2>
+      <p>Imagine you have been working on a design for several weeks. The model looks solid. The mechanism moves as it should. The render looks the part too. So you order the first prototype, open the package and within five minutes discover that the part is too heavy, assembly requires three hands, and everyone had a slightly different idea of what “easy to use” meant. That is where the trouble starts.</p>
+      <br>
+      <p>The most expensive mistakes are rarely born at the milling machine or on the assembly bench. They usually appear much earlier, when someone says, “it needs to be light, strong and cheap,” and everyone else nods as though they have just agreed on the same thing. They have not. CAD may be correct. The prototype may look excellent. And the project can still drift apart because the team never agreed on a few basic questions: what exactly are we building, under what conditions should it work, how will we know that it works well, and how do we ultimately want to manufacture it?</p>
 
-      <figure class="journal-figure journal-figure--hero"><img src="../../assets/journal/en/projekty-poza-cad-1/01-grafika-otwierajaca.svg" alt="A digital model and physical parts connected by decisions made before prototyping." width="1600" height="900" loading="eager" fetchpriority="high" decoding="async"><figcaption>Before a model becomes a part, the design passes through a series of decisions.</figcaption></figure>
+      <figure class="journal-figure journal-figure--hero">
+        <img src="../../assets/journal/en/projekty-poza-cad-1/01-grafika-otwierajaca.svg" alt="FEA model and manufactured parts linked by four decisions made before prototyping: requirements, testing, material and process, and consultation with manufacturing." width="1600" height="900" loading="eager" fetchpriority="high" decoding="async">
+        <figcaption>Before a model becomes a part, the project passes through a series of decisions.</figcaption>
+      </figure>
 
-      <p>If those decisions remain unclear, the CAD model may be correct and the prototype may look convincing, yet the project can still begin to drift. Subsequent iterations are no longer solving one technical problem; they are trying to compensate for the lack of a shared product definition. Before costly design work begins, four areas are therefore worth closing: measurable requirements, acceptance criteria, the relationship between material and process, and the involvement of manufacturing and suppliers. The aim is not to create a perfect specification. It is to ensure that the team knows which decisions are deliberate and which remain hypotheses.</p>
+      <p>Before the expensive work begins, it is worth sorting out four things: requirements, test criteria, material together with manufacturing process, and the involvement of manufacturing and suppliers. This is not about writing documentation as thick as a phone book. It is about knowing what is a decision and what remains only an assumption.</p>
 
-      <h2>1. A requirement that cannot be measured is difficult to verify</h2>
-      <p>“It must be strong”, “easy to assemble”, “as light as possible” or “inexpensive to manufacture” may sound like requirements. In practice, they are directions, and every member of the team may understand them differently. To a designer, “light” may mean a 15% mass reduction. To a product manager, it may mean no transport difficulties. To the user, it may mean being able to carry the device with one hand. Each interpretation leads to different material, design and cost decisions.</p>
+      <h2>1. “It needs to be light” is not yet a requirement</h2>
+      <p>“Strong”, “easy to assemble”, “as light as possible” and “inexpensive to manufacture” all sound reasonable. The problem is that they are wishes rather than requirements. Take “light” alone. A design engineer may think: reduce mass by 15 percent. A Product Manager: make it cheaper to ship. A user: let me carry the device with one hand. One word, three different products. Until that word is converted into something we can calculate or verify, everyone will be designing a slightly different version of the same thing.</p>
 
-      <figure class="journal-figure"><img src="../../assets/journal/en/projekty-poza-cad-1/02-zyczenie-a-wymaganie.svg" alt="A wish compared with a measurable requirement." width="1600" height="900" loading="lazy" decoding="async"></figure>
+      <figure class="journal-figure">
+        <img src="../../assets/journal/en/projekty-poza-cad-1/02-zyczenie-a-wymaganie.svg" alt="Comparison of vague expectations with a requirement defined by a parameter, conditions, method and acceptance threshold." width="1600" height="900" loading="lazy" decoding="async">
+        <figcaption>If two people can judge a requirement differently, it is not yet precise enough.</figcaption>
+      </figure>
 
-      <p>Imprecise requirements have another characteristic: conflicts between them emerge late. The product is expected to be stiff, light, inexpensive, weather-resistant and available quickly at the same time. Modelling alone cannot resolve that combination. Priorities must be established and trade-offs accepted. A good technical brief should therefore not be a wish list. Among other things, it should answer:</p>
+      <p>The second problem usually appears later: requirements begin to conflict. The product needs to be light, stiff, inexpensive, weather-resistant and preferably ready yesterday. Fine. Except geometry does not perform magic, material does not read sales presentations, and a supplier will not shorten a process just because the deadline is ambitious. Priorities therefore need to be clear. What is truly critical? Where can we compromise? Which trade-offs are we deliberately accepting?</p>
+      <br>
+      <p>A good technical brief should give the team concrete answers:</p>
       <ul class="journal-bullets">
         <li>what function the product must perform and under what conditions;</li>
         <li>which parameters are critical and which are negotiable;</li>
-        <li>the permissible manufacturing cost and the production volume behind it;</li>
-        <li>the constraints imposed by size, mass, transport, power supply or the operating environment;</li>
-        <li>what “good enough” means for the first version of the product.</li>
+        <li>what manufacturing cost is acceptable and at what production volume;</li>
+        <li>what limits apply to mass, size, transport, power supply and environment;</li>
+        <li>what “good enough” means for the first version.</li>
       </ul>
-      <p>The budget should be treated as a technical requirement, not as something to review at the end. If the design is directed from the outset towards processes, materials or tolerances that are unsuitable for the planned volume, later “cost optimisation” may in fact mean redesigning the product.</p>
-      <h2>2. Acceptance criteria must be defined before the test, not after it</h2>
-      <p>A prototype cannot answer a question that was never asked. It may work during a presentation, pass several trials and still fail to provide the information the team needs to make a decision. “It works” is a particularly dangerous result because it sounds final. In reality, it may mean only that one unit worked once, under specific conditions and with the involvement of people who knew its limitations.</p>
+      <p>One more thing: budget is also a technical requirement. If from the outset we design a part around an expensive process, tight tolerances and a hard-to-source material, the final step will not be a “small cost optimisation”. It will be a second design, only later, more expensive and under greater pressure.</p>
 
-      <figure class="journal-figure"><img src="../../assets/journal/en/projekty-poza-cad-1/03-decyzja-po-tescie.svg" alt="A test hypothesis leading through criteria to a decision." width="1600" height="900" loading="lazy" decoding="async"><figcaption>Decision criteria should be established before testing.</figcaption></figure>
+      <h2>2. First define what “works” means</h2>
+      <p>A prototype is not an oracle. It is simply a question put to reality, sometimes quite an expensive one. Ask a vague question and the answer will be equally vague. The most deceptive word after a test is: “works”. What exactly works? One unit? Once? On a bench, in a warm room, with someone who knows all its quirks? That may still be a useful result, but you need to know what it actually means.</p>
 
-      <p>Acceptance criteria bring order to this uncertainty. They define what constitutes a positive result, the conditions under which the test is conducted, what is measured and what decision follows a positive or negative outcome. In practice, at least three questions should be separated:</p>
+      <figure class="journal-figure">
+        <img src="../../assets/journal/en/projekty-poza-cad-1/03-decyzja-po-tescie.svg" alt="A test hypothesis leading through criteria to a decision: proceed, iterate or reject the concept." width="1600" height="900" loading="lazy" decoding="async">
+        <figcaption>Decision criteria should be established before testing.</figcaption>
+      </figure>
+
+      <p>That is why acceptance criteria are defined before the test, not after it. Before building anything, we should know:</p>
       <ul class="journal-bullets">
-        <li>Does the solution perform its function?</li>
-        <li>Does it perform that function over the required range and under the required conditions?</li>
-        <li>Is the result repeatable enough to proceed to the next stage?</li>
+        <li>Does the solution perform its function at all?</li>
+        <li>Does it do so across the required range and under the required conditions?</li>
+        <li>Is the result repeatable enough to move forward?</li>
       </ul>
-      <p>This distinction changes how a prototype is designed. If the first iteration is intended to verify load capacity and stiffness, there is no need to invest immediately in a production-like finish. If the objective is to assess assembly, the prototype must reproduce interfaces, tool access and the sequence of operations. If the team is comparing variants, it needs a common method and identical test conditions.<br class="paragraph-break"><br>In projects where I prepared test protocols, reports, acceptance criteria and test fixtures, the document itself was not the greatest source of value. What mattered was agreeing before the trial what we actually wanted to learn. This turned the test into a decision-making tool rather than merely an event in the schedule.</p>
-      <h2>3. A material cannot be selected in isolation from the process</h2>
-      <p>Material selection is often reduced to comparing mechanical properties. In reality, the material is part of a larger system of decisions. What matters is not only what it can withstand, but also how it will be formed, joined, finished, inspected and sourced. The same function may be provided by a machined, sheet-metal, cast, welded or polymer component. Each process creates different geometry, constraints, tolerances, tooling costs and supply risks.</p>
+      <p>This immediately brings order to how the prototype is built. If we are checking load capacity and stiffness, we do not need a production-like surface finish yet. If we are evaluating assembly, we must reproduce the interfaces, tool access and sequence of operations. If we are comparing two variants, both must be tested using the same method and under the same conditions. Otherwise, we are comparing apples with a 13 mm spanner.</p>
+      <br>
+      <p>On various projects I have prepared test protocols, reports, acceptance criteria and test fixtures. The document itself was never the greatest source of value. Paper will not save anyone if nobody knows why the test is being run. The value came from agreeing before the trial what we wanted to learn and what decision would follow the result. At that point, the test stops being an event in the schedule. It becomes a decision-making tool.</p>
 
-      <figure class="journal-figure"><img src="../../assets/journal/en/projekty-poza-cad-1/04-material-i-proces.svg" alt="A part connected with material, process, volume, geometry, joining and inspection decisions." width="1600" height="900" loading="lazy" decoding="async"><figcaption>You are not choosing only a material. You are choosing the entire way the part will be made. Material, geometry and manufacturing process form one decision system.</figcaption></figure>
+      <h2>3. Material never comes alone. It brings the entire process with it</h2>
+      <p>Material is often selected from a table: strength, stiffness, density, operating temperature. These obviously matter. But the material alone does not settle the issue. Along with it, we choose the manufacturing method, tolerances, joining method, finish, quality control, suppliers and a substantial share of the cost. In short, the material arrives with plenty of baggage. The same function may be delivered by a machined part, bent sheet metal, a casting, a weldment or a polymer component. Each process prefers different geometry and comes with different constraints. A milling machine may happily produce a prototype that verifies the function perfectly. But geometry suited to machining may make little sense as a casting or injection-moulded part.</p>
 
-      <p>For an initial prototype, a machined part may be the fastest way to verify function. This does not mean that geometry optimised for machining will suit casting or injection moulding. If the target process is known, its logic should be incorporated as early as possible. Otherwise, a successful prototype may merely postpone an expensive redesign. While working on systems combining injection-moulded plastics, sheet metal, castings and machined parts, I repeatedly saw how a material decision affected the entire product. It changed support conditions, joints, cable routing, assembly order, component availability and the test plan. Material assessment should therefore consider:</p>
+      <figure class="journal-figure">
+        <img src="../../assets/journal/en/projekty-poza-cad-1/04-material-i-proces.svg" alt="A structural part surrounded by linked decisions concerning function, material, process, volume, geometry, tolerances, joining and inspection." width="1600" height="900" loading="lazy" decoding="async">
+        <figcaption>You are not choosing only a material. You are choosing the entire way the part will be made. Material, geometry and manufacturing process form one decision system.</figcaption>
+      </figure>
+
+      <p>This is where it is easy to fall into a trap: the prototype works, everyone is pleased, and several months later someone asks how it is actually going to be manufactured at the target cost and volume. Suddenly it becomes clear that the successful prototype merely postponed the redesign. While working on systems combining injection-moulded plastics, sheet metal, castings and machined parts, I repeatedly saw one material decision ripple through the entire product. It changes supports, joints, cable routing, assembly sequence, component availability and the test plan.</p>
+      <br>
+      <p>Material selection should therefore be viewed more broadly:</p>
       <ul class="journal-bullets">
-        <li>function and loads;</li>
-        <li>the target process and expected production volume;</li>
-        <li>tolerances that the process can maintain;</li>
-        <li>availability of stock material and suppliers;</li>
-        <li>how the part will be joined to other components;</li>
-        <li>finish, operating environment and servicing;</li>
-        <li>the cost of the complete solution, not only the price per kilogram of material.</li>
+        <li>what function the part performs and what loads it carries;</li>
+        <li>the target manufacturing process and volume;</li>
+        <li>which tolerances can realistically be maintained;</li>
+        <li>whether the material and suppliers are available;</li>
+        <li>how the part will be joined to the rest of the product;</li>
+        <li>how it will be finished, protected and serviced;</li>
+        <li>what the complete solution costs, not just a kilogram of material.</li>
       </ul>
-      <h2>4. Manufacturing and suppliers should not see the design for the first time at the end</h2>
-      <figure class="journal-figure"><img src="../../assets/journal/en/projekty-poza-cad-1/05-wczesne-zaangazowanie-zespolu.svg" alt="Timeline showing when engineering, testing, manufacturing, purchasing and quality should review the design." width="1600" height="900" loading="lazy" decoding="async"><figcaption>Each bar shows when a team should begin reviewing the design. A later review means a greater risk of costly redesign.</figcaption></figure>
-      <p>The design team does not need to know every detail of every process. It does, however, need to know when to invite people who do. Consulting manufacturing or a supplier too late often leads to more than a minor correction. It may reveal unavailable tooling, an unsuitable bend radius, a fixture problem, a difficult-to-inspect dimension, an impractical tolerance or a component with an unacceptable lead time.<br class="paragraph-break"><br>Early involvement of a manufacturing partner does not transfer responsibility for the design. It is a way to identify constraints sooner. A short conversation during the concept stage can be more valuable than an extensive review once the documentation is complete and the prototype deadline has been agreed. Regulatory and safety requirements should be treated in the same way. Not every product is regulated, but if it operates in a specific environment or interacts with users, electrical energy, loads or foreseeable misuse, those requirements should influence the architecture from the outset. Reviewing them only before launch can undermine earlier design decisions.</p>
-      <p>A useful minimum is a concept review involving representatives of design, testing, manufacturing, purchasing and—where required—quality or compliance. The purpose is not to hold a large status meeting. It is to identify assumptions that one function regards as obvious and another considers unrealistic.</p>
-      <h2>A prototype should test hypotheses, not organise chaos</h2>
-      <p>It is impossible to eliminate all uncertainty before the first prototype—and that is not the objective. Product development always requires iteration. The difference lies in whether we iterate deliberately around a specific hypothesis or use successive prototypes to discover fundamental requirements.<br class="paragraph-break"><br>Before modelling begins and parts are ordered, five points are worth confirming:</p>
+      <p>The raw-material price can look beautiful in a spreadsheet. Less so once tooling, additional processing, special fixtures and previously overlooked inspection are added.</p>
+
+      <h2>4. Manufacturing is not a final review board</h2>
+      <p>A common scenario goes like this: the design is almost finished, so we send the drawings to a supplier and ask for a price. Only then do we learn that the tool cannot reach, the bend radius is too small, the part is difficult to fixture, and the tolerance costs more than the rest of the component. This does not mean that the supplier should design the product for the team. It means confronting the idea with the real process earlier. A short consultation can uncover problems with tooling, datums, inspection, lead time or material availability before the geometry is treated as sacred.</p>
+      <br>
+      <p>Assembly is much the same. On screen, everything has infinite space. In the workshop, the spanner suddenly does not fit, the cable cannot be routed, and the final screw can only be tightened through sheer willpower.</p>
+
+      <figure class="journal-figure">
+        <img src="../../assets/journal/en/projekty-poza-cad-1/05-wczesne-zaangazowanie-zespolu.svg" alt="Product-development timeline showing engineering, testing, manufacturing, suppliers, purchasing and quality involved before documentation is frozen." width="1600" height="900" loading="lazy" decoding="async">
+        <figcaption>Each bar shows when a team should begin reviewing the design. A later review means a greater risk of costly redesign.</figcaption>
+      </figure>
+
+      <p>The sooner manufacturing, suppliers, purchasing and quality see the key assumptions, the less it costs to change direction. Early on, we move a line in CAD. Later, we change documentation, orders, tooling and schedules. The same applies to safety and regulatory compliance. If a product has requirements concerning guards, service access, stability, temperature, noise or behaviour during a failure, these are not decorations to add just before launch. They can change the product architecture.</p>
+      <br>
+      <p>A good design review should therefore not consist of the designer showing a finished model while everyone else says, “looks nice”. It is worth bringing together early the people who view the product from different angles: design, testing, manufacturing, purchasing, quality and service. Each sees a different risk. That is precisely the point.</p>
+
+      <h2>A prototype should test hypotheses, not clean up chaos</h2>
+      <p>We cannot remove all uncertainty before the first prototype. And that is a good thing, the reason we build prototypes is to learn something. Iteration is not failure. It is part of product development.</p>
+      <p>The difference is simply this: we can iterate deliberately around a specific hypothesis, or use successive prototypes to discover what we actually intended to build.</p>
+      <p>Before modelling begins and parts are ordered, five things are worth confirming:</p>
       <ul class="journal-bullets">
-        <li>critical requirements are measurable and have owners;</li>
+        <li>critical requirements are measurable and their owners are known;</li>
         <li>priorities and trade-offs are explicit;</li>
-        <li>the team knows what will be tested and how;</li>
-        <li>the material has been considered together with the process, volume and supply chain;</li>
-        <li>manufacturing, suppliers and safety requirements have been involved at the right stage.</li>
+        <li>the team knows what will be tested and how the result will be judged;</li>
+        <li>material has been considered together with process, volume and supply;</li>
+        <li>manufacturing, suppliers and safety requirements entered the conversation early enough.</li>
       </ul>
-      <p>If these elements are in order, the first prototype does not have to be perfect. It must provide information that allows the team to make the next good decision.<br class="paragraph-break"><br>Are you developing a mechanical product and want to confirm that its assumptions are ready to move into design or prototyping? I can help review requirements, the test plan, mechanical architecture and manufacturing risks before costly iterations begin.</p>
+      <p>Once these points are in order, the first prototype does not need to be beautiful or perfect. It needs to give the team the information required to make the next good decision. No more, and no less.</p>
+      <br>
+      <p>Are you developing a mechanical product and want to check whether its assumptions are ready to move into design or prototyping? I can help review requirements, the test plan, mechanical architecture and manufacturing risks before costly iterations begin consuming the budget and schedule.</p>
 
       <section class="journal-project-check">
         <h2>Review your project</h2>

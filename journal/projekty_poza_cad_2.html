@@ -41,100 +41,116 @@
 
 
       <h2>Od poprawnej geometrii do działającego produktu</h2>
-      <p>Model można przebudować bez oporu materiału. Złożenie można obrócić pod dowolnym kątem. Narzędzie montażowe nie zajmuje miejsca, przewód układa się dokładnie po wyznaczonej trasie, a wszystkie części mają wymiary nominalne. Rzeczywisty produkt nie jest tak uprzejmy. Części mają odchyłki, przewody własną sztywność, operator ograniczony dostęp, a kolejność montażu potrafi zablokować rozwiązanie, które na ekranie wygląda poprawnie. Do tego dochodzą deformacje, powierzchnie kontaktu, luzy, transport, kontrola jakości i serwis.</p>
+      <p>W CAD-zie świat działa podejrzanie idealnie. Każda część ma dokładnie taki wymiar, jaki jej nadaliśmy. Przewód pokornie układa się po wyznaczonej trasie, materiał nie ugina się, dopóki mu na to nie pozwolimy, a śrubę można umieścić nawet tam, gdzie podczas montażu nie zmieści się ani klucz, ani ręka, ani resztki cierpliwości montera. Na ekranie wszystko pasuje, bo model zna wyłącznie reguły, które sami mu podaliśmy. Rzeczywisty produkt dorzuca własne: tolerancje, sztywność, tarcie, kolejność montażu i człowieka, który ma to wszystko złożyć dwiema rękami. I właśnie w tym miejscu poprawny model CAD może przestać być poprawnym projektem.</p>
+      <br>
+      <p>Części mają odchyłki. Przewody własną sztywność. Operator tylko dwie ręce. Narzędzie zajmuje miejsce, a kolejność montażu potrafi zablokować rozwiązanie, które na ekranie wyglądało wręcz elegancko. Dlatego poprawny model 3D nie jest jeszcze dowodem, że projekt jest dobry. CAD świetnie opisuje geometrię, ale nie zna całego kontekstu. Nie wie, kto będzie to składał, jak część zostanie wykonana, co się ugnie, co rozgrzeje ani do której śruby serwisant zacznie kiedyś mówić bardzo nieładne rzeczy.</p>
 
       <figure class="journal-figure journal-figure--hero">
         <img src="../assets/journal/projekty-poza-cad-2/01-grafika-otwierajaca.svg" alt="Zestawienie nominalnego modelu cyfrowego z fizycznymi częściami oraz pięcioma obszarami, których CAD sam nie ocenia." width="1600" height="900" loading="eager" fetchpriority="high" decoding="async">
         <figcaption>CAD opisuje geometrię. Konstruktor musi dopowiedzieć rzeczywistość.</figcaption>
       </figure>
 
-      <p>Dlatego poprawny model 3D nie jest jeszcze dowodem, że projekt jest dobry. CAD opisuje geometrię. Konstruktor musi dopowiedzieć cały kontekst, którego model sam nie zna. Poniższe pięć obszarów traktuję jak praktyczny przegląd przed prototypem. Nie są „błędami początkujących”. Wracają również w doświadczonych zespołach, szczególnie wtedy, gdy produkt łączy kilka technologii i jest rozwijany pod presją terminu.</p>
-      <h2>1. Nominał pasuje. A co wydarzy się na granicach tolerancji?</h2>
-      <p>W CAD każda część najczęściej występuje w wymiarze nominalnym. Otwór ma dokładnie 10 mm, rozstaw dokładnie 80 mm, a dwie powierzchnie spotykają się bez odchyłek. W produkcji każdy z tych wymiarów zajmuje pewien zakres. Pojedyncza tolerancja może wyglądać niewinnie. Problem pojawia się, gdy kilka wymiarów tworzy łańcuch wpływający na ten sam luz, docisk albo pozycję. Wtedy zgodne z rysunkiem części mogą złożyć się w produkt, który nie spełnia funkcji.</p>
+      <p>Poniższych pięć obszarów traktuję jak przegląd przed zamówieniem prototypu albo wypuszczeniem dokumentacji. I nie, nie są to wyłącznie „błędy początkujących”. Wracają również w doświadczonych zespołach, zwłaszcza gdy kilka technologii spotyka się w jednym produkcie, a termin zaczyna oddychać wszystkim na kark.</p>
+
+      <h2>1. Nominał pasuje. Tylko że nominał prawie nie istnieje</h2>
+      <p>W modelu otwór ma dokładnie 10 mm, rozstaw dokładnie 80 mm, a dwie powierzchnie spotykają się idealnie. W produkcji każdy z tych wymiarów porusza się w pewnym zakresie. Raz trochę w górę, raz trochę w dół. I pojedynczo wszystko może być zgodne z rysunkiem. Problem zaczyna się wtedy, gdy kilka takich wymiarów tworzy jeden łańcuch. Nagle wszystkie części są formalnie dobre, ale złożenie nie daje wymaganego luzu, docisku albo położenia. Każdy zrobił swoje poprawnie, a produkt mimo to nie działa. Inżynierska wersja „wszyscy niewinni, tylko trup leży”.</p>
 
       <figure class="journal-figure">
         <img src="../assets/journal/projekty-poza-cad-2/02-nominal-i-granice-tolerancji.svg" alt="Trzy układy wymiarowe pokazujące kontrolowany luz, ryzyko kolizji i utratę pozycjonowania." width="1600" height="900" loading="lazy" decoding="async">
       </figure>
 
-      <p>Analiza łańcucha tolerancji nie musi zawsze oznaczać rozbudowanego modelu statystycznego. Pierwszym krokiem jest zrozumienie funkcji:</p>
+      <p>Analiza łańcucha tolerancji nie zawsze wymaga potężnego arkusza i modelu statystycznego. Najpierw trzeba po prostu zrozumieć funkcję:</p>
       <ul class="journal-bullets">
-        <li>które powierzchnie naprawdę pozycjonują element;</li>
+        <li>które powierzchnie rzeczywiście pozycjonują element;</li>
         <li>gdzie potrzebny jest luz, a gdzie kontrolowany docisk;</li>
-        <li>jaki wymiar zamyka łańcuch;</li>
+        <li>jaki wymiar zamyka cały łańcuch;</li>
         <li>które odchyłki sumują się w najgorszym przypadku;</li>
-        <li>czy sposób bazowania na rysunku odpowiada sposobowi montażu i kontroli.</li>
+        <li>czy bazowanie na rysunku odpowiada montażowi i kontroli.</li>
       </ul>
-      <p>Przy projektowaniu zespołów elektromechanicznych, prowadzeniu kabli, elementach blaszanych czy obudowach z tworzyw jedna zmiana potrafi wpłynąć na kilka interfejsów jednocześnie. Dlatego tolerancja nie jest dopiskiem do gotowej geometrii. Jest częścią architektury produktu.<br class="paragraph-break"><br>Warto również uważać na nadmierne zawężanie tolerancji „dla bezpieczeństwa”. Dokładniejszy wymiar nie naprawia niejasnego sposobu bazowania. Może za to zwiększyć koszt, ograniczyć liczbę dostawców i utrudnić kontrolę.</p>
-      <h2>2. Złożenie części to nie to samo co proces montażu</h2>
-      <p>W złożeniu CAD element może pojawić się od razu we właściwym miejscu. W rzeczywistości musi przejść konkretną drogę. Ktoś musi go chwycić, ustawić, przytrzymać, połączyć i skontrolować. Najprostszy przegląd montażowy zaczyna się od odtworzenia kolejności operacji. Jeżeli montujemy część A, czy nadal mamy dostęp do śruby B? Czy narzędzie zmieści się w osi elementu złącznego? Czy operator widzi punkt połączenia? Czy przewód można ułożyć bez przekroczenia promienia gięcia i bez późniejszego demontażu połowy urządzenia?</p>
+      <p>Przy zespołach elektromechanicznych, elementach blaszanych, obudowach z tworzyw czy prowadzeniu kabli jedna zmiana wymiaru potrafi przejść przez kilka interfejsów naraz. Dlatego tolerancja nie jest przyprawą, którą posypujemy gotowy rysunek. Jest częścią architektury produktu.</p>
+      <br>
+      <p>Warto też uważać na tolerancje zawężane „dla bezpieczeństwa”. Bardziej dokładny wymiar nie naprawi niejasnego bazowania. Może za to podnieść cenę, ograniczyć liczbę dostawców i sprawić, że kontrola stanie się osobnym projektem. Dokładniej nie zawsze znaczy lepiej. Czasem znaczy tylko drożej.</p>
+
+      <h2>2. CAD teleportuje części. Monter niestety nie może</h2>
+      <p>W złożeniu klikamy i element pojawia się dokładnie tam, gdzie powinien. W rzeczywistości ktoś musi go chwycić, obrócić, wsunąć, przytrzymać, połączyć i jeszcze sprawdzić, czy zrobił to dobrze. Dlatego złożenie części to nie to samo co proces montażu. Najprostszy przegląd zaczyna się od przejścia przez prawdziwą kolejność operacji. Jeśli najpierw montujemy część A, czy nadal mamy dostęp do śruby B? Czy klucz wejdzie w osi połączenia? Czy operator widzi miejsce montażu? Czy przewód da się ułożyć bez łamania dopuszczalnego promienia i bez demontażu połowy urządzenia?</p>
 
       <figure class="journal-figure">
         <img src="../assets/journal/projekty-poza-cad-2/03-zlozenie-a-montaz.svg" alt="Porównanie części umieszczonej w złożeniu CAD z rzeczywistym montażem wymagającym drogi wprowadzenia i dostępu narzędzia." width="1600" height="900" loading="lazy" decoding="async">
       </figure>
 
-      <p>Elementy złączne wymagają szczególnej uwagi. Biblioteka CAD podpowie średnicę i długość śruby, ale nie oceni automatycznie:</p>
+      <p>Same elementy złączne potrafią dostarczyć sporo rozrywki. Biblioteka CAD dobierze średnicę i długość śruby, ale nie powie nam automatycznie:</p>
       <ul class="journal-bullets">
-        <li>dostępu klucza lub wkrętaka;</li>
-        <li>miejsca na wprowadzenie śruby;</li>
-        <li>ryzyka upuszczenia nakrętki do wnętrza urządzenia;</li>
-        <li>możliwości pomylenia podobnych elementów;</li>
-        <li>liczby zmian narzędzia;</li>
-        <li>tego, czy połączenie da się później rozebrać w serwisie.</li>
+        <li>czy zmieści się klucz albo wkrętak;</li>
+        <li>czy jest miejsce na wprowadzenie śruby;</li>
+        <li>czy nakrętka może wpaść do wnętrza urządzenia;</li>
+        <li>czy podobne śruby da się łatwo pomylić;</li>
+        <li>ile razy podczas montażu trzeba zmienić narzędzie;</li>
+        <li>czy połączenie da się później rozebrać w serwisie.</li>
       </ul>
-      <p>Podczas nadzoru nad montażem prototypów oraz pracy z zespołami produkcyjnymi widać wyraźnie, że konstrukcja i montaż mówią różnymi językami. Konstruktor widzi funkcję połączenia. Monter widzi sekwencję ruchów, dostęp i ryzyko pomyłki. Dobry projekt musi uwzględnić oba spojrzenia.<br class="paragraph-break"><br>Pomaga prosty test: przejść przez montaż krok po kroku z modelem, narzędziami i planowaną kolejnością. Jeszcze lepiej, jeśli robi to osoba, która nie budowała wcześniej złożenia w CAD. Szybko wskaże miejsca, w których projekt zakłada wiedzę niewidoczną w dokumentacji.</p>
-      <h2>3. Dobra część może tworzyć zły produkt</h2>
-      <p>Konstruktor często pracuje na wybranym komponencie lub podzespole. To potrzebne, ale tworzy ryzyko lokalnej optymalizacji. Część staje się lżejsza, sztywniejsza albo łatwiejsza do wykonania, a jednocześnie pogarsza montaż, chłodzenie, prowadzenie przewodów, dostęp serwisowy albo zachowanie sąsiedniego układu. W produktach łączących blachy, odlewy, tworzywa, komponenty handlowe i okablowanie interfejsy bywają ważniejsze niż same części. To na nich kumulują się odchyłki, obciążenia, wymagania montażowe i odpowiedzialność kilku osób.<br class="paragraph-break"><br>Dlatego przegląd projektu warto prowadzić nie tylko według części, ale również według przepływów i interfejsów:</p>
+      <p>Podczas nadzoru nad montażem prototypów i pracy z zespołami produkcyjnymi dobrze widać, że konstruktor i monter patrzą na ten sam detal zupełnie inaczej. Konstruktor widzi funkcję połączenia. Monter widzi ruch ręki, dostęp, kolejność i ryzyko pomyłki. Dobry projekt musi pogodzić oba światy.</p>
+      <br>
+      <p>Pomaga bardzo prosty test: przejść montaż krok po kroku z modelem, rzeczywistymi narzędziami i planowaną kolejnością. Najlepiej z osobą, która nie budowała tego złożenia w CAD. Ona nie zna naszych skrótów myślowych i właśnie dlatego szybko znajdzie miejsca, w których projekt działa tylko dzięki wiedzy konstruktora.</p>
+
+      <h2>3. Świetna część może zepsuć cały produkt</h2>
+      <p>Konstruktor zwykle odpowiada za konkretny komponent albo podzespół. To naturalne, ale łatwo wtedy wpaść w lokalną optymalizację. Część staje się lżejsza, sztywniejsza lub prostsza w produkcji, a przy okazji pogarsza chłodzenie, montaż, prowadzenie kabli albo dostęp serwisowy sąsiedniego układu. Na swoim ekranie wygraliśmy. Cały produkt przegrał.</p>
+      <br>
+      <p>W urządzeniach łączących blachy, odlewy, tworzywa, gotowe komponenty i okablowanie to właśnie interfejsy bywają ważniejsze od pojedynczych części. Na styku kumulują się odchyłki, obciążenia, wymagania montażowe i odpowiedzialność kilku osób. Czyli dokładnie tam, gdzie najłatwiej założyć, że „ktoś inny to sprawdzi”. Dlatego projekt warto przeglądać nie tylko część po części, lecz także według przepływów:</p>
       <ul class="journal-bullets">
-        <li>jak przenoszone są siły;</li>
+        <li>jak przez produkt przechodzą siły;</li>
         <li>którędy płynie energia lub medium;</li>
-        <li>jak prowadzone i odciążane są kable;</li>
-        <li>gdzie odprowadzane jest ciepło;</li>
-        <li>jak użytkownik oddziałuje z produktem;</li>
+        <li>jak prowadzone i odciążane są przewody;</li>
+        <li>gdzie ucieka ciepło;</li>
+        <li>jak użytkownik oddziałuje z urządzeniem;</li>
         <li>co trzeba otworzyć, wyjąć lub odłączyć podczas serwisu.</li>
       </ul>
-      <p>Takie spojrzenie zmienia pytanie z „czy moja część jest poprawna?” na „co moja część robi całemu produktowi?”. Jest szczególnie ważne w pracy rozproszonej, gdy różne podzespoły mają różnych właścicieli, a każdy z nich optymalizuje swój zakres.</p>
-      <h2>4. Symulacja i automatyzacja nie znają wszystkich założeń</h2>
-      <p>Oprogramowanie potrafi szybko wykryć kolizję, policzyć naprężenia, zasugerować wymiar albo wygenerować wariant geometrii. Wynik wygląda precyzyjnie, dlatego łatwo przypisać mu większą pewność, niż naprawdę daje. Każdy wynik jest jednak odpowiedzią na model i założenia wprowadzone przez człowieka. Analiza wytrzymałościowa nie rozpozna sama, że warunek brzegowy nie odpowiada rzeczywistemu mocowaniu. Detekcja kolizji nie pokaże problemu, jeśli w złożeniu brakuje przewodu, narzędzia, uszczelki albo pełnego zakresu ruchu. Biblioteka komponentów nie zagwarantuje, że wybrana część jest dostępna w wymaganym wariancie i terminie.</p>
+      <p>Pytanie „czy moja część jest poprawna?” warto więc zamienić na „co moja część robi całemu produktowi?”. To szczególnie ważne w pracy rozproszonej, gdy każdy właściciel podzespołu pilnuje własnego ogródka. Produkt niestety nie przejmuje się granicami między działami.</p>
+
+      <h2>4. Symulacja potrafi policzyć wszystko, poza tym, że liczymy zły przypadek</h2>
+      <p>Program szybko wykryje kolizję, policzy naprężenia albo wygeneruje wariant geometrii. Wynik ma trzy miejsca po przecinku i kolorową mapę, więc wygląda bardzo pewnie. Człowiek odruchowo zaczyna mu ufać. Tyle że każdy wynik odpowiada wyłącznie na model i założenia, które sami wprowadziliśmy. Analiza wytrzymałościowa nie zgłosi, że sposób zamocowania w symulacji nie odpowiada rzeczywistości. Detekcja kolizji nie znajdzie przewodu, którego nie dodaliśmy do złożenia. Nie pokaże też brakującego narzędzia, uszczelki ani zakresu ruchu, którego nie zasymulowaliśmy. Biblioteka komponentów nie zagwarantuje z kolei, że wybrana część będzie dostępna w odpowiednim wariancie i terminie.</p>
       <figure class="journal-figure">
         <img src="../assets/journal/projekty-poza-cad-2/04-symulacja-i-weryfikacja.svg" alt="Założenia modelu prowadzące do wyniku MES, który następnie jest weryfikowany obliczeniem, testem i analizą wrażliwości." width="1600" height="900" loading="lazy" decoding="async">
       </figure>
-      <p>Pracując z analizami konstrukcyjnymi, prototypami i testami, traktuję wynik cyfrowy jako element łańcucha dowodowego, nie jego zakończenie. Dobra praktyka obejmuje:</p>
+      <p>Pracując z analizami konstrukcyjnymi, prototypami i testami, traktuję wynik cyfrowy jako jeden element dowodu, a nie pieczątkę zamykającą temat. Sensowna kolejność wygląda tak:</p>
       <ul class="journal-bullets">
-        <li>zapisanie założeń wejściowych;</li>
-        <li>sprawdzenie, czy model odpowiada rzeczywistemu przypadkowi;</li>
-        <li>ocenę wrażliwości wyniku na zmianę założeń;</li>
-        <li>porównanie z obliczeniem uproszczonym, doświadczeniem lub testem;</li>
-        <li>udokumentowanie zakresu, którego analiza nie obejmuje.</li>
+        <li>zapisujemy założenia wejściowe;</li>
+        <li>sprawdzamy, czy model odpowiada rzeczywistemu przypadkowi;</li>
+        <li>oceniamy, jak wynik zmienia się wraz z założeniami;</li>
+        <li>porównujemy go z prostym obliczeniem, doświadczeniem albo testem;</li>
+        <li>zapisujemy, czego analiza nie obejmuje.</li>
       </ul>
-      <p>Nie chodzi o brak zaufania do narzędzi. Chodzi o właściwe rozłożenie odpowiedzialności. Program oblicza konsekwencje przyjętego modelu. Konstruktor odpowiada za to, czy model reprezentuje właściwy problem.</p>
-      <h2>5. Projekt kończy się później niż model</h2>
-      <p>Część może działać w prototypie, a mimo to sprawiać problemy w produkcji, transporcie, kontroli lub serwisie. To dlatego, że życie produktu obejmuje więcej niż jego nominalną pracę.</p>
+      <p>Nie chodzi o nieufność wobec narzędzi. Program robi dokładnie to, o co go prosimy. Problem w tym, że potrafi bardzo dokładnie odpowiedzieć na źle postawione pytanie. Za liczby odpowiada solver. Za sens całego przypadku nadal odpowiada konstruktor.</p>
+
+      <h2>5. Projekt nie kończy się na przycisku „release”</h2>
+      <p>Część może świetnie działać w prototypie, a potem sprawiać problemy przy produkcji, kontroli, transporcie albo serwisie. Bo życie produktu jest znacznie dłuższe niż chwila, w której wykonuje swoją główną funkcję.</p>
 
       <figure class="journal-figure">
         <img src="../assets/journal/projekty-poza-cad-2/05-cykl-zycia-czesci.svg" alt="Oś cyklu życia części od materiału przez wykonanie, kontrolę, montaż i transport po użytkowanie oraz serwis." width="1600" height="900" loading="lazy" decoding="async">
       </figure>
 
-      <p>W projektach rozwijanych od koncepcji do wdrożenia regularnie wracają pytania, których nie widać w podstawowym złożeniu:</p>
+      <p>W modelu podstawowym zwykle nie widać wielu bardzo przyziemnych pytań:</p>
       <ul class="journal-bullets">
-        <li>jak część zostanie zamocowana podczas obróbki lub kontroli;</li>
-        <li>które wymiary są możliwe do zmierzenia;</li>
+        <li>jak część zostanie zamocowana podczas obróbki i kontroli;</li>
+        <li>które wymiary naprawdę da się zmierzyć;</li>
         <li>jak produkt zostanie podniesiony, zabezpieczony i zapakowany;</li>
-        <li>co wydarzy się pod wpływem drgań, temperatury lub wielokrotnego montażu;</li>
-        <li>które elementy zużywają się i jak będą wymieniane;</li>
-        <li>czy serwis wymaga specjalnego narzędzia albo ponownej kalibracji;</li>
-        <li>jak odróżnimy kolejne rewizje części.</li>
+        <li>co zrobią z nim drgania, temperatura i wielokrotny montaż;</li>
+        <li>które elementy będą się zużywać i jak je wymienimy;</li>
+        <li>czy serwis potrzebuje specjalnego narzędzia lub kalibracji;</li>
+        <li>jak odróżnimy od siebie kolejne rewizje.</li>
       </ul>
-      <p>W projekcie obiektu sportowego realizowanego dla klienta w USA zakres nie kończył się na konstrukcji. Obejmował również koszt, optymalizację, pakowanie i koordynację wykonania. To dobry przykład szerszej zasady: rozwiązanie techniczne jest częścią procesu dostarczenia i użytkowania produktu. Jeżeli proces nie działa, sama geometria nie uratuje projektu.</p>
-      <h2>Przegląd przed kliknięciem „release”</h2>
-      <p>Przed wypuszczeniem dokumentacji lub zamówieniem prototypu warto zatrzymać się na pięć krótkich kontroli:</p>
+      <p>W projekcie obiektu sportowego dla klienta w USA moja praca nie kończyła się na samej konstrukcji. Zakres obejmował również koszt, optymalizację, pakowanie i koordynację wykonania. I dobrze pokazuje to szerszą zasadę: rozwiązanie techniczne jest tylko częścią procesu dostarczenia i użytkowania produktu. Jeśli ten proces nie działa, piękna geometria niewiele pomoże.</p>
+
+      <h2>Pięć minut przed wypuszczeniem dokumentacji</h2>
+      <p>Przed zamówieniem prototypu albo kliknięciem „release” warto jeszcze raz:</p>
       <ul class="journal-bullets">
-        <li>sprawdź funkcję w skrajnych kombinacjach tolerancji;</li>
-        <li>odtwórz rzeczywistą kolejność montażu wraz z narzędziami;</li>
-        <li>przejrzyj interfejsy i wpływ części na cały produkt;</li>
-        <li>zapisz założenia analiz oraz sposób ich potwierdzenia;</li>
-        <li>przeprowadź część przez produkcję, kontrolę, transport i serwis.</li>
+        <li>sprawdzić funkcję w skrajnych kombinacjach tolerancji;</li>
+        <li>odtworzyć prawdziwą kolejność montażu z narzędziami;</li>
+        <li>przejrzeć interfejsy i wpływ części na resztę produktu;</li>
+        <li>zapisać założenia analiz oraz sposób ich potwierdzenia;</li>
+        <li>przeprowadzić część przez produkcję, kontrolę, transport i serwis.</li>
       </ul>
-      <p>CAD jest świetnym narzędziem do opisywania rozwiązania. Nie powinien jednak zastępować rozmowy z produkcją, montażem, testami ani użytkownikiem. Największa wartość konstruktora zaczyna się właśnie tam, gdzie kończy się automatyczna odpowiedź programu.<br class="paragraph-break"><br>Jaki problem zdarzyło Wam się zauważyć dopiero podczas prototypowania albo montażu - mimo że model wyglądał poprawnie? Chętnie porównam doświadczenia w komentarzach.</p>
+      <p>CAD jest świetnym narzędziem do opisywania rozwiązania. Ale nie zastąpi rozmowy z produkcją, montażem, testami ani użytkownikiem. Największa wartość konstruktora zaczyna się właśnie tam, gdzie kończy się automatyczna odpowiedź programu.</p>
+      <br>
+      <p>Jaki problem zdarzyło Wam się zauważyć dopiero przy prototypie albo montażu, mimo że na ekranie wszystko wyglądało idealnie? Chętnie porównam doświadczenia w komentarzach.</p>
 
       <section class="journal-project-check">
         <h2>Sprawdź swój projekt</h2>

@@ -731,8 +731,8 @@ function buildSeriesNumber(source) {
       footer: {
         margin: [42, 17, 42, 0],
         text: IS_ENGLISH
-          ? 'dawid.kuczynski.dom@gmail.com  ·  © 2026 CADsmart.pl — all rights reserved'
-          : 'dawid.kuczynski.dom@gmail.com  ·  © 2026 CADsmart.pl — wszelkie prawa zastrzeżone',
+          ? 'dawid@cadsmart.pl  ·  © 2026 CADsmart.pl — all rights reserved'
+          : 'dawid@cadsmart.pl  ·  © 2026 CADsmart.pl — wszelkie prawa zastrzeżone',
         style: 'footer',
         alignment: 'center'
       },

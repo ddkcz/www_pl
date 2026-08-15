@@ -41,95 +41,105 @@
 
 
       <h2>From correct geometry to a working product</h2>
-      <p>A model can be rebuilt without material resistance. An assembly can be rotated to any angle. The assembly tool occupies no space, a cable follows its defined route exactly and every part has its nominal dimensions. A real product is not so accommodating. Parts have variation, cables have stiffness, operators have limited access, and the assembly sequence can block a solution that looks correct on screen. Deformation, contact surfaces, clearances, transport, quality control and servicing add further constraints.</p>
+      <p>In CAD, the world works suspiciously perfectly. Every part has exactly the dimensions we gave it. A cable obediently follows its defined route, material does not bend until we allow it to, and a bolt can be placed even where neither a tool, a hand nor the assembler's remaining patience will fit. Everything fits on screen because the model knows only the rules we gave it. A real product adds its own: tolerances, stiffness, friction, assembly sequence and a person who has to put it all together with two hands. This is exactly where a correct CAD model can stop being a correct design.</p>
+      <br>
+      <p>Parts have variation. Cables have stiffness of their own. The operator has only two hands. Tools take up space, and the assembly sequence can block a solution that looked downright elegant on screen. A correct 3D model is therefore not proof of a good design. CAD is excellent at describing geometry, but it does not know the whole context. It does not know who will assemble the product, how the part will be made, what will bend, what will heat up, or which bolt will one day make a service technician swear.</p>
 
       <figure class="journal-figure journal-figure--hero"><img src="../../assets/journal/en/projekty-poza-cad-2/01-grafika-otwierajaca.svg" alt="A nominal CAD model compared with the physical product." width="1600" height="900" loading="eager" fetchpriority="high" decoding="async"></figure>
 
-      <p>A correct 3D model is therefore not proof of a good design. CAD describes geometry; the designer must supply the complete context that the model does not know. I treat the following five areas as a practical pre-prototype review. They are not merely “beginner mistakes”. They recur in experienced teams as well, especially when a product combines several technologies and is developed under schedule pressure.</p>
+      <p>I treat the following five areas as a review before ordering a prototype or releasing documentation. And no, these are not just “beginner mistakes”. They return in experienced teams too, especially when several technologies meet in one product and the deadline starts breathing down everyone's neck.</p>
 
-      <h2>1. The nominal geometry fits. What happens at the tolerance limits?</h2>
-      <p>In CAD, each part usually appears at its nominal dimensions. A hole is exactly 10 mm, a spacing exactly 80 mm and two surfaces meet without variation. In manufacturing, every one of those dimensions occupies a range. A single tolerance may seem harmless. The problem begins when several dimensions form a stack that affects the same clearance, clamp load or position. Parts that individually comply with their drawings can then assemble into a product that fails to perform its function.</p>
+      <h2>1. The nominal fits. Except the nominal hardly exists</h2>
+      <p>In the model, a hole is exactly 10 mm, the spacing exactly 80 mm, and two surfaces meet perfectly. In manufacturing, every one of those dimensions moves within a range. Sometimes slightly up, sometimes slightly down. On its own, each one may still comply with the drawing. The problem begins when several dimensions form one stack. Suddenly every part is formally correct, but the assembly does not provide the required clearance, preload or position. Everyone did their job correctly, yet the product still does not work. The engineering version of “everyone is innocent, but there is still a body on the floor”.</p>
 
       <figure class="journal-figure"><img src="../../assets/journal/en/projekty-poza-cad-2/02-nominal-i-granice-tolerancji.svg" alt="Nominal, minimum-clearance and maximum-clearance conditions." width="1600" height="900" loading="lazy" decoding="async"></figure>
 
-      <p>A tolerance-stack analysis does not always require an elaborate statistical model. The first step is to understand the function:</p>
+      <p>A tolerance-stack analysis does not always require a huge spreadsheet and a statistical model. First, you simply need to understand the function:</p>
       <ul class="journal-bullets">
         <li>which surfaces actually locate the component;</li>
         <li>where clearance is required and where controlled contact is needed;</li>
-        <li>which dimension closes the stack;</li>
+        <li>which dimension closes the entire stack;</li>
         <li>which variations accumulate in the worst case;</li>
         <li>whether the drawing datum scheme reflects how the part will be assembled and inspected.</li>
       </ul>
-      <p>In electromechanical assemblies, cable routing, sheet-metal components or plastic housings, one change can affect several interfaces at once. A tolerance is therefore not an annotation added to completed geometry; it is part of the product architecture.<br class="paragraph-break"><br>Excessively tightening tolerances “for safety” also deserves caution. A more accurate dimension will not repair an unclear locating strategy. It can, however, increase cost, reduce the supplier base and make inspection more difficult.</p>
+      <p>In electromechanical assemblies, sheet-metal parts, plastic housings or cable routing, one dimensional change can pass through several interfaces at once. A tolerance is not seasoning sprinkled over a finished drawing. It is part of the product architecture.</p>
+      <br>
+      <p>Be careful with tolerances tightened “for safety” as well. A more accurate dimension will not fix an unclear locating strategy. It can raise the price, reduce the supplier base and turn inspection into a separate project. More accurate does not always mean better. Sometimes it simply means more expensive.</p>
 
-      <h2>2. Parts fitting together is not the same as an assembly process</h2>
-      <p>In a CAD assembly, a component can appear immediately in its final position. In reality, it has to follow a physical path. Someone must grip it, orient it, hold it, connect it and inspect it. The simplest assembly review begins by reconstructing the sequence of operations. Once part A is installed, is fastener B still accessible? Can the tool align with the fastener axis? Can the operator see the joint? Can the cable be routed without exceeding its bend radius or removing half of the device later?</p>
+      <h2>2. CAD teleports parts. The assembler cannot</h2>
+      <p>In an assembly, we click and the part appears exactly where it should be. In reality, someone has to pick it up, rotate it, insert it, hold it, connect it and then check whether it was done correctly. Putting parts together is not the same thing as defining an assembly process. The simplest review starts by walking through the real sequence of operations. If part A goes in first, can we still reach bolt B? Can the tool line up with the joint? Can the operator see the assembly point? Can the cable be routed without violating its bend radius or dismantling half the device?</p>
 
       <figure class="journal-figure"><img src="../../assets/journal/en/projekty-poza-cad-2/03-zlozenie-a-montaz.svg" alt="A part that fits its target position but collides with a wall along the assembly path." width="1600" height="900" loading="lazy" decoding="async"></figure>
 
-      <p>Fasteners deserve particular attention. A CAD library may suggest a bolt diameter and length, but it will not automatically assess:</p>
+      <p>Fasteners alone can provide plenty of entertainment. A CAD library will select the bolt diameter and length, but it will not automatically tell us:</p>
       <ul class="journal-bullets">
-        <li>wrench or screwdriver access;</li>
-        <li>space to insert the bolt;</li>
-        <li>the risk of dropping a nut inside the device;</li>
-        <li>the possibility of confusing similar components;</li>
-        <li>the number of tool changes;</li>
-        <li>whether the joint can later be dismantled for servicing.</li>
+        <li>whether a wrench or screwdriver will fit;</li>
+        <li>whether there is enough space to insert the bolt;</li>
+        <li>whether the nut can fall inside the device;</li>
+        <li>whether similar bolts can easily be confused;</li>
+        <li>how many times the tool must be changed during assembly;</li>
+        <li>whether the joint can later be dismantled for service.</li>
       </ul>
-      <p>Supervising prototype assembly and working with manufacturing teams makes it clear that design and assembly speak different languages. The designer sees the function of a joint. The assembler sees a sequence of movements, access and the risk of error. A good design must account for both perspectives.<br class="paragraph-break"><br>A simple exercise helps: walk through the assembly step by step using the model, real tools and the planned sequence. Better still, ask someone who did not build the CAD assembly to do it. They will quickly identify places where the design assumes knowledge that is absent from the documentation.</p>
+      <p>When supervising prototype assembly and working with manufacturing teams, it becomes obvious that a designer and an assembler see the same detail very differently. The designer sees the function of the joint. The assembler sees hand movement, access, sequence and the risk of a mistake. A good design has to reconcile both worlds.</p>
+      <br>
+      <p>A very simple test helps: walk through the assembly step by step with the model, real tools and the planned sequence. Ideally, do it with someone who did not build the CAD assembly. They do not know our mental shortcuts, which is exactly why they will quickly find the places where the design works only because of knowledge stored in the designer's head.</p>
 
-      <h2>3. A good part can create a bad product</h2>
-      <p>A designer often works on one selected component or subsystem. This is necessary, but it creates the risk of local optimisation. A part becomes lighter, stiffer or easier to manufacture while making assembly, cooling, cable routing, servicing or the behaviour of a neighbouring system worse.<br class="paragraph-break"><br>In products combining sheet metal, castings, plastics, standard components and wiring, interfaces may matter more than the individual parts. This is where variation, loads, assembly requirements and the responsibilities of several people accumulate. A design review should therefore examine not only parts, but also flows and interfaces:</p>
+      <h2>3. A great part can ruin the whole product</h2>
+      <p>A designer is usually responsible for a specific component or subsystem. That is natural, but it makes local optimisation an easy trap. The part becomes lighter, stiffer or easier to manufacture, while making cooling, assembly, cable routing or access to a neighbouring system worse. We won on our own screen. The whole product lost.</p>
+      <br>
+      <p>In devices combining sheet metal, castings, plastics, standard components and wiring, interfaces may matter more than individual parts. Variation, loads, assembly requirements and the responsibilities of several people all accumulate at those interfaces, exactly where it is easiest to assume that “someone else will check it”. A design should therefore be reviewed not only part by part, but also by following its flows:</p>
       <ul class="journal-bullets">
-        <li>how forces are transferred;</li>
+        <li>how forces travel through the product;</li>
         <li>where energy or media flow;</li>
         <li>how cables are routed and strain-relieved;</li>
-        <li>where heat is dissipated;</li>
-        <li>how the user interacts with the product;</li>
+        <li>where heat escapes;</li>
+        <li>how the user interacts with the device;</li>
         <li>what must be opened, removed or disconnected during servicing.</li>
       </ul>
-      <p>This perspective changes the question from “Is my part correct?” to “What does my part do to the whole product?”. It is particularly important in distributed work, where different subsystems have different owners and each person optimises their own scope.</p>
+      <p>The question “Is my part correct?” is therefore worth replacing with “What does my part do to the whole product?”. This matters especially in distributed teams, where every subsystem owner tends their own garden. Unfortunately, the product does not care about boundaries between departments.</p>
 
-      <h2>4. Simulation and automation do not know every assumption</h2>
-      <p>Software can quickly detect an interference, calculate stress, suggest a dimension or generate a geometry variant. The result looks precise, which makes it easy to assign it more certainty than it actually provides. Every result is an answer to the model and assumptions entered by a person. A structural analysis will not independently recognise that a boundary condition fails to represent the real mounting arrangement. Interference detection will not show a problem if the assembly is missing a cable, tool, seal or complete range of motion. A component library cannot guarantee that the selected part is available in the required variant and lead time.</p>
+      <h2>4. Simulation can calculate everything, except that we are analysing the wrong case</h2>
+      <p>Software will quickly detect an interference, calculate stress or generate a geometry variant. The result has three decimal places and a colourful map, so it looks very convincing. We instinctively begin to trust it. But every result answers only the model and assumptions we entered. A structural analysis will not warn us that the simulated mounting condition does not match reality. Interference detection will not find a cable that was never added to the assembly. Nor will it reveal a missing tool, seal or range of motion that we did not simulate. A component library cannot guarantee that the selected part will be available in the right variant and on time.</p>
       <figure class="journal-figure"><img src="../../assets/journal/en/projekty-poza-cad-2/04-symulacja-i-weryfikacja.svg" alt="Simulation assumptions leading to a result verified by calculation, test and sensitivity analysis." width="1600" height="900" loading="lazy" decoding="async"></figure>
-      <p>When working with structural analyses, prototypes and tests, I treat a digital result as one element in a chain of evidence, not its conclusion. Good practice includes:</p>
+      <p>When working with structural analyses, prototypes and tests, I treat a digital result as one piece of evidence, not a stamp that closes the subject. A sensible sequence looks like this:</p>
       <ul class="journal-bullets">
-        <li>recording the input assumptions;</li>
-        <li>checking whether the model represents the real case;</li>
-        <li>assessing how sensitive the result is to changes in assumptions;</li>
-        <li>comparing it with a simplified calculation, experience or a test;</li>
-        <li>documenting what the analysis does not cover.</li>
+        <li>record the input assumptions;</li>
+        <li>check whether the model represents the real case;</li>
+        <li>assess how the result changes with the assumptions;</li>
+        <li>compare it with a simple calculation, experience or a test;</li>
+        <li>record what the analysis does not cover.</li>
       </ul>
-      <p>This is not about distrusting tools. It is about assigning responsibility correctly. The software calculates the consequences of the chosen model. The designer is responsible for whether that model represents the right problem.</p>
+      <p>This is not about distrusting tools. The software does exactly what we ask it to do. The problem is that it can give a very precise answer to a badly framed question. The solver is responsible for the numbers. The designer is still responsible for whether the whole case makes sense.</p>
 
-      <h2>5. The project ends later than the model</h2>
-      <p>A part may work in a prototype and still create difficulties in manufacturing, transport, inspection or service. A product's life extends far beyond its nominal operation. Projects developed from concept to implementation repeatedly raise questions that are not visible in a basic assembly:</p>
-      <ul class="journal-bullets">
-        <li>how the part will be held during machining or inspection;</li>
-        <li>which dimensions can actually be measured;</li>
-        <li>how the product will be lifted, protected and packaged;</li>
-        <li>what happens under vibration, temperature changes or repeated assembly;</li>
-        <li>which parts wear out and how they will be replaced;</li>
-        <li>whether servicing requires a special tool or recalibration;</li>
-        <li>how successive part revisions will be distinguished.</li>
-      </ul>
-      <p>In a sports-facility project delivered for a client in the United States, the scope did not end with the structure. It also covered cost, optimisation, packaging and manufacturing coordination. This illustrates a broader rule: the technical solution forms part of the process through which the product is delivered and used. If that process does not work, geometry alone will not save the design.</p>
-
-      <h2>A review before clicking “release”</h2>
-      <p>Before releasing documentation or ordering a prototype, pause for five short checks:</p>
-      <ul class="journal-bullets">
-        <li>verify function at the extreme tolerance combinations;</li>
-        <li>recreate the real assembly sequence, including tools;</li>
-        <li>review interfaces and the part's influence on the whole product;</li>
-        <li>record analysis assumptions and how they will be confirmed;</li>
-        <li>follow the part through manufacturing, inspection, transport and service.</li>
-      </ul>
-      <p>CAD is an excellent tool for describing a solution. It should not replace conversations with manufacturing, assembly, testing or the user.</p>
+      <h2>5. A project does not end at the “release” button</h2>
+      <p>A part may work perfectly in a prototype and then cause problems in manufacturing, inspection, transport or service. A product's life is much longer than the moment when it performs its main function.</p>
 
       <figure class="journal-figure"><img src="../../assets/journal/en/projekty-poza-cad-2/05-cykl-zycia-czesci.svg" alt="A part life cycle from sourcing through manufacture and use to service." width="1600" height="900" loading="lazy" decoding="async"></figure>
 
-      <p>The designer's greatest value begins precisely where the software's automatic answer ends. What problem have you only discovered during prototyping or assembly, even though the model looked correct? I would be glad to compare experiences in the comments.</p>
+      <p>A basic assembly usually hides many very down-to-earth questions:</p>
+      <ul class="journal-bullets">
+        <li>how the part will be held during machining and inspection;</li>
+        <li>which dimensions can genuinely be measured;</li>
+        <li>how the product will be lifted, protected and packaged;</li>
+        <li>what vibration, temperature and repeated assembly will do to it;</li>
+        <li>which parts will wear out and how they will be replaced;</li>
+        <li>whether service needs a special tool or calibration;</li>
+        <li>how successive revisions will be distinguished.</li>
+      </ul>
+      <p>On a sports-facility project for a client in the United States, my work did not end with the structure itself. The scope also covered cost, optimisation, packaging and manufacturing coordination. It demonstrates a broader principle well: the technical solution is only one part of delivering and using the product. If that process does not work, beautiful geometry will not help much.</p>
+
+      <h2>Five minutes before releasing the documentation</h2>
+      <p>Before ordering a prototype or clicking “release”, it is worth checking once more:</p>
+      <ul class="journal-bullets">
+        <li>function at the extreme tolerance combinations;</li>
+        <li>the real assembly sequence with actual tools;</li>
+        <li>interfaces and the part's effect on the rest of the product;</li>
+        <li>record analysis assumptions and how they will be confirmed;</li>
+        <li>follow the part through manufacturing, inspection, transport and service.</li>
+      </ul>
+      <p>CAD is an excellent tool for describing a solution. But it cannot replace conversations with manufacturing, assembly, testing or the user. A designer's greatest value begins precisely where the software's automatic answer ends.</p>
+      <br>
+      <p>What problem did you discover only during prototyping or assembly, even though everything looked perfect on screen? I would be glad to compare experiences in the comments.</p>
 
       <section class="journal-project-check">
         <h2>Review your project</h2>
