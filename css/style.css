@@ -1993,6 +1993,18 @@ form button {
   margin-top: 0.75rem;
 }
 
+.form-privacy-link {
+  margin: 0.25rem 0 0;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  color: var(--ink-muted);
+}
+
+.form-privacy-link a {
+  color: inherit;
+}
+
 /* FOOTER */
 footer {
   margin-top: 3rem;
