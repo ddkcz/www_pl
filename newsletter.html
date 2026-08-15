@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CADsmart - Newsletter</title>
+  <meta name="description" content="Newsletter CADsmart — artykuły, checklisty i praktyczne obserwacje z pracy inżynierskiej.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CADsmart">
+  <meta property="og:url" content="https://cadsmart.pl/newsletter.html">
+  <meta property="og:title" content="CADsmart - Newsletter">
+  <meta property="og:description" content="Artykuły, checklisty i praktyczne obserwacje z pracy inżynierskiej.">
+  <meta property="og:image" content="https://cadsmart.pl/assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="alternate" hreflang="pl" href="https://cadsmart.pl/newsletter.html">
+  <link rel="alternate" hreflang="en" href="https://cadsmart.pl/en/newsletter.html">
+
+  <script>
+    (function(){
+      var t = localStorage.getItem('theme');
+      if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="header-placeholder"></div>
+
+  <main class="container newsletter-landing">
+    <header class="page-header page-header--wide">
+      <span class="section-label">NEWSLETTER · CADSMART</span>
+      <h1>Zostańmy w kontakcie</h1>
+      <p>Od czasu do czasu wysyłam rzeczy, które warto zachować na dłużej: nowe artykuły, praktyczne checklisty oraz obserwacje z projektowania i rozwijania produktów.</p>
+    </header>
+
+    <section class="newsletter-landing__details" aria-labelledby="newsletter-contents-title">
+      <h2 id="newsletter-contents-title">Co znajdziesz w newsletterze?</h2>
+      <div class="newsletter-landing__grid">
+        <article>
+          <span>01</span>
+          <h3>Nowe artykuły</h3>
+          <p>Informacje o nowych publikacjach w Dzienniku inżyniera.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Praktyczne materiały</h3>
+          <p>Checklisty i materiały, do których możesz wrócić podczas pracy nad projektem.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Inżynierskie obserwacje</h3>
+          <p>Krótkie wnioski z projektowania, prototypowania i współpracy z produkcją.</p>
+        </article>
+      </div>
+    </section>
+
+    <div id="newsletter-signup" data-newsletter-signup></div>
+  </main>
+
+  <div id="footer-placeholder"></div>
+  <script src="js/script.js"></script>
+</body>
+</html>

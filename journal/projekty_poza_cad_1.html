@@ -173,9 +173,66 @@
           </div>
         </details>
       </section>
+
+      <section class="newsletter-signup" aria-labelledby="newsletter-title-pl">
+        <div class="newsletter-signup__intro">
+          <span class="newsletter-signup__label">NEWSLETTER · CADSMART</span>
+          <h2 id="newsletter-title-pl">Zostańmy w kontakcie</h2>
+          <p>Nowe artykuły, checklisty i inżynierskie przemyślenia. Zapisz się, a dam Ci znać, kiedy pojawi się coś nowego.</p>
+        </div>
+
+        <div id="mlb2-44862063" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-44862063 newsletter-signup__form">
+          <div class="ml-form-align-center">
+            <div class="ml-form-embedWrapper embedForm">
+          <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+            <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2577461/forms/195873593710609665/subscribe" data-code="" method="post" target="_blank">
+              <div class="ml-form-fieldRow">
+                <label for="newsletter-name-pl">Imię <span>(opcjonalnie)</span></label>
+                <input id="newsletter-name-pl" aria-label="Imię" type="text" name="fields[name]" placeholder="Twoje imię" autocomplete="given-name">
+              </div>
+              <div class="ml-form-fieldRow ml-validate-email ml-validate-required">
+                <label for="newsletter-email-pl">E-mail</label>
+                <input id="newsletter-email-pl" aria-label="E-mail" aria-required="true" type="email" name="fields[email]" placeholder="twoj@email.pl" autocomplete="email" required>
+              </div>
+
+              <div class="ml-form-checkboxRow ml-validate-required newsletter-signup__consent">
+                <label>
+                  <input type="checkbox" required>
+                  <span>Chcę otrzymywać newsletter CADsmart i akceptuję <a href="../privacy.html">Politykę prywatności</a>.</span>
+                </label>
+              </div>
+
+              <div class="ml-form-recaptcha ml-validate-required newsletter-signup__recaptcha">
+                <div class="g-recaptcha" data-sitekey="6Lf1KHQUAAAAAFNKEX1hdSWCS3mRMv4FlFaNslaD"></div>
+              </div>
+
+              <input type="hidden" name="ml-submit" value="1">
+              <input type="hidden" name="anticsrf" value="true">
+
+              <div class="ml-form-embedSubmit">
+                <button type="submit" class="primary">Zapisuję się →</button>
+                <button disabled style="display: none" type="button" class="loading">
+                  <span class="newsletter-signup__loader" aria-hidden="true"></span>
+                  <span class="sr-only">Zapisywanie…</span>
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <div class="ml-form-successBody row-success newsletter-signup__success" role="status" aria-live="polite" style="display: none">
+            <h2>Dziękuję!</h2>
+            <p>Adres został zapisany. Sprawdź skrzynkę i potwierdź zapis do newslettera.</p>
+          </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </article>
   </main>
   <div id="footer-placeholder"></div>
   <script src="../js/script.js"></script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v83147fa8ce2d95cb73ece7f28b469519"></script>
+  <script>fetch('https://assets.mailerlite.com/jsonp/2577461/forms/195873593710609665/takel');</script>
 </body>
 </html>

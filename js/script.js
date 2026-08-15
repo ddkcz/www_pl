@@ -11,6 +11,120 @@
 // Shared layout loader (header + footer)
 // ============================================
 const IS_ENGLISH = document.documentElement.lang.toLowerCase().startsWith('en');
+
+// MailerLite calls this function after a successful newsletter subscription.
+function ml_webform_success_44862063() {
+  document.querySelectorAll('.ml-subscribe-form-44862063').forEach(form => {
+    const formBody = form.querySelector('.row-form');
+    const successBody = form.querySelector('.row-success');
+    if (formBody) formBody.style.display = 'none';
+    if (successBody) successBody.style.display = 'block';
+  });
+}
+
+// Shared newsletter block — appended to every journal article.
+function initNewsletterSignup() {
+  const article = document.querySelector('.journal-entry');
+  const placeholder = document.querySelector('[data-newsletter-signup]');
+  const target = placeholder || article;
+  if (!target || target.querySelector('.newsletter-signup')) return;
+
+  const copy = IS_ENGLISH
+    ? {
+        title: 'Let’s stay in touch',
+        description: 'New articles, checklists and engineering insights. Subscribe and I’ll let you know when something new is published.',
+        name: 'Name',
+        optional: 'optional',
+        namePlaceholder: 'Your name',
+        consent: 'I agree to receive the CADsmart newsletter and accept the',
+        privacy: 'Privacy Policy',
+        submit: 'Subscribe →',
+        loading: 'Subscribing…',
+        successTitle: 'Thank you!',
+        successText: 'Your address has been added. Check your inbox and confirm your subscription.',
+      }
+    : {
+        title: 'Zostańmy w kontakcie',
+        description: 'Nowe artykuły, checklisty i inżynierskie przemyślenia. Zapisz się, a dam Ci znać, kiedy pojawi się coś nowego.',
+        name: 'Imię',
+        optional: 'opcjonalnie',
+        namePlaceholder: 'Twoje imię',
+        consent: 'Chcę otrzymywać newsletter CADsmart i akceptuję',
+        privacy: 'Politykę prywatności',
+        submit: 'Zapisuję się →',
+        loading: 'Zapisywanie…',
+        successTitle: 'Dziękuję!',
+        successText: 'Adres został zapisany. Sprawdź skrzynkę i potwierdź zapis do newslettera.',
+      };
+
+  const languageSuffix = IS_ENGLISH ? 'en' : 'pl';
+  const privacyHref = article ? '../privacy.html' : 'privacy.html';
+  const section = document.createElement('section');
+  section.className = 'newsletter-signup';
+  section.setAttribute('aria-labelledby', `newsletter-title-${languageSuffix}`);
+  section.innerHTML = `
+    <div class="newsletter-signup__intro">
+      <span class="newsletter-signup__label">NEWSLETTER · CADSMART</span>
+      <h2 id="newsletter-title-${languageSuffix}">${copy.title}</h2>
+      <p>${copy.description}</p>
+    </div>
+    <div id="mlb2-44862063" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-44862063 newsletter-signup__form">
+      <div class="ml-form-align-center">
+        <div class="ml-form-embedWrapper embedForm">
+          <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+            <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2577461/forms/195873593710609665/subscribe" data-code="" method="post" target="_blank">
+              <div class="ml-form-fieldRow">
+                <label for="newsletter-name-${languageSuffix}">${copy.name} <span>(${copy.optional})</span></label>
+                <input id="newsletter-name-${languageSuffix}" aria-label="${copy.name}" type="text" name="fields[name]" placeholder="${copy.namePlaceholder}" autocomplete="given-name">
+              </div>
+              <div class="ml-form-fieldRow ml-validate-email ml-validate-required">
+                <label for="newsletter-email-${languageSuffix}">E-mail</label>
+                <input id="newsletter-email-${languageSuffix}" aria-label="E-mail" aria-required="true" type="email" name="fields[email]" placeholder="your@email.com" autocomplete="email" required>
+              </div>
+              <div class="ml-form-checkboxRow ml-validate-required newsletter-signup__consent">
+                <label>
+                  <input type="checkbox" required>
+                  <span>${copy.consent} <a href="${privacyHref}">${copy.privacy}</a>.</span>
+                </label>
+              </div>
+              <div class="ml-form-recaptcha ml-validate-required newsletter-signup__recaptcha">
+                <div class="g-recaptcha" data-sitekey="6Lf1KHQUAAAAAFNKEX1hdSWCS3mRMv4FlFaNslaD"></div>
+              </div>
+              <input type="hidden" name="ml-submit" value="1">
+              <input type="hidden" name="anticsrf" value="true">
+              <div class="ml-form-embedSubmit">
+                <button type="submit" class="primary">${copy.submit}</button>
+                <button disabled style="display: none" type="button" class="loading">
+                  <span class="newsletter-signup__loader" aria-hidden="true"></span>
+                  <span class="sr-only">${copy.loading}</span>
+                </button>
+              </div>
+            </form>
+          </div>
+          <div class="ml-form-successBody row-success newsletter-signup__success" role="status" aria-live="polite" style="display: none">
+            <h2>${copy.successTitle}</h2>
+            <p>${copy.successText}</p>
+          </div>
+        </div>
+      </div>
+    </div>`;
+
+  target.appendChild(section);
+
+  const recaptcha = document.createElement('script');
+  recaptcha.src = 'https://www.google.com/recaptcha/api.js';
+  recaptcha.async = true;
+  recaptcha.defer = true;
+  document.body.appendChild(recaptcha);
+
+  const mailerLite = document.createElement('script');
+  mailerLite.src = 'https://groot.mailerlite.com/js/w/webforms.min.js?v83147fa8ce2d95cb73ece7f28b469519';
+  mailerLite.onload = () => fetch('https://assets.mailerlite.com/jsonp/2577461/forms/195873593710609665/takel');
+  document.body.appendChild(mailerLite);
+}
+
+initNewsletterSignup();
+
 fetch(IS_ENGLISH ? '/layout-en.html' : '/layout.html')
   .then(r => r.text())
   .then(html => {
@@ -86,11 +200,12 @@ function initLanguageSwitch() {
   const toggle = document.querySelector('[data-language-toggle]');
   if (!toggle) return;
 
-  const articleWithoutTranslation =
-    document.querySelector('.journal-entry') &&
-    !document.querySelector(`link[rel="alternate"][hreflang="${IS_ENGLISH ? 'pl' : 'en'}"]`);
+  const pageWithoutTranslation =
+    document.body.hasAttribute('data-no-translation') ||
+    (document.querySelector('.journal-entry') &&
+      !document.querySelector(`link[rel="alternate"][hreflang="${IS_ENGLISH ? 'pl' : 'en'}"]`));
 
-  toggle.href = articleWithoutTranslation
+  toggle.href = pageWithoutTranslation
     ? (IS_ENGLISH ? '/blog.html' : '/en/blog.html')
     : (IS_ENGLISH ? `/${relativePath}` : `/en/${relativePath}`);
   toggle.textContent = IS_ENGLISH ? 'PL' : 'EN';

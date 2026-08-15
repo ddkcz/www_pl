@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CADsmart - Newsletter</title>
+  <meta name="description" content="The CADsmart newsletter — articles, checklists and practical insights from engineering work.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CADsmart">
+  <meta property="og:url" content="https://cadsmart.pl/en/newsletter.html">
+  <meta property="og:title" content="CADsmart - Newsletter">
+  <meta property="og:description" content="Articles, checklists and practical insights from engineering work.">
+  <meta property="og:image" content="https://cadsmart.pl/assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="alternate" hreflang="pl" href="https://cadsmart.pl/newsletter.html">
+  <link rel="alternate" hreflang="en" href="https://cadsmart.pl/en/newsletter.html">
+
+  <script>
+    (function(){
+      var t = localStorage.getItem('theme');
+      if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div id="header-placeholder"></div>
+
+  <main class="container newsletter-landing">
+    <header class="page-header page-header--wide">
+      <span class="section-label">NEWSLETTER · CADSMART</span>
+      <h1>Let’s stay in touch</h1>
+      <p>From time to time, I share things worth keeping: new articles, practical checklists and observations from designing and developing products.</p>
+    </header>
+
+    <section class="newsletter-landing__details" aria-labelledby="newsletter-contents-title">
+      <h2 id="newsletter-contents-title">What will you receive?</h2>
+      <div class="newsletter-landing__grid">
+        <article>
+          <span>01</span>
+          <h3>New articles</h3>
+          <p>Updates whenever a new piece is published in the Engineering Journal.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Practical resources</h3>
+          <p>Checklists and materials you can return to while working on your project.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Engineering insights</h3>
+          <p>Concise lessons from design, prototyping and working with manufacturing teams.</p>
+        </article>
+      </div>
+    </section>
+
+    <div id="newsletter-signup" data-newsletter-signup></div>
+  </main>
+
+  <div id="footer-placeholder"></div>
+  <script src="../js/script.js"></script>
+</body>
+</html>
