@@ -2530,10 +2530,10 @@ form button {
 
 .testimonial-slide blockquote p {
   max-width: none;
-  color: var(--ink);
-  font-family: var(--font-serif);
-  font-size: clamp(1.03rem, 1.8vw, 1.28rem);
-  line-height: 1.72;
+  color: var(--ink-soft);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.65;
 }
 
 .testimonial-slide blockquote p::before {
@@ -2685,8 +2685,6 @@ form button {
     padding: 2rem 1.4rem;
   }
 
-  .testimonial-slide blockquote p { font-size: 1rem; }
-
   .testimonial-carousel__controls {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     margin-top: 2.3rem;
@@ -2763,7 +2761,7 @@ footer {
 }
 
 .footer-links a {
-  color: var(--ink);
+  color: var(--ink-muted);
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 0.1em;
