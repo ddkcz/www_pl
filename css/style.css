@@ -2256,6 +2256,18 @@ html[lang="en"] .journal-series::before {
   font-family: var(--font-mono);
 }
 
+.contact-method--newsletter {
+  min-height: 10.5rem;
+}
+
+.contact-method--newsletter .contact-method-value {
+  max-width: 27rem;
+  margin-top: 0.35rem;
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -2791,6 +2803,10 @@ main > *:nth-child(3) { animation-delay: 0.25s; }
   .contact-grid {
     grid-template-columns: 1fr;
     gap: 2.5rem;
+  }
+
+  .contact-method--newsletter {
+    min-height: 0;
   }
 
   .profile-frame { max-width: 280px; }

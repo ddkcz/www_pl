@@ -13,21 +13,21 @@
       document.documentElement.setAttribute('data-theme', t);
     })();
   </script>
-  <link rel="stylesheet" href="../../../css/style.css">
-  <link rel="stylesheet" href="../../test.css">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../style.css">
 </head>
 <body data-no-translation>
   <div id="header-placeholder"></div>
 
   <main class="container proposal-page">
-    <a href="../../../projects.html" class="back-link">← Wróć do wszystkich projektów</a>
+    <a href="../../projects.html" class="back-link">← Wróć do wszystkich projektów</a>
 
     <article class="project-entry" aria-labelledby="project-title">
       <header class="project-head">
         <div class="project-entry-header">
           <span class="prj-id">PRJ-009</span>
           <span class="prj-company">CADsmart</span>
-          <span>2018 — obecnie</span>
+          <span>2018 do obecnie</span>
         </div>
         <h1 id="project-title">Automatyzacje i prawie software</h1>
         <p class="proposal-lead">Projekty rozwijane na styku inżynierii mechanicznej, automatyzacji, AI i codziennych procesów projektowych.</p>
@@ -40,23 +40,24 @@
         <tbody>
           <tr><th>ID projektu</th><td>PRJ-009</td></tr>
           <tr><th>Klient</th><td>CADsmart</td></tr>
-          <tr><th>Okres</th><td>2018 — obecnie</td></tr>
+          <tr><th>Okres</th><td>2018 do obecnie</td></tr>
           <tr><th>Rola</th><td>Deweloper</td></tr>
         </tbody>
       </table>
 
       <section class="proposal-section proposal-section--ruled" aria-labelledby="approach-title">
-        <div class="proposal-section__head">
+        <div class="proposal-section__head proposal-section__head--stacked">
           <div>
             <span class="proposal-kicker">Podejście</span>
             <h2 id="approach-title">Automatyzacja jako praktyczne narzędzie inżynierskie</h2>
           </div>
-          <p>Rozwijam rozwiązania, które porządkują dane, skracają powtarzalną pracę i łączą modele 3D z wyceną, dokumentacją, produkcją oraz codziennym zarządzaniem informacją.</p>
+          <p>Każde z tych narzędzi powstało jako odpowiedź na konkretny problem w pracy inżynierskiej lub prowadzeniu firmy. Najczęściej punktem wyjścia były powtarzalne obliczenia, ręczne przepisywanie danych albo informacje rozproszone pomiędzy modelem 3D, dokumentacją, ofertą i produkcją.</p>
+          <p>Od 2018 roku rozwijam rozwiązania, które porządkują dane i skracają czas potrzebny na wykonanie rutynowych zadań. Korzystam z Excela, Pythona, JavaScript i narzędzi AI, dobierając technologię do problemu, a nie odwrotnie.</p>
         </div>
       </section>
 
       <section class="proposal-section" aria-labelledby="projects-title">
-        <div class="proposal-section__head">
+        <div class="proposal-section__head proposal-section__head--stacked">
           <div>
             <span class="proposal-kicker">Projekty</span>
             <h2 id="projects-title">Od kalkulatorów ofertowych do narzędzi AI</h2>
@@ -64,64 +65,80 @@
           <p>Każdy z poniższych projektów odpowiadał na inny, konkretny problem: czasochłonną wycenę, zarządzanie dokumentacją, analizę konstrukcji albo potrzebę zbudowania kompletnego narzędzia od zera.</p>
         </div>
 
-        <div class="proposal-grid proposal-grid--2">
-          <article class="proposal-card">
-            <span class="proposal-card__index">01 · 2026</span>
-            <h3>Wizytówka w sieci</h3>
-            <p>Projekt i wykonanie wizytówki w sieci — od zera do działającego portfolio. Dzięki intensywnemu wykorzystaniu AI, cały serwis powstał z rąk inżyniera mechanika bez wcześniejszego doświadczenia we front-endzie.</p>
-            <hr class="proposal-card__rule">
-            <ul class="proposal-list">
-              <li>Vanilla HTML / CSS / JavaScript — bez frameworków.</li>
-              <li>Hosting na Cloudflare Workers z automatycznym deploymentem przez GitHub Actions.</li>
-              <li>Dynamiczne ładowanie layoutu (header i footer) ze wspólnego pliku.</li>
-              <li>System tagów i filtrów projektów — single source of truth w JS.</li>
-              <li>Obsługa trybu ciemnego i jasnego z persystencją w localStorage.</li>
-            </ul>
+        <div class="proposal-timeline">
+          <article class="proposal-timeline__item">
+            <time class="proposal-timeline__date" datetime="2026">2026</time>
+            <div class="proposal-timeline__content">
+              <h3>Wizytówka w sieci</h3>
+              <p>Zaprojektowałem i wykonałem tę stronę od zera, doprowadzając ją od pierwszego szkicu do działającego, dwujęzycznego portfolio. Intensywne wykorzystanie AI pozwoliło mi zrealizować projekt pomimo braku wcześniejszego doświadczenia we front-endzie.</p>
+              <p>Serwis działa bez frameworków i pokazuje, że nowe narzędzie można opanować wtedy, gdy punkt wyjścia stanowią jasno zdefiniowane wymagania, testowanie kolejnych wersji oraz konsekwentne poprawianie błędów.</p>
+              <ul class="proposal-list">
+                <li>Vanilla HTML, CSS i JavaScript, bez frameworków.</li>
+                <li>Hosting na Cloudflare Workers z automatycznym deploymentem przez GitHub Actions.</li>
+                <li>Dynamiczne ładowanie layoutu, czyli nagłówka i stopki, ze wspólnego pliku.</li>
+                <li>System tagów i filtrów projektów oparty na jednym źródle danych w JavaScript.</li>
+                <li>Tryb ciemny i jasny z zapisem ustawienia w localStorage.</li>
+              </ul>
+            </div>
           </article>
 
-          <article class="proposal-card">
-            <span class="proposal-card__index">02 · 2025</span>
-            <h3>Automatyczny arkusz Google do wyceny mebli</h3>
-            <p>Na bazie doświadczenia z poprzednich projektów ofertowych stworzyłem autorską aplikację napisaną w języku JavaScript. Aplikacja potrafiła wygenerować pełną listę materiałową bezpośrednio z modelu 3D — około 2000 pozycji dla całego mieszkania — w ciągu kilku sekund. Zaoszczędziła mi ogromną ilość czasu przy zamawianiu materiałów i znacznie przyspieszyła oraz uściśliła wycenę dla klientów. To doskonały przykład zastosowania AI w praktyce.</p>
+          <article class="proposal-timeline__item">
+            <time class="proposal-timeline__date" datetime="2025">2025</time>
+            <div class="proposal-timeline__content">
+              <h3>Automatyczny arkusz Google do wyceny mebli</h3>
+              <p>Na bazie doświadczenia z poprzednich projektów ofertowych stworzyłem autorską aplikację w JavaScript. Narzędzie generowało pełną listę materiałową bezpośrednio z modelu 3D. Dla całego mieszkania oznaczało to około 2000 pozycji przygotowanych w ciągu kilku sekund.</p>
+              <p>Rozwiązanie przyspieszyło zamawianie materiałów i pozwoliło przygotowywać dokładniejsze wyceny dla klientów. W tym projekcie AI było wsparciem podczas tworzenia narzędzia, natomiast logika procesu wynikała z mojego doświadczenia w projektowaniu i prowadzeniu stolarni.</p>
+            </div>
           </article>
 
-          <article class="proposal-card">
-            <span class="proposal-card__index">03 · 2022–OBECNIE</span>
-            <h3>AI i nowe technologie</h3>
-            <p>Jestem entuzjastą nowych technologii i od pojawienia się ChatGPT wykorzystuję narzędzia AI w codziennej pracy. Przez lata praktycznego doświadczenia nauczyłem się świadomie pracować z modelami językowymi — od tworzenia skutecznych promptów, przez benchmarkowanie i porównywanie modeli, aż po dobór odpowiedniego narzędzia do konkretnego zadania. Potrafię integrować AI z codziennymi procesami, budować proste automatyzacje oraz agentów wspierających pracę i podejmowanie decyzji.</p>
-            <br>
-            <p>Traktuję AI nie jako ciekawostkę, ale jako praktyczne narzędzie inżynierskie, które pozwala szybciej analizować informacje, automatyzować powtarzalne zadania i zwiększać efektywność pracy. Swoją wiedzę ekspercką zdobywam przez doświadczenie, ale również przez śledzenie ekspertów w tej dziedzinie, takich jak Mateusz Chrobok, Jakub Mrugalski, Franciszek Georgiew i Andrzej Krzywda.</p>
+          <article class="proposal-timeline__item">
+            <time class="proposal-timeline__date" datetime="2022">2022 do obecnie</time>
+            <div class="proposal-timeline__content">
+              <h3>AI i nowe technologie</h3>
+              <p>Od pojawienia się ChatGPT wykorzystuję narzędzia AI w codziennej pracy. Praktyczne doświadczenie nauczyło mnie tworzenia skutecznych promptów, benchmarkowania modeli oraz dobierania narzędzia do konkretnego zadania.</p>
+              <p>Integruję AI z codziennymi procesami, buduję proste automatyzacje i agentów wspierających analizę informacji oraz podejmowanie decyzji. Traktuję te rozwiązania jako narzędzia inżynierskie, które mają skrócić pracę i poprawić jej jakość, a nie jako cel sam w sobie.</p>
+              <p>Wiedzę rozwijam przez własne eksperymenty oraz śledzenie ekspertów, między innymi Mateusza Chroboka, Jakuba Mrugalskiego, Franciszka Georgiewa i Andrzeja Krzywdy.</p>
+            </div>
           </article>
 
-          <article class="proposal-card">
-            <span class="proposal-card__index">04 · 2021–2025</span>
-            <h3>Skrypty do pracy z programami PLM</h3>
-            <p>Pierwszy skrypt w języku Python automatyzował proces zmiany nazw plików. Skrypt ten pozwalał na szybkie wprowadzanie odpowiednich zmian w nazwach plików zgodnie z konwencją w PLM, co znacznie usprawniło proces zarządzania plikami. Dodatkowo na przestrzeni lat rozwijałem kolejne skrypty, które pozwalały na automatyzację różnych procesów w programach PLM, SolidWorks i Onshape. Między innymi były to automatyczne eksporty rysunków ze złożeń, sprawdzanie poprawności danych czy wyszukiwanie błędów w tabelach.</p>
+          <article class="proposal-timeline__item">
+            <time class="proposal-timeline__date" datetime="2021">2021–2025</time>
+            <div class="proposal-timeline__content">
+              <h3>Skrypty do pracy z programami PLM</h3>
+              <p>Pierwszy skrypt w Pythonie automatyzował zmianę nazw plików zgodnie z konwencją stosowaną w PLM. Rozwiązywał prosty, ale regularnie powtarzający się problem i wyraźnie usprawnił zarządzanie dokumentacją.</p>
+              <p>W kolejnych latach rozwijałem skrypty wspierające pracę w programach PLM, SolidWorks i Onshape. Automatyzowały eksport rysunków ze złożeń, kontrolę poprawności danych oraz wyszukiwanie błędów w tabelach.</p>
+            </div>
           </article>
 
-          <article class="proposal-card">
-            <span class="proposal-card__index">05 · 2020</span>
-            <h3>Skrypt do automatyzacji stabilizacji przeszkody wakeparkowej</h3>
-            <p>Stworzyłem skrypt w języku Python, który automatyzował proces stabilizacji przeszkody wakeparkowej. Skrypt ten pozwalał na szybkie generowanie raportu, co znacznie usprawniło proces projektowy. Wejściowy model 3D w SolidWorks był analizowany pod kątem pływalności, a projektant dostawał szczegółowe informacje, w jakim miejscu należy dodać obciążenie, aby element był stabilny i równo unosił się na wodzie.</p>
+          <article class="proposal-timeline__item">
+            <time class="proposal-timeline__date" datetime="2020">2020</time>
+            <div class="proposal-timeline__content">
+              <h3>Automatyzacja stabilizacji przeszkody wakeparkowej</h3>
+              <p>Stworzyłem skrypt w Pythonie, który analizował model 3D z SolidWorks pod kątem pływalności przeszkody wakeparkowej. Na podstawie geometrii narzędzie generowało raport wskazujący miejsce, w którym należało dodać obciążenie.</p>
+              <p>Projektant otrzymywał konkretną informację potrzebną do uzyskania stabilnego i równo unoszącego się elementu. Dzięki temu analiza przestała być każdorazowo wykonywana ręcznie i stała się częścią powtarzalnego procesu projektowego.</p>
+            </div>
           </article>
 
-          <article class="proposal-card">
-            <span class="proposal-card__index">06 · 2019</span>
-            <h3>Automatyczne programy do wyceny w Excelu</h3>
-            <p>W 2019 roku stworzyłem kilka programów w Excelu do automatycznej wyceny projektów i materiałów. Programy te pozwalały na szybkie generowanie ofert i zestawień materiałowych, co znacznie usprawniło proces sprzedaży i realizacji projektów. Celem kalkulatorów było przygotowanie kompletnej wyceny sprzedażowej dla torów pumptrack oraz utworzenie wstępnego zestawienia materiałowego (BOM). Po wybraniu raportu z modelu 3D w SketchUp i dodaniu szczegółów, takich jak rodzaj nawierzchni, sposób montażu i lokalizacja projektu, cały projekt mógł zostać natychmiast wyceniony dla klienta, a lista komponentów do produkcji — przygotowana. Program ten przygotowałem również dla spółki FlowParks.</p>
+          <article class="proposal-timeline__item">
+            <time class="proposal-timeline__date" datetime="2019">2019</time>
+            <div class="proposal-timeline__content">
+              <h3>Automatyczne programy do wyceny w Excelu</h3>
+              <p>Stworzyłem kilka programów w Excelu do automatycznej wyceny projektów i materiałów. Kalkulatory przygotowywały kompletną wycenę sprzedażową torów pumptrack oraz wstępne zestawienie materiałowe BOM.</p>
+              <p>Po wczytaniu raportu z modelu 3D w SketchUp oraz uzupełnieniu rodzaju nawierzchni, sposobu montażu i lokalizacji inwestycji można było od razu przygotować ofertę dla klienta i listę komponentów dla produkcji. Analogiczne narzędzie przygotowałem również dla spółki FlowParks.</p>
+            </div>
           </article>
         </div>
       </section>
 
       <section class="proposal-section proposal-section--compact">
-        <div class="proposal-cta">
+        <div class="proposal-cta proposal-cta--minimal">
           <div>
             <span class="proposal-mini-label">Proces do usprawnienia?</span>
             <h2>Masz powtarzalną pracę, którą warto zautomatyzować?</h2>
             <p>Opisz dane wejściowe, oczekiwany wynik i miejsce, w którym proces zabiera najwięcej czasu.</p>
           </div>
           <div class="proposal-actions">
-            <a class="btn btn-primary" href="../../../contact.html">Porozmawiajmy →</a>
+            <a class="btn btn-primary" href="../../contact.html">Porozmawiajmy →</a>
           </div>
         </div>
       </section>
@@ -129,6 +146,6 @@
   </main>
 
   <div id="footer-placeholder"></div>
-  <script src="../../../js/script.js"></script>
+  <script src="../../js/script.js"></script>
 </body>
 </html>
