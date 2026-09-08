@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>When does an idea become a project? | CADsmart</title>
+  <meta name="description" content="How to move from an intuitive idea to a project that reduces uncertainty and leads to deliberate decisions.">
+  <meta name="author" content="Dawid Kuczyński">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="CADsmart">
+  <meta property="og:url" content="https://cadsmart.pl/en/journal/od_pomyslu_do_rozwiazania_1.html">
+  <meta property="og:title" content="When does an idea become a project? | CADsmart">
+  <meta property="og:description" content="How to move from an intuitive idea to a project that reduces uncertainty and leads to deliberate decisions.">
+  <meta property="og:image" content="https://cadsmart.pl/assets/og-image.png">
+  <meta property="article:published_time" content="2026-09-08">
+  <meta property="article:author" content="Dawid Kuczyński">
+  <meta property="article:section" content="From idea to validated solution">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="alternate" hreflang="pl" href="https://cadsmart.pl/journal/od_pomyslu_do_rozwiazania_1.html">
+  <link rel="alternate" hreflang="en" href="https://cadsmart.pl/en/journal/od_pomyslu_do_rozwiazania_1.html">
+  <script>
+    (function(){
+      var t = localStorage.getItem('theme');
+      if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+  <div id="header-placeholder"></div>
+  <main class="container">
+    <a href="../blog.html" class="back-link journal-back-link">← Back to the journal</a>
+    <article class="journal-entry" data-published="2026.09.08" data-author="Dawid Kuczyński">
+      <header class="page-header">
+        <span class="section-label">JOURNAL · ARTICLE</span>
+        <div class="journal-series" data-article-series="idea-to-validated-solution" data-series-part="01" data-series-total="06">From idea to validated solution</div>
+        <h1>When does an idea become a project?</h1>
+        <p class="journal-lead">An idea suggests a solution. A project begins when we turn it into a process for reducing uncertainty.</p>
+      </header>
+
+      <p>In this second series, I want to explore how to move from an idea to a validated solution. This time, I will take a specific design problem from my past and analyse it step by step. Over the next three weeks, I will publish six short articles about:</p>
+      <ul class="journal-bullets">
+        <li>when an idea becomes a project;</li>
+        <li>how to turn assumptions into requirements;</li>
+        <li>how to choose a solution when every concept has drawbacks;</li>
+        <li>what really validates a design decision: calculations, simulation or testing;</li>
+        <li>whether a working prototype already means success;</li>
+        <li>when a solution can be considered ready.</li>
+      </ul>
+      <p>I also wanted to learn something myself, so I put my first engineering case study under the microscope: a carbon-fibre control-arm project completed as part of my engineering thesis at AGH Racing. A lot has changed in the way I think about design since then.</p>
+
+      <h2>“Let’s make carbon-fibre control arms”</h2>
+      <p>“Everyone drives on them. We need the same. They will be lighter and better.”</p>
+      <br>
+      <p>That sounds like the start of a project: there is an idea, a direction for development, and in theory we can start moving. When I worked in a student team, a sentence like that was basically enough to get going. The real world needs a little more. Looking back, I know that such a project would have had no right to exist in a regular organisation. In a student team? That was exactly the point: to try, search and make mistakes.</p>
+      <br>
+      <p>What was missing? The right questions. Why are we changing the control arm, and what is the purpose of the change? What can we change, and what do we not want to touch? What technologies and tools are available to us? What must we do to deliver the project? Above all, what is the budget?</p>
+      <br>
+      <p>Without these answers, it is easy to mistake activity for progress. You can research, build models, concepts and prototypes forever. Until the team knows which decisions those activities are meant to support, it is producing motion rather than knowledge.</p>
+      <br>
+      <p>Today I know that an idea becomes a project when we turn it into a process for reducing uncertainty. We define the problem and its boundary conditions, name what we know and write down what we do not know. We decide how to obtain the missing information, what budget we have, and what the whole effort is for.</p>
+
+      <h2>1. An idea suggests a solution. A project starts with a problem</h2>
+      <p>For my engineering thesis, I analysed whether carbon-fibre tube control arms could be used in a Formula Student car. The team had previously used steel components. The intuitive direction was simple: use carbon fibre and reduce unsprung mass, the mass of parts that move together with the wheel. Fortunately, the team was not a pioneer of this technology. I had examples to learn from and knew it was a promising direction.</p>
+      <br>
+      <p>If we had stopped at the phrase “carbon control arm”, the work would quickly have focused on tube geometry and an attractive material. The real problem was broader: how can we reduce the mass of a suspension component while retaining its function, strength, compatibility with the system geometry and manufacturability with the technologies available to us? That distinction matters. An idea usually points to one answer. A problem opens up a space of solutions.</p>
+      <p>If a team becomes attached to an answer from the start, it begins to defend it. Uncomfortable results become obstacles and alternatives feel like a step backwards. A well-defined problem allows several routes to be compared: change the tube material, optimise the steel component, redesign the end fitting or change the joining method.</p>
+      <p>This does not require a six-month strategic process. One sentence is enough, provided it does not smuggle the solution in as the objective: “We want to reduce the unsprung mass of the front suspension without compromising control-arm load capacity, geometry or manufacturability.”</p>
+      <br>
+      <p>It is also worth stating who benefits from the result. In the car, lower unsprung mass was meant to improve wheel behaviour, but the solution also had to be manufacturable by the team with sponsor support. From the start, we assumed aluminium end fittings would be bonded into composite tubes. We could not let the car fall apart for a seemingly minor reason such as a bonded joint. In a company, similar perspectives come from users, design engineering, manufacturing and quality. If no one can say who benefits from a change and how they will recognise it, the project may remain an interesting technical exercise.</p>
+
+      <h2>2. A project has boundaries — and problems usually begin there</h2>
+      <p>On screen, a control arm can look like a few simple elements: a tube, bushes, an end fitting and a bearing. In reality, it is part of a suspension system, and its behaviour also depends on the interfaces between components. It was not enough to assess the carbon-fibre tube itself. Loads had to pass through the aluminium fitting, the bonded joint and the tube to the next mounting points. Every interface brought its own questions about geometry, support, bond area, centring and assembly.</p>
+      <br>
+      <p>This is a typical situation. A team says it is designing a part, but the problem lives at the point where the part meets the rest of the product. That is why defining the project boundary should be one of the first steps. What are we analysing as a system? Which elements remain unchanged? Which input data do we use? What is an external condition, and what remains a design decision?</p>
+      <p>Requirements are not there to avoid responsibility. They should show where the model ends, not where its consequences end. A project therefore needs not only a scope of work, but also a scope of model responsibility: what it covers and what it deliberately does not describe.</p>
+      <br>
+      <p>At this stage, it is also useful to find the hardest parts of the puzzle. In my case, it was the bonded joint. No one in the team had made one before, yet it carried the entire suspension load. It could not fail.</p>
+
+      <h2>3. Turn unknowns into questions, not tasks</h2>
+      <p>It is easy to put “build a model”, “run a simulation” or “make a prototype” in a schedule. Those tasks can be checked off, but a completed task does not necessarily reduce any meaningful uncertainty.</p>
+      <br>
+      <p>A much better structure emerges when we first write down decision questions. In the case of the control arm, they included:</p>
+      <ul class="journal-bullets">
+        <li>What load should the component carry?</li>
+        <li>Can a bonded joint of feasible geometry reach the required load capacity?</li>
+        <li>What additional requirements does the bonded joint introduce?</li>
+        <li>Will the aluminium end fittings survive the same load case?</li>
+        <li>Will theoretical work and static tests give results we can trust?</li>
+      </ul>
+      <p>Only then do we choose the tools. Data from the suspension system helped define the load. Catalogue calculations for bonded joints gave a first joint size. Tensile tests checked the real bonded joint, while FEA allowed me to examine stress distribution in the aluminium fittings. Every tool was meant to provide evidence for a specific decision. It was not a mandatory stage merely because that is what professional product development looks like.</p>
+      <br>
+      <p>Questions should be ordered by risk, not by what is convenient for the team. A project should begin with the uncertainty that can invalidate the whole direction most cheaply and quickly. If we do not know the load, detailed optimisation of the fitting is premature. If the joining method cannot achieve the required capacity, polishing the tube geometry will change little.</p>
+      <br>
+      <p>In our case, a simulation of the complete suspension load in Ansys helped establish the highest forces. We then applied a safety factor of three — because we did not have the nerve to assume less. That is how it started.</p>
+      <p>This is the practical meaning of “fail fast”. It is not about breaking prototypes quickly; it is about asking, early, the questions whose negative answer changes the most. CAD, calculations and testing then form a chain of evidence. If a link does not lead to a decision, we may be producing documentation rather than knowledge.</p>
+
+      <h2>4. A good project allows the answer: “this does not work yet”</h2>
+      <p>There comes a point when a project starts defending itself against reality. The team has invested time, the model looks good and the parts have been made, so everyone wants to call the result a success. That is when we need to return to the question: what was meant to be confirmed?</p>
+      <br>
+      <p>For the control arm analysed here, the target capacity of the bonded joint was 40 kN. The tests did not confirm that level and revealed issues with surface preparation, adhesive, centring and specimen manufacture. The analysis of the fittings, meanwhile, showed stresses above the assumed limit. There was therefore no basis for using the solution in the car.</p>
+      <p>That did not make the work worthless. The general idea had been split into concrete problems, and the results showed the next move. The fitting geometry needed to change. The bonded-joint preparation process needed improvement and retesting. Some hypotheses were rejected and others stayed open. That is what separates a project from a series of attempts. In a series of attempts, a negative result breaks the plan. In a project, a negative result updates knowledge and changes the decision.</p>
+      <br>
+      <p>That is why, before the first calculation, it is worth setting not only a success criterion but also a response to a borderline or negative result. Do we change the geometry? Return to the input data? Repeat the test after removing process errors? Abandon the variant?</p>
+      <p>If every answer leads to “we keep doing the same thing”, we have not designed an experiment. We have designed a justification for an earlier decision. There also needs to be a decision owner who turns the result into action: continue, change the variant, repeat the test after removing a specific cause, or close the direction.</p>
+      <br>
+      <p>In our specific case, we drew conclusions, improved a few things and made the final product despite not meeting the original success criterion. Student teams operate under different rules, fortunately. The control arms completed two full seasons without any issues. It worked out.</p>
+
+      <h2>5. The first product of a project is a decision map</h2>
+      <p>Before a 3D model exists, it is worth having a simple map: what problem are we solving, where are the boundaries, what do we not know, and which decision awaits us at the end of the next iteration?</p>
+      <br>
+      <p>It does not need to be an elaborate document. In a small project, one page is enough if it contains:</p>
+      <ul class="journal-bullets">
+        <li>the problem, described without prescribing a solution;</li>
+        <li>the expected outcome and the key constraints;</li>
+        <li>system boundaries and critical interfaces;</li>
+        <li>assumptions we are making for now;</li>
+        <li>the largest unknowns and risks;</li>
+        <li>the method for obtaining evidence;</li>
+        <li>the decision to be made after the iteration.</li>
+      </ul>
+      <p>The last field is the most important. A project progresses from decision to decision. The model, analysis and prototype are along the way.</p>
+      <br>
+      <p>For the control arm, the map would look like this: we want to reduce unsprung mass; we retain the suspension geometry; we consider a composite tube with aluminium end fittings; we need to verify joint and fitting capacity; at the end, we decide whether this architecture is suitable for further development. It still does not guarantee success. It guarantees something more useful: that the next iteration will answer an important question.</p>
+
+      <h2>From idea to project</h2>
+      <p>An idea can appear in a minute. A project starts a moment later, when instead of asking “how should we draw it?”, we establish:</p>
+      <ul class="journal-bullets">
+        <li>what problem we are really solving;</li>
+        <li>within which boundaries the solution operates;</li>
+        <li>which assumptions are facts and which are hypotheses;</li>
+        <li>what evidence we need;</li>
+        <li>which decision will be made after collecting it.</li>
+      </ul>
+      <p>This is not about killing an idea’s energy with a form. It is about not spending that energy on perfectly developing the wrong solution.</p>
+      <br>
+      <p>In the next article, I will show how to move from assumptions to requirements that can be calculated, checked and used to make design decisions.</p>
+      <br>
+      <p>If you are developing a mechanical product and want to bring order to the path from concept to the first decisive iteration, I can help define the scope, risks and verification plan before the team invests time in detailed design.</p>
+
+      <section class="journal-project-check">
+        <h2>Check whether your idea is already a project</h2>
+        <p>Do you want to structure the first iteration before the team starts detailed modelling?</p>
+        <details class="journal-project-check__disclosure">
+          <summary class="journal-project-check__summary">
+            <span>View 9 review questions</span>
+            <span class="journal-project-check__arrow" aria-hidden="true">→</span>
+          </summary>
+          <div class="journal-checklist journal-project-check__content">
+            <ul class="journal-checklist__items">
+              <li>Is the problem described without building the preferred solution into its definition?</li>
+              <li>Can we identify who benefits from the change and how they will recognise the expected outcome?</li>
+              <li>Have we defined the function, constraints, budget and boundary conditions of the project?</li>
+              <li>Do the system boundaries identify fixed elements, input data and decisions that still belong to the team?</li>
+              <li>Have we identified critical interfaces where risk may be greater than in the part being designed?</li>
+              <li>Are assumptions separated into confirmed facts and hypotheses that need validation?</li>
+              <li>Have the biggest unknowns been written as decision questions rather than merely schedule tasks?</li>
+              <li>For every question, have we selected a way to obtain evidence and defined a result criterion?</li>
+              <li>Before starting the iteration, do we know which decision follows a positive, borderline or negative result?</li>
+            </ul>
+          </div>
+          <div class="journal-checklist-download">
+            <p>Want to save these questions for later?</p>
+            <button type="button" class="journal-checklist-download__button" data-checklist-pdf data-pdf-filename="CADsmart-checklist-from-idea-to-project.pdf">Download the PDF checklist →</button>
+          </div>
+        </details>
+      </section>
+    </article>
+  </main>
+  <div id="footer-placeholder"></div>
+  <script src="../../js/script.js"></script>
+</body>
+</html>
